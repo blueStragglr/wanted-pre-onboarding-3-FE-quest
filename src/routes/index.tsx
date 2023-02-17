@@ -1,36 +1,44 @@
+import Layout from '@/components/atoms/Layout';
 import { createBrowserRouter } from 'react-router-dom';
-import Auth from '@/pages/auth';
+import { ProtectRoute } from '@/components/ProtectRoute';
 import Home from '@/pages/home';
 import Community from '@/pages/community';
 import ErrorPage from '@/pages/error-page';
 import Login from '@/pages/auth/login';
 import Join from '@/pages/auth/join';
+import { PATH } from '@/constants';
 
 const router = createBrowserRouter([
   {
-    path: '/',
-    element: <Home />,
+    element: (
+      <Layout>
+        <ProtectRoute />
+      </Layout>
+    ),
     errorElement: <ErrorPage />,
     children: [
       {
-        path: 'community',
+        path: PATH.MAIN,
+        element: <Home />,
+      },
+      {
+        path: PATH.COMMUNITY,
         element: <Community />,
       },
     ],
   },
   {
-    path: '/auth',
-    element: <Auth />,
+    path: PATH.AUTH,
     errorElement: <ErrorPage />,
     children: [
       { index: true, element: <Login /> },
       {
-        path: 'login',
+        path: PATH.LOGIN,
         element: <Login />,
         errorElement: <ErrorPage />,
       },
       {
-        path: 'join',
+        path: PATH.JOIN,
         element: <Join />,
         errorElement: <ErrorPage />,
       },

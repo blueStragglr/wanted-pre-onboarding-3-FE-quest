@@ -1,12 +1,13 @@
 import { NavLink } from 'react-router-dom';
+import { PATH } from '@/constants';
 
 const menu = [
   {
-    id: '/',
+    id: PATH.MAIN,
     name: '홈',
   },
   {
-    id: '/community',
+    id: PATH.COMMUNITY,
     name: '커뮤니티',
   },
 ];
