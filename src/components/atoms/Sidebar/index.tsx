@@ -1,41 +1,36 @@
-import { NavLink } from 'react-router-dom';
-import { PATH } from '@/constants';
+import { useTheme } from '@mui/material/styles';
 
-const menu = [
-  {
-    id: PATH.MAIN,
-    name: '홈',
-  },
-  {
-    id: PATH.COMMUNITY,
-    name: '커뮤니티',
-  },
-];
+import List from '@mui/material/List';
+import Divider from '@mui/material/Divider';
+import IconButton from '@mui/material/IconButton';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import Menu from './Menu';
+import { useRecoilState } from 'recoil';
+import { drowerState } from '@/store/drowerState';
+import { Drawer, DrawerHeader } from '@/styles/muiStyles';
 
 const Sidebar = () => {
+  const theme = useTheme();
+
+  const [drowerOpen, setDrowerOpen] = useRecoilState(drowerState);
+
+  const handleDrawerClose = () => {
+    setDrowerOpen(false);
+  };
+
   return (
-    <aside className="h-screen max-w-xs w-80 bg-slate-100">
-      <div className="flex flex-col h-full">
-        <div className="overflow-auto grow">
-          <nav>
-            <ul>
-              {menu.map(({ id, name }) => (
-                <li key={id} className="p-2 font-black">
-                  <NavLink
-                    to={id}
-                    className={({ isActive, isPending }) =>
-                      isActive ? 'text-rose-900' : isPending ? 'text-fuchsia-300' : ''
-                    }
-                  >
-                    {name}
-                  </NavLink>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </aside>
+    <Drawer variant="permanent" open={drowerOpen}>
+      <DrawerHeader>
+        <IconButton onClick={handleDrawerClose}>
+          {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+        </IconButton>
+      </DrawerHeader>
+      <Divider />
+      <List>
+        <Menu />
+      </List>
+    </Drawer>
   );
 };
 
