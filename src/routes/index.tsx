@@ -1,3 +1,4 @@
+import AuthLayout from '@/components/atoms/Layout/AuthLayout';
 import Layout from '@/components/atoms/Layout';
 import { createBrowserRouter } from 'react-router-dom';
 import { ProtectRoute } from '@/components/ProtectRoute';
@@ -29,9 +30,13 @@ const router = createBrowserRouter([
   },
   {
     path: PATH.AUTH,
+    element: (
+      <AuthLayout>
+        <ProtectRoute />
+      </AuthLayout>
+    ),
     errorElement: <ErrorPage />,
     children: [
-      { index: true, element: <Login /> },
       {
         path: PATH.LOGIN,
         element: <Login />,

@@ -1,11 +1,13 @@
-import { Navigate, Outlet } from 'react-router-dom';
+import { PATH } from '@/constants';
+import { Navigate, Outlet, useLocation } from 'react-router-dom';
 import useAuth from '@/hooks/useAuth';
 
 export const ProtectRoute = () => {
-  const isLogin = true;
+  const { pathname } = useLocation();
+  const isLogin = false;
 
-  if (!isLogin) {
-    return <Navigate to={'/auth/login'} />;
+  if (pathname === PATH.AUTH && !isLogin) {
+    return <Navigate to={PATH.LOGIN} />;
   }
 
   return <Outlet />;

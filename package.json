@@ -23,6 +23,7 @@
     "@mui/material": "^5.11.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-lottie": "^1.2.3",
     "react-router-dom": "^6.8.1",
     "recoil": "^0.7.6"
   },
@@ -53,6 +54,7 @@
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.9",
+    "@types/react-lottie": "^1.2.6",
     "@types/testing-library__jest-dom": "^5.14.5",
     "@typescript-eslint/eslint-plugin": "^5.48.2",
     "@typescript-eslint/parser": "^5.48.2",
