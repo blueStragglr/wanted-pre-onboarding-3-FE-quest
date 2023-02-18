@@ -8,8 +8,6 @@ interface SideMenuProps {
 const SideMenu = ({ menuList }: SideMenuProps) => {
   const location = useLocation();
 
-  console.log(location);
-
   return (
     <SideWrap>
       <MenuUl>
