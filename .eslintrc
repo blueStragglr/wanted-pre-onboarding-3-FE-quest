@@ -78,7 +78,7 @@
         "argsIgnorePattern": "^_"
       }
     ],
-    "no-console": "error",
+    "no-console": "warn",
     "prettier/prettier": "off",
     "react/react-in-jsx-scope": "off"
   }
