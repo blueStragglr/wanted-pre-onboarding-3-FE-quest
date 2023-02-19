@@ -1,60 +1,69 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 function SideBar() {
-  const [nowPage, setNowPage] = useState(0);
+  const [nowPage, setNowPage] = useState(1);
+  const locationNow = useLocation();
   const nowPageColor = (number) => {
     setNowPage(number);
   };
-  console.log(nowPage);
+  if (locationNow.pathname === "/login") return null;
   return (
-    <SideBarWrapper nowPage={nowPage}>
-      <LinkDiv
+    <SideBarWrapper>
+      <LinkTag
         to="/"
         className="pageA"
         nowPage={nowPage}
         onClick={() => nowPageColor(1)}
       >
-        <div>Page A</div>
-      </LinkDiv>
-      <LinkDiv
+        <LinkDiv>Page A</LinkDiv>
+      </LinkTag>
+      <LinkTag
         to="/2"
         className="pageB"
         nowPage={nowPage}
         onClick={() => nowPageColor(2)}
       >
-        <div>Page B</div>
-      </LinkDiv>
-      <LinkDiv
+        <LinkDiv>Page B</LinkDiv>
+      </LinkTag>
+      <LinkTag
         to="/3"
         className="pageC"
         nowPage={nowPage}
         onClick={() => nowPageColor(3)}
       >
-        <div>Page C</div>
-      </LinkDiv>
+        <LinkDiv>Page C</LinkDiv>
+      </LinkTag>
     </SideBarWrapper>
   );
 }
 const SideBarWrapper = styled.div`
-  width: 10vh;
+  width: 10vw;
   height: 93vh;
-  border-right: 5px solid gray;
+  border-right: 1px solid gray;
 `;
 
-const LinkDiv = styled(Link)`
+const LinkTag = styled(Link)`
   text-decoration: none;
 
   &.pageA {
-    color: ${(props) => (props.$nowPage === 1 ? "#0090ff" : "black")};
+    color: ${(props) => (props.nowPage === 1 ? "#0090ff" : "black")};
   }
   &.pageB {
-    color: ${(props) => (props.$nowPage === 2 ? "#0090ff" : "black")};
+    color: ${(props) => (props.nowPage === 2 ? "#0090ff" : "black")};
   }
   &.pageC {
-    color: ${(props) => (props.$nowPage === 3 ? "#0090ff" : "black")};
+    color: ${(props) => (props.nowPage === 3 ? "#0090ff" : "black")};
   }
 `;
 
+const LinkDiv = styled.div`
+  height: 5vh;
+  display: flex;
+  margin-left: 30px;
+  align-items: center;
+  font-weight: bolder;
+`;
 export default SideBar;
