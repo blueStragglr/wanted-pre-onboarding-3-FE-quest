@@ -12,7 +12,7 @@ function Login() {
         <Input type="password" placeholder="비밀번호를 입력해 주세요." />
       </Form>
       <LoginButton>이메일로 로그인</LoginButton>
-      <SignupButton>회원가입</SignupButton>
+      <SignupButton to="/">회원가입</SignupButton>
     </Section>
   );
 }
@@ -40,6 +40,7 @@ const Form = styled.form`
   align-items: center;
   gap: 0.8rem;
   margin-top: 4rem;
+  border-radius: 0.5rem;
 `;
 const Input = styled.input`
   width: 20rem;
