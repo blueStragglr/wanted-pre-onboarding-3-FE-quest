@@ -1,0 +1,85 @@
+{
+  "root": true,
+  "env": { "browser": true, "es6": true, "commonjs": true },
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2015
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/parsers": { "@typescript-eslint/parser": [".ts", ".tsx"] },
+    "import/resolver": {
+      "node": {},
+      "typescript": {}
+    }
+  },
+  "plugins": ["import", "prettier", "unused-imports", "@typescript-eslint"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:import/typescript",
+    "plugin:import/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "@typescript-eslint/interface-name-prefix": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { "varsIgnorePattern": "_" }
+    ],
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "import/no-unresolved": "off",
+    "import/export": "off",
+    "import/first": 1,
+    "import/newline-after-import": ["error", { "count": 1 }],
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          ["builtin", "external"],
+          ["parent", "sibling", "index"]
+        ],
+        "pathGroups": [
+          {
+            "pattern": "react*",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "@src/**",
+            "group": "internal",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react*"],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "unused-imports/no-unused-imports": ["error"],
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "no-console": "error",
+    "prettier/prettier": "off",
+    "react/react-in-jsx-scope": "off"
+  }
+}
