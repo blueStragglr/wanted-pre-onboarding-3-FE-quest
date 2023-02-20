@@ -8,10 +8,16 @@ const MenuConatiner = styled.div`
   align-items: center;
 `;
 
-// const AllLink = styled(Link)`
-//   color: black;
-//   text-decoration: none;
-// `;
+const AllNavLink = styled(NavLink)`
+  color: black;
+  &:link {
+    text-decoration: none;
+  }
+  &.active {
+    color: #0c6efd;
+    font-weight: 900;
+  }
+`;
 
 const SideBarContainer = styled.div`
   position: fixed;
@@ -24,32 +30,27 @@ const SideBarContainer = styled.div`
 `;
 
 const Sidebar = () => {
-  const activeStyle = {
-    color: "#289951",
-    fontWeight: 700,
-    textDecorate: "none",
-  };
   return (
     <>
       <SideBarContainer>
-        <NavLink
-          style={({ isActive }) => (isActive ? activeStyle : {})}
+        <AllNavLink
+          style={({ isActive }) => (isActive ? "active" : "")}
           to="/a-page"
         >
           <MenuConatiner>PageA</MenuConatiner>
-        </NavLink>
-        <NavLink
-          style={({ isActive }) => (isActive ? activeStyle : {})}
+        </AllNavLink>
+        <AllNavLink
+          style={({ isActive }) => (isActive ? "active" : "")}
           to="/b-page"
         >
           <MenuConatiner>PageB</MenuConatiner>
-        </NavLink>
-        <NavLink
-          style={({ isActive }) => (isActive ? activeStyle : {})}
+        </AllNavLink>
+        <AllNavLink
+          style={({ isActive }) => (isActive ? "active" : "")}
           to="/c-page"
         >
           <MenuConatiner>PageC</MenuConatiner>
-        </NavLink>
+        </AllNavLink>
       </SideBarContainer>
     </>
   );
