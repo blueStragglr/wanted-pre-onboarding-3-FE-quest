@@ -1,17 +1,17 @@
 import { Outlet } from "react-router-dom";
-import ErrorPage from "./routes/ErrorPage";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
-import Home from "./routes/PageA";
 
 export default function App() {
   return (
-    <div>
+    <div className="h-full flex flex-col" style={{ minWidth: "600px" }}>
       <Header />
-      <Sidebar />
-      <main>
-        <Outlet />
-      </main>
+      <div className="flex-1 flex">
+        <Sidebar />
+        <main className="flex-1 flex justify-center items-center">
+          <Outlet />
+        </main>
+      </div>
     </div>
   );
 }

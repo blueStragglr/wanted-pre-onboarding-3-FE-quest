@@ -19,7 +19,7 @@ export default function ErrorPage() {
               {error.status} - {error.statusText}
             </i>
           ) : (
-            <i>unknown</i>
+            <i>Something went wrong</i>
           )}
         </p>
       </div>
