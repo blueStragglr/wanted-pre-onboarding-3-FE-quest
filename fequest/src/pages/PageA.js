@@ -6,6 +6,7 @@ const PageAContent = styled.article`
   justify-content: center;
   align-items: center;
   font-size: x-large;
+  font-weight: 700;
 `;
 
 const PageA = () => {
