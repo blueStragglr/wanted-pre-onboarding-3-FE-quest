@@ -17,17 +17,7 @@ const MainLayout = () => {
       </Header>
       <ContentContainer>
         <Nav>
-          {routes.public.map((route) =>
-            route.subPage?.map((value) => (
-              <Link
-                key={value.id}
-                to={value.pathname}
-              >
-                {value.pageName}
-              </Link>
-            ))
-          )}
-          {routes.private.map((route) =>
+          {routes.map((route) =>
             route.subPage?.map((value) => (
               <Link
                 key={value.id}

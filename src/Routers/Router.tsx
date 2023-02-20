@@ -2,86 +2,49 @@ import { Route, Routes } from "react-router-dom";
 
 import PrivateRoutes from "./PrivateRoutes";
 
+import MainLayout from "@/Components/Layouts/MainLayout";
 import { useAuthContext } from "@/Context/AuthContextProvider";
-import { routes } from "@/Routers/routes";
+import { Login, PageA, PageB, PageC } from "@/Pages";
+import Logout from "@/Pages/Logout";
 
 const Routers = () => {
   const {
     state: { isLogin }
   } = useAuthContext();
+
   return (
-    <>
-      <Routes>
-        {routes.public.map((route) => {
-          return route.subPage && route.subPage.length !== 0 ? (
-            <Route
-              key={route.id}
-              path={route.pathname}
-              element={route.layout && <route.layout />}
-            >
-              <Route
-                index={true}
-                element={route.component && <route.component />}
-              />
-              {
-                <Route path={route.pathname}>
-                  {route.subPage.map((subRoute) => {
-                    return (
-                      <Route
-                        key={subRoute.id}
-                        path={subRoute.pathname}
-                        element={subRoute.component && <subRoute.component />}
-                      />
-                    );
-                  })}
-                </Route>
-              }
-            </Route>
-          ) : (
-            <Route
-              key={route.id}
-              path={route.pathname}
-              element={route.component && <route.component />}
-            />
-          );
-        })}
-      </Routes>
-      <PrivateRoutes isLogin={isLogin}>
-        {routes.private.map((route) => {
-          return route.subPage && route.subPage.length !== 0 ? (
-            <Route
-              key={route.id}
-              path={route.pathname}
-              element={route.layout && <route.layout />}
-            >
-              <Route
-                index={true}
-                element={route.component && <route.component />}
-              />
-              {
-                <Route path={route.pathname}>
-                  {route.subPage.map((subRoute) => {
-                    return (
-                      <Route
-                        key={subRoute.id}
-                        path={subRoute.pathname}
-                        element={subRoute.component && <subRoute.component />}
-                      />
-                    );
-                  })}
-                </Route>
-              }
-            </Route>
-          ) : (
-            <Route
-              key={route.id}
-              path={route.pathname}
-              element={route.component && <route.component />}
-            />
-          );
-        })}
-      </PrivateRoutes>
-    </>
+    <Routes>
+      <Route element={<MainLayout />}>
+        <Route
+          index
+          element={<PageA />}
+        />
+        <Route
+          path="page-a"
+          element={<PageA />}
+        />
+        <Route
+          path="page-b"
+          element={<PageB />}
+        />
+        <Route element={<PrivateRoutes isLogin={isLogin} />}>
+          <Route
+            path="page-c"
+            element={<PageC />}
+          />
+        </Route>
+      </Route>
+      <Route
+        path="/login"
+        element={<Login />}
+      />
+      <Route element={<PrivateRoutes isLogin={isLogin} />}>
+        <Route
+          path="/logout"
+          element={<Logout />}
+        />
+      </Route>
+    </Routes>
   );
 };
 
