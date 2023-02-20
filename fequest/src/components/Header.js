@@ -16,8 +16,9 @@ const HeaderContainer = styled.header`
 `;
 
 const TextContainer = styled.h1`
-  margin: 10%;
-  right: 100px;
+  margin: 10rem;
+  padding: 30vh;
+  position: fixed;
 `;
 
 const LogoStyle = styled.div`
@@ -38,7 +39,7 @@ const LogoStyle = styled.div`
 
 const LoginButton = styled.button`
   position: relative;
-  left: 70vh;
+  left: 170vh;
 `;
 
 const Header = () => {
