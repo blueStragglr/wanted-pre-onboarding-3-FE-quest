@@ -1,14 +1,16 @@
 import Headers from "./Header";
 import Sidebar from "./Sidebar";
 import styled from "styled-components";
-
-function Layout({ children }: any) {
+import { Outlet } from "react-router-dom";
+function Layout() {
   return (
     <>
       <Headers />
       <MainBodyLayout>
         <Sidebar />
-        <Content>{children}</Content>
+        <Content>
+          <Outlet />
+        </Content>
       </MainBodyLayout>
     </>
   );

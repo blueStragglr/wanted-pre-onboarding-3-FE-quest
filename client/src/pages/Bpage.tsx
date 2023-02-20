@@ -1,6 +1,8 @@
 import styled from "styled-components";
+import useIsLogin from "../hooks/useIsLogin";
 
 const Bpage = () => {
+  useIsLogin();
   return <Content>This is page B</Content>;
 };
 

@@ -6,9 +6,7 @@ function App() {
   return (
     <>
       <Reset />
-      <Layout>
-        <AppRouter />
-      </Layout>
+      <AppRouter />
     </>
   );
 }
