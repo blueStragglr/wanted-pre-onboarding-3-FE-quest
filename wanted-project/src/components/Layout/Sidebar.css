@@ -1,0 +1,22 @@
+.box {
+    display: flex;
+    min-height: 1200px;
+}
+
+
+.box-sidebar {
+    width: 140px;
+    flex-shrink: 0;
+    border-right: solid 2px lightgray;
+    padding-left: 15px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.box-contents {
+    flex-grow: 1;
+    color: dodgerblue;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}

@@ -1,0 +1,16 @@
+.header {
+    padding-left: 15px;
+    padding-bottom: 15px;
+    border-bottom: solid 2px lightgray;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+
+
+.login {
+    display: inline-block;
+    float: right;
+    padding-right: 10px;
+    color: lightgray
+}
