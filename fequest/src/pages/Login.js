@@ -1,35 +1,42 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import WantedLogo from "../assets/wantedLogo.png";
 
 const LoginContainer = styled.div`
+  position: relative;
+  top: 50%;
+  margin: 10em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
-  margin: 10em;
+  > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    > input {
+      width: 80%;
+      margin: 10px;
+      padding: 5px;
+    }
+    > button {
+      cursor: pointer;
+      width: 85px;
+      height: 40px;
+      margin: 10px;
+      padding: 0 20px;
+      &:hover {
+        color: white;
+        background-color: black;
+      }
+    }
+  }
 `;
 
 const TitleContainer = styled.h3`
   font-size: x-large;
-`;
-
-const IdContainer = styled.input`
-  margin: 10px;
-  padding: 5px;
-  width: 15%;
-`;
-
-const PwContainer = styled.input`
-  padding: 5px;
-  width: 15%;
-`;
-
-const ButtonContainer = styled.button`
-  margin: 30px;
-  padding: 5px;
 `;
 
 const LogoStyle = styled.div`
@@ -44,7 +51,36 @@ const LogoStyle = styled.div`
   }
 `;
 
+const ErrorMessage = styled.div`
+  color: red;
+  font-size: 0.9rem;
+`;
+
 const Login = () => {
+  const navigate = useNavigate();
+
+  const [id, setId] = useState("");
+  const [duplicateMessage, setDuplicateMessage] = useState("");
+
+  const handleId = (e) => {
+    setId(e.target.value);
+  };
+
+  const handlePressKey = (e) => {
+    if (e.key) {
+      setDuplicateMessage("");
+    }
+  };
+
+  const handleLogin = () => {
+    if (id === "") {
+      setDuplicateMessage("아이디를 입력해주세요");
+      return;
+    }
+    localStorage.setItem("id", id);
+    navigate("/");
+  };
+
   return (
     <>
       <LoginContainer>
@@ -53,10 +89,22 @@ const Login = () => {
             <img src={WantedLogo} alt="logo" />
           </LogoStyle>
         </NavLink>
-        <TitleContainer>Wanted Pre-onboarding Course</TitleContainer>
-        <IdContainer type="text" placeholder="ID" />
-        <PwContainer type="password" placeholder="Password" />
-        <ButtonContainer>Login</ButtonContainer>
+        <TitleContainer>로그인</TitleContainer>
+        <form onSubmit={handleLogin}>
+          <input
+            type="text"
+            name="id"
+            value={id}
+            placeholder="ID"
+            onChange={handleId}
+            onKeyUp={handlePressKey}
+          />
+          <input type="password" placeholder="Password" disabled />
+          <ErrorMessage>
+            {duplicateMessage === "" ? null : duplicateMessage}
+          </ErrorMessage>
+          <button type="submit">Login</button>
+        </form>
       </LoginContainer>
     </>
   );

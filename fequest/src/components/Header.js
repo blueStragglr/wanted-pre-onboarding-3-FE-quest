@@ -1,6 +1,5 @@
-import React from "react";
-import { useNavigate, NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { useNavigate, NavLink } from "react-router-dom";
 import WantedLogo from "../assets/wantedLogo.png";
 
 const HeaderContainer = styled.header`
@@ -8,6 +7,7 @@ const HeaderContainer = styled.header`
   height: 70px;
   border-bottom: 1px solid black;
   display: flex;
+  justify-content: flex-start;
   align-items: center;
   flex-grow: 1;
   padding: 1% 2%;
@@ -21,14 +21,10 @@ const TextContainer = styled.h1`
   position: fixed;
 `;
 
-const LogoStyle = styled.div`
+const LogoStyle = styled(NavLink)`
   img {
     max-width: 100px;
     max-height: 100px;
-    position: absolute;
-    left: 1em;
-    top: 0.1px;
-    bottom: 1em;
     background-size: 20%;
   }
   &:link {
@@ -37,31 +33,40 @@ const LogoStyle = styled.div`
   }
 `;
 
-const LoginButton = styled.button`
-  position: relative;
-  left: 170vh;
+const Buttons = styled(NavLink)`
+  position: absolute;
+  bottom: 35%;
+  right: 10rem;
+  color: black;
+  font-size: 25px;
+  &:link {
+    text-decoration: none;
+  }
 `;
 
-const Header = () => {
+function Header() {
   const navigate = useNavigate();
 
-  const toLogin = () => {
-    navigate("/login");
+  const handleLogout = () => {
+    localStorage.removeItem("id");
+    localStorage.clear();
+    navigate("/");
   };
 
   return (
-    <>
-      <HeaderContainer>
-        <TextContainer>Wanted Pre-onboarding course</TextContainer>
-        <NavLink to="/">
-          <LogoStyle>
-            <img src={WantedLogo} alt="logo" />
-          </LogoStyle>
-        </NavLink>
-        <LoginButton onClick={toLogin}>Login</LoginButton>
-      </HeaderContainer>
-    </>
+    <HeaderContainer>
+      <LogoStyle to="/">
+        <img src={WantedLogo} alt="logo" />
+      </LogoStyle>
+      <TextContainer>Wanted Pre-onboarding course</TextContainer>
+      <div>
+        {localStorage.id ? "" : <Buttons to="/login">Login</Buttons>}
+        {localStorage.id ? (
+          <Buttons onClick={handleLogout}>Logout</Buttons>
+        ) : null}
+      </div>
+    </HeaderContainer>
   );
-};
+}
 
 export default Header;
