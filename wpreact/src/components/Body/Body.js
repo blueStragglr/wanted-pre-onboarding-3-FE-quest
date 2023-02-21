@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
-
-// Login은 헤더 푸터 없이 이동할 수 있도록 다르게 연결 고민
+import Login from "../User/Login";
 
 const Body = () => {
     return (
@@ -13,8 +11,8 @@ const Body = () => {
 }
 
 const BodyPage = styled.div`
-    height : 600px;
-    border : 2px solid black;
+    height : 100px;
+    border : 1px solid black;
 `
 
 export default Body;
