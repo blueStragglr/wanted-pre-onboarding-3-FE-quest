@@ -1,0 +1,83 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["plugin:react/recommended", "airbnb", "airbnb-typescript"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["react", "@typescript-eslint"],
+  "rules": {
+    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-no-useless-fragment": ["error", { "allowExpressions": true }],
+    "react/self-closing-comp": "off",
+    "react/no-array-index-key": "off",
+    "react/require-default-props": "off",
+    "react/button-has-type": "off",
+    "react/jsx-wrap-multilines": "off",
+    "react/jsx-sort-props": [
+      "error",
+      {
+        "callbacksLast": true,
+        "shorthandFirst": true,
+        "multiline": "ignore",
+        "ignoreCase": true,
+        "reservedFirst": ["key"]
+      }
+    ],
+    "@typescript-eslint/indent": ["off"],
+    "@typescript-eslint/no-use-before-define": ["off"],
+    "@typescript-eslint/space-before-blocks": ["off"],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "default",
+        "format": ["camelCase", "PascalCase", "UPPER_CASE", "snake_case"]
+      }
+    ],
+    "consistent-return": "off",
+    "indent": "off",
+    "implicit-arrow-linebreak": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/order": "off",
+    "import/prefer-default-export": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "jsx-a11y/media-has-caption": ["off"],
+    "no-alert": "off",
+    "no-console": "off",
+    "no-confusing-arrow": "off",
+    "no-use-before-define": "off",
+    "no-underscore-dangle": ["error", { "allowAfterThis": true }],
+    "no-param-reassign": ["error", { "props": false }],
+    "no-plusplus": "off",
+    "max-len": ["error", { "code": 120 }],
+    "operator-linebreak": "off",
+    "object-curly-newline": ["off"],
+    "radix": ["error", "as-needed"],
+    "space-before-blocks": "off",
+    "function-paren-newline": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  }
+}
