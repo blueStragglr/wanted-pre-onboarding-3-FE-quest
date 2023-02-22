@@ -1,14 +1,12 @@
 import React from 'react';
-import Header from './components/Header/Header';
-import Body from './components/Body/Body';
-import Footer from './components/Footer/Footer';
+import { NavLink, Routes, Route} from 'react-router-dom';
 
-const App = () => {
+function App() {
   return (
     <div>
-      <Header />
-      <Body />
-      <Footer />
+      <Routes>
+        <Route></Route>
+      </Routes>
     </div>
   );
 }
