@@ -1,0 +1,10 @@
+@import "./global.scss";
+.page {
+  height: $MAINHEIGHT;
+  h1 {
+    text-align: center;
+    line-height: $MAINHEIGHT;
+    color: #42b983;
+    font-size: 24px;
+  }
+}

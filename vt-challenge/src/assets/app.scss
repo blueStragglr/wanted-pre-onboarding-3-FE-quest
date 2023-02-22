@@ -1,0 +1,44 @@
+@import "./global.scss";
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  header {
+    height: $BOXHEIGHT;
+    line-height: $BOXHEIGHT;
+    padding: $BOXPADDING;
+    text-align: start;
+    font-weight: bold;
+    font-style: italic;
+    border-bottom: 1px solid black;
+  }
+  & > section {
+    display: flex;
+    justify-content: flex-start;
+    $navRatio: 20%;
+    & > nav {
+      width: $navRatio;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      border-right: 1px solid black;
+      a {
+        text-decoration: none;
+        height: $BOXHEIGHT;
+        line-height: $BOXHEIGHT;
+        padding: $BOXPADDING;
+        font-weight: bold;
+        color: #2c3e50;
+        &.router-link-exact-active {
+          color: #42b983;
+        }
+      }
+    }
+    & > article {
+      width: 100%-$navRatio;
+    }
+  }
+}
