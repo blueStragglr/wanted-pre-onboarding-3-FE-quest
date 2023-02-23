@@ -1,4 +1,4 @@
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Header = styled.header`
@@ -29,24 +29,28 @@ const Nav = styled.div`
 const Li = styled.li`
   list-style: none;
   margin: 15px 0;
+  color: ${(props) => props.color};
   a {
     text-decoration: none;
+    color: inherit;
   }
 `;
 
 function App() {
+  const pathname = useLocation().pathname;
+
   return (
     <>
       <Header>Wanted Pre-onboarding course</Header>
       <Box>
         <Nav>
-          <Li>
+          <Li color={pathname === '/pageA' ? '#19769b' : 'black'}>
             <Link to={'/pageA'}>Page A</Link>
           </Li>
-          <Li>
+          <Li color={pathname === '/pageB' ? '#19769b' : 'black'}>
             <Link to={'/pageB'}>Page B</Link>
           </Li>
-          <Li>
+          <Li color={pathname === '/pageC' ? '#19769b' : 'black'}>
             <Link to={'/pageC'}>Page C</Link>
           </Li>
         </Nav>
