@@ -5,11 +5,13 @@ import * as S from "./styled";
 
 export default function ThirdPage() {
   return (
-    <div>
+    <>
       <TopNavigation />
-      <div>
+
+      <S.Layout>
         <SideNavigation />
-      </div>
-    </div>
+        <S.TempTypo>page3</S.TempTypo>
+      </S.Layout>
+    </>
   );
 }
