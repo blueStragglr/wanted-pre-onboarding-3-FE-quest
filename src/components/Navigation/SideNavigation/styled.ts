@@ -7,7 +7,7 @@ export const Layout = styled.div`
   padding: 20px;
   border-right: 1px solid #a7a7a7;
   width: 150px;
-  height: 100vh;
+  height: 100%;
   box-sizing: border-box;
 `;
 

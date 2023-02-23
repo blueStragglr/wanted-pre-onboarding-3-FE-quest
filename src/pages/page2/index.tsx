@@ -1,12 +1,15 @@
 import React from "react";
 import SideNavigation from "../../components/Navigation/SideNavigation";
+import TopNavigation from "../../components/Navigation/TopNavigation";
 import * as S from "./styled";
 
 export default function SecondPage() {
   return (
     <div>
-      <SideNavigation />
-      page2
+      <TopNavigation />
+      <div>
+        <SideNavigation />
+      </div>
     </div>
   );
 }
