@@ -1,26 +1,28 @@
 import React, { useCallback, useState } from 'react';
 import styled from '@emotion/styled';
-import LoginBtn from "../common/LoginBtn";
+import {Link} from "react-router-dom";
+// import LoginBtn from "../common/LoginBtn";
 
 /**
  *
  */
 const Login = () => {
 
-  const [state, setState] = useState({
-    email: '',
-    password: '',
-  })
+  const [email, setEmail] = useState('');
+  const [saveEmail, setSaveEmail] = useState([]);
 
-  const handleChange = useCallback((e) => {
-    setState({
-      ...state,
-      [e.target.name]: e.target.value
-    })
-  }, [setState])
+  const handleChangeEmail = useCallback((e) => {
+    setEmail(e.target.value);
+  },[setEmail, email]);
+  console.log('email:', email);
 
-
-
+  const handleDoneLogIn = useCallback((e) => {
+    e.preventDefault();
+    setSaveEmail([
+      ...saveEmail, email
+    ])
+      localStorage.setItem("email", saveEmail[0]);
+  },[setSaveEmail,saveEmail, email]);
 
   return (
     <LoginStyle>
@@ -32,8 +34,8 @@ const Login = () => {
           name={'email'}
           type={'email'}
           placeholder={'email'}
-          onChange={handleChange}
-          value={state.email}
+          onChange={handleChangeEmail}
+          value={email}
           className={'basic-input'}
         />
         <label htmlFor={'password'}>비밀번호</label>
@@ -42,17 +44,14 @@ const Login = () => {
           name={'password'}
           type={'password'}
           placeholder={'password'}
-          onChange={handleChange}
-          value={state.password}
+          // onChange={handleChangePwd}
+          // value={password}
           className={'basic-input'}
         />
-        <div>
-          <LoginBtn
-            // onClick={handleDoneSignIn}
-            title={'로그인'}
-            type={'button'}
-          />
-        </div>
+        <LoginBtn
+          onClick={handleDoneLogIn}
+          type={'submit'}
+          ><Link to={'/'} className={'link'}>로그인</Link></LoginBtn>
       </form>
     </LoginStyle>
   );
@@ -67,7 +66,7 @@ const LoginStyle = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -80%);
-  
+
 	.title{
 		font-size: 24px;
 		margin-bottom: 10px;
@@ -89,6 +88,19 @@ const LoginStyle = styled.div`
     margin: 4px 0 20px;
     padding: 5px 10px;
   }
+  .link{
+    color: #fff;
+  }
+`;
+
+export const LoginBtn = styled.button`
+	min-width: 350px;
+	height: 50px;
+	color: white;
+	background-color: teal;
+	border-radius: 8px;
+	border: none;
+	background-color: ${(props) => (props.disabled ? 'gray' : 'teal')};
 `;
 
 export default Login;

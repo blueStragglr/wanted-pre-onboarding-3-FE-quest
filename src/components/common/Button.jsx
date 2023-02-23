@@ -6,12 +6,10 @@ import {Link} from "react-router-dom";
 /**
  *
  */
-const Button = ({title}) => {
-  const transTitle = title.toLowerCase();
-  console.log(transTitle);
+const Button = ({title, toHome}) => {
   return (
     <ButtonStyle>
-      <Link className={'link'} to={`/${transTitle}`}>
+      <Link className={'link'} to={`${ toHome ? '/' : title }`}>
         {title}
       </Link>
     </ButtonStyle>
