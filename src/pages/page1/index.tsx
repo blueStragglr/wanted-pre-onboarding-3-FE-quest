@@ -1,6 +1,12 @@
 import React from "react";
+import SideNavigation from "../../components/Navigation/SideNavigation";
 import * as S from "./styled";
 
 export default function FirstPage() {
-  return <div>page1</div>;
+  return (
+    <div>
+      <SideNavigation />
+      page1
+    </div>
+  );
 }
