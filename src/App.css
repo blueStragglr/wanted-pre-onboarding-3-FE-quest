@@ -1,0 +1,70 @@
+*,
+body {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+.header {
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+}
+.app {
+  width: 100%;
+  height: calc(100vh - 42px);
+  display: flex;
+  box-sizing: border-box;
+}
+.page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: dodgerblue;
+}
+.aside {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100px;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+}
+a {
+  color: inherit;
+}
+.login {
+  margin-top: 200px;
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form {
+  margin-top: 20px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+input {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+button {
+  background-color: transparent;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  color: inherit;
+}
+.button {
+  background-color: dodgerblue;
+
+  color: #fff;
+  padding: 10px;
+}
