@@ -1,0 +1,8 @@
+.container {
+  flex: 0 0 80%;
+  max-width: 80%;
+}
+
+.container article {
+  padding: 0 4rem;
+}
