@@ -1,0 +1,30 @@
+:root{
+    /* Color */
+    --white-color:#f5f5f5;
+    --black-color:black;
+    --blue-light-color: #b1bfca;
+    --blue-gray-color:#5b7999;
+    --pink-color:#c87f83;
+  }
+
+body {
+    background-color: whitesmoke;
+}
+
+header{
+    border-bottom:1px solid var(--blue-gray-color);
+    color: var(--blue-gray-color);
+
+    font-style: italic;
+}
+.content-sec{
+    display: flex;
+    flex-direction: row;
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
+
+    border-right: 1px solid var(--blue-gray-color); 
+}
