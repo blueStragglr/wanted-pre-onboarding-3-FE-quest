@@ -1,0 +1,140 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.headContainer {
+  height: 6%;
+  outline: solid 1px black;
+  display: flex;
+  align-items: center;
+}
+
+.headLogo {
+  margin-left: 20px;
+  font-size: 20px;
+  font-weight: 900;
+  width: 20%;
+  color: black;
+}
+
+.login {
+  width: 20%;
+}
+
+.loginBtn {
+  position: absolute;
+  top: 3%;
+  right: 0%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  text-align: center;
+  font-family: sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: #ccc;
+}
+.loginBtn:before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: #ff005e;
+  color: #fff;
+  transition: 0.5s;
+  transform-origin: bottom;
+  transform: translatey(-100%) rotatex(90deg);
+}
+.loginBtn:hover:before {
+  transform: translatey(0) rotatex(0deg);
+}
+
+.loginBtn:after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: #ea004f;
+  color: #fff;
+  transition: 0.5s;
+  transform-origin: top;
+  transform: translatey(0) rotatex(0deg);
+}
+.loginBtn:hover:after {
+  transform: translatey(100%) rotatex(90deg);
+}
+
+.bodyContainer {
+  height: 94%;
+  outline: solid 1px black;
+  display: flex;
+}
+
+.navBody {
+  width: 10%;
+  height: 100%;
+  outline: solid 1px black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navItem {
+  width: 80%;
+  height: 5%;
+  border: 1px solid #ea004f;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+  padding-left: 15px;
+}
+
+.navItem:hover {
+  color: white;
+  background-color: #ea004f;
+  transition-duration: 0.3s;
+}
+
+.contentBody {
+  width: 90%;
+  height: 100%;
+  outline: solid 1px black;
+}
+
+.loginForm {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginH1 {
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+
+.idpw{
+  display: flex;
+  
+}
