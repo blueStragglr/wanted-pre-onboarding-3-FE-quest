@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const SideBarSC = styled.aside`
 	width: 240px;
@@ -14,16 +14,21 @@ const NavListSC = styled.ul`
 	flex-direction: column;
 	height: 100%;
 `;
-const NavListItemSC = styled(Link)`
+const NavListItemSC = styled(NavLink)`
 	padding: 12px 0;
-	font-size: 20px;
+	font-weight: 500;
+
+	&.active {
+		color: tomato;
+		font-weight: 700;
+	}
 `;
 
 const PAGES = [
-	{ path: '/page/1', name: 'PAGE A' },
-	{ path: '/page/2', name: 'PAGE B' },
-	{ path: '/page/3', name: 'PAGE C' },
-	{ path: '/page/4', name: 'PAGE D' },
+	{ path: '/page/a', name: 'PAGE A' },
+	{ path: '/page/b', name: 'PAGE B' },
+	{ path: '/page/c', name: 'PAGE C' },
+	{ path: '/page/d', name: 'PAGE D' },
 ];
 
 const SideBar = (props) => {
@@ -32,6 +37,7 @@ const SideBar = (props) => {
 			<NavListSC>
 				{PAGES.map((v, i) => (
 					<NavListItemSC
+						className={({ isActive }) => (isActive ? 'active' : '')}
 						to={v.path}
 						key={v.name}
 					>
