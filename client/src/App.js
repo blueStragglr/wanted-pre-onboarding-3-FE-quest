@@ -4,7 +4,7 @@ import './App.css';
 import Main from './pages/Main';
 import Page from './pages/Page';
 import SignIn from './pages/SignIn';
-import RootBoundary from './components/RootBoundary';
+import RootBoundary from './components/error/RootBoundary';
 
 const router = createBrowserRouter([
 	{ path: '/', element: <Main />, errorElement: <RootBoundary /> },
