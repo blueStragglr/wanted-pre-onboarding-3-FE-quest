@@ -1,20 +1,14 @@
 import React from 'react';
-import { BrowserRouter as NavLink, Routes, Route, Router } from 'react-router-dom';
-import Home from './components/Home/Home';
+import Main from './components/Main/Main';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
-    <div>
-      <Router>
-        <li>
-          <NavLink to = "/">Home</NavLink>
-        </li>
-          <Routes>
-            <Route path="/" element={<Home />}></Route>
-          </Routes>
-      </Router>
-    </div>
+      <div>
+        <Main />
+        <Footer />
+      </div>
   );
-}
+};
 
 export default App;
