@@ -18,7 +18,11 @@ export async function getContacts(query?: string) {
 export async function createContact() {
   await fakeNetwork()
   let id = Math.random().toString(36).substring(2, 9)
-  let contact = { id, createdAt: Date.now() }
+  let contact: Contact = {
+    id,
+    createdAt: Date.now(),
+    avatar: `https://picsum.photos/seed/${id}/200/200`,
+  }
   let contacts = await getContacts()
   contacts.unshift(contact)
   await set(contacts)
