@@ -1,4 +1,11 @@
-import { Form, Link, NavLink, Outlet, useLoaderData } from "react-router-dom"
+import {
+  Form,
+  Link,
+  NavLink,
+  Outlet,
+  useLoaderData,
+  useNavigation,
+} from "react-router-dom"
 import { getContacts, createContact } from "../contacts"
 
 export async function loader() {
@@ -44,6 +51,8 @@ function NewContact() {
 
 export default function Root() {
   const { contacts } = useLoaderData() as { contacts: Contact[] }
+  const navigation = useNavigation()
+
   return (
     <>
       <div id='sidebar'>
@@ -81,7 +90,10 @@ export default function Root() {
           )}
         </nav>
       </div>
-      <div id='detail'>
+      <div
+        id='detail'
+        className={navigation.state === "loading" ? "loading" : ""}
+      >
         <Outlet />
       </div>
     </>
