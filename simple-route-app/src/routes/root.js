@@ -1,7 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import HomePage from "./HomePage";
 import LoginPage from "./LoginPage";
-import SubPage from "./sub/SubPage";
+import SubPageA from "./sub/SubPageA";
+import SubPageB from "./sub/SubPageB";
+import SubPageC from "./sub/SubPageC";
 
 const RootRouter = createBrowserRouter([
   {
@@ -9,8 +11,16 @@ const RootRouter = createBrowserRouter([
     element: <HomePage />,
     children: [
       {
-        path: "sub/:pageName",
-        element: <SubPage name={"A"} />,
+        path: "sub/A",
+        element: <SubPageA />,
+      },
+      {
+        path: "sub/B",
+        element: <SubPageB />,
+      },
+      {
+        path: "sub/C",
+        element: <SubPageC />,
       },
     ],
   },
