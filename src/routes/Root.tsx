@@ -30,7 +30,7 @@ function NewContact({ q }: { q?: string }) {
   const searching =
     navigation.location &&
     new URLSearchParams(navigation.location.search).has("q")
-  console.log(q || "d")
+
   return (
     <div>
       <Form

@@ -9,6 +9,8 @@ import EditContact, { action as editAction } from "./routes/EditContect"
 import { action as destroyAction } from "./routes/destroy"
 import Index from "./routes/Index"
 import { Auth } from "./routes/Auth"
+import { useEffect } from "react"
+import { initContacts } from "./contacts"
 
 export const router = createBrowserRouter([
   {
@@ -50,6 +52,13 @@ export const router = createBrowserRouter([
 ])
 
 function App() {
+  useEffect(() => {
+    const init = async () => {
+      await initContacts()
+    }
+    init()
+  }, [])
+
   return <RouterProvider router={router} />
 }
 

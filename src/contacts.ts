@@ -85,3 +85,12 @@ async function fakeNetwork(key?: string) {
     setTimeout(res, Math.random() * 800)
   })
 }
+
+export async function initContacts() {
+  const existing = await getContacts()
+  if (existing && existing.length > 0) {
+    console.log("contacts already exist", existing)
+    return
+  }
+  await Promise.all([0, 1, 2].map(createContact))
+}
