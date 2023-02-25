@@ -74,6 +74,9 @@ type Props = { contact: Contact }
 function Favorite({ contact }: Props) {
   const fetcher = useFetcher()
   let favorite = contact.favorite
+  if (fetcher.formData) {
+    favorite = fetcher.formData.get("favorite") === "true"
+  }
   return (
     <fetcher.Form method='post'>
       <button
