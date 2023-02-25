@@ -24,6 +24,11 @@ export async function action() {
 
 function NewContact({ q }: { q?: string }) {
   const submit = useSubmit()
+  const navigation = useNavigation()
+
+  const searching =
+    navigation.location &&
+    new URLSearchParams(navigation.location.search).has("q")
 
   return (
     <div>
@@ -33,6 +38,7 @@ function NewContact({ q }: { q?: string }) {
       >
         <input
           id='q'
+          className={searching ? "loading" : ""}
           aria-label='Search contacts'
           placeholder='Search'
           type='search'
@@ -43,7 +49,7 @@ function NewContact({ q }: { q?: string }) {
         <div
           id='search-spinner'
           aria-hidden
-          hidden={true}
+          hidden={!searching}
         />
         <div
           className='sr-only'
