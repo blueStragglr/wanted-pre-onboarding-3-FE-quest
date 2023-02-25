@@ -1,5 +1,12 @@
+import Sidebar from "./components/Sidebar";
+import GlobalStyle from "./styles/GlobalStyle";
+
 function App() {
-  return <div className="App"></div>;
+  return (
+    <>
+      <GlobalStyle />
+    </>
+  );
 }
 
 export default App;
