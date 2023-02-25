@@ -5,13 +5,21 @@ import { Reset } from "styled-reset";
 import Login from "./routes/Login";
 import SideNav from "./Component/SideNav";
 import Header from "./Component/Header";
-import Router from "./Router";
-function App() {
+
+function Router() {
   return (
     <>
-      <Router />
+      <BrowserRouter>
+        <Reset />
+        <Routes>
+          <Route path="/" element={<Home />}>
+            <Route path="/:PageId" element={<Page />} />
+          </Route>
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
 
-export default App;
+export default Router;
