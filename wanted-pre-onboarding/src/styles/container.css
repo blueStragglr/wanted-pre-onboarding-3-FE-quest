@@ -1,0 +1,96 @@
+.App {
+  display: grid;
+  grid-template-rows: 50px 100%;
+
+  height: 100vh;
+}
+
+.content {
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: 2fr 8fr
+}
+
+.side-content {
+  grid-column: 1;
+  padding: 5px;
+}
+
+.page-content {
+  grid-column: 2;
+  padding: 20px;
+}
+
+/* TopNavigator.css styles */
+
+.top-nav {
+  background-color: #333;
+  color: white;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.top-nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.top-nav li {
+  margin: 0 10px;
+}
+
+.top-nav a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Sidebar.css styles */
+
+.sidebar {
+  width: 200px;
+  height: 90%;
+  background-color: #f4f4f4;
+  top: 50px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 10px 0;
+}
+
+.sidebar a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.sidebar a.active {
+  font-weight: bold;
+}
+
+.add-page-btn {
+  width: 200px;
+  height: 10%;
+  margin-top: auto;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-page-btn:hover {
+  background-color: #444;
+}
