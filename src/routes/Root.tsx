@@ -44,7 +44,12 @@ function NewContact({ q }: { q?: string }) {
           type='search'
           name='q'
           defaultValue={q}
-          onChange={(e) => submit(e.currentTarget.form)}
+          onChange={(e) => {
+            const isFirstSearch = q === undefined
+            submit(e.currentTarget.form, {
+              replace: !isFirstSearch,
+            })
+          }}
         />
         <div
           id='search-spinner'
