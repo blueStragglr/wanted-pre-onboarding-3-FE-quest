@@ -1,6 +1,6 @@
 const customStyle = {
   borderBottom: "1px solid black",
-  height: "5rem",
+  height: "7vh",
   fontSize: "3rem",
   textAlign: "left" as const,
   paddingLeft: "30px",
