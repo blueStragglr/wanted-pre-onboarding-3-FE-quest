@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+
 const TopNavigationBar = styled.h1`
   font-size: 20px;
   font-style: italic;
@@ -7,20 +8,26 @@ const TopNavigationBar = styled.h1`
   padding: 20px;
   border-bottom: 2px solid gray;
   font-weight: bold;
-  a{
+  div {
     position: absolute;
+    top: 10px;
     right: 30px;
-    font-size: 15px;
+    a {
+      margin-right: 5px;
+      font-size: 15px;
+    }
   }
 `;
 
 function Header() {
   return (
     <>
-      <TopNavigationBar>Wanted pre-onboarding-course
-        <Link to={
-            {pathname : `/`}
-        }>Home</Link>
+      <TopNavigationBar>
+        Wanted pre-onboarding-course
+        <div>
+          <Link to={{ pathname: `/` }}>Home</Link>
+          <Link to={{ pathname: `/login` }}>Login</Link>
+        </div>
       </TopNavigationBar>
     </>
   );

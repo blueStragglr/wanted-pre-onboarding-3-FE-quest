@@ -40,7 +40,7 @@ function SideNav() {
       <Nav>
         <NavList>
           {NavPart.map((item) => (
-            <Page>
+            <Page key={item.part}>
               <Link
                 to={{
                   pathname: item.pathname,

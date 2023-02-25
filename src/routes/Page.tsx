@@ -1,23 +1,23 @@
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import Header from "../Component/Header";
+import SideNav from "../Component/SideNav";
 
 const MainContainer = styled.div`
   margin-left: 150px;
-  width: 100%;
   height: 100vh;
   display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
-  border : 1px solid black;
-  
 `;
 
 function Page() {
-
-  const {PageId} = useParams()
+  const { PageId } = useParams();
   return (
     <>
+      <Header />
+      <SideNav />
       <MainContainer>I'm {PageId}</MainContainer>
     </>
   );
