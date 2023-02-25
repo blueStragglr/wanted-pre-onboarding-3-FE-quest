@@ -1,16 +1,11 @@
 import { Outlet } from "react-router-dom";
+import HomeLayout from "../Layout/HomeLayout";
 
-const HomePage = (props) => {
+const HomePage = () => {
   return (
-    <div>
-      <h1>홈페이지</h1>
-      <div>
-        <header>
-          <h1>Wanted Pre-onbording course : yeongi</h1>
-        </header>
-        <Outlet />
-      </div>
-    </div>
+    <HomeLayout>
+      <Outlet />
+    </HomeLayout>
   );
 };
 
