@@ -3,6 +3,12 @@ import { getContact, updateContact } from "../contacts"
 
 export async function loader({ params }) {
   const contact = await getContact(params.contactId)
+  if (!contact) {
+    throw new Response("", {
+      status: 404,
+      statusText: `Contact ${params.contactId} not found`,
+    })
+  }
   return { contact }
 }
 export async function action({ request, params }) {
