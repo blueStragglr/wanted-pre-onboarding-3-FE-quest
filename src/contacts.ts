@@ -41,7 +41,7 @@ export async function getContact(id: Contact["id"]) {
 
 export async function updateContact(
   id: Contact["id"],
-  updates: Contact["updates"]
+  updates: Partial<Contact>
 ) {
   await fakeNetwork()
   let contacts = await getLocalContact()
