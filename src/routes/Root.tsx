@@ -29,7 +29,7 @@ function NewContact({ q }: { q?: string }) {
   const searching =
     navigation.location &&
     new URLSearchParams(navigation.location.search).has("q")
-
+  console.log(q || "d")
   return (
     <div>
       <Form
@@ -43,7 +43,7 @@ function NewContact({ q }: { q?: string }) {
           placeholder='Search'
           type='search'
           name='q'
-          defaultValue={q}
+          defaultValue={q || ""}
           onChange={(e) => {
             const isFirstSearch = q === undefined
             submit(e.currentTarget.form, {
@@ -74,7 +74,7 @@ export default function Root() {
 
   useEffect(() => {
     // @ts-ignore
-    document.getElementById("q").value = q
+    document.getElementById("q").value = q ?? ""
   }, [q])
 
   return (
