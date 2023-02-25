@@ -7,6 +7,7 @@ import {
   useNavigation,
 } from "react-router-dom"
 import { getContacts, createContact } from "../contacts"
+import { useEffect } from "react"
 
 export async function loader({ request }: { request: Request }) {
   const url = new URL(request.url)
@@ -56,11 +57,16 @@ export default function Root() {
   const { contacts, q } = useLoaderData() as { contacts: Contact[]; q?: string }
   const navigation = useNavigation()
 
+  useEffect(() => {
+    // @ts-ignore
+    document.getElementById("q").value = q
+  }, [q])
+
   return (
     <>
       <div id='sidebar'>
         <h1>Wanted Pre-onboarding course</h1>
-        <NewContact q={q}/>
+        <NewContact q={q} />
         <nav>
           {contacts.length ? (
             <ul>
