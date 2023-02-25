@@ -12,7 +12,7 @@ export async function loader({ request }: { request: Request }) {
   const url = new URL(request.url)
   const q = url.searchParams.get("q") ?? undefined
   const contacts = await getContacts(q)
-  return { contacts }
+  return { contacts, q }
 }
 
 export async function action() {
@@ -20,7 +20,7 @@ export async function action() {
   return { contact }
 }
 
-function NewContact() {
+function NewContact({ q }: { q?: string }) {
   return (
     <div>
       <Form
@@ -33,6 +33,7 @@ function NewContact() {
           placeholder='Search'
           type='search'
           name='q'
+          defaultValue={q}
         />
         <div
           id='search-spinner'
@@ -52,14 +53,14 @@ function NewContact() {
 }
 
 export default function Root() {
-  const { contacts } = useLoaderData() as { contacts: Contact[] }
+  const { contacts, q } = useLoaderData() as { contacts: Contact[]; q?: string }
   const navigation = useNavigation()
 
   return (
     <>
       <div id='sidebar'>
         <h1>Wanted Pre-onboarding course</h1>
-        <NewContact />
+        <NewContact q={q}/>
         <nav>
           {contacts.length ? (
             <ul>
