@@ -7,6 +7,7 @@ import Community from '@/pages/community';
 import ErrorPage from '@/pages/error-page';
 import Login from '@/pages/auth/login';
 import Join from '@/pages/auth/join';
+import Other from '@/pages/other';
 import { PATH } from '@/constants';
 
 const router = createBrowserRouter([
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: PATH.COMMUNITY,
         element: <Community />,
+      },
+      {
+        path: PATH.OTHER,
+        element: <Other />,
       },
     ],
   },

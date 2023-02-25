@@ -6,6 +6,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import MailIcon from '@mui/icons-material/Mail';
+import SupervisedUserCircle from '@mui/icons-material/SupervisedUserCircle';
 import HomeIcon from '@mui/icons-material/Home';
 import { useRecoilValue } from 'recoil';
 import { drowerState } from '@/store/drowerState';
@@ -20,6 +21,11 @@ const menu = [
     id: PATH.COMMUNITY,
     name: '커뮤니티',
     icon: <MailIcon />,
+  },
+  {
+    id: PATH.OTHER,
+    name: '기타',
+    icon: <SupervisedUserCircle />,
   },
 ];
 

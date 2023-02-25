@@ -1,5 +1,5 @@
 const Community = () => {
-  return <div>Community??</div>;
+  return <>This is page Community..</>;
 };
 
 export default Community;
