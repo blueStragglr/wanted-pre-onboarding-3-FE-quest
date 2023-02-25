@@ -1,15 +1,16 @@
 import Sidebar from "./Sidebar";
 import Headers from "./Header";
+import styles from "./Layout.module.css";
 
 const HomeLayout = ({ children }) => {
   return (
-    <div>
+    <div className={styles["home-wrapper"]}>
       <Headers />
-      <section>
-        <article>
+      <section className={styles["home-body"]}>
+        <article className={styles.sidebar}>
           <Sidebar />
         </article>
-        <article>{children}</article>
+        <article className={styles.page}>{children}</article>
       </section>
     </div>
   );

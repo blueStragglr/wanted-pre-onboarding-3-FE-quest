@@ -2,11 +2,9 @@ const Sidebar = (props) => {
   return (
     <>
       <nav>
-        <ul></ul>
-
-        <ul></ul>
-
-        <ul></ul>
+        <ul>"A"</ul>
+        <ul>"A"</ul>
+        <ul>"A"</ul>
       </nav>
     </>
   );
