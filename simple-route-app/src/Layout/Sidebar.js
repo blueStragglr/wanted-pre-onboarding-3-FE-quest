@@ -1,19 +1,17 @@
 import { Link } from "react-router-dom";
 import styles from "./Layout.module.css";
 
-const Sidebar = (props) => {
+const Sidebar = ({ subRootList }) => {
   return (
     <>
       <nav className={styles["sidebar-wrapper"]}>
-        <ul>
-          <Link to={`sub/A`}>page A</Link>
-        </ul>
-        <ul>
-          <Link to={`sub/B`}>page B</Link>
-        </ul>
-        <ul>
-          <Link to={`sub/C`}>page C</Link>
-        </ul>
+        {subRootList.map(({ path, linkName }) => {
+          return (
+            <ul>
+              <Link to={path}>{linkName}</Link>
+            </ul>
+          );
+        })}
       </nav>
     </>
   );
