@@ -44,7 +44,7 @@ module.exports = {
     // NOTE: .releaserc.js
     'breaking',
     'no-release',
-    'README',
+    'docs',
   ],
   allowCustomScopes: true,
   allowBreakingChanges: ['feat', 'fix'],
