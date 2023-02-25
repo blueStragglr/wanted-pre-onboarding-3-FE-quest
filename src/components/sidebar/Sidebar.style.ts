@@ -9,28 +9,41 @@ export const SidebarContainer = styled.div`
   background-color: white;
   border-right: 1px solid gray;
 `;
+
 export const Link = styled(RouterLink)`
-  color: black;
   text-decoration: none;
 
   &:hover {
     color: #639ec3;
-    text-decoration: none;
-  }
-
-  &:active {
-    color: green;
-    text-decoration: none;
   }
 `;
 
 export const SidebarItem = styled.div`
-  padding-top: 20px;
-  padding-left: 30px;
   transition: transform 0.3s ease-in-out;
   transform-origin: left;
+  padding-top: 30px;
+  padding-left: 50px;
+  font-size: 20px;
 
   &:hover {
     transform: scale(1.1);
+    color: #639ec3;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  a.selected {
+    color: #639ec3;
+  }
+`;
+
+export const AuthHover = styled.a`
+  color: black;
+
+  &:hover {
+    color: #639ec3;
   }
 `;
