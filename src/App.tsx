@@ -8,8 +8,13 @@ import Contact, {
 import EditContact, { action as editAction } from "./routes/EditContect"
 import { action as destroyAction } from "./routes/destroy"
 import Index from "./routes/Index"
+import { Auth } from "./routes/Auth"
 
 export const router = createBrowserRouter([
+  {
+    path: "/auth",
+    element: <Auth />,
+  },
   {
     path: "/",
     element: <Root />,

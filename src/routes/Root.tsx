@@ -4,6 +4,7 @@ import {
   NavLink,
   Outlet,
   useLoaderData,
+  useNavigate,
   useNavigation,
   useSubmit,
 } from "react-router-dom"
@@ -68,6 +69,12 @@ function NewContact({ q }: { q?: string }) {
   )
 }
 
+function AuthLink() {
+  const navigate = useNavigate()
+
+  return <button onClick={() => navigate("/auth")}>Login</button>
+}
+
 export default function Root() {
   const { contacts, q } = useLoaderData() as { contacts: Contact[]; q?: string }
   const navigation = useNavigation()
@@ -93,16 +100,14 @@ export default function Root() {
                       isActive ? "active" : isPending ? "pending" : ""
                     }
                   >
-                    <Link to={`contacts/${contact.id}`}>
-                      {contact.first || contact.last ? (
-                        <>
-                          {contact.first} {contact.last}
-                        </>
-                      ) : (
-                        <i>No Name</i>
-                      )}{" "}
-                      {contact.favorite && <span>★</span>}
-                    </Link>
+                    {contact.first || contact.last ? (
+                      <>
+                        {contact.first} {contact.last}
+                      </>
+                    ) : (
+                      <i>No Name</i>
+                    )}{" "}
+                    {contact.favorite && <span>★</span>}
                   </NavLink>
                 </li>
               ))}
@@ -113,6 +118,7 @@ export default function Root() {
             </p>
           )}
         </nav>
+        <AuthLink />
       </div>
       <div
         id='detail'
