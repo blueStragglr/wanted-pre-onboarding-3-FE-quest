@@ -20,7 +20,7 @@
 
 즉, 다음 이미지와 같은 형태로 구현합니다.
 
-![sample-image](./sample.jpg)
+![sample-image](../sample.jpg)
 
 이 때, 아래의 내용을 고민하며 과제를 진행해 주시면 더욱 도움이 됩니다.
 
