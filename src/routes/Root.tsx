@@ -5,6 +5,7 @@ import {
   Outlet,
   useLoaderData,
   useNavigation,
+  useSubmit,
 } from "react-router-dom"
 import { getContacts, createContact } from "../contacts"
 import { useEffect } from "react"
@@ -22,6 +23,8 @@ export async function action() {
 }
 
 function NewContact({ q }: { q?: string }) {
+  const submit = useSubmit()
+
   return (
     <div>
       <Form
@@ -35,6 +38,7 @@ function NewContact({ q }: { q?: string }) {
           type='search'
           name='q'
           defaultValue={q}
+          onChange={(e) => submit(e.currentTarget.form)}
         />
         <div
           id='search-spinner'
