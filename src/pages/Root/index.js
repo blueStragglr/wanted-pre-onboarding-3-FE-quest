@@ -7,11 +7,11 @@ import { Outlet } from 'react-router';
 
 const Root = () => {
   return (
-    <div className={style.container}>
+    <div className={ style.container }>
       <Header />
-      <div className={style.mainSection}>
+      <div className={ style.mainSection }>
         <SideMenu />
-        <div className={style.content}>
+        <div className={ style.content }>
           <Outlet />
         </div>
       </div>
