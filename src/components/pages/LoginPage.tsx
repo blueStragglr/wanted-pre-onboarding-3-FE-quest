@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../atoms/Button";
 import { Input } from "../atoms/Input";
+import { RiErrorWarningFill } from "react-icons/ri";
 
 export const LoginPage = () => {
   const [username, setUsername] = useState("");
@@ -19,7 +20,7 @@ export const LoginPage = () => {
       setErrorMessage("password를 입력해주세요.");
     } else {
       sessionStorage.setItem("access", "true");
-      navigate("/home");
+      navigate("/");
     }
   };
 
@@ -27,7 +28,7 @@ export const LoginPage = () => {
     <div className="bg-bgColor w-full h-full flex justify-center items-center">
       <div className="h-[50%] w-full bg-subColor text-mainColor flex flex-col justify-center sm:w-[400px] ">
         <img
-          src="/public/Cute-Cloud-Coloring-Book.svg"
+          src="/Cute-Cloud-Coloring-Book.svg"
           alt=""
           className="w-full h-20"
         />
@@ -56,7 +57,12 @@ export const LoginPage = () => {
               }}
             />
             <div className="h-[10px] flex justify-center text-xs">
-              {errorMessage && <div>! {errorMessage}</div>}
+              {errorMessage && (
+                <div className="flex flex-row items-center">
+                  <RiErrorWarningFill className="mr-1" />
+                  {errorMessage}
+                </div>
+              )}
             </div>
 
             <Button label="Continue" onClick={onSubmit} />
