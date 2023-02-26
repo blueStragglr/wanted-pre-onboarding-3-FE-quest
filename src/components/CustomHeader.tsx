@@ -7,6 +7,8 @@ const customStyle = {
   lineHeight: "5rem",
 };
 
-const CustomHeader = () => <header style={customStyle}>헤더</header>;
+const CustomHeader = () => (
+  <header style={customStyle}>Wanted Pre-onboarding course</header>
+);
 
 export default CustomHeader;
