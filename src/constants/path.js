@@ -8,5 +8,6 @@ export const PATH_ROUTE = Object.freeze({
 
 export const PATH_API = Object.freeze({
   root: '/',
-  user: '/user',
+  login: '/login',
+  join: '/register',
 });
