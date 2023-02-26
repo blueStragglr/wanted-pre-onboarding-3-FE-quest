@@ -15,7 +15,7 @@ export const Header = () => {
     <div className="h-[100px] w-full bg-mainColor flex items-center justify-between">
       <div
         className="font-bold text-[#fff] text-2xl cursor-pointer pl-7"
-        onClick={() => navigate("/home")}
+        onClick={() => navigate("/")}
       >
         wanted Pre-onboarding course
       </div>

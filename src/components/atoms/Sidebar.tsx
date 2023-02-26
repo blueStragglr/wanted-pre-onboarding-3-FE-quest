@@ -7,9 +7,9 @@ export const Sidebar = () => {
 
   return (
     <div className="w-[250px] h-full bg-subColor flex flex-col">
-      <SidebarItemProps title="PageA" onClick={() => navigate("/home/PageA")} />
-      <SidebarItemProps title="PageB" onClick={() => navigate("/home/PageB")} />
-      <SidebarItemProps title="PageC" onClick={() => navigate("/home/PageC")} />
+      <SidebarItemProps title="PageA" onClick={() => navigate("/PageA")} />
+      <SidebarItemProps title="PageB" onClick={() => navigate("/PageB")} />
+      <SidebarItemProps title="PageC" onClick={() => navigate("/PageC")} />
     </div>
   );
 };
