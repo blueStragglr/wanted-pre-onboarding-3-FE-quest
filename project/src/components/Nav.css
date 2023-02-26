@@ -1,0 +1,30 @@
+.nav {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 180px;
+  height: 100%;
+  background: #fff;
+  border-right: 1px solid #ccc;
+  box-sizing: border-box;
+  
+  font-size: 18px;
+  font-weight: 500;
+}
+.nav .active {
+  color: rgb(89, 167, 255);
+}
+.nav p {
+  margin-bottom: 20px;
+  color: #000;
+  transition: 0.3s;
+}
+.nav p:hover {
+  color: rgb(89, 167, 255);
+}
+.nav p a {
+  color: inherit;
+}
+.nav p:last-child {
+  margin-bottom: 0;
+}
