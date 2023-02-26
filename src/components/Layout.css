@@ -1,0 +1,14 @@
+.layout_container {
+  display: grid;
+  grid-template-rows: 60px auto;
+  grid-template-columns: minmax(150px, 300px) auto;
+  min-height: 100vh;
+}
+
+header {
+  grid-column: 1 / -1;
+}
+
+.page_container {
+  padding: 20px;
+}
