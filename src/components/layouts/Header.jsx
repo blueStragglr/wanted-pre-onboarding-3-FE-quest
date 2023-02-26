@@ -1,8 +1,7 @@
 import styled from '@emotion/styled';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import Button from "../common/Button";
-import React, {useCallback, useState} from "react";
-import {LoginBtn} from "../pages/Login";
+import React, {useCallback, useEffect, useState} from "react";
 
 /**
  *
@@ -12,18 +11,26 @@ const Header = () => {
   const emailStorage = localStorage.getItem("email");
   const [haveStorageItem, setHaveStorageItem] = useState(emailStorage);
 
-  const handleDoneLogOut = useCallback((e) => {
+  const navigate = useNavigate();
+  const handleClickLogOut = useCallback((e) => {
     e.preventDefault();
+    navigate('/');
+    console.log('clicekd');
     localStorage.removeItem("email");
-  },[haveStorageItem, setHaveStorageItem])
+    setHaveStorageItem(null);
+  },[haveStorageItem]);
+
+  useEffect(()=> {
+    navigate('/');
+  },[haveStorageItem]);
 
   return (
     <HeaderStyle>
       <Link className={'link'} to={"/"}> Wanted-pre-onboarding
       </Link>
       {haveStorageItem ?
-        <Button title={'LogOut'} onClick={handleDoneLogOut} toHome /> :
-        <Button title={'LogIn'} url={'login'}/>
+        <Button title={'LogOut'} onClick={handleClickLogOut} toHome /> :
+        <Button title={'LogIn'} />
       }
     </HeaderStyle>
   );

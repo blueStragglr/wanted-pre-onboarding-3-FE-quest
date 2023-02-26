@@ -1,15 +1,15 @@
 import styled from '@emotion/styled';
-import {useCallback} from "react";
 import {Link} from "react-router-dom";
 
 
 /**
  *
  */
-const Button = ({title, toHome}) => {
+const Button = ({title, onClick}) => {
+  const transTitle = title.toLowerCase();
   return (
-    <ButtonStyle>
-      <Link className={'link'} to={`${ toHome ? '/' : title }`}>
+    <ButtonStyle onClick={onClick}>
+      <Link className={'link'} to={`${transTitle}`}>
         {title}
       </Link>
     </ButtonStyle>
@@ -21,6 +21,7 @@ const ButtonStyle = styled.button`
   background-color: #444;
   border-radius: 8px;
   margin-bottom: 16px;
+  padding: 8px 30px;
   .link {
     color: white;
     display: inline-block;

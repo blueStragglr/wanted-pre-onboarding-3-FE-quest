@@ -1,13 +1,13 @@
-import React, { useCallback, useState } from 'react';
+import React, {useCallback, useState} from 'react';
 import styled from '@emotion/styled';
-import {Link} from "react-router-dom";
-// import LoginBtn from "../common/LoginBtn";
+import { useNavigate } from "react-router-dom";
+
 
 /**
  *
  */
 const Login = () => {
-
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [saveEmail, setSaveEmail] = useState([]);
 
@@ -20,14 +20,16 @@ const Login = () => {
     e.preventDefault();
     setSaveEmail([
       ...saveEmail, email
-    ])
-      localStorage.setItem("email", saveEmail[0]);
+    ]);
+    localStorage.setItem("email", saveEmail[0]);
+    navigate('/');
+    console.log('saveEmail',saveEmail);
   },[setSaveEmail,saveEmail, email]);
 
   return (
     <LoginStyle>
       <p className={'title'}>로그인 페이지</p>
-      <form className={'form'}>
+      <form className={'form'                                                                                                                       }>
         <label htmlFor={'email'}>이메일</label>
         <input
           id={'email'}
@@ -44,42 +46,39 @@ const Login = () => {
           name={'password'}
           type={'password'}
           placeholder={'password'}
-          // onChange={handleChangePwd}
-          // value={password}
           className={'basic-input'}
         />
         <LoginBtn
           onClick={handleDoneLogIn}
           type={'submit'}
-          ><Link to={'/'} className={'link'}>로그인</Link></LoginBtn>
+        >로그인</LoginBtn>
       </form>
     </LoginStyle>
   );
 };
 
 const LoginStyle = styled.div`
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	//max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -80%);
 
-	.title{
-		font-size: 24px;
-		margin-bottom: 10px;
-	}
-	.form {
-		display: flex;
-		flex-direction: column;
-	}
-	.goto-signup {
-		text-decoration: underline;
-		margin-top: 10px;
-		text-align: right;
-	}
+  .title{
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  .goto-signup {
+    text-decoration: underline;
+    margin-top: 10px;
+    text-align: right;
+  }
   .basic-input {
     width: 100%;
     height: 40px;
@@ -94,13 +93,14 @@ const LoginStyle = styled.div`
 `;
 
 export const LoginBtn = styled.button`
-	min-width: 350px;
-	height: 50px;
-	color: white;
-	background-color: teal;
-	border-radius: 8px;
-	border: none;
-	background-color: ${(props) => (props.disabled ? 'gray' : 'teal')};
+  min-width: 350px;
+  height: 50px;
+  color: white;
+  background-color: teal;
+  border-radius: 8px;
+  border: none;
+  background-color: ${(props) => (props.disabled ? 'gray' : 'teal')};
 `;
 
 export default Login;
+

@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 import Button from "../common/Button";
+import {useEffect} from "react";
+import {useNavigate} from "react-router-dom";
 
 /**
  *
@@ -7,10 +9,18 @@ import Button from "../common/Button";
 const pageList = ['Apage', 'Bpage', 'Cpage', 'Dpage'];
 
 const AsideLeft = () => {
+  const navigate = useNavigate('/');
+  const emailStorage = localStorage.getItem("email");
+
+  useEffect(()=> {
+    navigate('/');
+  },[emailStorage]);
 
   return (
     <AsideLeftStyle>
-      {pageList.map((item, idx) => <Button key={idx} title={item}/>)}
+      {pageList.map((item, idx) => <Button key={idx} title={item}>
+      </Button>)}
+      {emailStorage && <Button title={'Mypage'}/>}
     </AsideLeftStyle>
   );
 };
