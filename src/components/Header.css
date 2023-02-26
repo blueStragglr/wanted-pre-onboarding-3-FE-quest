@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  border-bottom: 1px solid #181818;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.login_button {
+  padding: 6px 8px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.login_button:hover {
+  background-color: rgb(255, 217, 210, 0.5);
+  transition: all 0.5s ease;
+}
