@@ -1,18 +1,14 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import './App.css';
-import Header from 'components/layout/Header';
-import SideMenu from 'components/layout/SideMenu';
+import { RouterProvider } from 'react-router';
+import { router } from 'router';
 
 function App() {
   return (
     <div className='container'>
-      <Header />
-      <div className='mainSection'>
-        <SideMenu />
-        <div className='content'>
-          <h1>This is Page A!</h1>
-        </div>
-      </div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <RouterProvider router={router} />
+      </Suspense>
     </div>
   );
 }
