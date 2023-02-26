@@ -19,7 +19,8 @@
     "eject": "react-scripts eject",
     "postinstall": "husky install",
     "format": "prettier --cache --write .",
-    "lint": "eslint --cache --max-warnings=0"
+    "lint": "eslint --cache --max-warnings=0",
+    "server": "json-server-auth --watch src/db/data.json --port 3001 -r src/db/routes.json"
   },
   "eslintConfig": {
     "extends": [
