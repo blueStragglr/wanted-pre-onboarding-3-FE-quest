@@ -50,6 +50,7 @@ export const LoginPage = () => {
             />
             <Input
               placeholder="password"
+              type="password"
               value={password}
               onChange={(e) => {
                 setPassword(e.target.value);
