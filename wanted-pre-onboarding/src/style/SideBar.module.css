@@ -1,0 +1,16 @@
+.sideBarWrap {
+  padding: 20px 40px 20px 20px;
+  height: auto;
+  border-right: 1px solid gray;
+}
+.listWrap {
+  display: flex;
+  padding: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  color: gray;
+  text-decoration: none;
+}
+.listWrap:hover {
+  color: black;
+}

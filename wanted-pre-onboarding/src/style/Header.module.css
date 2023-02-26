@@ -1,0 +1,21 @@
+@import "../css/reset.css";
+
+.headerWrap {
+  font-size: 20px;
+  padding: 20px;
+  font-weight: bold;
+  border-bottom: 1px solid gray;
+  display: flex;
+  justify-content: space-between;
+}
+.loginBtn {
+  border: 0;
+  color: white;
+  background-color: coral;
+  padding: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.loginBtn:hover {
+  color: black;
+}
