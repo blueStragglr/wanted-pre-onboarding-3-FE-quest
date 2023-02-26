@@ -70,6 +70,9 @@ const Login = () => {
     if (e.key) {
       setDuplicateMessage("");
     }
+    if (id === "") {
+      setDuplicateMessage("아이디를 입력해주세요");
+    }
   };
 
   const handleLogin = () => {
@@ -99,10 +102,10 @@ const Login = () => {
             onChange={handleId}
             onKeyUp={handlePressKey}
           />
-          <input type="password" placeholder="Password" disabled />
           <ErrorMessage>
             {duplicateMessage === "" ? null : duplicateMessage}
           </ErrorMessage>
+          <input type="password" placeholder="Password" disabled />
           <button type="submit">Login</button>
         </form>
       </LoginContainer>
