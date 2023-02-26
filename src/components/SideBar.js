@@ -32,9 +32,9 @@ const SideBar = () => {
           return (
             item.viewList && (
             <NavLink 
-            key={item.pathname}
-            to={`/${item.pathname}`}
-            className={({ isActive }) => isActive ? 'nav_active' : undefined}
+              key={item.pathname}
+              to={`/${item.pathname}`}
+              className={({ isActive }) => isActive ? 'nav_active' : undefined}
             >
               <h6 className="nav_item">{item.title}</h6>
             </NavLink>
