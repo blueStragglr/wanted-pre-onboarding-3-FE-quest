@@ -1,0 +1,9 @@
+.sidebar-container {
+  width: 200px;
+  border-right: 1px solid gray;
+  padding: 20px 0 0 30px;
+  .page_link {
+    text-decoration: none;
+    font-size: 20px;
+  }
+}
