@@ -7,7 +7,7 @@ const PageD = () => {
     <Layout>
       <div className="page_container">
         <h1 className="logo">여기는 D페이지 입니다</h1>
-        <p> login후에 보여지는 페이지 입니다</p>
+        <p> login하면 보이는 페이지 입니다</p>
       </div>
     </Layout>
   )
