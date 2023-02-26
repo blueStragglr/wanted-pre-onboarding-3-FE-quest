@@ -22,9 +22,9 @@ const Main = () => {
             <Router>
                 <HeaderSc>
                     <NavLink to = "/"><span>Home</span></NavLink>
-                    <NavLink to = "/Page1">Page1</NavLink>
-                    <NavLink to = "/Page2">Page2</NavLink>
-                    <NavLink to = "/Page3">Page3</NavLink>
+                    <NavLink to = "/Page1"><span>Page1</span></NavLink>
+                    <NavLink to = "/Page2"><span>Page2</span></NavLink>
+                    <NavLink to = "/Page3"><span>Page3</span></NavLink>
                     <button onClick = {LoginFunction}>Login</button>
                 </HeaderSc>
                 <BodySC>
@@ -43,8 +43,10 @@ const Main = () => {
 
 const HeaderSc = styled.header`
     padding : 2%;
-    & NavLink {
+    & span {
+        padding : 1em;
         color : black;
+        text-decoration : none;
     }
 `
 
