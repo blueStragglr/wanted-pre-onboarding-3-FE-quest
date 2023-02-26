@@ -1,0 +1,12 @@
+.wrapper {
+  padding: 10px 50px;
+}
+.page {
+  position: absolute;
+  top: 80px;
+  left: 180px;
+  padding: 100px;
+  box-sizing: border-box;
+  font-size: 40px;
+  color: blueviolet;
+}
