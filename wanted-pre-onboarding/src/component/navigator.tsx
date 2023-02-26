@@ -1,15 +1,22 @@
 import React from 'react';
 
-const TopNavigator: React.FC = () => {
+interface Props {
+  onLogout: () => void;
+}
+
+const TopNavigator: React.FC<Props> = ({ onLogout }) => {
   return (
-    <nav className="top-nav">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
+    <div className="top-navigator">
+      <div className="logo">
+        <span>React App</span>
+      </div>
+      <div className="menu">
+        <button onClick={onLogout}>Logout</button>
+      </div>
+    </div>
   );
 };
+
+
 
 export default TopNavigator;

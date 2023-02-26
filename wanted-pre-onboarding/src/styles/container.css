@@ -23,30 +23,48 @@
 
 /* TopNavigator.css styles */
 
-.top-nav {
-  background-color: #333;
-  color: white;
-  height: 50px;
+.top-navigator {
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #222;
+  color: #fff;
+  height: 100%;
+  padding: 0 20px;
+}
+
+.logo {
   display: flex;
   align-items: center;
 }
 
-.top-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.menu {
   display: flex;
+  align-items: center;
 }
 
-.top-nav li {
-  margin: 0 10px;
+.menu button {
+  background-color: #fff;
+  color: #222;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 10px;
+  transition: background-color 0.2s ease;
 }
 
-.top-nav a {
-  color: white;
-  text-decoration: none;
+.menu button:hover {
+  background-color: #eee;
 }
-
 /* Sidebar.css styles */
 
 .sidebar {
