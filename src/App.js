@@ -1,10 +1,12 @@
 import React from "react";
-import { Container } from "react-bootstrap";
-import Layout from "./components/Layout";
+
+import Layout from "./compoenets/Layout"
 
 function App() {
   return (
-    <Layout/>
+    <Layout>
+      <div>콘텐츠</div>
+    </Layout>
     
   );
 }
