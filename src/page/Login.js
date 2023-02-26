@@ -1,23 +1,11 @@
 import { useState } from "react";
+import { cls } from "../util";
 
 const Login = () => {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
-  const [isId, setIsId] = useState();
   const isPassword = /^(?=.*\d)(?=.*[A-Za-z]).{8,20}$/.test(password);
-
-  const changeId = (e) => {
-    const idRegex = /^([0-9a-z]){6,15}$/;
-    const idCurrent = e.target.value;
-    setId(idCurrent);
-
-    !idRegex.test(idCurrent) ? setIsId(false) : setIsId(true);
-  };
-
-  const changePsw = (e) => {
-    const passwordCurrent = e.target.value;
-    setPassword(passwordCurrent);
-  };
+  const isId = /^([0-9a-z]){6,15}$/.test(id);
 
   return (
     <div className="pt-20">
@@ -32,36 +20,40 @@ const Login = () => {
               type="text"
               className="text-md font-[#AAA] w-[328px] h-[45px] mx-auto shadow-custom rounded-full flex items-center px-5 focus:outline-blue-300 focus:shadow-none"
               placeholder="아이디(6~15자의 영문소문자, 숫자)"
-              onChange={changeId}
+              onChange={(e) => setId(e.target.value)}
             ></input>
-            {id &&
-              (!isId ? (
-                <span className="flex items-center justify-center text-md text-red-300 mt-1">
-                  6~15자의 영문소문자, 숫자로 입력해주세요.
-                </span>
-              ) : (
-                <span className="flex items-center justify-center text-md text-cyan-500 mt-1">
-                  올바른 아이디입니다
-                </span>
-              ))}
+            {id && (
+              <span
+                className={cls(
+                  isId ? "text-cyan-500" : "text-red-300",
+                  "flex items-center justify-center text-md mt-1"
+                )}
+              >
+                {isId
+                  ? "올바른 아이디입니다"
+                  : "6~15자의 영문소문자, 숫자로 입력해주세요."}
+              </span>
+            )}
           </div>
 
           <input
             type="password"
             className="text-md font-[#AAA] w-[328px] h-[45px] mx-auto shadow-custom rounded-full flex items-center px-5 focus:outline-blue-300 focus:shadow-none"
             placeholder="비밀번호(영문, 숫자 포함 8~20자 조합)"
-            onChange={changePsw}
+            onChange={(e) => setPassword(e.target.value)}
           ></input>
-          {password &&
-            (!isPassword ? (
-              <span className="flex items-center justify-center text-md text-red-300 mt-1">
-                영문, 숫자 포함 8~20자 조합으로 입력해주세요.
-              </span>
-            ) : (
-              <span className="flex items-center justify-center text-md text-cyan-500 mt-1">
-                사용가능한 비밀번호입니다.
-              </span>
-            ))}
+          {password && (
+            <span
+              className={cls(
+                isPassword ? "text-cyan-500" : "text-red-300",
+                "flex items-center justify-center text-md mt-1"
+              )}
+            >
+              {isPassword
+                ? "사용가능한 비밀번호입니다."
+                : "영문, 숫자 포함 8~20자 조합으로 입력해주세요."}
+            </span>
+          )}
         </div>
         <button
           disabled={!isId || !isPassword}
