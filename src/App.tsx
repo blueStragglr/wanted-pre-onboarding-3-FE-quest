@@ -10,11 +10,12 @@ import MainPage from "./components/MainPage";
 import LoginPage from "./components/LoginPage";
 
 function App() {
+  const [auth, setAuth] = useState(false);
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/*" element={<MainPage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/*" element={<MainPage auth={auth} setAuth={setAuth}/>} />
+        <Route path="/login" element={<LoginPage setAuth={setAuth} />} />
       </Routes>
     </BrowserRouter>
   );

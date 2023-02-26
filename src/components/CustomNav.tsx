@@ -1,7 +1,14 @@
 import { Link, NavLink } from "react-router-dom";
 import { navStyle } from "../style";
 
-const CustomNav = () => {
+const CustomNav = ({
+  auth,
+  setAuth,
+}: {
+  auth: boolean;
+  setAuth: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
+  const onLogout = () => setAuth(false);
   return (
     <nav style={navStyle}>
       <NavLink
@@ -28,14 +35,15 @@ const CustomNav = () => {
       >
         Page C
       </NavLink>
-      <NavLink
-        className={({ isActive }) =>
-          isActive ? "customLinkActive" : "customLink"
-        }
-        to="/login"
-      >
-        Log In
-      </NavLink>
+      {auth ? (
+        <div onClick={onLogout} className="customLink">
+          Log Out
+        </div>
+      ) : (
+        <NavLink className="customLink" to="/login">
+          Log In
+        </NavLink>
+      )}
     </nav>
   );
 };

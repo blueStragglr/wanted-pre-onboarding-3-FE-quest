@@ -71,7 +71,7 @@
   height: 30px;
 }
 
-.loginPage button {
+.loginPage .formLink {
   width: 30%;
   height: 50px;
   outline: none;
@@ -83,4 +83,9 @@
   font-weight: bold;
   font-size: 1.2rem;
   color: rgb(239, 158, 171);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  outline: none;
 }
