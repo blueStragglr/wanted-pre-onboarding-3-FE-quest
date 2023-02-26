@@ -1,9 +1,26 @@
 .container {
   display: flex;
   flex-direction: column;
-  width: 20%;
+  width: 15%;
   max-width: 250px;
   min-width: 150px;
-  margin-left: 30px;
   border-right: 1px solid #eaeaea;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+
+.menuTitle {
+  font-size: 22px;
+  margin: 10px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.menuTitle:hover {
+  text-decoration: underline;
+}
+
+.selected {
+  color: rgb(94, 166, 169);
 }
