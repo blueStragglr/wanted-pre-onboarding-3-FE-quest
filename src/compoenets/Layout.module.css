@@ -11,7 +11,11 @@
   .layout {
     display: flex;
     flex: 1;
+    
   }
-  .contents {
+
+  .contents{
     flex: 1;
+    margin-left: 100px;
+    border-left: 1px solid #656ba5;
   }
