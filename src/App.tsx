@@ -8,13 +8,14 @@ import CustomSection from "./components/CustomSection";
 import { BrowserRouter } from "react-router-dom";
 
 function App() {
+  const [auth, setAuth] = useState(false);
   return (
     <div className="App">
       <CustomHeader />
       <BrowserRouter>
         <div style={mainStyle}>
           <CustomNav />
-          <CustomSection />
+          <CustomSection auth={auth} />
         </div>
       </BrowserRouter>
     </div>
