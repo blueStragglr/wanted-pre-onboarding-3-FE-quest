@@ -19,6 +19,11 @@ const routes = [
     loader: rootLoader,
     children: [
       {
+        index: true,
+        path: PATH_ROUTE.root,
+        element: <PageA />,
+      },
+      {
         path: PATH_ROUTE.pagea,
         element: <PageA />,
       },
