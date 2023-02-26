@@ -3,13 +3,20 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 // Page imports
+import Footer from "../Footer/Footer";
 import Home from "../Home/Home";
-import Login from "../User/Login";
 import Page1 from "../Pages/Page1";
 import Page2 from "../Pages/Page2";
 import Page3 from "../Pages/Page3";
 
 const Main = () => {
+
+    // 로그인 버튼을 눌렀을 때 LocalStorage에 Status를 넣어서 값을 확인하게 만들기
+    const LoginFunction = () => {
+        localStorage.setItem('Status','PreLogin')
+        window.location.href = './'
+    }
+
     return(
         <div>
             <Router>
@@ -18,7 +25,7 @@ const Main = () => {
                     <NavLink to = "/Page1">Page1</NavLink>
                     <NavLink to = "/Page2">Page2</NavLink>
                     <NavLink to = "/Page3">Page3</NavLink>
-                    <NavLink to = "/Login">Login</NavLink>
+                    <button onClick = {LoginFunction}>Login</button>
                 </HeaderSc>
                 <BodySC>
                     <Routes>
@@ -26,9 +33,9 @@ const Main = () => {
                         <Route path = "/Page1" element={<Page1 />}></Route>
                         <Route path = "/Page2" element={<Page2 />}></Route>
                         <Route path = "/Page3" element={<Page3 />}></Route>
-                        <Route path = "/Login" element={<Login />}></Route>
                     </Routes>
                 </BodySC>
+                <Footer />
             </Router>
         </div>
     )

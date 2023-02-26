@@ -2,6 +2,13 @@ import React from "react";
 import styled from 'styled-components';
 
 const Login = () => {
+
+    // Status를 삭제 후 메인페이지로 보내기
+    const AfterLogin = () => {
+        localStorage.removeItem('Status')
+        window.location.href = '/'
+    }
+
     return(
         <LoginSC>
             <InputSC>
@@ -14,7 +21,7 @@ const Login = () => {
             </InputSC>
             <div>
                 <button>로그인</button>
-                <button>회원가입</button>
+                <button onClick = {AfterLogin}>뒤로가기</button>
             </div>
         </LoginSC>
     )
@@ -26,7 +33,8 @@ const InputSC = styled.div`
 `
 
 const LoginSC = styled.div`
-    margin-left : 40%
+    margin : 10em;
+    margin-left : 40%;
 `
 
 export default Login;
