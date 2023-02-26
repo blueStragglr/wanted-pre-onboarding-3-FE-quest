@@ -1,16 +1,18 @@
 import React from 'react';
+import style from './Root.module.css';
 
 import Header from 'components/layout/Header';
 import SideMenu from 'components/layout/SideMenu';
+import { Outlet } from 'react-router';
 
 const Root = () => {
   return (
-    <div className='container'>
+    <div className={style.container}>
       <Header />
-      <div className='mainSection'>
+      <div className={style.mainSection}>
         <SideMenu />
-        <div className='content'>
-          <h1>This is Page A!</h1>
+        <div className={style.content}>
+          <Outlet />
         </div>
       </div>
     </div>
