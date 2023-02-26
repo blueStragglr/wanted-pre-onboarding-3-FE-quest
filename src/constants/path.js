@@ -4,6 +4,7 @@ export const PATH_ROUTE = Object.freeze({
   login: '/login',
   pagea: '/pagea',
   pageb: '/pageb',
+  pagec: '/pagec',
 });
 
 export const PATH_API = Object.freeze({
