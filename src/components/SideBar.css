@@ -1,0 +1,13 @@
+.sidebar_container {
+  padding: 28px;
+  border-right: 1px solid #181818;
+}
+
+.nav_item {
+  font-size: 18px;
+  margin-bottom: 28px;
+}
+
+.nav_active, .nav_item:hover {
+  color: tomato;
+}

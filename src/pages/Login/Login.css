@@ -1,0 +1,52 @@
+.login_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: rgb(255, 217, 210, 0.3);
+}
+
+.login_box {
+  display: flex;
+  flex-direction: column;
+  padding:  40px 20px 20px;
+  width: 90vw;
+  max-width: 400px;
+  background: rgb(255, 217, 210, 0.7);
+  border-radius: 25px;
+}
+
+label {
+  margin-bottom: 12px;
+}
+
+input[type="text"], input[type="password"] {
+  padding: 0 10px; 
+  margin-bottom: 36px;
+  height: 44px;
+  border: none;
+  border-radius: 12px;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+  outline: none;
+  border: 1px solid tomato;
+  box-shadow: 0 0 8px tomato;
+}
+
+.login_btn {
+  padding: 6px 8px;
+  margin-top: 36px;
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  color: rgb(236, 236, 236);
+  background: rgba(255, 104, 78, 0.8);
+  border-radius: 10px;
+  transition: all 0.5s ease;
+}
+
+.login_btn:hover {
+  background: tomato;
+}
