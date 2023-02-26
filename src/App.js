@@ -5,11 +5,9 @@ import { router } from 'router';
 
 function App() {
   return (
-    <div className='container'>
-      <Suspense fallback={<div>Loading...</div>}>
-        <RouterProvider router={router} />
-      </Suspense>
-    </div>
+    <Suspense fallback={<div>Loading...</div>}>
+      <RouterProvider router={router} />
+    </Suspense>
   );
 }
 
