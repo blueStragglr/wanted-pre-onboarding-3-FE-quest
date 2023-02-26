@@ -1,9 +1,9 @@
-import axios from "axios";
-import { getUserToken } from "utils";
+import axios from 'axios';
+import { getUserToken } from 'utils';
 
 export const userClient = axios.create({
-  baseURL: "http://localhost:3001",
-  headers: { "Content-Type": "application/json" },
+  baseURL: 'http://localhost:3001',
+  headers: { 'Content-Type': 'application/json' },
 });
 
 userClient.interceptors.request.use(
