@@ -28,6 +28,14 @@ const CustomNav = () => {
       >
         Page C
       </NavLink>
+      <NavLink
+        className={({ isActive }) =>
+          isActive ? "customLinkActive" : "customLink"
+        }
+        to="/login"
+      >
+        Log In
+      </NavLink>
     </nav>
   );
 };

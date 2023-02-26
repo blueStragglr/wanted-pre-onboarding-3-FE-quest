@@ -5,20 +5,18 @@ import CustomHeader from "./components/CustomHeader";
 import { mainStyle } from "./style";
 import CustomNav from "./components/CustomNav";
 import CustomSection from "./components/CustomSection";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import MainPage from "./components/MainPage";
+import LoginPage from "./components/LoginPage";
 
 function App() {
-  const [auth, setAuth] = useState(false);
   return (
-    <div className="App">
-      <CustomHeader />
-      <BrowserRouter>
-        <div style={mainStyle}>
-          <CustomNav />
-          <CustomSection auth={auth} />
-        </div>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/*" element={<MainPage />} />
+        <Route path="/login" element={<LoginPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
