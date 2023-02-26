@@ -1,0 +1,18 @@
+.layout {
+  padding-top: 80px;
+}
+
+.content {
+  display: flex;
+  min-height: calc(100vh - 80px);
+}
+
+.main {
+  min-width: calc(100% - 200px);
+  height: 100%;
+  font-size: 40px;
+  margin: auto;
+  text-align: center;
+  justify-content: center;
+  color: #0a82ff;
+}
