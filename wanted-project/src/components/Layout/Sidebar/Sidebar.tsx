@@ -1,5 +1,5 @@
 import "./Sidebar.scss";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import SidebarItem from "./SidebarItem";
 
 export type MenuType = {
@@ -19,9 +19,16 @@ const Sidebar = () => {
     <div className="sidebar-container">
       {menus.map((menu) => {
         return (
-          <Link className="page_link" key={menu.id} to={menu.path}>
+          <NavLink
+            className="page_link"
+            style={({ isActive }) =>
+              isActive ? { color: "#0a82ff" } : { color: "black" }
+            }
+            key={menu.id}
+            to={menu.path}
+          >
             <SidebarItem menu={menu} />
-          </Link>
+          </NavLink>
         );
       })}
     </div>
