@@ -1,5 +1,8 @@
 import React from "react";
+import { useAuthRedirect } from "../../hooks/useAuthRedirect";
 
 export const PageA = () => {
-  return <div>PageA</div>;
+  useAuthRedirect();
+
+  return <div>This is page A !</div>;
 };

@@ -1,5 +1,5 @@
 import React from "react";
 
 export const PageB = () => {
-  return <div>PageB</div>;
+  return <div>This is page B !</div>;
 };
