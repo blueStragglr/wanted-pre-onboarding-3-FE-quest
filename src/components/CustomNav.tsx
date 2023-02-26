@@ -1,18 +1,35 @@
-import { linkStyle, navStyle } from "../style";
-import { CustomLink } from "./CustomLink";
+import { Link, NavLink } from "react-router-dom";
+import { navStyle } from "../style";
 
-const CustomNav = () => (
-  <nav style={navStyle}>
-    <CustomLink style={linkStyle} to="/page_a">
-      Page A
-    </CustomLink>
-    <CustomLink style={linkStyle} to="/page_b">
-      Page B
-    </CustomLink>
-    <CustomLink style={linkStyle} to="/page_c">
-      Page C
-    </CustomLink>
-  </nav>
-);
+const CustomNav = () => {
+  return (
+    <nav style={navStyle}>
+      <NavLink
+        className={({ isActive }) =>
+          isActive ? "customLinkActive" : "customLink"
+        }
+        to="/page_a"
+      >
+        Page A
+      </NavLink>
+      <NavLink
+        className={({ isActive }) =>
+          isActive ? "customLinkActive" : "customLink"
+        }
+        to="/page_b"
+      >
+        Page B
+      </NavLink>
+      <NavLink
+        className={({ isActive }) =>
+          isActive ? "customLinkActive" : "customLink"
+        }
+        to="/page_c"
+      >
+        Page C
+      </NavLink>
+    </nav>
+  );
+};
 
 export default CustomNav;
