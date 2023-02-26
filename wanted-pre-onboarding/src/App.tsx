@@ -29,10 +29,8 @@ const App: React.FC = () => {
     }
   };
 
-  const handleLogin = (username: string, password: string) => {
-    if (username !== "" && password !== "") {
-      setIsLoggedIn(true);
-    }
+  const handleLogin = () => {
+    setIsLoggedIn(true);
   };
 
   const handleLogout = () => {
@@ -60,7 +58,7 @@ const App: React.FC = () => {
           </div>
         </>
       ) : (
-        <LoginPage onLogin={handleLogin} />
+        <LoginPage handleLogin={handleLogin} />
       )}
     </div>
   );

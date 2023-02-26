@@ -1,46 +1,45 @@
 import React, { useState } from 'react';
+import "../styles/container.css"
 
-interface Props {
-  onLogin: (username: string, password: string) => void;
-}
-
-const LoginPage: React.FC<Props> = ({ onLogin }) => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleUsernameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setUsername(event.target.value);
+type LoginPageProps = {
+    handleLogin: () => void;
   };
-
-  const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setPassword(event.target.value);
+  
+  const LoginPage = ({ handleLogin }: LoginPageProps) => {
+    const [username, setUsername] = React.useState("");
+    const [password, setPassword] = React.useState("");
+  
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
+      if (username !== "" && password !== "") {
+        handleLogin();
+      }
+    };
+  
+    return (
+      <div className="login-container">
+        <form className="login-form" onSubmit={handleSubmit}>
+          <h2>Login</h2>
+          <label htmlFor="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    );
   };
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    onLogin(username, password);
-  };
-
-  return (
-    <div>
-      <h2>Login Page</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>
-            Username:
-            <input type="text" value={username} onChange={handleUsernameChange} />
-          </label>
-        </div>
-        <div>
-          <label>
-            Password:
-            <input type="password" value={password} onChange={handlePasswordChange} />
-          </label>
-        </div>
-        <button type="submit">Login</button>
-      </form>
-    </div>
-  );
-};
-
-export default LoginPage;
+  
+  export default LoginPage;
