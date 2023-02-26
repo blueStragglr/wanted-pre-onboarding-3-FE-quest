@@ -1,10 +1,11 @@
 import React from 'react'
 import Header from './Header'
 import SideBar from './SideBar'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 
 const CmnLayout = () => {
+  const { pathname } = useLocation()
   return (
     <HtmlWrap>
       <HeadWrap>
@@ -15,6 +16,7 @@ const CmnLayout = () => {
           <SideBar />
         </SideWrap>
         <PageWrap>
+          {pathname === '/' && <h1>MainPage</h1>}
           <Outlet />
         </PageWrap>
       </BodyWrap>
