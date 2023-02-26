@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { mainStyle } from "../style";
 import CustomHeader from "./CustomHeader";
 import CustomNav from "./CustomNav";
