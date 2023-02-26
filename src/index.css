@@ -12,4 +12,8 @@
   .input {
     @apply p-2 border rounded-md border-slate-100 placeholder:text-base;
   }
+
+  .button {
+    @apply p-3 border rounded-md text-base transition hover:bg-slate-500 hover:text-white;
+  }
 }

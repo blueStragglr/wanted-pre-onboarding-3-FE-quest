@@ -1,12 +1,12 @@
-import { useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
-import { getAuth, setAuth } from "../../libs/authAction";
+import { useRef } from "react";
+import { setAuth } from "../../libs/authAction";
+import ShareButton from "../common/ShareButton";
+import ShareInput from "../common/ShareInput";
+import ShareLabel from "../common/ShareLabel";
 
 const AuthForm = () => {
   const emailRef = useRef<HTMLInputElement | null>(null);
   const passwordRef = useRef<HTMLInputElement | null>(null);
-  const navigate = useNavigate();
-  const isAuth = getAuth();
 
   const loginSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -31,10 +31,8 @@ const AuthForm = () => {
       onSubmit={loginSubmitHandler}
     >
       <div className="div">
-        <label className="label" htmlFor="id">
-          아이디
-        </label>
-        <input
+        <ShareLabel className="label" htmlFor="id" text="아이디" />
+        <ShareInput
           className="input"
           ref={emailRef}
           id="id"
@@ -43,10 +41,8 @@ const AuthForm = () => {
         />
       </div>
       <div className="div">
-        <label className="label" htmlFor="password">
-          패스워드
-        </label>
-        <input
+        <ShareLabel className="label" htmlFor="password" text="패스워드" />
+        <ShareInput
           className="input"
           ref={passwordRef}
           id="password"
@@ -54,12 +50,7 @@ const AuthForm = () => {
           placeholder="패스워드"
         />
       </div>
-      <button
-        className="py-2 border rounded-md text-lg transition hover:bg-slate-500 hover:text-white"
-        type="submit"
-      >
-        로그인
-      </button>
+      <ShareButton className="button" type="submit" text="로그인" />
     </form>
   );
 };
