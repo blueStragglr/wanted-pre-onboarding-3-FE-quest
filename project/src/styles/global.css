@@ -18,4 +18,7 @@
   .contents-layout {
     @apply w-full h-full flex justify-center items-center text-5xl text-sky-600;
   }
+  .btn {
+    @apply rounded-xl border-2 border-sky-300 w-fit p-2 px-6 mt-4 font-bold active:bg-slate-500 active:text-white;
+  }
 }
