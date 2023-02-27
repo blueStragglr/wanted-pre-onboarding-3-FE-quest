@@ -5,15 +5,17 @@ import reportWebVitals from './reportWebVitals';
 
 import Routing from './Routing';
 import GlobalStyle from './common/GlobalStyle';
+import CustomToast from './components/CustomToast';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
+  <>
     <GlobalStyle />
+    <CustomToast />
     <Routing />
-  </React.StrictMode>
+  </>
 );
 
 // If you want to start measuring performance in your app, pass a function

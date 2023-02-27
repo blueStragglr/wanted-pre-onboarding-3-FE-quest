@@ -8,7 +8,7 @@ export default function SideNav() {
     ];
     return (
         <ul className={sideNavStyle}>
-            {navLinks.map((link) => <li><StyledNavLink className={({isActive}) => ('nav-link' + isActive ? '-activated' : "")} to={link.path}>{link.name}</StyledNavLink></li>)}
+            {navLinks.map((link) => <li key={link.name}><StyledNavLink className={({isActive}) => ('nav-link' + isActive ? '-activated' : "")} to={link.path}>{link.name}</StyledNavLink></li>)}
         </ul>
     );
 }

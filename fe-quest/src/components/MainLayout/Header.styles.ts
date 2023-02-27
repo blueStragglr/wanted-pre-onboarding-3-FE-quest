@@ -9,3 +9,10 @@ export const headerStyle = css({
     fontStyle: 'italic',
     fontWeight: 'bold',
   });
+
+export const signInButtonStyle = css({
+  position: 'absolute',
+  right: '20px',
+  textDecorationLine: 'none',
+  fontStyle: 'normal',
+});
