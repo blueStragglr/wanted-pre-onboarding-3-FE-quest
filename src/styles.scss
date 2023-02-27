@@ -1,0 +1,60 @@
+@import "./App.css";
+
+.Header {
+  width: 100vw;
+  height: 3rem;
+  border-bottom: 1px solid lightgray;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  span {
+    cursor: pointer;
+  }
+
+  div {
+    display: flex;
+    gap: 2rem;
+
+    span {
+      cursor: pointer;
+    }
+  }
+}
+
+.Sidebar {
+  width: 20vw;
+  height: calc(100vh - 3rem);
+  border-right: 1px solid lightgray;
+  background-color: lightcoral;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+
+  ul {
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    li {
+      list-style: none;
+      cursor: pointer;
+    }
+  }
+}
+
+.Content {
+  width: 80vw;
+  height: calc(100vh - 3rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.Login {
+  width: 100vw;
+  height: 100vh;
+}
