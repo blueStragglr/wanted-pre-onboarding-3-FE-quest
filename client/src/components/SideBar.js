@@ -25,10 +25,9 @@ const NavListItemSC = styled(NavLink)`
 `;
 
 const PAGES = [
-	{ path: '/page/a', name: 'PAGE A' },
-	{ path: '/page/b', name: 'PAGE B' },
-	{ path: '/page/c', name: 'PAGE C' },
-	{ path: '/page/d', name: 'PAGE D' },
+	{ path: '/a', name: 'PAGE A' },
+	{ path: '/b', name: 'PAGE B' },
+	{ path: '/c', name: 'PAGE C' },
 ];
 
 const SideBar = (props) => {

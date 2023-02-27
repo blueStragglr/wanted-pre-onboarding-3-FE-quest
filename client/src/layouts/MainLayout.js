@@ -14,8 +14,14 @@ const MainSC = styled.main`
 	flex: 1;
 `;
 const ContentsSC = styled.section`
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	flex: 1;
 	padding: 36px;
+	font-size: 24px;
+	font-weight: 600;
+	color: tomato;
 	background-color: beige;
 `;
 
