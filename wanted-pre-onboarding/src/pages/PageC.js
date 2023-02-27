@@ -1,10 +1,11 @@
 import React from "react";
-import classes from "../style/PageC.module.css";
 
 const PageC = () => {
   return (
-    <div className={classes.pageCWrap}>
-      <h1>This is PageC</h1>
+    <div className="w-full">
+      <h1 className="absolute top-1/2 right-1/2 text-xl font-bold animate-bounce text-orange-600">
+        This is PageC
+      </h1>
     </div>
   );
 };

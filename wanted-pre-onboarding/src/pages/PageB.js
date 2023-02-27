@@ -1,10 +1,11 @@
 import React from "react";
-import classes from "../style/PageB.module.css";
 
 const PageB = () => {
   return (
-    <div className={classes.pageBWrap}>
-      <h1>This is PageB</h1>
+    <div className="w-full">
+      <h1 className="absolute top-1/2 right-1/2 text-xl font-bold animate-bounce text-orange-600">
+        This is PageB
+      </h1>
     </div>
   );
 };
