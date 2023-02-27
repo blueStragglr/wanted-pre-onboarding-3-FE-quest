@@ -1,5 +1,18 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Template from './page/Template';
+import PageData from './PageData';
+
 function App() {
-  return <div className="App">원티드 프리온보딩 챌린지</div>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route index element={<Template />} />
+        {PageData.map(({ contentsComponent, path }) => (
+          <Route path={path} element={contentsComponent} />
+        ))}
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
