@@ -1,0 +1,9 @@
+html, body, #root, #root > div, .body { height: 100%;}
+
+.header { border-bottom: 2px solid #000000; padding: 0.6rem;}
+.body {display: flex;}
+.body .nav { width: 10%; padding: 0.4rem 0.8rem; border-right: 2px solid #000000;}
+.body .nav > div { padding: 7px 0px; }
+.body .nav > div.on { color:rgb(59, 59, 211); font-weight: bold;}
+.body .content {width: 90%; display: flex; justify-content: center;align-items: center; }
+.page { color: rgb(59, 59, 211); font-weight: bold; }
