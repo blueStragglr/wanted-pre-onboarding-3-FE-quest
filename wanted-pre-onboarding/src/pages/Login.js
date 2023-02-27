@@ -5,13 +5,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const obj = {
-    email: email,
-    password: password,
-  };
-
   const handleLoginClick = () => {
-    localStorage.setItem("email", JSON.stringify(obj));
     if ((email, password)) {
       alert("로그인완료");
       navigation("/");
@@ -26,7 +20,7 @@ const Login = () => {
           로그인
         </h2>
         <input
-          className="w-full border-2 h-12 mb-3 text-center"
+          className="outline-0 w-full border-2 h-12 mb-3 text-center focus:border-solid focus:border-orange-600"
           type="email"
           onChange={(e) => {
             setEmail(e.target.value);
@@ -34,7 +28,7 @@ const Login = () => {
           placeholder="email을 입력해주세요"
         />
         <input
-          className="w-full border-2 h-12 mb-3 text-center"
+          className="outline-0 w-full border-2 h-12 mb-3 text-center focus:border-solid focus:border-orange-600"
           onChange={(e) => {
             setPassword(e.target.value);
           }}
@@ -42,7 +36,7 @@ const Login = () => {
           placeholder="password를 입력해주세요"
         />
         <button
-          className="w-full bg-orange-600 text-white cursor-pointer rounded-md p-3 hover:bg-orange-500"
+          className="w-full bg-orange-600 text-white cursor-pointer rounded-md p-3 hover:bg-orange-500 "
           onClick={handleLoginClick}
         >
           로그인하기
