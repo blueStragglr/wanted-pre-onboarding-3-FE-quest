@@ -13,7 +13,7 @@ const SideBar = () => {
             }>Page01</NavLink></li>
         <li><NavLink to='page02' style={({ isActive }) =>
               isActive ? ActiveStyle : undefined
-            }>Page02</NavLink></li>
+            }>Page02.</NavLink></li>
         <li><NavLink to='page03' style={({ isActive }) =>
               isActive ? ActiveStyle : undefined
             }>Page03</NavLink></li>
