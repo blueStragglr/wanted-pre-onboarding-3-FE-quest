@@ -6,8 +6,8 @@
   "author": "dev-rne <coco.wapplab@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start" : "webpack serve --progress --mode development",
-    "build":"webpack"
+    "start": "webpack serve --progress --mode development",
+    "build": "webpack"
   },
   "dependencies": {
     "@babel/core": "^7.21.0",
@@ -17,7 +17,9 @@
     "css-loader": "^6.7.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.1",
     "style-loader": "^3.3.1",
+    "styled-components": "^5.3.6",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.11.1"
