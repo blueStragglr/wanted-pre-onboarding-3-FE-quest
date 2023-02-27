@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { LoginInfo } from "../../type/login.type";
-import { USER_INFO } from "../../dummyData/userInfoDummy";
+import { USER_INFO } from "../../_dummyData/userInfoDummy";
 import { useNavigate } from "react-router-dom";
 export const LoginForm = () => {
   const navigate = useNavigate();
