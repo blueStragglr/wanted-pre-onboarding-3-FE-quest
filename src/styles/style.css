@@ -1,10 +1,24 @@
+:root {
+  --font-color: #0b79d9;
+}
+
 .wrap {
 }
 
-.body {
+.header {
+  padding: 0 20px;
+  border-bottom: 2px solid #808080;
 }
 
-.pages {
+.body {
+  display: flex;
+  flex-direction: row;
+  height: 92vh;
+}
+
+.sidebar {
+  padding: 30px 50px;
+  border-right: 2px solid #808080;
 }
 
 .page-item {
@@ -13,13 +27,15 @@
 .page-item h2 {
 }
 
-.is-clicked {
-  color: blue;
-}
-
 .contents {
+  text-align: center;
+  margin: auto;
 }
 
 .contents h1 {
-  color: blue;
+  font-size: 100px;
+}
+
+.contents h1 {
+  color: var(--font-color);
 }
