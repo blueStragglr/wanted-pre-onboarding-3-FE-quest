@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { FaHome } from "react-icons/fa";
 
 const HeaderWrapper = styled.div`
   background-color: #61dafb;
@@ -22,9 +23,16 @@ const LoginButton = styled(Link)`
 `;
 
 const Header: React.FC = () => {
+  const navigate = useNavigate();
+  const homeHandler = () => {
+    navigate("/");
+  };
+
   return (
     <HeaderWrapper>
-      <Logo>My App</Logo>
+      <Logo onClick={homeHandler}>
+        <FaHome />
+      </Logo>
       <LoginButton to="/login">Login</LoginButton>
     </HeaderWrapper>
   );

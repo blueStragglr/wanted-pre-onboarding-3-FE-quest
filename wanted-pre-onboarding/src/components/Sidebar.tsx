@@ -2,13 +2,25 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
+interface Page {
+  path: string;
+  label: string;
+  requireAuth: boolean;
+}
+
+const pages: Page[] = [
+  { path: "/pageA", label: "Page A", requireAuth: true },
+  { path: "/pageB", label: "Page B", requireAuth: false },
+  { path: "/pageC", label: "Page C", requireAuth: true },
+];
+
 const SidebarContainer = styled.div`
   position: fixed;
-  top: 0;
   left: 0;
-  height: 100vh;
-  width: 100px;
-  background-color: #f8f9fa;
+  width: 240px;
+  height: 100%;
+  background-color: white;
+  border-right: 1px solid gray;
 `;
 
 const SidebarItem = styled.div`
@@ -30,11 +42,20 @@ const Sidebar: React.FC = () => {
     navigate(path);
   };
 
+  const isLoggedIn = true; // 로그인 여부에 따라 수정
+
   return (
     <SidebarContainer>
-      <SidebarItem onClick={() => handleClick("/pageA")}>Page A</SidebarItem>
-      <SidebarItem onClick={() => handleClick("/pageB")}>Page B</SidebarItem>
-      <SidebarItem onClick={() => handleClick("/pageC")}>Page C</SidebarItem>
+      {pages.map((page) => {
+        if (!page.requireAuth || isLoggedIn) {
+          return (
+            <SidebarItem key={page.path} onClick={() => handleClick(page.path)}>
+              {page.label}
+            </SidebarItem>
+          );
+        }
+        return null;
+      })}
     </SidebarContainer>
   );
 };

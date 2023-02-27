@@ -1,10 +1,6 @@
-import React from 'react';
+import React from "react";
+import { PageContainer } from "./page.style";
 
 export default function PageC() {
-    return (
-        <div>
-            
-        </div>
-    );
+  return <PageContainer>This is Page C!</PageContainer>;
 }
-
