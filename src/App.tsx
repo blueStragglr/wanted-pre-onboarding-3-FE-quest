@@ -7,6 +7,7 @@ function App() {
       <Route path="/" element={<P.PageA />} />
       <Route path="/b" element={<P.PageB />} />
       <Route path="/c" element={<P.PageC />} />
+      <Route path="/login" element={<P.LoginPage />} />
     </Routes>
   );
 }
