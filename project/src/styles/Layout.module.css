@@ -1,0 +1,17 @@
+.layout {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  display: flex;
+}
+
+.main > div:last-child {
+  width: 85%;
+}
+
+.main > div:first-child {
+  width: 15%;
+}
