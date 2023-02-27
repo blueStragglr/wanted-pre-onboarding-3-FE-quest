@@ -1,15 +1,19 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { APage } from "../pages/APage";
-import { BPage } from "../pages/BPage";
-import { CPage } from "../pages/CPage";
+import { Home } from "../pages/HomePage";
+import { NotFoundPage } from "../pages/NotFoundPage";
+import { PageA } from "../pages/PageA";
+import { PageB } from "../pages/PageB";
+import { PageC } from "../pages/PageC";
 
 export const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<APage />} />
-        <Route path="/bpage" element={<BPage />} />
-        <Route path="/cpage" element={<CPage />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/pageA" element={<PageA />} />
+        <Route path="/pageB" element={<PageB />} />
+        <Route path="/pageC" element={<PageC />} />
+        <Route path="/*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   );

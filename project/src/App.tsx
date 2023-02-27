@@ -1,6 +1,10 @@
 import React from "react";
-import "./App.css";
+import { Router } from "./router/Router";
 
 export const App = () => {
-  return <></>;
+  return (
+    <div className="flex items-center justify-center sticky h-screen">
+      <Router />
+    </div>
+  );
 };
