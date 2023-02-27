@@ -13,6 +13,7 @@ const NavContainer = styled.nav`
 const H1 = styled.h1`
 	padding: 20px 40px;
 	color: #2d3436;
+	cursor: pointer;
 `;
 
 const ButtonContainer = styled.div`
@@ -40,7 +41,7 @@ function Nav() {
 
 	return (
 		<NavContainer>
-			<H1>Wanted Pre-onboarding course</H1>
+			<H1 onClick={() => navigate('/')}>Wanted Pre-onboarding course</H1>
 			<ButtonContainer>
 				<Button onClick={() => navigate('/login')}>Login</Button>
 			</ButtonContainer>
