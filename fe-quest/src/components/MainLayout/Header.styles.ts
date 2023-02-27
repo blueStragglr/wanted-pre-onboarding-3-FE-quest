@@ -6,5 +6,5 @@ export const headerStyle = css({
     alignItems: 'center',
     padding: '0 20px',
     height: '60px',
-    backgroundColor: '#fff',
+    borderBottom: '1px solid #ccc',
   });
