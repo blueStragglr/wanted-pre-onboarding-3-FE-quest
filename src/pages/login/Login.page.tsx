@@ -49,7 +49,7 @@ const Login = () => {
             onChange={onChange}
           />
           <Input
-            type="text"
+            type="password"
             name="password"
             value={inputs.password}
             placeholder="Password"
