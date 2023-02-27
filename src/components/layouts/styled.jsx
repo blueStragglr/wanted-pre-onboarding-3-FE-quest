@@ -7,8 +7,27 @@ export const StyledHeader = styled.div`
     align-items: center;
     padding: 0 20px;
     border-bottom: 1px solid #ccc;
-    font-size: 18px;
-    font-weight: 600;
+    justify-content: space-between;
+    .title{
+        font-size: 18px;
+        font-weight: 600;
+    }
+    .user-box{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        .btn{
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 14px;
+            background: #ddd;
+            cursor: pointer;
+            transition: 0.2s;
+            &:hover{
+                background: #bbb;
+            }
+        }
+    }
 `
 
 export const StyledSideBar = styled.div`

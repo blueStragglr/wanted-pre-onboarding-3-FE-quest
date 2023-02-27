@@ -3,7 +3,7 @@ import SideBar from "./SideBar";
 import { StyledLayout } from "./styled";
 
 const Layout = ({children}) => {
-    return(
+    return (
         <StyledLayout>
             <Header />
             <main className="main-box">
