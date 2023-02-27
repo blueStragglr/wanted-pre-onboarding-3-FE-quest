@@ -29,11 +29,7 @@ function Main() {
     <div>
       <div className='header'>Wanted Pre-onBoarding course</div>
       <div className='body'>
-        <div className='nav'>
-          {/* <div className='on'>Page A</div>
-          <div>Page B</div>
-          <div>Page C</div>
-          <div>Page D</div> */}
+        <div className='nav'>          
           { arr.map((_page)=>{
             return  <div 
                       className={page.name == _page.name ? "on" : ""}
