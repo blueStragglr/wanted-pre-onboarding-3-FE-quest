@@ -1,25 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './styles/style.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import lodash from 'lodash';
+import PageA from './components/pages/PageA';
+import PageB from './components/pages/PageB';
+import PageC from './components/pages/PageC';
+import LoginPage from './components/pages/LoginPage';
+import MainPage from './components/pages/MainPage';
 
 function App() {
+  window._ = lodash;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/" element={<MainPage />}>
+            <Route path="/page-a" element={<PageA />} />
+            <Route path="/page-b" element={<PageB />} />
+            <Route path="/page-c" element={<PageC />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
