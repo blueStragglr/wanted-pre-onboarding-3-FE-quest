@@ -6,7 +6,7 @@ function Footer() {
     <div>
       <Container>
           <div style={{textAlign:"center"}}>
-              박승현
+              원티드 프리온보딩 사전과제
           </div>
       </Container>
     </div>
