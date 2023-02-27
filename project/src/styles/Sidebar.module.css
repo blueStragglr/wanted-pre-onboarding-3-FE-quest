@@ -1,0 +1,22 @@
+.sidebar {
+  height: calc(100vh - 70px);
+  min-height: 100%;
+  width: 120px;
+  border-right: 2px solid rgb(196, 196, 196);
+}
+
+.itmes > li {
+  font-size: 24px;
+  font-weight: 600;
+  height: 48px;
+  text-align: center;
+  padding: 6px 0;
+}
+
+.itmes > li:first-child {
+  padding-top: 24px;
+}
+
+.item > a {
+  color: #72b7e6;
+}
