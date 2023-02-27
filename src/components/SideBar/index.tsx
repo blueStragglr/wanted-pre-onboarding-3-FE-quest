@@ -23,8 +23,17 @@ const SideBar = () => {
 
 const StyledSideBar = styled.div`
   width: 15%;
-  height: 100vh;
+  height: calc(100vh - 70px);
   border-right: 1px solid #757575;
+  > nav > ul {
+    padding: 20px;
+    > li {
+      margin-bottom: 10px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 `;
 
 export default SideBar;
