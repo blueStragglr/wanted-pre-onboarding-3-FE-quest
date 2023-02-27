@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .base-layout {
+    @apply w-full h-full;
+  }
+
+  .header-layout {
+    @apply w-full border border-b-gray-400 border-b-2 absolute bg-white;
+  }
+
+  .sidebar-layout {
+    @apply w-48 h-full flex flex-col gap-y-4 p-6 pt-24 pr-20 border border-r-gray-400;
+  }
+
+  .contents-layout {
+    @apply w-full h-full flex justify-center items-center text-5xl text-sky-600;
+  }
+  .btn {
+    @apply rounded-xl border-2 border-sky-300 w-fit p-2 px-6 mt-4 font-bold active:bg-slate-500 active:text-white;
+  }
+}
