@@ -1,0 +1,41 @@
+*{margin: 0;padding:0;box-sizing: border-box;list-style: none;color:#333;text-decoration: none;}
+
+body{height: 100vh;}
+#root{height:100%}
+header{
+  padding:1em 1.5em;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+h1{font-size: 1.5em;}
+
+nav{
+  border-right: 1px solid #e7e7e7;
+  width: 100%;
+  max-width:20vw;
+}
+
+ul > li {
+  padding: 1em;
+  border-bottom: 1px solid #e7e7e7;
+  font-weight: 700;
+}
+
+
+
+.flex{
+  display: flex;
+  height: calc(100% - 65px);
+}
+
+
+.page{
+  display:flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  font-weight: 700;
+  
+}
+.page > h2{color:lightskyblue;}
