@@ -46,9 +46,9 @@ function Sidebar() {
 	return (
 		<SidebarContainer>
 			<Ul>
-				{link.map((list, i) => (
-					<Menu>
-						<NavLink key={i} to={list.link} activeClassName="active">
+				{link.map((list, idx) => (
+					<Menu key={idx}>
+						<NavLink to={list.link} activeclassname="active">
 							{list.title}
 						</NavLink>
 					</Menu>
