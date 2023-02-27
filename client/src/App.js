@@ -2,9 +2,7 @@ import { useCallback } from 'react';
 import {
 	createBrowserRouter,
 	RouterProvider,
-	Route,
 	redirect,
-	useHref,
 } from 'react-router-dom';
 
 import './App.css';
@@ -19,11 +17,8 @@ import { getCookie } from './utils/common';
 function App() {
 	const checkHasJWT = () => {
 		const isSignedIn = getCookie('jwt');
-		const { pathname = '', search = '' } = window.location;
-		const url = encodeURIComponent(pathname + search);
-		console.log(window.location);
 
-		if (!isSignedIn) throw redirect(`/signin?url=${url}`);
+		if (!isSignedIn) throw redirect(`/signin`);
 		else return null;
 	};
 

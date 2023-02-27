@@ -1,7 +1,6 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import styled from 'styled-components';
 import { setCookie } from '../../utils/common';
@@ -72,11 +71,6 @@ const FIELDS = [
 ];
 
 const SignInForm = (props) => {
-	const location = useLocation();
-	const searchParams = useMemo(
-		() => new URLSearchParams(location.search),
-		[location.search]
-	);
 	const navigate = useNavigate();
 
 	const [signInFormData, setSignInFormData] = useState({
@@ -90,26 +84,18 @@ const SignInForm = (props) => {
 		setSignInFormData({ ...signInFormData, [key]: value });
 	};
 
-	const submitForm = useCallback(
-		(e) => {
-			e.preventDefault();
+	const submitForm = (e) => {
+		e.preventDefault();
 
-			// 값 유효성 체크 필요
+		// 값 유효성 체크 필요
 
-			// 로그인 요청
+		// 로그인 요청
 
-			// 요청 완료 후 jwt 쿠키 저장 & 이전 페이지 이동
-			setCookie('jwt', 'foo', 90);
+		// 요청 완료 후 jwt 쿠키 저장 & 이전 페이지 이동
+		setCookie('jwt', 'foo', 90);
 
-			const hasRedirectURL = searchParams.has('url');
-			const url = hasRedirectURL
-				? decodeURIComponent(searchParams.get('url'))
-				: '/';
-
-			navigate(url);
-		},
-		[searchParams, navigate]
-	);
+		navigate('/');
+	};
 
 	return (
 		<FormContainerSC>
