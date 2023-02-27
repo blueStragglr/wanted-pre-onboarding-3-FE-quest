@@ -1,10 +1,13 @@
-import MainLayout from "./layouts/MainLayout";
+import { Route, Routes } from "react-router-dom";
+import * as P from "./pages";
 
 function App() {
   return (
-    <MainLayout>
-      <h1>hello world</h1>
-    </MainLayout>
+    <Routes>
+      <Route path="/" element={<P.PageA />} />
+      <Route path="/b" element={<P.PageB />} />
+      <Route path="/c" element={<P.PageC />} />
+    </Routes>
   );
 }
 
