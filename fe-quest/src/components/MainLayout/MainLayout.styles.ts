@@ -9,4 +9,6 @@ export const mainContentStyle = css({
     left: '150px',
     alignItems: 'center',
     justifyContent: 'center',
+    fontSize: '1.5rem',
+    color: '#3399FF'
 });

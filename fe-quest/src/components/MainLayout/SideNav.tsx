@@ -1,6 +1,4 @@
-import { NavLink } from "react-router-dom";
-
-import { sideNavStyle } from "./SideNav.styles";
+import { sideNavStyle, StyledNavLink } from "./SideNav.styles";
 
 export default function SideNav() {
     const navLinks = [
@@ -10,7 +8,7 @@ export default function SideNav() {
     ];
     return (
         <ul className={sideNavStyle}>
-            {navLinks.map((link) => <li><NavLink to={link.path}>{link.name}</NavLink></li>)}
+            {navLinks.map((link) => <li><StyledNavLink className={({isActive}) => ('nav-link' + isActive ? '-activated' : "")} to={link.path}>{link.name}</StyledNavLink></li>)}
         </ul>
     );
 }
