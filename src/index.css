@@ -1,0 +1,13 @@
+:root {
+  --text-blue: #0073af;
+}
+
+body {
+  margin: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
