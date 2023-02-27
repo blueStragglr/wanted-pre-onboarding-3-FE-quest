@@ -9,6 +9,8 @@ export const Wrapper = styled.div`
 `;
 
 export const Content = styled.div`
-  width: 20rem;
+  width: 25rem;
   background: #303030;
+  padding: 1rem;
+  border-radius: 0.75rem;
 `;
