@@ -3,8 +3,7 @@ import Home from "./routes/Home";
 import Page from "./routes/Page";
 import { Reset } from "styled-reset";
 import Login from "./routes/Login";
-import SideNav from "./Component/SideNav";
-import Header from "./Component/Header";
+
 
 function Router() {
   return (
@@ -13,7 +12,7 @@ function Router() {
         <Reset />
         <Routes>
           <Route path="/" element={<Home />}>
-            <Route path="/:PageId" element={<Page />} />
+            <Route path=":PageId" element={<Page />} />
           </Route>
           <Route path="/login" element={<Login />} />
         </Routes>

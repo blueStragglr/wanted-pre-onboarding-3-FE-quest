@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const Nav = styled.nav`
-  position: absolute;
+const Nav = styled.div`
   width: 150px;
-  height: 100%;
+  height: 100vh;
   border-right: 2px gray solid;
+  margin: 0;
 `;
 const NavList = styled.ul``;
 

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useState } from "react";
 import request from "../Api/request";
+import { Link } from "react-router-dom";
 
 const LogContainer = styled.div`
   width: 100%;
@@ -14,6 +15,7 @@ const LogContainer = styled.div`
 const Form = styled.form`
   display: flex;
   flex-direction: column;
+  margin-bottom: 10px;
 `;
 const InputTag = styled.input`
   margin-top: 20px;
@@ -62,6 +64,14 @@ function Login() {
           />
           <Button type="submit">로그인하기</Button>
         </Form>
+        <Link
+                to={{
+                  pathname:`/`,
+                }}
+                state={{}}
+              >
+               Home
+              </Link>
       </LogContainer>
     </>
   );

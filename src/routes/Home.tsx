@@ -4,11 +4,14 @@ import Header from "../Component/Header";
 import SideNav from "../Component/SideNav";
 import { useParams } from "react-router-dom";
 
-const MainContainer = styled.div`
-  margin-left: 150px;
-  height: 100vh;
+const ParentBody = styled.div`
   display: flex;
-  text-align: center;
+  flex-direction: row;
+`;
+
+const MainContainer = styled.div`
+  width: 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
 `;
@@ -18,10 +21,12 @@ function Home() {
   return (
     <>
       <Header />
-      <SideNav />
-      <MainContainer>
-        {PageId ? <Outlet /> : "Welcome pre-onboarding"}
-      </MainContainer>
+      <ParentBody>
+        <SideNav />
+        <MainContainer>
+          {PageId ? <Outlet /> : "Welcome pre-onboarding"}
+        </MainContainer>
+      </ParentBody>
     </>
   );
 }
