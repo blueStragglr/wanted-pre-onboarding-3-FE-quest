@@ -13,4 +13,8 @@ export const Content = styled.div`
   background: #303030;
   padding: 1rem;
   border-radius: 0.75rem;
+
+  @media (prefers-color-scheme: light) {
+    background: #ebebeb;
+  }
 `;

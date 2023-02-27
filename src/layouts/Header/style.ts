@@ -9,4 +9,8 @@ export const Wrapper = styled.div`
   top: 0;
   left: 0;
   background: #303030;
+
+  @media (prefers-color-scheme: light) {
+    background: #ebebeb;
+  }
 `;
