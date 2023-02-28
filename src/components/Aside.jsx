@@ -19,7 +19,7 @@ const Page = styled(Link)`
 function Aside() {
   return (
     <Sidebar>
-      <Page to="/">Page A</Page>
+      <Page to="/pagea">Page A</Page>
       <Page to="/pageb">Page B</Page>
       <Page to="/pagec">Page C</Page>
     </Sidebar>
