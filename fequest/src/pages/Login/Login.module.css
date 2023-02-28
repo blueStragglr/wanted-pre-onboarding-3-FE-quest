@@ -1,0 +1,59 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: lightblue;
+}
+
+.logo {
+    width: 20rem;
+    margin: 2rem 0;
+}
+
+.form {
+    background-color: white;
+    width: 21rem;
+    height: 15rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+.form p {
+    font-size: 1.3rem;
+    margin: 0.3rem;
+}
+
+.form input {
+    width: 70%;
+    height: 13%;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+}
+
+.btns {
+    margin-top: 0.5rem;
+}
+
+.btns button {
+    background-color: lightblue;
+    font-size: 1rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.5rem;
+    border: 0.2rem solid lightblue;
+    color: white;
+    margin: 0 0.5rem;
+    cursor: pointer;
+}
+
+.btns button:hover {
+    background-color: white;
+    color: lightblue;
+}

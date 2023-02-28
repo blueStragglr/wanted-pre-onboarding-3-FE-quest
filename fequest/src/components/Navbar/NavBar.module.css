@@ -24,3 +24,8 @@ nav img {
 .login:hover {
     color: gray;
 }
+
+.link {
+    text-decoration: none;
+    color: black;
+}
