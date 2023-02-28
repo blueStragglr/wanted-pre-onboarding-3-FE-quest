@@ -11,7 +11,11 @@ export default function Aside() {
       <ul>
         { PageList.map((page) => {
           return (
-            <li key={`Page ${page}`} className={styles.page} onClick={() => navigate(`/Page ${page}`)}>
+            <li 
+            key={`Page ${page}`} 
+            className={styles.page} 
+            onClick={() => navigate(`/Page ${page}`)
+            }>
               Page {page}
             </li>
           )

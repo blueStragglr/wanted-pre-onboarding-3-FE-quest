@@ -1,0 +1,4 @@
+.section {
+  height: calc(100vh - 20px);
+  display: flex;
+}
