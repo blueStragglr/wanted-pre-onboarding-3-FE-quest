@@ -12,7 +12,7 @@ export default function PageItem({
   onClickPageItem,
 }: pageItemProps) {
   return (
-    <div className="page-item" data-idx={idx} onClick={onClickPageItem}>
+    <div className="page__item" data-idx={idx} onClick={onClickPageItem}>
       <h2>{title}</h2>
     </div>
   );

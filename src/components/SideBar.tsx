@@ -1,15 +1,13 @@
-import _ from 'lodash';
-import React, { HTMLAttributes, HtmlHTMLAttributes, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PageItem from './PageItem';
 
 export default function SideBar() {
   const navigate = useNavigate();
-  const [sideBarItems, setSideBarItems] = useState([
+  const sideBarItems = [
     { title: 'Page A', path: 'page-a' },
     { title: 'Page B', path: 'page-b' },
     { title: 'Page C', path: 'page-c' },
-  ]);
+  ];
 
   return (
     <div className="sidebar">

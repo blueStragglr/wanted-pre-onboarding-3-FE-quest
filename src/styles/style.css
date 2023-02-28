@@ -1,16 +1,63 @@
 :root {
   --font-color: #0b79d9;
+  --border-color: #808080;
 }
 
-.wrap {
+.wrap__login {
+  position: relative;
+  top: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 100px;
+  border: 2px solid var(--font-color);
+  border-radius: 25px;
+  width: 200px;
+  left: 70vh;
+}
+
+.wrap__auth {
+  display: inline-block;
+}
+
+.wrap__auth p {
+  margin-bottom: 5px;
+}
+
+.login__title {
+  text-align: center;
+}
+
+.input__box {
+  height: 30px;
+  width: 192px;
+}
+
+.wrap__login .submit {
+  text-align: center;
+  user-select: none;
+  padding: 1em 3em;
+  margin: 30px 0px;
 }
 
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 0 20px;
-  border-bottom: 2px solid #808080;
+  border-bottom: 2px solid var(--border-color);
 }
 
-.body {
+.login__button {
+  padding: 8px 12px;
+  border: 2px solid var(--border-color);
+  border-radius: 3px;
+  background-color: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.wrap__body {
   display: flex;
   flex-direction: row;
   height: 92vh;
@@ -18,13 +65,11 @@
 
 .sidebar {
   padding: 30px 50px;
-  border-right: 2px solid #808080;
+  border-right: 2px solid var(--border-color);
 }
 
-.page-item {
-}
-
-.page-item h2 {
+.page__item h2 {
+  cursor: pointer;
 }
 
 .contents {
@@ -38,4 +83,5 @@
 
 .contents h1 {
   color: var(--font-color);
+  cursor: default;
 }
