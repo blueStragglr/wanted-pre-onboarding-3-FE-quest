@@ -5,18 +5,24 @@ import Sidebar from './component/Sidebar';
 import PageA from './pages/PageA';
 import PageB from './pages/PageB';
 import PageC from './pages/PageC';
+import styled from 'styled-components';
+
+const Contents = styled.div`
+  display: flex;
+`
 
 function Routers() {
   return (
     <BrowserRouter>
-        <Header />
+      <Header />
+      <Contents>
         <Sidebar />
         <Switch>
-            <PageA />
-            <PageB />
-            <PageC />
+          <Route path={"/"} exact component={PageA} />
+          <Route path={"/pageB"} exact component={PageB} />
+          <Route path={"/pageC"} exact component={PageC} />
         </Switch>
-
+      </Contents>
     </BrowserRouter>
   );
 }
