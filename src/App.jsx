@@ -1,10 +1,16 @@
-function App() {
+import { Outlet } from 'react-router-dom';
+import Header from './components/Header/Header';
+import Sidebar from './components/Sidebar/Sidebar';
+import styles from './App.module.css';
 
+function App() {
   return (
-    <div>
-      <h1>Vite + React</h1>
+    <div className={styles.container}>
+      <Header />
+      <Sidebar />
+      <Outlet />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
