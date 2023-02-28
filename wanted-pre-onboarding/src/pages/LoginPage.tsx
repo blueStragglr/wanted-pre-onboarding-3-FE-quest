@@ -3,11 +3,9 @@ import styled from "styled-components";
 
 const LoginContainer = styled.div`
   width: 100%;
-  padding-top: 40vh;
+  top: 50%;
   text-align: center;
-
   padding: 1rem;
-  margin-left: 6rem;
 `;
 
 const LoginForm = styled.form`
@@ -51,13 +49,6 @@ const LoginPage: React.FC = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log(`Username: ${username}, Password: ${password}`);
-    //api를 통한 로그인
-    //isLogin boolean 변수
-    //set.cookie 를 이용해서 cookie
-    //jwt ,
-
-    //위에 설정후 홈으로 라우팅
-    //Home 으로 라우팅
   };
 
   return (

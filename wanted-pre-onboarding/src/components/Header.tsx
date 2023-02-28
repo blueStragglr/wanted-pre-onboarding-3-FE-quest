@@ -38,7 +38,7 @@ const Header: React.FC = () => {
   return (
     <HeaderWrapper>
       <Logo onClick={homeHandler}>Wanted Pre-onboarding course</Logo>
-      {/* <LoginButton to="/login">Login</LoginButton> */}
+      <LoginButton to="/login">Login</LoginButton>
     </HeaderWrapper>
   );
 };
