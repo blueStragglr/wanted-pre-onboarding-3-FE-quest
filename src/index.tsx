@@ -7,6 +7,7 @@ import Page1 from './routes/page1';
 import Page2 from './routes/page2';
 import Page3 from './routes/page3';
 import Layout from './routes/layout';
+import Login from './routes/login/login';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
         element: <Page3 />,
       },
     ],
+  },
+  {
+    path: '/login',
+    element: <Login />,
   },
 ]);
 

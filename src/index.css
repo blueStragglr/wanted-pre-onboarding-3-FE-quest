@@ -42,8 +42,26 @@ a {
   background-color: white;
   border-bottom: 1px solid gray;
   padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#header-title {
   font-weight: bold;
   font-style: italic;
+}
+
+.login-button {
+  padding: 0.5em 1em;
+  border: 1.5px solid black;
+  font-size: large;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.login-button:hover {
+  background-color: aliceblue;
 }
 
 #main {
@@ -69,7 +87,7 @@ a {
   display: block;
   width: 100%;
   padding: 0.5em;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .active {

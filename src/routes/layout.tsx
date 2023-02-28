@@ -1,9 +1,15 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 
 export default function Layout() {
+  const navigate = useNavigate();
   return (
     <>
-      <header id="header">Wanted Pre-onboarding Challenge</header>
+      <header id="header">
+        <span id="header-title">Wanted Pre-onboarding Challenge</span>
+        <button className="login-button" onClick={() => navigate('/login')}>
+          로그인
+        </button>
+      </header>
       <div id="main">
         <aside id="sidebar">
           <nav>
