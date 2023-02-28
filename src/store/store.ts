@@ -1,20 +1,33 @@
-import {configureStore, createSlice} from "@reduxjs/toolkit"
+import { configureStore, createSlice } from '@reduxjs/toolkit'
 
-export interface User {
-    id : number;
-    name : string;
+export interface Page{
+    id : number,
+    title : string
 }
 
-// const users = createSlice({
-//     name : 'users',
-//     initialState : [
-//         {id : 1, name : 'User1'},
-//         {id : 2, name : 'User2'}
-//     ],
-// })
-
+let page = createSlice({
+	name : 'page',
+  	initialState : [
+        {
+            id : 1,
+            title : "Page A"
+        },
+        {
+            id : 2,
+            title : "Page B"
+        },
+        {
+            id : 3,
+            title : "Page C"
+        }
+    ] as Page[],
+    reducers : {
+        
+    }
+})
 
 export default configureStore({
-    reducer : {
-    }
+	reducer : {
+		page : page.reducer //user 등록
+	}
 })
