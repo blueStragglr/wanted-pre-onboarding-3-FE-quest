@@ -1,9 +1,8 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import styled from "styled-components";
-import Header from "./components/header";
-import Sidebar from "./components/sidebar";
 import Home from "./pages/home";
-import { pages } from "./static/pages";
+import LoginPage from "./pages/login";
+import { useSelector } from "react-redux";
 
 const MainContainer = styled.div`
   width: 100%;
@@ -13,32 +12,12 @@ const MainContainer = styled.div`
   justify-content: center;
 `;
 
-const ContentWrapper = styled.main`
-  display: flex;
-`;
-
 function App() {
+  const isLogin = useSelector((state) => state.login.isLogin);
+
   return (
     <MainContainer>
-      <BrowserRouter>
-        <Header />
-        <ContentWrapper>
-          <Sidebar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            {pages.map((page) => (
-              <Route
-                key={page.id}
-                path={`/${page.router}`}
-                element={page.element}
-              />
-            ))}
-            {/* <Route path="/pageA" element={<PageA />} />
-          <Route path="/pageB" element={<PageB />} />
-          <Route path="/pageC" element={<PageC />} /> */}
-          </Routes>
-        </ContentWrapper>
-      </BrowserRouter>
+      <BrowserRouter>{isLogin ? <Home /> : <LoginPage />}</BrowserRouter>
     </MainContainer>
   );
 }
