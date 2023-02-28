@@ -1,20 +1,21 @@
 import React from 'react';
-import { Route } from 'react-router';
-import $ from './app.module.scss'
-import Header from './components/Header';
-import SideBar from './components/SideBar';
+import { Route, Routes } from 'react-router';
+import Layout from './Layout';
+import Main from './pages/Main';
+import PageA from './pages/PageA';
+import PageB from './pages/PageB';
+import PageC from './pages/PageC';
 
 const App = () => {
   return (
-    <div>
-      <Header />
-      <div className={$.wrapper}>
-        <SideBar />
-        <div className={$.contents}>
-          {/* <Route path='' element={} /> */}
-        </div>
-      </div>
-    </div>
+    <Routes>
+      <Route path='/' element={<Layout />}  >
+        <Route index element={<Main />} />
+        <Route path='/pageA' element={<PageA />} />
+        <Route path='/pageB' element={<PageB />} />
+        <Route path='/pageC' element={<PageC />} />
+      </Route>
+    </Routes>
   );
 }
 
