@@ -20,7 +20,7 @@ const SideBar = () => {
       <Link
         to={"/pagea"}
         css={css`
-          ${location.pathname == "/pagea" && "color: #2c49c9blue"}
+          ${location.pathname === "/pagea" && "color: #2c49c9"}
         `}
       >
         Page A
@@ -28,7 +28,7 @@ const SideBar = () => {
       <Link
         to={"/pageb"}
         css={css`
-          ${location.pathname == "/pageb" && "color: #2c49c9"}
+          ${location.pathname === "/pageb" && "color: #2c49c9"}
         `}
       >
         Page B
@@ -36,7 +36,7 @@ const SideBar = () => {
       <Link
         to={"/pagec"}
         css={css`
-          ${location.pathname == "/pagec" && "color: #2c49c9"}
+          ${location.pathname === "/pagec" && "color: #2c49c9"}
         `}
       >
         Page C
