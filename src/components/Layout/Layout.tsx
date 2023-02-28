@@ -1,21 +1,31 @@
+import { NavLink } from 'react-router-dom';
 import './Layout.css';
 
 function Layout({ children }: any) {
+  const links = [
+    { href: '/a', text: 'Page A' },
+    { href: '/b', text: 'Page B' },
+    { href: '/c', text: 'Page C' },
+  ];
+
   return (
     <>
       <header>Wanted Pre-onboarding course</header>
       <div className='center'>
         <nav>
           <ul>
-            <li>
-              <a href=''>Page A</a>
-            </li>
-            <li>
-              <a href=''>Page B</a>
-            </li>
-            <li>
-              <a href=''>Page C</a>
-            </li>
+            {links.map(({ text, href }) => (
+              <li key={text}>
+                <NavLink
+                  to={href}
+                  className={({ isActive }) =>
+                    isActive ? 'active' : undefined
+                  }
+                >
+                  {text}
+                </NavLink>
+              </li>
+            ))}
           </ul>
         </nav>
         <main>{children}</main>

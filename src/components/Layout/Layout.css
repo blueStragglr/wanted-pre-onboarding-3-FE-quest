@@ -40,6 +40,11 @@ a:visited {
   text-decoration: none;
 }
 
+a.active {
+  color: var(--text-blue);
+  font-weight: bolder;
+}
+
 main {
   display: flex;
   align-items: center;
