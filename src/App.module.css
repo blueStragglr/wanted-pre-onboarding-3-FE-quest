@@ -1,0 +1,9 @@
+.container {
+  display: grid;
+  grid-template-columns: 10% auto;
+  grid-template-rows: 15% auto;
+  grid-template-areas:
+    'header header'
+    'side page';
+  height: 100vh;
+}

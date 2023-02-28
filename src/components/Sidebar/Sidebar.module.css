@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  grid-area: side;
+  padding: 2rem;
+  border-right: 1px solid var(--color-text);
+}
+
+.container a {
+  font-size: larger;
+}
+
+.container a:focus {
+  color: rgb(140, 140, 251);
+}

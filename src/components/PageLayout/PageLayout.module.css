@@ -1,0 +1,7 @@
+.container {
+  grid-area: page;
+  margin: auto 0;
+  text-align: center;
+  font-size: 2rem;
+  color: rgb(140, 140, 251);
+}
