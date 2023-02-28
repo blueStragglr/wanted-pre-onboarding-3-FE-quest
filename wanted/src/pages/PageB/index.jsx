@@ -2,9 +2,9 @@ import React from 'react';
 
 const PageB = () => {
   return (
-    <div>
+    <section>
       This is Page B!
-    </div>
+    </section>
   );
 };
 

@@ -7,11 +7,16 @@
     margin: 10px;
     padding: 0;
     list-style: none;
+    font-weight: bold;
   }
 
   li {
     font-size: 1.6rem;
     
+    &.active {
+      color: #0f79bd; 
+    }
+
     a {
       display: block;
       padding: 10px;
