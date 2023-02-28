@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  height: inherit;
+}
+
+.others {
+  flex: 4;
+}
+#root {
+  margin: 0 auto;
+  height: 100vh;
+}
+.App {
+  height: inherit;
+}
