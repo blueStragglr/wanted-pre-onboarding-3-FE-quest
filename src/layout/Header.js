@@ -1,12 +1,18 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { logOut } from "../store/authSlice";
 
 const Header = () => {
 	const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
 	const dispatch = useDispatch();
+	const navigate = useNavigate();
+
+	const clickHandler = () => {
+		dispatch(logOut());
+		navigate("/");
+	};
 
 	return (
 		<Head>
@@ -14,7 +20,7 @@ const Header = () => {
 				Welcome!
 			</Link>
 			{isLoggedIn ? (
-				<LogButton onClick={() => dispatch(logOut())}>LogOut</LogButton>
+				<LogButton onClick={clickHandler}>LogOut</LogButton>
 			) : (
 				<Link to={"/login"}>
 					<LogButton>LogIn</LogButton>
