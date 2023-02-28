@@ -16,4 +16,4 @@
 
 ## 데모 영상
 
-<img src='./readme_src/demo.gif' alt='demo' />
+<img src='./readme_src/demo.gif' alt='demo' width=700 />
