@@ -1,0 +1,34 @@
+.signForm input {
+  display: block;
+  font-size: 24rem;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 8rem;
+  margin-bottom: 10rem;
+  width: 100%;
+}
+
+.signForm input:last-of-type {
+  margin-bottom: 0;
+}
+
+.signForm input:focus {
+  border: 1px solid deepskyblue;
+}
+
+.signForm label {
+  font-size: 20rem;
+  display: block;
+  padding-bottom: 10rem;
+}
+
+.signForm button {
+  margin-top: 20rem;
+  background: deepskyblue;
+  font-size: 24rem;
+  display: block;
+  padding: 20rem 30rem;
+  border-radius: 5px;
+  width: 100%;
+  text-align: center;
+}
