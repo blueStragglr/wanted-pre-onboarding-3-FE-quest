@@ -7,7 +7,7 @@ export default function Layout() {
       <header id="header">
         <span id="header-title">Wanted Pre-onboarding Challenge</span>
         <button className="login-button" onClick={() => navigate('/login')}>
-          로그인
+          Login
         </button>
       </header>
       <div id="main">

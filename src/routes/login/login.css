@@ -24,16 +24,16 @@
 }
 
 .login-item input {
-  width: 60%;
-  font-size: medium;
-  padding: 0.2em;
+  width: 100%;
+  font-size: large;
+  padding: 0.3em;
 }
 
 .submit-button {
-  float: right;
+  width: 100%;
   font-weight: bold;
   font-size: large;
-  padding: 0.3em 0.6em;
+  padding: 0.4em;
   border: 1px solid;
   border-radius: 5px;
   background-color: royalblue;
@@ -41,5 +41,5 @@
 }
 
 .submit-button:hover {
-  opacity: 70%;
+  opacity: 80%;
 }

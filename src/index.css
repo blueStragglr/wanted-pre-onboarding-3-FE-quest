@@ -55,9 +55,10 @@ a {
 .login-button {
   padding: 0.5em 1em;
   border: 1.5px solid black;
-  font-size: large;
-  font-weight: bold;
+  font-size: medium;
+  font-weight: normal;
   border-radius: 5px;
+  background-color: transparent;
 }
 
 .login-button:hover {

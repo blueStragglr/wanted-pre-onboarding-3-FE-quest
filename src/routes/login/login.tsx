@@ -15,30 +15,27 @@ export default function Login() {
 
   return (
     <nav id="login">
-      <h1 id="login-title">로그인</h1>
+      <h1 id="login-title">Login</h1>
       <form className="login-form" onSubmit={handleSubmit}>
         <div className="login-item">
-          <label htmlFor="login-id">아이디</label>
           <input
-            id="login-id"
             type="text"
-            placeholder="아이디를 입력 해 주세요"
+            placeholder="Username"
             value={id}
             onChange={(e) => setId(e.target.value)}
           />
         </div>
         <div className="login-item">
-          <label htmlFor="login-password">비밀번호</label>
           <input
-            id="login-password"
+            id="password"
             type="password"
-            placeholder="비밀번호를 입력 해 주세요"
+            placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
         <button className="submit-button" type="submit">
-          제출
+          submit
         </button>
       </form>
     </nav>
