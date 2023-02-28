@@ -3,23 +3,30 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
 
 const HeaderWrapper = styled.div`
-  background-color: #61dafb;
+  background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 64px;
-  padding: 0 16px;
+
+  border-bottom: 1px solid gray;
 `;
 
 const Logo = styled.h1`
-  margin: 0;
+  display: inline-block;
+  position: relative;
+  padding-left: 20px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  user-select: none;
 `;
 
 const LoginButton = styled(Link)`
   text-decoration: none;
-  color: #fff;
   font-size: 16px;
   font-weight: 500;
+  padding-right: 20px;
 `;
 
 const Header: React.FC = () => {
@@ -30,9 +37,7 @@ const Header: React.FC = () => {
 
   return (
     <HeaderWrapper>
-      <Logo onClick={homeHandler}>
-        <FaHome />
-      </Logo>
+      <Logo onClick={homeHandler}>Wanted Pre-onboarding course</Logo>
       <LoginButton to="/login">Login</LoginButton>
     </HeaderWrapper>
   );

@@ -1,22 +1,19 @@
-
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 import styled from "styled-components";
+import { Outlet } from "react-router-dom";
 
 const LayoutContainer = styled.div`
   display: flex;
 `;
-interface LayoutProps {
-  children: React.ReactNode;
-}
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout = () => {
   return (
     <>
       <Header />
       <Sidebar />
       <LayoutContainer>
-        <div style={{ marginLeft: "100px" }}>{children}</div>
+        <Outlet />
       </LayoutContainer>
     </>
   );
