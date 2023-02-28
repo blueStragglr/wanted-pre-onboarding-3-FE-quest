@@ -14,6 +14,7 @@ const Title = styled.header`
   padding: 20px;
   font-size: 1.5rem;
   font-weight: 600;
+  cursor: pointer;
 `;
 
 const Button = styled.button`
@@ -33,7 +34,9 @@ function Header() {
 
   return (
     <Top>
-      <Title>Wanted Pre-onboarding course</Title>
+      <Title onClick={() => history.push("/")}>
+        Wanted Pre-onboarding course
+      </Title>
       <Button onClick={() => history.push("/login")}>로그인</Button>
     </Top>
   );
