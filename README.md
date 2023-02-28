@@ -6,15 +6,13 @@
     
 
 ### 메인페이지  
-![image](https://user-images.githubusercontent.com/94662639/221763680-96577b6e-aef8-40c7-9540-103c0f9f4e0c.png)
+![image](https://user-images.githubusercontent.com/94662639/221827508-2a5559e4-4eec-42ff-97b8-1460e397ad13.png)
   
 - 유저 첫 접속시 보이는 Home 화면입니다.
 
 
-### 로그인 페이지  
-![image](https://user-images.githubusercontent.com/94662639/221763824-d6eb9a54-27b9-46fd-8214-17f07232016a.png)
-  
--  유저네임과 비밀번호를 받아 로그인을 수행할 수 있는 페이지입니다. 캡쳐를 위해 헤더에 이동 버튼을 임시로 만들어두었고, 후에 주석처리 했습니다.
+### 로그인 페이지  ![image](https://user-images.githubusercontent.com/94662639/221827528-d0ac5d24-dd5e-4e11-885c-c6b81ba3987a.png)  
+-  로그인 페이지입니다. (실제 작동 x) 
  
 ### 사이드바를 통한 페이지 이동  
 ![image](https://user-images.githubusercontent.com/94662639/221763862-17f433b3-1a7e-404b-8770-3a2427c1410d.png)
@@ -25,7 +23,7 @@
 ### 고민한 지점  
 
 ❓ 3개의 페이지가 고정되는 앱이 아니라, 여러 개의 페이지가 언제든 추가될 수 있다고 생각하고 프로젝트를 수행해 보세요.  
-✔ 중첩 라우팅이 되어도 상위 컴포넌트를 레이아웃화 할 수 있도록 React-router-dom의 Outlet을 이용해 레이아웃을 구현했습니다.  
+✔ 중첩 라우팅이 되어도 상위 컴포넌트를 레이아웃화 할 수 있도록 React-router-dom의 Outlet을 이용해 레이아웃을 구현했습니다. 
   
 
 ❓ 만들어진 페이지별로 로그인 여부를 판단하고자 한다면 어떻게 구조를 확장해야할지 고민해 보세요.  
