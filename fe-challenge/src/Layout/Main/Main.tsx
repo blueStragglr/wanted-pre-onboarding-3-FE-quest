@@ -6,9 +6,12 @@ const Main = ({ children }: PropsWithChildren) => {
   return (
     <main
       css={css`
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 100%;
         height: calc(100vh - 30px);
-        color: aquamarine;
+        color: #2c49c9;
       `}
     >
       {children}

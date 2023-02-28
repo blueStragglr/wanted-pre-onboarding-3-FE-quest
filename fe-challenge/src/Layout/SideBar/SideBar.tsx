@@ -15,15 +15,12 @@ const SideBar = () => {
         height: calc(100vh - 30px);
         padding: 20px;
         border-right: 1px solid #000000;
-        background-color: aliceblue;
       `}
     >
       <Link
         to={"/pagea"}
         css={css`
-          padding: 15px 50px;
-          border: 1px solid blueviolet;
-          ${location.pathname == "/pagea" && "background-color: pink"}
+          ${location.pathname == "/pagea" && "color: #2c49c9blue"}
         `}
       >
         Page A
@@ -31,9 +28,7 @@ const SideBar = () => {
       <Link
         to={"/pageb"}
         css={css`
-          padding: 15px 50px;
-          border: 1px solid blueviolet;
-          ${location.pathname == "/pageb" && "background-color: pink"}
+          ${location.pathname == "/pageb" && "color: #2c49c9"}
         `}
       >
         Page B
@@ -41,9 +36,7 @@ const SideBar = () => {
       <Link
         to={"/pagec"}
         css={css`
-          padding: 15px 50px;
-          border: 1px solid blueviolet;
-          ${location.pathname == "/pagec" && "background-color: pink"}
+          ${location.pathname == "/pagec" && "color: #2c49c9"}
         `}
       >
         Page C

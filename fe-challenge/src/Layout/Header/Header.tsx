@@ -8,8 +8,7 @@ const Header = () => {
         width: auto;
         height: 30px;
         border-bottom: 1px solid #000000;
-        color: pink;
-        background-color: aliceblue;
+        color: #2c49c9;
       `}
     >
       <h1
