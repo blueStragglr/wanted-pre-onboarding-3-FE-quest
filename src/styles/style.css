@@ -1,0 +1,102 @@
+:root {
+  --font-color: #0b79d9;
+  --border-color: #808080;
+}
+.container__login {
+  background-color: var(--font-color);
+  height: 100vh;
+}
+.wrap__login {
+  position: relative;
+  top: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 100px;
+  border: 2px solid white;
+  border-radius: 25px;
+  width: 200px;
+  left: 70vh;
+  box-shadow: 5px 5px 10px;
+  background-color: white;
+}
+
+.wrap__auth {
+  display: inline-block;
+}
+
+.wrap__auth p {
+  margin-bottom: 5px;
+}
+
+.login__title {
+  text-align: center;
+}
+
+.input__box {
+  height: 30px;
+  width: 192px;
+}
+
+.wrap__login .submit {
+  text-align: center;
+  user-select: none;
+  padding: 0.8em 3em;
+  margin: 30px 0px;
+  background-color: var(--font-color);
+  border: 1px solid var(--font-color);
+  border-radius: 3px;
+  font-size: 15px;
+  color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: 2px solid var(--border-color);
+  font-style: italic;
+}
+
+.login__button {
+  padding: 8px 12px;
+  border: 2px solid var(--border-color);
+  border-radius: 3px;
+  background-color: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.wrap__body {
+  display: flex;
+  flex-direction: row;
+  height: 92vh;
+}
+
+.sidebar {
+  padding: 30px 50px;
+  border-right: 2px solid var(--border-color);
+}
+
+.sidebar .clicked h2 {
+  color: var(--font-color);
+}
+
+.page__item h2 {
+  cursor: pointer;
+}
+
+.contents {
+  text-align: center;
+  margin: auto;
+}
+
+.contents h1 {
+  font-size: 100px;
+}
+
+.contents h1 {
+  color: var(--font-color);
+  cursor: default;
+}
