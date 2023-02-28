@@ -1,0 +1,16 @@
+.aside {
+  position: relative;
+  width: 200px;
+  border-right: 2px solid black;
+}
+
+.aside ul {
+  width: 200px;
+}
+
+.aside .page {
+  width: 100%;
+  text-align: end;
+  padding: 0.8rem 2rem;
+  cursor: pointer;
+}

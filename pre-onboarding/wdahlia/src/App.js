@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
+import Root from './components/Root/Root';
 import { LoginProvider } from './context/LoginContext';
 
 // react router 사용해서 CSR 구현
@@ -8,6 +9,7 @@ import { LoginProvider } from './context/LoginContext';
 
 const router = createBrowserRouter([{
   path: '/', // 기본 path 설정
+  element: <Root />,
 }]);
 
 function App() {

@@ -1,0 +1,12 @@
+.nav {
+  display: table;
+  height: 50px;
+  border-bottom: 2px solid black;
+}
+
+.nav .title {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 1rem;
+  padding: 0 1.3rem;
+}
