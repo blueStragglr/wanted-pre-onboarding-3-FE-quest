@@ -1,0 +1,11 @@
+
+.menuName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+.menuName >a{
+  text-decoration:none;
+}
