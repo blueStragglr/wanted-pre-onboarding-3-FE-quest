@@ -1,0 +1,23 @@
+:root {
+  --color-text: whitesmoke;
+  --color-bg: rgba(0, 0, 0, 0.823);
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  color: var(--color-text);
+}
+
+body {
+  background-color: var(--color-bg);
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+a {
+  text-decoration: none;
+}

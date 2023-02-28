@@ -1,0 +1,5 @@
+.container {
+  grid-area: header;
+  padding: 2rem;
+  border-bottom: 1px solid rgb(243, 243, 243);
+}
