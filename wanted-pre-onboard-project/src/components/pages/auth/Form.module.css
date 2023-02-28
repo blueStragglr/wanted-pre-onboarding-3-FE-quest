@@ -1,0 +1,20 @@
+.wrapper {
+  background-color: #fff;
+  width: 400px;
+  height: 250px;
+  padding: 10px 0;
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25%;
+}
+
+input[type="submit"] {
+  background-color: #ff0045;
+  height: 40px;
+  width: 100px;
+  color: #fff;
+}
