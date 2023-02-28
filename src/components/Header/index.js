@@ -3,7 +3,7 @@ import styles from "./Header.module.css";
 const Header = () => {
   return (
     <header>
-      <p>Wanted Pre-onboarding course</p>
+      <h4>Wanted Pre-onboarding course</h4>
       <hr />
     </header>
   );
