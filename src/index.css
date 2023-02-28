@@ -23,6 +23,11 @@ li {
   list-style-type: none;
 }
 
+a {
+  color: black;
+  text-decoration: none;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -55,13 +60,25 @@ li {
 }
 
 .sidebar-link {
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
   font-weight: 500;
+  width: 100%;
 }
 
 .sidebar-link a {
-  color: black;
-  text-decoration: none;
+  display: block;
+  width: 100%;
+  padding: 0.5em;
+  border-radius: 10px;
+}
+
+.active {
+  background-color: royalblue;
+  color: white;
+}
+
+.pending {
+  background-color: lightgray;
 }
 
 #detail {

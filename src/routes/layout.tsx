@@ -1,4 +1,4 @@
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 
 export default function Layout() {
   return (
@@ -9,13 +9,13 @@ export default function Layout() {
           <nav>
             <ul>
               <li className="sidebar-link">
-                <Link to={`/page1`}>Page 1</Link>
+                <NavLink to={`/page1`}>Page 1</NavLink>
               </li>
               <li className="sidebar-link">
-                <Link to={`/page2`}>Page 2</Link>
+                <NavLink to={`/page2`}>Page 2</NavLink>
               </li>
               <li className="sidebar-link">
-                <Link to={`/page3`}>Page 3</Link>
+                <NavLink to={`/page3`}>Page 3</NavLink>
               </li>
             </ul>
           </nav>
