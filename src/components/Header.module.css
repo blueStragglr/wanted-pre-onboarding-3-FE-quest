@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  border-bottom: 1px solid;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  padding-left: 2rem;
+  font-size: 1.5rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.title:hover {
+  color: inherit;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.userName {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.signButton {
+  margin: 0 1rem;
+  font-size: 0.8rem;
+}
