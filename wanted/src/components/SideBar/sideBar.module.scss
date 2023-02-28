@@ -1,0 +1,21 @@
+.side_bar {
+  width: 200px;
+  height: 100%;
+  border-right: 1px solid black;
+
+  ul {
+    margin: 10px;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    font-size: 1.6rem;
+    
+    a {
+      display: block;
+      padding: 10px;
+      width: 100%;
+    }
+  }
+}

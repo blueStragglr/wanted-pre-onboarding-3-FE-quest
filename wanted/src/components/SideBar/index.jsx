@@ -1,12 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import $ from './sideBar.module.scss'
 
 const SideBar = () => {
+  const CONSTANTS = ["A", "B", "C"]
   return (
-    <article>
+    <article className={$.side_bar}>
       <ul>
         {
-          Array(3).fill().map()
+          CONSTANTS.map((page) => {
+            return  <li><Link>{`Page ${page}`}</Link></li>
+          })
         }
       </ul>
     </article>
