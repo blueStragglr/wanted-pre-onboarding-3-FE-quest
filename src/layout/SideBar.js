@@ -14,14 +14,12 @@ const SideBar = () => {
 };
 
 const Side = styled.div`
-	position: fixed;
-	top: 50px;
-	left: 0;
-	height: 100%;
-	width: 200px;
+	grid-area: sidebar;
+	height: 100vh;
 	border-right: 2px solid #eee;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	a {
 		position: relative;
 		top: 20px;
