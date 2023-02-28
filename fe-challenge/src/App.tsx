@@ -3,6 +3,7 @@ import Mainlayout from "./Layout/MainLayout/MainLayout";
 import PageA from "./Pages/PageA";
 import PageB from "./Pages/PageB";
 import PageC from "./Pages/PageC";
+import Login from "./Pages/Login/Login";
 import reset from "./Style/style";
 import { Global } from "@emotion/react";
 
@@ -12,6 +13,7 @@ function App() {
       <Global styles={reset} />
       <BrowserRouter>
         <Routes>
+          <Route path="/login" element={<Login />} />
           <Route element={<Mainlayout />}>
             <Route path={"/"} element={<PageA />} />
             <Route path={"/pagea"} element={<PageA />} />
