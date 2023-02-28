@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './Layout.css';
 
 function Layout({ children }: any) {
@@ -10,7 +10,12 @@ function Layout({ children }: any) {
 
   return (
     <>
-      <header>Wanted Pre-onboarding course</header>
+      <header>
+        Wanted Pre-onboarding course
+        <span className='login'>
+          <Link to='/login'>login</Link>
+        </span>
+      </header>
       <div className='center'>
         <nav>
           <ul>

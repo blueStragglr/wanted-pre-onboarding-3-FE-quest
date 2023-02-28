@@ -1,11 +1,17 @@
 header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 108px;
   padding: 0 42px;
   border-bottom: 1px solid #000;
   font-weight: bold;
   font-size: x-large;
+}
+
+.login {
+  font-weight: 400;
+  font-size: large;
 }
 
 .center {
