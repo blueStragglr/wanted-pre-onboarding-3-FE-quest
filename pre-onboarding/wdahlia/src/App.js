@@ -1,7 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Root from './components/Root/Root';
-import Home from './pages/Home/Home';
 import Content from './pages/Content/Content';
 import { LoginProvider } from './context/LoginContext';
 
@@ -13,7 +12,7 @@ const router = createBrowserRouter([{
   path: '/', // 기본 path 설정
   element: <Root />,
   children: [
-    { index: true, element: <Home /> },
+    { index: true, element: <Content /> },
     { path: '/:tabId', element: <Content /> },
   ]
 }]);
