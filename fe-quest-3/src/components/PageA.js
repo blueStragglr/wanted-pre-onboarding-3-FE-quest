@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import Utils from '../common/Utils';
+import Utils from '../common/libs/Utils';
 
 const PageA = () => {
     const location = useLocation().search;
