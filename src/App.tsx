@@ -35,11 +35,11 @@ const App = () => {
           path: "signin",
           element: isAuth ? <Navigate to="/a" /> : <SigninPage />,
         },
-        {
-          path: "*",
-          element: <NotFound />,
-        },
       ],
+    },
+    {
+      path: "*",
+      element: <NotFound />,
     },
   ]);
 

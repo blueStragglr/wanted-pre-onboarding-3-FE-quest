@@ -12,11 +12,11 @@ const AuthForm = () => {
     e.preventDefault();
 
     if (emailRef.current && passwordRef.current) {
-      if (emailRef.current.value === "") {
+      if (emailRef.current.value.trim() === "") {
         return;
       }
 
-      if (passwordRef.current.value === "") {
+      if (passwordRef.current.value.trim() === "") {
         return;
       }
 

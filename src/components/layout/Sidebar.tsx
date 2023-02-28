@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
 
 const routes = [
-  { to: "a", name: "Page A" },
-  { to: "b", name: "Page B" },
-  { to: "c", name: "Page C" },
+  { to: "/a", name: "Page A" },
+  { to: "/b", name: "Page B" },
+  { to: "/c", name: "Page C" },
 ];
 
 const Sidebar = () => {

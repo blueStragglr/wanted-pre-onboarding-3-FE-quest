@@ -13,6 +13,7 @@ npm run dev
 ```
 
 <br>
+<br>
 
 ## 디렉토리 구조
 
@@ -46,6 +47,7 @@ src
 ```
 
 <br>
+<br>
 
 ## 사용된 라이브러리
 
@@ -55,6 +57,18 @@ src
 <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=Vite&logoColor=white" />
 <img src="https://img.shields.io/badge/Tailwind CSS-06B6D4?style=for-the-badge&logo=Tailwind CSS&logoColor=white">
 
+<br>
+<br>
+
+## 중점
+
+---
+
+- localStorage에 로그인 정보를 저장 후 로그인 판별 여부 식별
+- 공통적으로 사용되는 컴포넌트 생성 후 관리
+- 타입스크립트를 이용한 디버깅
+
+<br>
 <br>
 
 ## Commit Convention
