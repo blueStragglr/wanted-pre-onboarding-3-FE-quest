@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Layout = styled.div`
   display: flex;
@@ -35,18 +35,31 @@ export const Input = styled.input`
   box-sizing: border-box;
 `;
 
-export const LoginButton = styled.button`
+interface LoginButtonProps {
+  isActive: boolean;
+}
+
+export const LoginButton = styled.button<LoginButtonProps>`
   font-size: 14px;
   width: 250px;
   padding: 10px;
   margin: 10px 0 0 0;
   border: none;
   border-radius: 4px;
-  color: #383838;
-  background-color: #76d7c4;
-  transition-duration: 0.2s;
 
-  :hover {
-    background-color: #48c9b0;
-  }
+  ${({ isActive }) =>
+    isActive
+      ? css`
+          background-color: #76d7c4;
+          color: #383838;
+          transition-duration: 0.2s;
+
+          :hover {
+            background-color: #48c9b0;
+          }
+        `
+      : css`
+          background-color: #cfcfcf;
+          color: #868686;
+        `}
 `;
