@@ -4,6 +4,16 @@ import reset from "reset-css";
 const GlobalStyle = createGlobalStyle`
   ${reset}
 
+  html, body {
+    height: 100%;
+  }
+
+  #root {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
   button {
     margin: 0;
     border: 0;
