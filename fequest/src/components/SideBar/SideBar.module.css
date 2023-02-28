@@ -5,11 +5,15 @@
 }
 
 .ul li {
-    margin: 1.7rem 0;
-    cursor: pointer;
+    margin: 1.5rem 0;
 }
 
-.ul li:hover {
-    color: lightcoral;
+.link {
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
 
+.link:hover, .link:focus {
+    color: lightcoral;
 }
