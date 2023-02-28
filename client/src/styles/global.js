@@ -35,4 +35,11 @@ export const GlobalStyle = createGlobalStyle`
     border: none;
     cursor: pointer;
   }
+
+  input {
+    border: 1px solid lightgray;
+    :focus {
+      outline: none;
+    }
+  }
 `;

@@ -32,25 +32,14 @@ const ListStyle = styled.li`
 `;
 
 const Sidebar = () => {
-  const arrExceptForHomepages = pages.slice(1);
-
   return (
     <SidebarWrapper>
       <ListWrapper>
-        {arrExceptForHomepages.map((page) => (
+        {pages.map((page) => (
           <ListStyle key={page.id}>
             <Link to={`/${page.router}`}>{page.name}</Link>
           </ListStyle>
         ))}
-        {/* <Link to="/pageA">
-          <li>PageA</li>
-        </Link>
-        <Link to="/pageB">
-          <li>PageB</li>
-        </Link>
-        <Link to="/pageC">
-          <li>PageC</li>
-        </Link> */}
       </ListWrapper>
     </SidebarWrapper>
   );
