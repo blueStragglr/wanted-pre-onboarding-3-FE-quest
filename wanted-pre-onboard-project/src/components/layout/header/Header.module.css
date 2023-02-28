@@ -1,3 +1,22 @@
 .wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
   border-bottom: 1px solid rgba(0,0,1,0.3);
+}
+
+.signBtn {
+  display: flex;
+  align-items: center;
+}
+
+.signIn {
+  padding: 0 12px;
+  width: 100px;
+  height: 35px; 
+  background-color: #ff0045;
+  border:none;
+  border-radius: 5px;
+  color: #ffffff; 
+  cursor: pointer;
 }
