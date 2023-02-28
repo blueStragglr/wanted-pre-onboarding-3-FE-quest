@@ -1,0 +1,34 @@
+.SignContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.SignContainer .signFormWraper {
+  width: 500rem;
+}
+
+.SignContainer .signFormWraper p {
+  text-align: center;
+  font-size: 16rem;
+  text-decoration: underline;
+  padding-bottom: 20rem;
+}
+
+.SignContainer .signFormWraper p span {
+  cursor: pointer;
+}
+.SignContainer .signFormWraper .title {
+  padding-bottom: 20rem;
+  font-size: 40rem;
+  text-align: center;
+}
+
+.SignContainer .homeButton {
+  text-align: left;
+  font-size: 16rem;
+  text-decoration: underline;
+  padding-top: 10rem;
+}

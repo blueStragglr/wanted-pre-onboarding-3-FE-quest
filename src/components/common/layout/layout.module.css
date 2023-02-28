@@ -1,0 +1,19 @@
+.layout {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 107px);
+}
+
+.layout aside {
+  border-right: 1px solid #333;
+  padding: 30rem;
+  width: 200rem;
+}
+
+.layout section {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 32rem;
+}

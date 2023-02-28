@@ -1,0 +1,9 @@
+.gnb .menu {
+  font-size: 18rem;
+  padding-bottom: 14rem;
+  cursor: pointer;
+}
+
+.gnb .active {
+  color: deepskyblue;
+}
