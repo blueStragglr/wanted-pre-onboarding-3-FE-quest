@@ -16,4 +16,4 @@
 
 ## 데모 영상
 
-<img src='./readme_src/demo.gif' alt='demo' width=700 />
+<img src='https://user-images.githubusercontent.com/29790944/221876080-5ab68038-4890-483e-b610-3464d1e00e7d.gif' alt='demo' width=700 />
