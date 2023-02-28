@@ -13,9 +13,13 @@
   li {
     font-size: 1.6rem;
     
+    &:hover {
+      color: #999;
+    }
+
     &.active {
       color: #0f79bd; 
-    }
+    }    
 
     a {
       display: block;
