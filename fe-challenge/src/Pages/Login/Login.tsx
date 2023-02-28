@@ -1,7 +1,12 @@
 /** @jsxImportSource @emotion/react */
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { css } from "@emotion/react";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
   return (
     <section
       css={css`
@@ -28,6 +33,12 @@ const Login = () => {
           flex-direction: column;
           gap: 30px;
         `}
+        onSubmit={(e) => {
+          e.preventDefault();
+          console.log(email, password);
+          localStorage.setItem("email", email);
+          navigate("/");
+        }}
       >
         <div
           css={css`
@@ -37,7 +48,15 @@ const Login = () => {
           `}
         >
           <label htmlFor="email">Email</label>
-          <input type="email" id="email" placeholder="email" />
+          <input
+            type="email"
+            id="email"
+            placeholder="email"
+            value={email}
+            onChange={({ target }) =>
+              setEmail((target as HTMLInputElement).value)
+            }
+          />
         </div>
         <div
           css={css`
@@ -47,7 +66,15 @@ const Login = () => {
           `}
         >
           <label htmlFor="password">Password</label>
-          <input type="password" id="password" placeholder="password" />
+          <input
+            type="password"
+            id="password"
+            placeholder="password"
+            value={password}
+            onChange={({ target }) =>
+              setPassword((target as HTMLInputElement).value)
+            }
+          />
         </div>
         <button type="submit">login</button>
       </form>
