@@ -1,0 +1,31 @@
+nav {
+    display: flex;
+    margin: 1rem 4rem 1rem 1rem;
+    padding: 0.3rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img {
+    width: 10rem;
+}
+
+.title {
+    font-size: 1.3rem;
+    letter-spacing: 0.1rem;
+}
+
+.login {
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+}
+
+.login:hover {
+    color: gray;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}

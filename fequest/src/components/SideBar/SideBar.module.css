@@ -1,0 +1,19 @@
+.ul {
+    margin: 1.3rem;
+    list-style: none;
+    font-size: 1.7rem;
+}
+
+.ul li {
+    margin: 1.5rem 0;
+}
+
+.link {
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+.link:hover, .link:focus {
+    color: lightcoral;
+}

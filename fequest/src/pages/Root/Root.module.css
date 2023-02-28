@@ -1,0 +1,18 @@
+.navbar {
+    border-bottom: 0.2rem solid lightblue;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 15%;
+    border-right: 0.2rem solid lightblue;
+    text-align: center;
+}
+
+.outlet {
+    width: 80%;
+}
