@@ -5,7 +5,9 @@ export default function Layout() {
   return (
     <>
       <header id="header">
-        <span id="header-title">Wanted Pre-onboarding Challenge</span>
+        <span id="header-title" onClick={() => navigate('/')}>
+          Wanted Pre-onboarding Challenge
+        </span>
         <button className="login-button" onClick={() => navigate('/login')}>
           Login
         </button>

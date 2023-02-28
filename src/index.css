@@ -48,8 +48,10 @@ a {
 }
 
 #header-title {
+  color: royalblue;
   font-weight: bold;
   font-style: italic;
+  cursor: pointer;
 }
 
 .login-button {
@@ -62,7 +64,8 @@ a {
 }
 
 .login-button:hover {
-  background-color: aliceblue;
+  color: royalblue;
+  border-color: royalblue;
 }
 
 #main {

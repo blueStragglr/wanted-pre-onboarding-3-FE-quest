@@ -8,6 +8,7 @@ import Page2 from './routes/page2';
 import Page3 from './routes/page3';
 import Layout from './routes/common/layout';
 import Login from './routes/login/login';
+import Main from './routes/common/main';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
     element: <Layout />,
     errorElement: <ErrorPage />,
     children: [
+      {
+        path: '/',
+        element: <Main />,
+      },
       {
         path: 'page1',
         element: <Page1 />,
