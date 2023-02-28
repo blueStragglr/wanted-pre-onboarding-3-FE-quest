@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from '../../components/Navbar/NavBar';
 import SideBar from '../../components/SideBar/SideBar';
+import { Outlet } from 'react-router-dom';
 import styles from './Root.module.css'
 
 export default function Root() {
@@ -9,8 +10,9 @@ export default function Root() {
             <div className={styles.navbar}>
                 <NavBar />
             </div>
-            <div>
-                <SideBar />
+            <div className={styles.container}>
+                <div className={styles.sidebar}><SideBar /></div>
+                <div className={styles.outlet}><Outlet /></div>
             </div>
         </div>
     );

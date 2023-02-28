@@ -1,0 +1,13 @@
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    font-size: 4rem;
+}
+
+.page span {
+    color: lightcoral;
+    font-size: 4.5rem;
+    margin: 0 0.5rem;
+}
