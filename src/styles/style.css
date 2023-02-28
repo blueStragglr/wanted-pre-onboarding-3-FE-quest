@@ -2,7 +2,10 @@
   --font-color: #0b79d9;
   --border-color: #808080;
 }
-
+.container__login {
+  background-color: var(--font-color);
+  height: 100vh;
+}
 .wrap__login {
   position: relative;
   top: 30vh;
@@ -10,10 +13,12 @@
   flex-direction: column;
   justify-content: center;
   padding: 20px 100px;
-  border: 2px solid var(--font-color);
+  border: 2px solid white;
   border-radius: 25px;
   width: 200px;
   left: 70vh;
+  box-shadow: 5px 5px 10px;
+  background-color: white;
 }
 
 .wrap__auth {
@@ -36,8 +41,13 @@
 .wrap__login .submit {
   text-align: center;
   user-select: none;
-  padding: 1em 3em;
+  padding: 0.8em 3em;
   margin: 30px 0px;
+  background-color: var(--font-color);
+  border: 1px solid var(--font-color);
+  border-radius: 3px;
+  font-size: 15px;
+  color: white;
 }
 
 .header {
@@ -46,6 +56,7 @@
   align-items: center;
   padding: 0 20px;
   border-bottom: 2px solid var(--border-color);
+  font-style: italic;
 }
 
 .login__button {
@@ -66,6 +77,10 @@
 .sidebar {
   padding: 30px 50px;
   border-right: 2px solid var(--border-color);
+}
+
+.sidebar .clicked h2 {
+  color: var(--font-color);
 }
 
 .page__item h2 {

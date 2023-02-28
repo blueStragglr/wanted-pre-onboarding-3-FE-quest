@@ -21,21 +21,23 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="wrap__login">
-      <div className="login__title">
-        <h1>WELCOME</h1>
+    <div className="container__login">
+      <div className="wrap__login">
+        <div className="login__title">
+          <h1>WELCOME</h1>
+        </div>
+        <div className="wrap__auth">
+          <p>ID</p>
+          <input type="text" className="input__box" ref={idRef} />
+        </div>
+        <div className="wrap__auth">
+          <p>PASSWORD</p>
+          <input type="password" className="input__box" ref={pwRef} />
+        </div>
+        <button className="submit" onClick={onClickSubmit}>
+          LOGIN
+        </button>
       </div>
-      <div className="wrap__auth">
-        <p>ID</p>
-        <input type="text" className="input__box" ref={idRef} />
-      </div>
-      <div className="wrap__auth">
-        <p>PASSWORD</p>
-        <input type="password" className="input__box" ref={pwRef} />
-      </div>
-      <button className="submit" onClick={onClickSubmit}>
-        LOGIN
-      </button>
     </div>
   );
 }
