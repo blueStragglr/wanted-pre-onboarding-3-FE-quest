@@ -1,7 +1,8 @@
 /** @jsxImportSource @emotion/react */
+import { PropsWithChildren } from "react";
 import { css } from "@emotion/react";
 
-const Main = () => {
+const Main = ({ children }: PropsWithChildren) => {
   return (
     <main
       css={css`
@@ -10,7 +11,7 @@ const Main = () => {
         color: aquamarine;
       `}
     >
-      this is main
+      {children}
     </main>
   );
 };
