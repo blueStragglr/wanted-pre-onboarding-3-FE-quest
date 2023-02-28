@@ -8,10 +8,17 @@ const GlobalStyles = createGlobalStyle`
   * {
     --color-primary: #101A2F;
     --color-point: #BAF992;
+    --color-point-dark: #408A11;
     --color-light: #EFFFE4;
     --color-white: #FFFFFF;
     --color-blue: #7588B1;
-    --width-inner: 80%;
+    .page {
+      color: var(--color-point);
+      width: 100%;
+      background-color: var(--color-white);
+      border-radius: 20px;
+      position: relative;
+    }
   }
 
   body {
