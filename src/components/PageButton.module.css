@@ -1,0 +1,12 @@
+.buttonLayout {
+  background-color: white;
+  height: 40px;
+  border: 0;
+}
+.buttonLayout:hover {
+  cursor: pointer;
+  color: blue;
+}
+
+.buttonLayout:after {
+}
