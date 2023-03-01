@@ -13,6 +13,7 @@ const PAGE_PATH = {
 
 const ROUTES = [
   {
+    name: "A",
     path: PAGE_PATH.A,
     element: (
       <Template>
@@ -21,6 +22,7 @@ const ROUTES = [
     ),
   },
   {
+    name: "B",
     path: PAGE_PATH.B,
     element: (
       <Template>
@@ -29,6 +31,7 @@ const ROUTES = [
     ),
   },
   {
+    name: "C",
     path: PAGE_PATH.C,
     element: (
       <Template>
@@ -37,6 +40,7 @@ const ROUTES = [
     ),
   },
   {
+    name: "Login",
     path: PAGE_PATH.LOGIN,
     element: <Login />,
   },

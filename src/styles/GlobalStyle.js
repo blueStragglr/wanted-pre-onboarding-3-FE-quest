@@ -4,6 +4,10 @@ import reset from "reset-css";
 const GlobalStyle = createGlobalStyle`
   ${reset}
 
+  * {
+    box-sizing: border-box;
+  }
+
   html, body {
     height: 100%;
   }
