@@ -1,13 +1,28 @@
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import './App.css';
-import DrawNav from './layout/DrawNav';
-import Header from './layout/Header';
+import Home from './components/Home/Home';
+import Contents from './components/layout/Contents';
+import DrawNav from './components/layout/DrawNav';
+import Header from './components/layout/Header';
+import Login from './components/Login/Login';
+
 
 function App() {
   return (
+    <BrowserRouter >
     <div className="App font-sans flex flex-col w-full h-screen">
       <Header />
+      <div className="App font-sans flex flex-row w-full h-screen">
       <DrawNav />
-    </div>
+      <Contents>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="login/*" element={<Login />} />
+        </Routes>
+        </Contents>
+        </div>
+      </div>
+    </BrowserRouter>
   );
 }
 
