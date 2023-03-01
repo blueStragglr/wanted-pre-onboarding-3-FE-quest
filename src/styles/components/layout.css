@@ -1,0 +1,9 @@
+.content {
+  display: flex;
+  min-height: calc(100vh - 3rem - 0.5px);
+}
+
+.page_container {
+  width: 100%;
+  height: inherit;
+}

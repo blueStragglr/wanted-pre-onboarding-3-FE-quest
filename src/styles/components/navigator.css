@@ -1,0 +1,15 @@
+.navigator {
+  width: 20vw;
+  min-width: max-content;
+  max-width: 200px;
+  border-right: 0.5px solid gray;
+}
+
+.nav_item {
+  padding: 1.5rem 1rem;
+  font-weight: bold;
+}
+
+.nav_selected {
+  color: darkcyan;
+}

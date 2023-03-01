@@ -1,0 +1,74 @@
+.login {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login_title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.login_form {
+  min-width: max-content;
+  width: 40vw;
+  max-width: 800px;
+  min-width: 180px;
+}
+
+.login_input_container {
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+.login_input_container:nth-child(2) {
+  margin-top: 1rem;
+}
+
+.login_input_label {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.login_input_input {
+  width: 100%;
+  min-width: 180px;
+  box-sizing: border-box;
+  padding: 0.75rem 1rem;
+  border: 1px solid lightgray;
+  border-radius: 2px;
+  transition: 0.2s ease-in-out;
+}
+
+.login_input_input:focus,
+.login_input_input:not(:placeholder-shown) {
+  border: 1px solid darkcyan;
+}
+
+.login_button {
+  width: 100%;
+  min-width: inherit;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+  transition: 0.2s ease-in-out;
+  border-radius: 2px;
+}
+
+.active_button {
+  background-color: darkcyan;
+}
+
+.disabled_button {
+  background-color: lightgray;
+}
