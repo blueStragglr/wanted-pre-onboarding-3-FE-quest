@@ -2,10 +2,8 @@ import React from "react"
 
 function Header() {
   return (
-    <header
-      style={{ padding: "10px 20px", borderBottom: "2px solid salmon", marginBottom: "10px" }}
-    >
-      HEADER
+    <header className="py-2 px-4 border-b border-sky-500">
+      <h1>Wanted Pre-onboarding course</h1>
     </header>
   )
 }
