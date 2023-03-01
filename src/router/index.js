@@ -24,15 +24,15 @@ const routes = [
         element: <PageA />,
       },
       {
-        path: PATH_ROUTE.pagea,
+        path: PATH_ROUTE.pageA,
         element: <PageA />,
       },
       {
-        path: PATH_ROUTE.pageb,
+        path: PATH_ROUTE.pageB,
         element: <PageB />,
       },
       {
-        path: PATH_ROUTE.pagec,
+        path: PATH_ROUTE.pageC,
         element: <PageC />,
       },
     ],
