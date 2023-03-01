@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply m-0;
+    font-family: 'Pretendard Variable', Pretendard, -apple-system,
+      BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI',
+      'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic',
+      'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  }
+
+  body {
+    @apply w-full min-h-screen;
+  }
+}
+
+@layer components {
+  .button-blue {
+    @apply bg-blue-600 text-white hover:bg-blue-700;
+    @apply focus:outline-none focus:ring-2 focus:ring-blue-300;
+    @apply disabled:bg-blue-600/50;
+  }
+
+  .floating-input {
+    @apply block py-2.5 px-0 w-full text-sm border-0 border-b-2 appearance-none;
+    @apply bg-transparent text-gray-900 border-gray-300 focus:outline-none focus:ring-0 focus:border-blue-600;
+  }
+  .floating-label {
+    @apply absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0];
+    @apply peer-focus:font-medium peer-focus:left-0 peer-focus:text-blue-600 peer-focus:scale-75 peer-focus:-translate-y-6 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0;
+  }
+}
+
+@layer utilities {
+  .max-w-8xl {
+    max-width: 90rem;
+  }
+}
