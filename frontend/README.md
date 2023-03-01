@@ -12,4 +12,6 @@
 
 ### 구현 결과
 
-<img src="https://ifh.cc/g/yB7B9g.png", height="500px", width="100%">
+<div>
+    <img src="https://ifh.cc/g/yB7B9g.png", height="500px", width="100%">
+</div>
