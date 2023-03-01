@@ -1,9 +1,20 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { logout } from '../app/authSlice';
 
 type Props = {};
 
 const Header = (props: Props) => {
-  return <div>Header</div>;
+  const isLogin = useSelector((state: any) => state.auth.id);
+  const dispatch = useDispatch();
+  return (
+    <header>
+      Wanted Pre-OnBoarding Course
+      {isLogin ? (
+        <button onClick={() => dispatch(logout())}>logout</button>
+      ) : null}
+    </header>
+  );
 };
 
 export default Header;

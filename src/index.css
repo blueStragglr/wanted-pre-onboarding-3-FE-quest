@@ -1,0 +1,36 @@
+.app {
+  display: grid;
+  grid-template-rows: 10% auto;
+  grid-template-columns: 10% auto;
+  grid-template-areas:
+    'header header'
+    'sidebar main'
+    'sidebar main';
+}
+
+header {
+  grid-area: header;
+  margin: auto 0;
+}
+
+aside {
+  grid-area: sidebar;
+  height: 100vh;
+  border-right: solid 1px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+
+.move-page {
+  cursor: pointer;
+}
+
+.move-page:hover {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.container {
+  grid-area: main;
+}
