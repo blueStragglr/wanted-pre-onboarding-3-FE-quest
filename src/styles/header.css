@@ -1,0 +1,8 @@
+.header {
+  padding: 1rem 1.5rem;
+  border-bottom: 0.5px solid gray;
+}
+
+.header_title {
+  font-style: italic;
+}

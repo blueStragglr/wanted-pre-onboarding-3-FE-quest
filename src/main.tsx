@@ -1,9 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App from "./App";
 import { Layout } from "./components/layout";
-import "./index.css";
+import "./styles/index.css";
 import { NotFound } from "./pages/404";
 import { Page1 } from "./pages/page1";
 import { Page2 } from "./pages/page2";
@@ -35,7 +34,6 @@ const router = createBrowserRouter(routerList);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    {/* <App /> */}
     <RouterProvider router={router} />
   </React.StrictMode>
 );
