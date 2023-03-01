@@ -102,9 +102,6 @@ ol {
   padding: 20px;
 }
 
-.gnb ul li {
-}
-
 .gnb ul li:not(:last-child) {
   margin-bottom: 10px;
 }
