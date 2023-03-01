@@ -2,7 +2,7 @@
 const Intro = () => {
 
 	return (
-		<article className="intro w-full h-full bg-red-300">
+		<article className="intro w-full h-full">
 			Intro
 		</article>
 	)

@@ -2,8 +2,8 @@
 const Home = () => {
 
 	return (
-		<article className="main w-full h-full bg-red-300">
-
+		<article className="main w-full h-full">
+				반갑습니다! :]
 		</article>
 	)
 }
