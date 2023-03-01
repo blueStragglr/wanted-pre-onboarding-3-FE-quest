@@ -1,0 +1,36 @@
+html, body, #root{
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+header {
+    padding-left: 20px;
+    border-bottom: 1px solid #999;
+}
+nav, section {
+    float: left;
+}
+nav {
+    height: 100%;
+    padding: 0px 40px 0px 20px;
+    border-right: 1px solid #999;
+    text-align: left;
+}
+nav ol {
+    padding: 0;
+}
+nav li {
+    padding: 10px;
+    list-style: none;
+}
+section {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+section span {
+    color: blue;
+}
