@@ -22,7 +22,8 @@
   "homepage": "https://github.com/kabinny/wanted-pre-onboarding-3-FE-quest#readme",
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.2"
   },
   "devDependencies": {
     "@babel/core": "^7.21.0",
