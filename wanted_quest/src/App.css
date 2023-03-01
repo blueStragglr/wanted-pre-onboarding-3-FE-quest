@@ -1,0 +1,42 @@
+.ctn {
+  max-width: none;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-style: italic;
+  height: 50px;
+  border-bottom: 1px solid #aaa;
+  padding-left: 40px;
+}
+
+.section {
+  height: calc(100vh - 50px);
+}
+
+.aside {
+  font-weight: bold;
+  border-right: 1px solid #aaa;
+  padding: 10px 0 0 40px;
+  margin: 0;
+}
+
+.article {
+  position: relative;
+}
+.article div {
+  color: rgb(0, 126, 168);
+  font-size: 48px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform : translate(-50%, -50%)
+}
+
+.nav-link:focus {
+  color: blue;
+}
