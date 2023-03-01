@@ -1,21 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useState } from "react";
-import { useEffect } from "react";
+import { IoMdLogIn } from "react-icons/io";
 
 const Aside = () => {
-  const [active, setActive] = useState("");
   const { pathname } = useLocation();
   const navigate = useNavigate();
-  console.log(active);
-
-  useEffect(() => {
-    setActive(pathname);
-  }, [pathname]);
 
   function handleNavigate(e) {
-    const value = e.target.textContent.toLowerCase();
+    const value = e.target.textContent.toLowerCase().replaceAll(" ", "");
     if (value === "main") {
       navigate(`/`);
     } else navigate(`/${value}`);
@@ -24,10 +17,29 @@ const Aside = () => {
   return (
     <Container>
       <ul>
-        <li onClick={(e) => handleNavigate(e)}>Main</li>
-        <li onClick={(e) => handleNavigate(e)}>About</li>
-        <li onClick={(e) => handleNavigate(e)}>Login</li>
+        <li
+          className={pathname === "/" ? "active" : "basic"}
+          onClick={(e) => handleNavigate(e)}
+        >
+          Main
+        </li>
+        <li
+          className={pathname === "/about" ? "active" : "basic"}
+          onClick={(e) => handleNavigate(e)}
+        >
+          About
+        </li>
+        <li
+          className={pathname === "/mypage" ? "active" : "basic"}
+          onClick={(e) => handleNavigate(e)}
+        >
+          MyPage
+        </li>
       </ul>
+      <Auth onClick={(e) => handleNavigate(e)}>
+        <IoMdLogIn className="icon" />
+        <p>Login</p>
+      </Auth>
     </Container>
   );
 };
@@ -40,7 +52,8 @@ const Container = styled.div`
   margin-right: 20px;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-content: space-between;
+  flex-wrap: wrap;
   ul {
     display: flex;
     justify-content: center;
@@ -56,8 +69,28 @@ const Container = styled.div`
       padding: 15px 0;
       border-bottom: 1px solid var(--color-primary);
       color: var(--color-point-dark);
+      cursor: pointer;
+      &.active {
+        color: var(--color-primary);
+      }
+      &:hover {
+        color: var(--color-primary);
+      }
     }
   }
 `;
 
+const Auth = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+  .icon {
+    padding-right: 5px;
+    font-size: 22px;
+  }
+`;
 export default Aside;
