@@ -1,5 +1,7 @@
 import "../styles/pages/login.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { UserContext } from "../contexts/UserContext";
+import { useNavigate } from "react-router-dom";
 
 const UserInfo = {
   name: "testuser",
@@ -9,9 +11,8 @@ const UserInfo = {
 export const Login = (): React.ReactElement => {
   const [name, setName] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [user, setUser] = useState<string | null>(
-    localStorage.getItem("users")
-  );
+  const { setUser } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const handleSubmit = () => {
     if (!name || !password) {
@@ -20,7 +21,11 @@ export const Login = (): React.ReactElement => {
     if (name !== UserInfo.name || password !== UserInfo.password) {
       return alert("아이디 또는 비밀번호가 일치하지 않습니다.");
     }
-    setUser(UserInfo.name);
+    if (setUser) {
+      localStorage.setItem("users", UserInfo.name);
+      setUser(UserInfo.name);
+      navigate("/", { replace: true });
+    }
   };
 
   return (

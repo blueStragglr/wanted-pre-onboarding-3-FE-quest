@@ -1,6 +1,6 @@
 import "../styles/components/navigator.css";
 import { Link, useLocation } from "react-router-dom";
-import { routerList } from "../main";
+import { routerList } from "../App";
 
 export const Navigator = (): React.ReactElement => {
   const routers = routerList.flatMap((item) => item.children ?? []);

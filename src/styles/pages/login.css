@@ -17,6 +17,7 @@
   min-width: max-content;
   width: 40vw;
   max-width: 800px;
+  min-width: 180px;
 }
 
 .login_input_container {
@@ -36,6 +37,9 @@
 }
 
 .login_input_input {
+  width: 100%;
+  min-width: 180px;
+  box-sizing: border-box;
   padding: 0.75rem 1rem;
   border: 1px solid lightgray;
   border-radius: 2px;
@@ -49,6 +53,7 @@
 
 .login_button {
   width: 100%;
+  min-width: inherit;
   padding: 0.75rem;
   margin-top: 1rem;
   display: flex;
