@@ -1,0 +1,22 @@
+.container {
+  height: 100%;
+  width: 15%;
+  border-right: 1px solid black;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.list {
+  margin-bottom: 8px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.active {
+  font-weight: bold;
+  color: blue;
+}
