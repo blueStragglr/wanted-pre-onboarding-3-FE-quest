@@ -1,46 +1,44 @@
-# Getting Started with Create React App
+# 배경
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+프리온 보딩 3월에 다시 참여하게 됐습니다. 주제는 레이아웃과 로그인입니다.
 
-## Available Scripts
+요구사항은 다음과 같습니다.
 
-In the project directory, you can run:
+- NextJS 등의 SSR 어플리케이션이 아닌, CSR 어플리케이션을 구축한다.
+- 최소 3개 이상의 페이지를 가지도록 구성한다.
+- 모든 페이지에 공통으로 반복되는 헤더와 사이드바가 있도록 구성한다.
 
-### `npm start`
+추가적으로 고민해볼 요구사항은 다음과 같습니다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- 고정된 3개의 페이지가 있는 앱이 아니라, 여러 개의 페이지가 언제든 추가될 수 있다면.
+- 만들어진 페이지 별로 로그인 여부를 판단하고자 한다면, 어떻게 구조를 확장할 것인지.
+- 로그인 페이지는 공통 레이아웃과 분리되어야 한다.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Check List
 
-### `npm test`
+### 기본 요구사항
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [x]  CSR 어플리케이션 구축(React로 구현하면 OK)
+- [x]  최소 3개 이상의 페이지를 가지도록 구성한다.
+- [x]  모든 페이지에는 공통적으로 반복되는 헤더와 사이드바가 있도록 구성한다.
+- [x]  고정된 3개의 페이지 뿐만 아니라, 여러 개의 페이지가 추가될 수 있는 구조여야 한다.
+- [x]  만들어진 페이지 별로, 로그인 여부를 판단하여 로그인 페이지를 구현해야 한다.
 
-### `npm run build`
+### 생긴 문제점
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [x]  페이지 별, 로그인 체크 방법에 대한 고민이 필요할 것 같다.
+- [x]  현재 페이지의 path를 기준으로 페이지를 구분하고 있는데, 같은 페이지를 만들 경우 선택 영역 표시에 문제가 있다. 각 페이지 별 유니크한 값이 필요할 것 같다.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# 실행화면
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+23-02-26
 
-### `npm run eject`
+![2023-02-26-103422.webp](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/72b81cf3-8b06-491b-82cd-eac0cdc6a44c/2023-02-26-103422.webp)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+23-03-01
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![2023-03-01-94102.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/90778537-014b-4598-b1a8-71e0f4557f52/2023-03-01-94102.gif)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# 기한
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+~3.02(목요일) 전까지 제출
