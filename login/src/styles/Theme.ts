@@ -1,6 +1,9 @@
 const color = {
+  point_blue: "#3885ff",
+  placeholder: "#d9d9d9",
   disabled: "#aaa",
   border: "#e9e9e9",
+  gray_text: "#bbb",
 };
 
 const mixin = {

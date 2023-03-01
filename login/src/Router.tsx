@@ -12,8 +12,10 @@ const Router = () => {
         <Route path="/login" element={<Login />} />
         <Route element={<PageLayout />}>
           <Route path="/" element={<Home />} />
-          {PAGE_LIST.map(({ path, component: Component }) => {
-            return <Route path={path} element={<Component />}></Route>;
+          {PAGE_LIST.map(({ path, component: Component }, index) => {
+            return (
+              <Route key={index} path={path} element={<Component />}></Route>
+            );
           })}
         </Route>
       </Routes>

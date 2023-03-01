@@ -1,12 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import styled, { css } from "styled-components";
 import { PAGE_LIST } from "../utils/Menu";
 
 const PageLayout = () => {
-  const token = false;
+  const [isLogin, setIsLogin] = useState(
+    sessionStorage.getItem("isLogin") || ""
+  );
 
   const navigate = useNavigate();
+
+  const handleLogout = () => {
+    sessionStorage.removeItem("isLogin");
+    setIsLogin("");
+  };
 
   return (
     <Layout>
@@ -15,8 +22,8 @@ const PageLayout = () => {
           Wonted Pre-onboarding course
         </Title>
         <LoginWrap>
-          {token ? (
-            <User>최승이님, 환영합니다.</User>
+          {isLogin ? (
+            <User>{isLogin}님, 환영합니다.</User>
           ) : (
             <LogInOut onClick={() => navigate("/login")}>로그인 하기</LogInOut>
           )}
@@ -34,7 +41,7 @@ const PageLayout = () => {
               );
             })}
           </SidebarMenu>
-          <LogInOut>로그아웃</LogInOut>
+          <LogInOut onClick={handleLogout}>로그아웃</LogInOut>
         </Sidebar>
         <PageWrap>
           <Outlet />
