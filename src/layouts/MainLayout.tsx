@@ -6,8 +6,8 @@ const MainLayout = () => {
 	return (
 		<>
 			<Header />
-			<SideBar />
-			<main>
+			<main className="flex">
+				<SideBar />
 				<Outlet />
 			</main>
 		</>
