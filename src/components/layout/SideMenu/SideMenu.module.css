@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  max-width: 250px;
+  min-width: 150px;
+  border-right: 1px solid #eaeaea;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+
+.logout {
+  font-size: 22px;
+  margin: 10px;
+  font-weight: 500;
+}

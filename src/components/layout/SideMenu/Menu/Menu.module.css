@@ -1,0 +1,10 @@
+.container {
+  font-size: 22px;
+  margin: 10px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.selected {
+  color: rgb(94, 166, 169);
+}
