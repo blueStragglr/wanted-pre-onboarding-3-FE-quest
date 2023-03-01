@@ -10,7 +10,7 @@ function App() {
         <Route index element={<Template />} />
         <Route path="/login" element={<Login />} />
         {PageData.map(({ element, path }) => (
-          <Route path={path} element={element} />
+          <Route key={path} path={path} element={element} />
         ))}
       </Routes>
     </BrowserRouter>
