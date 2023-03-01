@@ -20,6 +20,17 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
   }
 
+  input {
+    background-color: transparent;
+    box-sizing: border-box;
+  }
+
+  button {
+    border: none;
+    cursor: pointer;
+    background: none;
+  }
+  
   a {
     text-decoration: none;
     color: inherit;

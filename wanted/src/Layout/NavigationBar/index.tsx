@@ -40,6 +40,7 @@ const S_Nav = styled.nav`
 `;
 
 const S_Ul = styled.ul`
+  display: flex;
   flex-flow: column;
   font-size: 1.4rem;
   font-weight: bold;
