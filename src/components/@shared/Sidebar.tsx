@@ -13,8 +13,6 @@ export const Sidebar = ({ navMenus }: SidebarProps) => {
     navigate("/" + path);
   };
 
-  console.log(sidebar);
-
   return (
     <S.Sidebar>
       {navMenus.map((menu) => (

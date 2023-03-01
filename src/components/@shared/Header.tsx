@@ -18,9 +18,6 @@ export const Header = () => {
     setIsLogin("false");
   };
 
-  console.log("isLogin: ", isLogin);
-  console.log("false" === isLogin);
-
   return (
     <S.Header>
       <S.LeftBox>Wanted Pre-onboarding course</S.LeftBox>
