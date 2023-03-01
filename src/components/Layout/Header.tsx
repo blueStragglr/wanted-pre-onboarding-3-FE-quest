@@ -1,5 +1,8 @@
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import styled from 'styled-components'
+import {useDispatch} from 'react-redux'
+
+import {logOut} from '../../store/loggedReducer'
 
 const HeaderContainer = styled.div`
   width: 100vw;
@@ -19,11 +22,20 @@ const HeaderContainer = styled.div`
 `
 
 const Header = () => {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+  const handleLogout = () => {
+    dispatch(logOut())
+    window.location.replace('/')
+  }
+
   return (
     <HeaderContainer>
       <Link to={'/'} style={{textDecoration: 'none'}}>
         <h1 className="header--h1">Wanted Pre-onboarding course</h1>
       </Link>
+      <button onClick={handleLogout}>LogOut</button>
     </HeaderContainer>
   )
 }

@@ -1,5 +1,7 @@
+import {PageLayout} from '../Layout'
+
 const PageB = () => {
-  return <section>This is Page B!</section>
+  return <PageLayout>This is Page B!</PageLayout>
 }
 
 export default PageB
