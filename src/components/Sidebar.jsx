@@ -1,11 +1,13 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { PAGE_PATH } from "../routes";
 
 function Sidebar() {
   return (
     <SidebarWrapper>
-      <Button>Page A</Button>
-      <Button>Page B</Button>
-      <Button>Page C</Button>
+      <StyledLink to={PAGE_PATH.A}>Page A</StyledLink>
+      <StyledLink to={PAGE_PATH.B}>Page B</StyledLink>
+      <StyledLink to={PAGE_PATH.C}>Page C</StyledLink>
     </SidebarWrapper>
   );
 }
@@ -13,12 +15,18 @@ function Sidebar() {
 const SidebarWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 10%;
+  width: 20%;
 `;
 
-const Button = styled.button`
-  padding: 1rem;
+const StyledLink = styled(Link)`
+  padding: 1.5rem;
   font-size: 1.5rem;
+  color: black;
+  text-decoration: none;
+
+  :hover {
+    color: blue;
+  }
 `;
 
 export default Sidebar;

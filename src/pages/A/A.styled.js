@@ -8,6 +8,7 @@ const Contents = styled.div`
   border-left: 1px solid black;
   font-size: 2rem;
   font-weight: bold;
+  color: blue;
 `;
 
 export { Contents };
