@@ -1,27 +1,17 @@
 import {Outlet} from 'react-router-dom'
-import styled from 'styled-components'
 
-import {Header, Nav} from '.'
-
-const Container = styled.div`
-  width: 100vw;
-  height: 100vh;
-
-  .content {
-    display: flex;
-    flex-direction: row;
-  }
-`
+import {Header, Nav} from './'
+import * as S from './styles'
 
 const Layout = () => {
   return (
-    <Container>
+    <S.LayoutContainer>
       <Header />
       <div className="content">
         <Nav />
         <Outlet />
       </div>
-    </Container>
+    </S.LayoutContainer>
   )
 }
 
