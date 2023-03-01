@@ -1,17 +1,19 @@
-import {Link} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
+
+const navList = [
+  {to: '/a', name: 'Page A'},
+  {to: '/b', name: 'Page B'},
+  {to: '/c', name: 'Page C'}
+]
 
 const Nav = () => {
   return (
     <>
-      <div>
-        <Link to="page1">A</Link>
-      </div>
-      <div>
-        <Link to="page2">B</Link>
-      </div>
-      <div>
-        <Link to="page3">C</Link>
-      </div>
+      {navList.map(nav => (
+        <NavLink key={nav.to} to={nav.to}>
+          {nav.name}
+        </NavLink>
+      ))}
     </>
   )
 }
