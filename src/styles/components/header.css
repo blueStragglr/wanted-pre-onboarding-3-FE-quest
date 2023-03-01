@@ -1,8 +1,21 @@
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 1rem 1.5rem;
   border-bottom: 0.5px solid gray;
 }
 
 .header_title {
   font-style: italic;
+}
+
+.header_button {
+  padding: 0.25rem 0.75rem;
+
+  border-radius: 2px;
+  background-color: dodgerblue;
+
+  color: white;
+  font-weight: bold;
 }

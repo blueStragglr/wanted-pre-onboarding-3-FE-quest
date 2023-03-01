@@ -7,6 +7,7 @@ import { NotFound } from "./pages/404";
 import { Page1 } from "./pages/page1";
 import { Page2 } from "./pages/page2";
 import { Page3 } from "./pages/page3";
+import { Login } from "./pages/login";
 
 export const routerList = [
   {
@@ -30,6 +31,10 @@ export const routerList = [
         element: <Page3 />,
       },
     ],
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
 ];
 
