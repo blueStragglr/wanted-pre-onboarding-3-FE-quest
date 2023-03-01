@@ -1,12 +1,22 @@
 import { Outlet } from 'react-router-dom';
+import styled from 'styled-components';
 import './App.css';
+import Header from './components/Header';
+import SideBar from './components/SideBar';
 
-function App() {
+export default function App() {
   return (
     <>
-      <Outlet />
+      <Header />
+      <Wrapper>
+        <SideBar />
+        <Outlet />
+      </Wrapper>
     </>
   );
 }
 
-export default App;
+const Wrapper = styled.div`
+  display: flex;
+  height: 100%;
+`;
