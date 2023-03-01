@@ -1,5 +1,10 @@
 import { PageWrapper } from '../../common/style';
+import Template from '../Template';
 
 export default function PageA() {
-  return <PageWrapper>This is Page A!</PageWrapper>;
+  return (
+    <Template>
+      <PageWrapper>This is Page A!</PageWrapper>
+    </Template>
+  );
 }

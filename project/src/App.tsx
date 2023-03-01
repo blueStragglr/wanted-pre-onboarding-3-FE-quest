@@ -9,8 +9,8 @@ function App() {
       <Routes>
         <Route index element={<Template />} />
         <Route path="/login" element={<Login />} />
-        {PageData.map(({ contentsComponent, path }) => (
-          <Route path={path} element={contentsComponent} />
+        {PageData.map(({ element, path }) => (
+          <Route path={path} element={element} />
         ))}
       </Routes>
     </BrowserRouter>
