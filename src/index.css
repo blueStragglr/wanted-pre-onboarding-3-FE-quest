@@ -120,14 +120,23 @@ ol {
 .main {
   align-items: center;
   display: flex;
+  flex-direction: column;
   height: calc(100vh);
   justify-content: center;
   margin: 0 calc(100vw - 85%);
   width: 85%;
 }
 
-.content {
-  color: #0066ff;
+.main .login {
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: -0.02em;
+}
+
+.main .login:hover,
+.main .login:active {
+  text-decoration: underline;
+  text-decoration-color: #0066ff;
 }
 
 .section {
