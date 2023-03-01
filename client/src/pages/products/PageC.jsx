@@ -1,5 +1,6 @@
 import React from "react";
+import "./index.css";
 
 export default function PageC() {
-  return <div>PageC</div>;
+  return <div className="content">PageC</div>;
 }

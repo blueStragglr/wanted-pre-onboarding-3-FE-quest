@@ -8,4 +8,6 @@ export default function Nav() {
 const NavBar = styled.div`
   display: flex;
   border-bottom: 1px solid;
+  font-size: 30px;
+  padding: 20px;
 `;

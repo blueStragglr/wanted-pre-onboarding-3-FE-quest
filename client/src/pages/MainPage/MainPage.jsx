@@ -1,8 +1,9 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
-import Nav from "../components/Nav";
-import Sidebar from "../components/Sidebar";
+import Nav from "../../components/Nav";
+import Sidebar from "../../components/Sidebar";
+import "./MainPage.css";
 
 export default function MainPage() {
   return (

@@ -1,0 +1,11 @@
+button {
+  border: none;
+  background: none;
+  margin: 50px;
+  font-size: 40px;
+}
+
+button:hover {
+  color: blue;
+  cursor: pointer;
+}
