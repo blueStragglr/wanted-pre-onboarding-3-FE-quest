@@ -15,7 +15,7 @@ export const Sidebar = ({ navMenus }: SidebarProps) => {
 
   return (
     <S.Sidebar>
-      {navMenus.map((menu, index) => (
+      {navMenus.map((menu) => (
         <S.Menu
           key={menu.name}
           isSelect={sidebar === menu.path}

@@ -13,7 +13,16 @@ const S = {
     min-height: 44px;
     min-width: 44px;
     border: none;
+    border-radius: 10px;
     background-color: white;
     padding: 10px;
+    cursor: pointer;
+
+    :hover {
+      filter: brightness(0.8);
+    }
+    :active {
+      filter: brightness(0.7);
+    }
   `,
 };

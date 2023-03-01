@@ -1,12 +1,39 @@
 import styled from "@emotion/styled";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "./Button";
 
 export const Header = () => {
+  const navigate = useNavigate();
+  const [isLogin, setIsLogin] = useState(
+    localStorage.getItem("isLogin") ? localStorage.getItem("isLogin") : "false"
+  );
+
+  const handleClickLoginButton = () => {
+    navigate("/login");
+  };
+
+  const handleClickLogoutButton = () => {
+    localStorage.removeItem("isLogin");
+    setIsLogin("false");
+  };
+
+  console.log("isLogin: ", isLogin);
+  console.log("false" === isLogin);
+
   return (
     <S.Header>
       <S.LeftBox>Wanted Pre-onboarding course</S.LeftBox>
       <S.RightBox>
-        <S.LoginButton buttonText="Login" />
+        {isLogin === "false" && (
+          <S.LoginButton buttonText="Login" onClick={handleClickLoginButton} />
+        )}
+        {isLogin === "true" && (
+          <S.LogoutButton
+            buttonText="Logout"
+            onClick={handleClickLogoutButton}
+          />
+        )}
       </S.RightBox>
     </S.Header>
   );
@@ -51,6 +78,10 @@ const S = {
   `,
 
   LoginButton: styled(Button)`
+    font-size: 20px;
+  `,
+
+  LogoutButton: styled(Button)`
     font-size: 20px;
   `,
 };
