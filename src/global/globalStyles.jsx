@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
-import "./fonts.css";
+import "@/global/fonts.css";
 
 const GlobalStyles = createGlobalStyle`
   ${reset}
@@ -13,7 +13,7 @@ const GlobalStyles = createGlobalStyle`
     --color-white: #FFFFFF;
     --color-blue: #7588B1;
     .page {
-      color: var(--color-point);
+      color: var(--color-primary);
       width: 100%;
       background-color: var(--color-white);
       border-radius: 20px;
