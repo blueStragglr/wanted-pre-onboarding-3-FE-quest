@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import PagesContext from "../contexts/PagesContext";
 
 export default function Sidebar() {
+  const { pageComponents } = useContext(PagesContext);
+
   const navigate = useNavigate();
 
   const HandleClick = (e) => {
@@ -15,18 +18,15 @@ export default function Sidebar() {
 
   return (
     <StyledSidebar>
-      <button name="Home" onClick={HandleClick}>
-        Home
-      </button>
-      <button name="PageA" onClick={HandleClick}>
-        PageA
-      </button>
-      <button name="PageB" onClick={HandleClick}>
-        PageB
-      </button>
-      <button name="PageC" onClick={HandleClick}>
-        PageC
-      </button>
+      <PagesContext.Provider value={pageComponents}>
+        {pageComponents.map((page) => {
+          return (
+            <button key={page.name} name={page.name} onClick={HandleClick}>
+              {page.name}
+            </button>
+          );
+        })}
+      </PagesContext.Provider>
     </StyledSidebar>
   );
 }
