@@ -8,7 +8,7 @@ const PageText = styled.h1`
 const Cpage = () => {
   return (
     <div>
-      <PageText>This is Page Common!</PageText>
+      <PageText>This is Page C!</PageText>
     </div>
   );
 };

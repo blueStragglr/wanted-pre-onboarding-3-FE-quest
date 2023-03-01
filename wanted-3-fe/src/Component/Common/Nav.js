@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const NavBox = styled.nav`
   width: 250px;
@@ -7,12 +8,22 @@ const NavBox = styled.nav`
 `;
 
 const Nav = () => {
+  const navigate = useNavigate();
+  const onClickAHandler = () => {
+    navigate(`apage`);
+  };
+  const onClickBHandler = () => {
+    navigate(`bpage`);
+  };
+  const onClickCHandler = () => {
+    navigate(`cpage`);
+  };
   return (
     <>
       <NavBox>
-        <div>Page A</div>
-        <div>Page B</div>
-        <div>Page C</div>
+        <div onClick={onClickAHandler}>Page A</div>
+        <div onClick={onClickBHandler}>Page B</div>
+        <div onClick={onClickCHandler}>Page C</div>
       </NavBox>
     </>
   );
