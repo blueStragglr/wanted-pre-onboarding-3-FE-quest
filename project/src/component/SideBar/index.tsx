@@ -6,7 +6,7 @@ export default function SideBar({ menu }: { menu: page[] }) {
   return (
     <Wrapper>
       {menu.map(({ name, path }) => (
-        <li>
+        <li key={path}>
           <Menu to={path}>{name}</Menu>
         </li>
       ))}
