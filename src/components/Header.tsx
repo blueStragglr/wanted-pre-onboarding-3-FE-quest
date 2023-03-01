@@ -10,6 +10,7 @@ const Header = (props: Props) => {
   return (
     <header>
       Wanted Pre-OnBoarding Course
+      {isLogin.id}
       {isLogin ? (
         <button className='btn' onClick={() => dispatch(logout())}>
           logout
