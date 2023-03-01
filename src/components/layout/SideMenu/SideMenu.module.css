@@ -10,17 +10,8 @@
   margin-top: 20px;
 }
 
-.menuTitle {
+.logout {
   font-size: 22px;
   margin: 10px;
   font-weight: 500;
-  cursor: pointer;
-}
-
-.menuTitle:hover {
-  text-decoration: underline;
-}
-
-.selected {
-  color: rgb(94, 166, 169);
 }
