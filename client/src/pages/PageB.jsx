@@ -1,8 +1,9 @@
+import { StyledMain } from "./PageA";
 const PageB = () => {
   return (
-    <div>
-      <p>Page B 입니다.</p>
-    </div>
+    <StyledMain>
+      <p>This is Page B!</p>
+    </StyledMain>
   )
 }
 
