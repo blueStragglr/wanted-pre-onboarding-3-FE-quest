@@ -1,6 +1,6 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import * as P from "../components/Page";
-import { Nav } from "../components/Layout";
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import * as P from '../components/Page'
+import {Nav} from '../components/Layout'
 
 export const Router = () => {
   return (
@@ -14,5 +14,5 @@ export const Router = () => {
         <Route path="/login" element={<P.Login />} />
       </Routes>
     </BrowserRouter>
-  );
-};
+  )
+}

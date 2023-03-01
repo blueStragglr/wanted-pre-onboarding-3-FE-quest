@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import {Link} from 'react-router-dom'
 
 const Nav = () => {
   return (
@@ -13,7 +13,7 @@ const Nav = () => {
         <Link to="page3">C</Link>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Nav;
+export default Nav
