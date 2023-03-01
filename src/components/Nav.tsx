@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { pages } from 'data/pages';
 
 export const Nav = () => {
@@ -8,7 +8,12 @@ export const Nav = () => {
       <ul>
         {pages.map(({ id, name, path }) => (
           <li key={id}>
-            <Link to={path}>{name}</Link>
+            <NavLink
+              to={path}
+              className={({ isActive }) => (isActive ? 'active' : undefined)}
+            >
+              {name}
+            </NavLink>
           </li>
         ))}
       </ul>

@@ -102,19 +102,30 @@ ol {
   padding: 20px;
 }
 
+.gnb ul li {
+}
+
 .gnb ul li:not(:last-child) {
-  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .gnb ul li a {
   font-size: 18px;
   line-height: 28px;
   letter-spacing: -0.02em;
+  display: block;
+  padding: 8px;
+}
+
+.gnb ul li a.active {
+  background-color: #f7f8fa;
+  border-radius: 4px;
+  color: #0066ff;
 }
 
 .gnb ul li a:active,
 .gnb ul li a:hover {
-  color: #0066ff;
+  background-color: #f7f8fa;
 }
 
 .main {
