@@ -1,0 +1,11 @@
+.page {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.page_text {
+  font-size: 2rem;
+  font-family: monospace;
+}

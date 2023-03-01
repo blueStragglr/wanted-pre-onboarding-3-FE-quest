@@ -16,14 +16,17 @@ export const routerList = [
     children: [
       {
         path: "/",
+        title: "Page 1",
         element: <Page1 />,
       },
       {
         path: "/page2",
+        title: "Page 2",
         element: <Page2 />,
       },
       {
         path: "/page3",
+        title: "Page 3",
         element: <Page3 />,
       },
     ],
