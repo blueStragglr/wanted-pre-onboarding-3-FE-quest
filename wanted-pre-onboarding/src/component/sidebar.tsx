@@ -3,12 +3,13 @@ import React from 'react';
 interface Page {
   title: string;
   path: string;
+  type: string;
 }
 
 interface Props {
   pages: Page[];
   activePage: string;
-  onSetActivePage: (pagePath: string) => void;
+  onSetActivePage: (pagePath: string, pageType: string) => void;
   onAddNewPage: () => void;
 }
 
@@ -18,7 +19,7 @@ const Sidebar: React.FC<Props> = ({ pages, activePage, onSetActivePage, onAddNew
       <ul>
         {pages.map((page) => (
           <li key={page.path}>
-            <a href="#" className={page.path === activePage ? 'active' : ''} onClick={() => onSetActivePage(page.path)}>
+            <a href="#" className={page.path === activePage ? 'active' : ''} onClick={() => onSetActivePage(page.path, page.type)}>
               {page.title}
             </a>
           </li>
