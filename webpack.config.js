@@ -17,6 +17,11 @@ module.exports = {
         test: /\.tsx?$/,
         use: ["babel-loader", "ts-loader"], // loader를 여기 적어준다.
       },
+      {
+        test: /.css?$/,
+        exclude: [],
+        use: ["style-loader", "css-loader", "postcss-loader"],
+      },
     ],
   },
   output: {
