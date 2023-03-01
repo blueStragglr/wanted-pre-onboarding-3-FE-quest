@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
 
@@ -12,6 +14,9 @@ const Login = () => {
   };
   const onSubmitHandler = (e) => {
     setPassword(e.currentTarget.value);
+  };
+  const navigateToPageA = () => {
+    navigate("/pageA");
   };
 
   return (
@@ -32,7 +37,9 @@ const Login = () => {
         <label>Password</label>
         <input type="password" value={Password} onChange={onPasswordHandler} />
         <br />
-        <button formAction="">Login</button>
+        <button formAction="" onClick={navigateToPageA}>
+          Login
+        </button>
       </form>
     </div>
   );
