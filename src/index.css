@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Source Code Pro', monospace;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+h1 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
