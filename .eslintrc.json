@@ -16,6 +16,10 @@
   },
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
+    "no-multiple-empty-lines": "error",
+    "eqeqeq": "error",
+    "dot-notation": "error",
+    "no-unused-vars": "error",
     "no-console": ["warn", { "allow": ["warn", "error", "info"] }],
     "no-var": "warn"
   }
