@@ -1,5 +1,7 @@
+import {PageLayout} from '../Layout'
+
 const PageA = () => {
-  return <div>PageA</div>
+  return <PageLayout>This is Page A!</PageLayout>
 }
 
 export default PageA

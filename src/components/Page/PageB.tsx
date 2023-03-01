@@ -1,5 +1,5 @@
 const PageB = () => {
-  return <div>PageB</div>
+  return <section>This is Page B!</section>
 }
 
 export default PageB
