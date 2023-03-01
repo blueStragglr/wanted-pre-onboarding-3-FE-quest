@@ -13,13 +13,15 @@ import NotFound from "./pages/NotFound";
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
-		<Route path="/" element={<ProtectedRoute />} errorElement={<NotFound />}>
-			<Route index element={<LoginPage />} />
-			<Route path="/page" element={<MainLayout />}>
-				<Route index element={<HomePage />} />
-				<Route path="/page/:id" element={<DetailPage />} />
+		<>
+			<Route path="/" element={<LoginPage />} errorElement={<NotFound />} />
+			<Route path="/" element={<ProtectedRoute />}>
+				<Route path="/page" element={<MainLayout />}>
+					<Route index element={<HomePage />} />
+					<Route path="/page/:id" element={<DetailPage />} />
+				</Route>
 			</Route>
-		</Route>
+		</>
 	)
 );
 

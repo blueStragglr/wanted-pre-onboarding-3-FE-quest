@@ -1,11 +1,11 @@
-import { Outlet } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 
 const ProtectedRoute = () => {
+	const isAuth = Boolean(localStorage.getItem("token"));
+
 	return (
 		<>
-			<main>
-				<Outlet />
-			</main>
+			<main>{isAuth ? <Outlet /> : <Navigate to="/" />}</main>
 		</>
 	);
 };
