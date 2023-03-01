@@ -5,6 +5,7 @@ import HomeContainer from "../components/HomeContainer";
 import PageA from "./PageA";
 import PageB from "./PageB";
 import PageC from "./PageC";
+import Login from "./Login";
 import NotFound from "./NotFound";
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
         <Layout>
           <Routes>
             <Route path="/" element={<HomeContainer />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/pageA" element={<PageA />} />
             <Route path="/PageB" element={<PageB />} />
             <Route path="/PageC" element={<PageC />} />
