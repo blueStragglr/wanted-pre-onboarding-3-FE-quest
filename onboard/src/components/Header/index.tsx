@@ -5,9 +5,9 @@ function Header() {
   return (
     <HeaderContainer>
       <HeaderLogo>Wanted Pre-onboarding course</HeaderLogo>
-      <HeaderSignInBtn>
-        <Link to="/sign-in">SignIn</Link>
-      </HeaderSignInBtn>
+      <Link to="/sign-in">
+        <HeaderSignInBtn>Sign In</HeaderSignInBtn>
+      </Link>
     </HeaderContainer>
   );
 }

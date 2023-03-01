@@ -1,12 +1,11 @@
-import { Link } from "react-router-dom";
-import { SideBarContainer } from "./SideBar.style";
+import { SideBarContainer, SideBarMenu } from "./SideBar.style";
 
 function SideBar() {
   return (
     <SideBarContainer>
-      <Link to="/pagea">Page A</Link>
-      <Link to="/pageb">Page B</Link>
-      <Link to="/pagec">Page C</Link>
+      <SideBarMenu to="/pagea">Page A</SideBarMenu>
+      <SideBarMenu to="/pageb">Page B</SideBarMenu>
+      <SideBarMenu to="/pagec">Page C</SideBarMenu>
     </SideBarContainer>
   );
 }
