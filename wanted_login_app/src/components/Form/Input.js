@@ -6,7 +6,7 @@ const Input = ((props) => {
 		<label htmlFor={props.id} className="w-20 text-sm font-semibold text-left ">{props.label}</label>
 		<input	type={props.type}
 			id={props.id}
-			value={props.value} className="w-full h-full ml-2 rounded-md"></input>
+			value={props.value} className="box-border w-full h-full ml-2 border rounded-md border-lightgray-900"></input>
 		</div>
 	)
 })
