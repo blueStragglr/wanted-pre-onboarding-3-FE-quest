@@ -33,11 +33,11 @@
 
 23-02-26
 
-![2023-02-26-103422.webp](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/72b81cf3-8b06-491b-82cd-eac0cdc6a44c/2023-02-26-103422.webp)
+![2023-02-26-103422](https://user-images.githubusercontent.com/48785968/222017844-fccfb419-9a42-4839-811b-49e51052e41f.gif)
 
 23-03-01
 
-![2023-03-01-94102.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/90778537-014b-4598-b1a8-71e0f4557f52/2023-03-01-94102.gif)
+![2023-03-01-94102](https://user-images.githubusercontent.com/48785968/222017651-5cb00e4a-edc2-48aa-99ea-e9ee23ea51c7.gif)
 
 # 기한
 
