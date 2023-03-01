@@ -1,11 +1,14 @@
 import ReactDOM from "react-dom/client";
+import { Global } from "@emotion/react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { RecoilRoot } from "recoil";
 import { Layout } from "./Layout";
 import { Error } from "./pages/Error";
 import { Login } from "./pages/Login";
 import { PageA } from "./pages/PageA";
 import { PageB } from "./pages/PageB";
 import { PageC } from "./pages/PageC";
+import { GlobalStyles } from "./styles/GlobalStyles";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +16,10 @@ const router = createBrowserRouter([
     element: <Layout />,
     errorElement: <Error />,
     children: [
+      {
+        path: "",
+        element: <PageA />,
+      },
       {
         path: "page-a",
         element: <PageA />,
@@ -35,5 +42,10 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <RouterProvider router={router} />
+  <>
+    <RecoilRoot>
+      <Global styles={GlobalStyles} />
+      <RouterProvider router={router} />
+    </RecoilRoot>
+  </>
 );
