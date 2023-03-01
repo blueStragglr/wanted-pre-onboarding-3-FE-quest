@@ -1,3 +1,11 @@
 .textContainer {
-  color: blue;
+  color: #6a9fd1;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  padding: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: x-large;
 }
