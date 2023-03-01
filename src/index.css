@@ -11,6 +11,9 @@
 header {
   grid-area: header;
   margin: auto 0;
+  display: flex;
+  gap: 5px;
+  align-items: center;
 }
 
 aside {
@@ -33,4 +36,47 @@ aside {
 
 .container {
   grid-area: main;
+}
+
+.login-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn {
+  background-color: gray;
+  border: none;
+  width: 80px;
+  height: 30px;
+  border-radius: 15px;
+  color: white;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: white;
+  color: black;
+}
+
+.page-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-btn {
+  background-color: gray;
+  border: none;
+  width: 200px;
+  height: 30px;
+  border-radius: 15px;
+  color: white;
+  cursor: pointer;
+}
+
+.main-btn:hover {
+  background-color: white;
+  color: black;
 }

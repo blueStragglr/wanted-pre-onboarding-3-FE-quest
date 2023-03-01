@@ -11,7 +11,9 @@ const Header = (props: Props) => {
     <header>
       Wanted Pre-OnBoarding Course
       {isLogin ? (
-        <button onClick={() => dispatch(logout())}>logout</button>
+        <button className='btn' onClick={() => dispatch(logout())}>
+          logout
+        </button>
       ) : null}
     </header>
   );

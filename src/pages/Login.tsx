@@ -17,7 +17,7 @@ const Login = (props: Props) => {
   };
   return (
     <div>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} className='login-box'>
         <input
           type='text'
           placeholder='아이디를 입력해 주세요.'
@@ -30,7 +30,9 @@ const Login = (props: Props) => {
           value={password}
           onChange={(event) => setPassword(event.target.value)}
         />
-        <button type='submit'>login</button>
+        <button type='submit' className='btn'>
+          login
+        </button>
       </form>
     </div>
   );
