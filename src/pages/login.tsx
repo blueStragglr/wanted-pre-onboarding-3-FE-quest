@@ -24,7 +24,6 @@ export const Login = (): React.ReactElement => {
     if (setUser) {
       localStorage.setItem("users", UserInfo.name);
       setUser(UserInfo.name);
-      navigate("/", { replace: true });
     }
   };
 

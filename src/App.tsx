@@ -7,6 +7,8 @@ import { Login } from "./pages/login";
 import { Page1 } from "./pages/page1";
 import { Page2 } from "./pages/page2";
 import { Page3 } from "./pages/page3";
+import { Page4 } from "./pages/page4";
+import { AuthRoute } from "./routes/AuthRoute";
 
 export const routerList = [
   {
@@ -29,11 +31,24 @@ export const routerList = [
         title: "Page 3",
         element: <Page3 />,
       },
+      {
+        path: "/page4",
+        title: "로그인 전용",
+        element: (
+          <AuthRoute onlyAuth={true}>
+            <Page4 />
+          </AuthRoute>
+        ),
+      },
     ],
   },
   {
     path: "/login",
-    element: <Login />,
+    element: (
+      <AuthRoute onlyAuth={false}>
+        <Login />
+      </AuthRoute>
+    ),
   },
 ];
 

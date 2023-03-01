@@ -11,7 +11,6 @@ export const Header = (): React.ReactElement => {
     if (user && setUser) {
       localStorage.removeItem("users");
       setUser(null);
-      navigate("/login", { replace: true });
     }
   };
 
