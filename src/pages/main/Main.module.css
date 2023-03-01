@@ -1,5 +1,23 @@
 .layout {
   display: flex;
   flex-direction: row;
-  height: 100vh;
+  min-height: 100vh;
+}
+.headerContainer {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid gainsboro;
+}
+.addButton {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  font-size: small;
+  border: 1px solid gainsboro;
+  border-radius: 100px;
+  margin: 12px;
+  padding: 4px;
+}
+.addButton:hover {
+  cursor: pointer;
 }

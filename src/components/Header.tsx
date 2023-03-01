@@ -3,7 +3,7 @@ import { HEADER_LABEL } from '../constant/constant';
 import styles from './Header.module.css';
 
 function Header() {
-  return <header className={styles.headerLabel}>{HEADER_LABEL}</header>;
+  return <div className={styles.headerLabel}>{HEADER_LABEL}</div>;
 }
 
 export default Header;
