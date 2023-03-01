@@ -3,13 +3,11 @@ import style from './SideMenu.module.css';
 import { useNavigate } from 'react-router';
 import { PATH_ROUTE } from 'constants';
 import { logoutApi } from 'apis/authApi';
+import Menu from './Menu';
 
 const SideMenu = () => {
   const navigete = useNavigate();
-
-  const handleMenu = (path) => {
-    navigete(path);
-  };
+  const [selected, setSelected] = React.useState('pageA');
 
   const handleLogout = () => {
     try {
@@ -22,18 +20,12 @@ const SideMenu = () => {
 
   return (
     <div className={style.container}>
-      <button className={style.menuTitle} onClick={handleLogout}>
+      <button className={style.logout} onClick={handleLogout}>
         로그아웃
       </button>
-      <div className={style.menuTitle} onClick={() => handleMenu(PATH_ROUTE.pagea)}>
-        Page A
-      </div>
-      <div className={style.menuTitle} onClick={() => handleMenu(PATH_ROUTE.pageb)}>
-        Page B
-      </div>
-      <div className={style.menuTitle} onClick={() => handleMenu(PATH_ROUTE.pagec)}>
-        Page C
-      </div>
+      <Menu setSelected={setSelected} name='pageA' selected={'pageA' === selected} />
+      <Menu setSelected={setSelected} name='pageB' selected={'pageB' === selected} />
+      <Menu setSelected={setSelected} name='pageC' selected={'pageC' === selected} />
     </div>
   );
 };
