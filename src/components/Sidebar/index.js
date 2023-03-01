@@ -31,7 +31,7 @@ const Sidbar = () => {
           Page B
         </Link>
         <Link
-          to={"/pageA"}
+          to={"/pageC"}
           className={`${styles.list} ${
             activeLink === "Page C" ? styles.active : ""
           }`}
