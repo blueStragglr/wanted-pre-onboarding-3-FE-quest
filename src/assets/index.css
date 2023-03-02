@@ -4,8 +4,20 @@
 }
 
 .content {
-  width: 100%;
+  width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.SNB {
+  list-style: none;
+  border-right: 1px solid gray; 
+  width: 10%;
+  margin-top: 0;
+}
+
+.SNB li a{
+  text-decoration: none;
+  color: black;
 }

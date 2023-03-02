@@ -1,18 +1,19 @@
 import { React } from 'react';
 import { Link } from 'react-router-dom';
+
 //TODO Link태크 반복문 돌릴 방법 찾기
 const SNB = () => {
   return (
     <>
-      <ul>
+      <ul className="SNB">
         <li>
-          <Link to="pageA">pageA</Link>
+          <Link to="pageA">page A</Link>
         </li>
         <li>
-          <Link to="pageB">pageB</Link>
+          <Link to="pageB">page B</Link>
         </li>
         <li>
-          <Link to="pageC">pageC</Link>
+          <Link to="pageC">page C</Link>
         </li>
       </ul>
     </>
