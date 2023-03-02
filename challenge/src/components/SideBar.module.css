@@ -1,0 +1,17 @@
+.sidebar{
+    width: 200px;
+    border-right: 1px solid gray;
+}
+
+.sidebar ul{
+    list-style: none;
+}
+
+.sidebar li{
+    margin: 20px;
+}
+
+.sidebar a{
+    text-decoration: none;
+    color: black;
+}
