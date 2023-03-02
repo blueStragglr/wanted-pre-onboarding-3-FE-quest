@@ -36,7 +36,7 @@ function App() {
     }
       setActiveLink(pageName);
       // eslint-disable-next-line react-hooks/rules-of-hooks
-      goNav(`${path}?permission=${permission}`);
+      goNav(`${path}?permission=${permission}`,{state:{message:'this is state'}});
   }
 
   return (
