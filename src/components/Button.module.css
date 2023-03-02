@@ -12,17 +12,37 @@
   cursor: pointer;
 }
 
-.addButton {
+.default {
   background-color: white;
   display: flex;
   align-items: center;
   font-size: small;
   border: 1px solid gainsboro;
   border-radius: 12px;
+  width: fit-content;
   margin: 12px;
   padding: 4px 8px;
   color: #222222;
 }
-.addButton:hover {
+.default:hover {
+  border: 0;
+  border: 1px solid white;
+  color: white;
+  background-color: #6a9fd1;
+  cursor: pointer;
+}
+
+.main {
+  font-size: large;
+  color: #5797d4;
+  background-color: white;
+  border: 0;
+  display: flex;
+  align-items: center;
+}
+
+.main:hover {
+  border: 0;
+  color: #0170d8;
   cursor: pointer;
 }

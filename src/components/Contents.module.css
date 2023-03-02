@@ -1,8 +1,8 @@
 .textContainer {
   color: #6a9fd1;
   width: 100%;
-  height: 100%;
-  margin: auto;
+  height: 800px;
+  margin: 0;
   padding: auto;
   display: flex;
   justify-content: center;

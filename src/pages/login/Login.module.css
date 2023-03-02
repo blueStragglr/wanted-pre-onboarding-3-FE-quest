@@ -1,11 +1,15 @@
 .layout {
   width: 300px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   margin: auto;
+  padding: 200px 0 0 0;
+  align-items: center;
   gap: 8px;
 }
 p {
   color: #222222;
   margin: 4px 0;
+  font-size: small;
 }

@@ -11,3 +11,4 @@ export const INIT_SELECTED = 'A';
 export const ID_LABEL = '아이디';
 export const PW_LABEL = '비밀번호';
 export const LOGIN_LABEL = '로그인';
+export const MAIN_LABEL = '메인화면';
