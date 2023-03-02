@@ -67,3 +67,9 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
