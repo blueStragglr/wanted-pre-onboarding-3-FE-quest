@@ -1,7 +1,16 @@
-import React from "react";
+import { Routes, Route } from 'react-router-dom'
+import { Layout } from './components/Layouts'
+import { Home, Login } from './routes'
 
-function App() {
-  return <div>react</div>;
+const App = () => {
+  return (
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path='/' element={<Home />} />
+      </Route>
+      <Route path='/Login' element={<Login />} />
+    </Routes>
+  )
 }
 
-export default App;
+export default App
