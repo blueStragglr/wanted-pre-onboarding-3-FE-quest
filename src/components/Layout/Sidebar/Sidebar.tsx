@@ -1,7 +1,7 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import className from 'classnames';
 import styles from './Sidebar.module.scss';
-import { Link } from 'react-router-dom';
 
 export const Sidebar = () => {
   const [clickedTabId, setClickedTabId] = useState('0');
