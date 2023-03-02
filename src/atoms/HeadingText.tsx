@@ -4,6 +4,6 @@ export type HeadingTextPropsType = {
 
 export function HeadingText({content}:HeadingTextPropsType) {
     return(
-        <h2>{content}</h2>
+        <h3>{content}</h3>
     )
 }

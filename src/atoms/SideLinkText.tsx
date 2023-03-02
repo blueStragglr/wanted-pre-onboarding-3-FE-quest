@@ -1,10 +1,11 @@
 export type SideLinkTextPropsType = {
     content : string,
     url: string,
+    highlightColor? : string
 }
 
-export function SideLinkText({content, url}:SideLinkTextPropsType) {
+export function SideLinkText({content, url, highlightColor}:SideLinkTextPropsType) {
     return(
-        <a href={url}>{content}</a>
+        <a href={url} style={{color:highlightColor?highlightColor:"black"}}>{content}</a>
     )
 }

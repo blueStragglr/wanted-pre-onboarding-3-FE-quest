@@ -1,6 +1,11 @@
+import { useEffect } from 'react';
 import { SideLinkText } from "../atoms/SideLinkText";
 
-export function ASide() {
+export type ASidePropsType = {
+    pageType? : string,
+}
+
+export function ASide({pageType}: ASidePropsType) {
     return(
         <aside>
             <SideLinkText content="Page A" url="/A"/>
