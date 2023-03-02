@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
   return (
     <StSidebar>
-      <div>Page A</div>
+      <div><Link to="/pageA">PageA</Link></div>
       <div>Page B</div>
       <div>Page C</div>
     </StSidebar>
