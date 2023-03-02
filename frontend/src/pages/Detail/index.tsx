@@ -6,7 +6,11 @@ const Detail = () => {
   return (
     <>
     <Wrapper>
-      <Title>{`This is Page ${pageId?.toUpperCase()}`} !</Title>
+      {
+        pageId 
+        ? <Title>{`This is Page ${pageId?.toUpperCase()}`} !</Title>
+        : <Title>This is Detail Page</Title>
+      }
     </Wrapper>
     </>
   )
