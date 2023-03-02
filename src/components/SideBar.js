@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useLocation } from 'react-router-dom';
-import SideBarItem from './SideBarItem';
+import SideBarItem from './sideBarItem';
 const Sidebar = ({ savedUsername }) => {
   const pathName = useLocation().pathname;
   const menus = [

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Template from '../components/Template';
+import Template from '../components/template';
 
 const PageB = () => {
   return (

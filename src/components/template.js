@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from './Header';
-import Sidebar from './SideBar';
+import Header from './header';
+import Sidebar from './sideBar';
 import styled from 'styled-components';
 const Template = ({ children }) => {
   const savedUsername = sessionStorage.getItem('username');
