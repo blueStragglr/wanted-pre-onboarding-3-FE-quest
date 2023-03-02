@@ -10,7 +10,8 @@
 
 ### 🐭 구현 내용
 
-<img src="./public/사전과제.gif" alt="시연" width="100%">
+<img src="./public/사전과제_시연.gif" alt="시연" width="100%">
+<img src="./public/사전과제_스크린샷.png" alt="시연" width="100%">
 
 - recoil, recoil persist 사용하여 로그인 상태 관리
 - 로그인 여부에 따라 login/logout 변경
