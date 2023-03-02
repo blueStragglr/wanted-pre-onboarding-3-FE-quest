@@ -1,0 +1,90 @@
+html {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    line-height: 1.5;
+    color: #121212;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#root, main, #content {
+    width: 100%;
+    height: 100%;
+}
+
+#contents{
+    height: 100%;
+    display: flex;
+}
+
+header {
+    font-family: cursive, sans-serif;
+    padding-left: 40px;
+    border-bottom: solid 1px #e3e3e3;
+}
+
+#lnb {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-right: 50px;
+    border-right: solid 1px #e3e3e3;
+}
+#lnb ul {
+    padding-inline-start: 40px;
+}
+#lnb ul li {
+    margin-bottom: 20px;
+    display: flex;
+    list-style: none;
+}
+#lnb ul li a {
+    font-size: 15px;
+    font-weight: 500;
+}
+#lnb ul li a:active {
+    color: cornflowerblue;
+}
+
+#loginBtn {
+    position:absolute;
+    bottom: 15%;
+    font-size: 20px;
+    margin-left: 40px;
+    padding: 2px;
+    border: solid 1px gainsboro;
+    background-color:#e3e3e3;
+}
+
+#error-page, #login-page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+#login-page {
+    height: 100vh;
+}
+#login-page form input[type="submit"]{
+    width: 100%;
+}
+
+.page-content {
+    height: 100%;
+}
+.page-content p {
+    padding-top: 30%;
+    font-size: 30px;
+    text-align: center;
+    color: rgb(23, 120, 194);
+}
