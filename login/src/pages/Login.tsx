@@ -36,6 +36,7 @@ export default function Login(): JSX.Element {
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             setPassword(e.target.value);
           }}
+          autoComplete={"off"}
         />
         <button>로그인</button>
       </FormStyle>

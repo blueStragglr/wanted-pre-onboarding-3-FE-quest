@@ -10,7 +10,7 @@ export default function Layout(): JSX.Element {
         <Header />
       </HeaderStyle>
       <SideBarOutletWrapper>
-        <SideBar pages={["B", "C", "is not exist"]} />
+        <SideBar pages={["B", "C", "is not exist", "Protect"]} />
         <OutletWrapper>
           <Outlet />
         </OutletWrapper>
