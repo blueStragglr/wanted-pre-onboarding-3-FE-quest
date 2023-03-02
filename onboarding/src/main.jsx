@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ErrorPage from './pages/ErrorPage';
-import GreetingPage from './pages/GreetingPage';
 import InitialPage from './pages/InitialPage';
 import Layout from './layout';
 import LoginPage from './pages/LoginPage';
 import { worker } from './mocks/browser';
 import './index.css';
+import PageA from './pages/PageA';
+import PageB from './pages/PageB';
+import PageC from './pages/PageC';
 
 const router = createBrowserRouter([
   {
@@ -16,8 +18,16 @@ const router = createBrowserRouter([
     errorElement: <Layout children={<ErrorPage />} />,
   },
   {
-    path: '/page/:id',
-    element: <Layout children={<GreetingPage />} />,
+    path: '/pageA',
+    element: <Layout children={<PageA />} />,
+  },
+  {
+    path: '/pageB',
+    element: <Layout children={<PageB />} />,
+  },
+  {
+    path: '/pageC',
+    element: <Layout children={<PageC />} />,
   },
   {
     path: '/login',
@@ -31,16 +41,16 @@ export const routesList = [
     url: '/login',
   },
   {
-    title: 'Page 1',
-    url: '/page/1',
+    title: 'Page A',
+    url: '/pageA',
   },
   {
-    title: 'Page 2',
-    url: '/page/2',
+    title: 'Page B',
+    url: '/pageB',
   },
   {
-    title: 'Page 3',
-    url: '/page/3',
+    title: 'Page C',
+    url: '/pageC',
   },
 ];
 
