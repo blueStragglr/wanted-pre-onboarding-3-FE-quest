@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
-import Header from "./components/Layout/Header";
-import Footer from "./components/Layout/Footer";
-import Aside from "./components/Layout/Aside";
+import Header from "@/components/Layout/Header";
+import Footer from "@/components/Layout/Footer";
+import Aside from "@/components/Layout/Aside";
 import styled from "styled-components";
 
 function App() {
