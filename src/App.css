@@ -1,0 +1,51 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+  padding: 10px 0;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  width: 100vw;
+  height: 80px;
+  border-bottom: 1px solid #282c34;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.section {
+  display: flex;
+}
+
+.sidebar {
+  width: 15vw;
+  height: 92vh;
+  padding: 20px;
+  border-right: 1px solid #282c34;
+  box-sizing: border-box;
+}
+
+.content {
+  padding: 20px;
+}
+
+.active {
+  color: blue;
+}
