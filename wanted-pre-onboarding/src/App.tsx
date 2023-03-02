@@ -1,12 +1,17 @@
 import React from 'react';
-
-import './App.css';
+import Header from './Layout/Header'
+import Sidebar from './Layout/Sidebar';
+import Contents from './Layout/Contents';
 
 function App() {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <>
+        <Header />
+        <div className='flex flex-row'>
+          <Sidebar />
+          <Contents />
+        </div>
+    </>
   );
 }
 
