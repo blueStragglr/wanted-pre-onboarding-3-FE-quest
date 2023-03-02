@@ -3,7 +3,7 @@ import Header from '@components/header'
 import Sidebar from '@components/sidebar'
 import { css } from '@emotion/react'
 import theme from '@styles/theme'
-import { Link, Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 
 export default function Layout() {
     return (
