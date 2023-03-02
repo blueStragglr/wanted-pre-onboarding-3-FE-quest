@@ -1,7 +1,8 @@
+import { Outlet } from "react-router-dom";
 import "./Root.css";
 
 const links = [
-  { name: "page a", path: "/a" },
+  { name: "turtle page", path: "/a" },
   { name: "page b", path: "/b" },
   { name: "page c", path: "/c" },
 ];
@@ -21,7 +22,9 @@ const root = () => {
           </ul>
         </nav>
       </aside>
-      <article className="content">this is index</article>
+      <article className="content">
+        <Outlet />
+      </article>
     </div>
   );
 };
