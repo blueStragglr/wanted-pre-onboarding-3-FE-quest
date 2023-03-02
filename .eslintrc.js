@@ -5,4 +5,7 @@ module.export = {
     node: true,
   },
   extends: ['airbnb', 'plugin:prettier/recommended'],
+  rules: {
+    'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx'] }],
+  },
 };
