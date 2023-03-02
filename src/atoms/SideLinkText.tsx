@@ -1,11 +1,18 @@
+import styled from "styled-components"
+
 export type SideLinkTextPropsType = {
     content : string,
     url: string,
-    highlightColor? : string
+    color : string
 }
 
-export function SideLinkText({content, url, highlightColor}:SideLinkTextPropsType) {
+const StyledA = styled.a`
+  text-decoration:none;  
+  margin-top:30px;
+`;
+
+export function SideLinkText({content, url, color}:SideLinkTextPropsType) {
     return(
-        <a href={url} style={{color:highlightColor?highlightColor:"black"}}>{content}</a>
+        <StyledA href={url} style={{color:color}}>{content}</StyledA>
     )
 }
