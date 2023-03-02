@@ -1,70 +1,120 @@
-# Getting Started with Create React App
+#  리액트 라우터와 로그인 페이지 구현
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 🚩 목차
+- 구현 사항
+- 설치 및 세팅
+- 브랜치
+- 개발 사양
+- 기술 스택
+- 폴더 구조
 
-## Available Scripts
+<br/>
 
-In the project directory, you can run:
+## 🎁 구현 사항
+### 필수 구현사항
+- [x] 최소 3개 이상의 페이지 구현
+- [x] 모든 페이지에 공통으로 반복되는 헤더와 사이드바가 있도록 구성
+### 선택 구현사항
+- [x] 유저네임과 비밀번호를 받아 로그인을 수행할 수 있는 페이지 구현
+- [x] 로그인 페이지는 공통 레이아웃(상단 네비게이션 바 및 사이드바)이 적용되지 않도록 구현
+### 추가 구현사항
+- [x] 로그인한 경우, 네비게이션에서 'Login' 버튼을 숨기고 헤더에서 '로그아웃' 버튼을 보여주도록 구현
+- [x] 로그인한 경우, 헤더 우측에 프로필 기능을 만들어 유저네임을 보여주도록 구현
+- [x] 로그인 정보는 세션 스토리지에 저장하도록 구현
 
-### `npm start`
+<br/>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## ⚙️ 설치 및 세팅
+### 1. npm 설치
+``` shell
+$ npm install
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 2. Extension 설치
+- ESLint
+- Prettier - Code formatter
+- Style Guide: Airbnb
 
-### `npm test`
+### 3. Scripts
+| 명령어  | 기능  |
+|---|---|
+| ```$ npm run start``` | 프로젝트 구동 |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 4. 테스트 계정
+- Email: test1234
+- Password: test1234
 
-### `npm run build`
+<br/>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📷 스크린샷
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<p align="center">
+  <table>
+    <tr>
+      <th>로그인 페이지</th>
+    </tr>
+    <tr>
+      <th>
+        <img width="600" height="350" alt="login" src="https://user-images.githubusercontent.com/52736242/222516307-e878df73-5804-4813-b488-223eb68281a1.png">
+      </th>
+    </tr>    
+  </table>
+    <table>
+    <tr>
+      <th>로그인 상태의 메인 페이지</th>
+    </tr>
+    <tr>
+      <th>
+        <img width="600" height="350" alt="notice board with login status" src="https://user-images.githubusercontent.com/52736242/222516535-4c7f202d-740b-4b46-9ce0-832776ede1f7.png">
+      </th>
+    </tr>    
+  </table>
+    <table>
+    <tr>
+      <th>로그아웃 상태의 메인 페이지</th>
+    </tr>
+    <tr>
+      <th>
+        <img width="600" height="350" alt="notice board with logout status" src="https://user-images.githubusercontent.com/52736242/222517659-3895aceb-3d4c-40b8-a68d-1dd1882e32fe.png">
+      </th>
+    </tr>    
+  </table>
+</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🌲 브랜치
+- [master](https://github.com/Homegirl7417/wanted-pre-onboarding-3-FE-quest)
 
-### `npm run eject`
+<br/>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📚 개발 사양
+- 디자인: PC 최적화
+- 표준 브라우저: Chrome
+- SPA: Client Side Rendering
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<br/>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## ⚒ 기술 스택
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
+<br/>
+<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAF"/>
+<img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white"/>
+<img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white"/>
 
-## Learn More
+<br/>
+<br/>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🗂 폴더 구조
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+``` shell
+├── README.md
+├── .eslintrc.js
+├── .prettier.js
+├── webpack.config.js
+├── package.json
+├── package-lock.json
+├── public
+└── src
+    ├── components
+    ├── pages
+    ├── styles
