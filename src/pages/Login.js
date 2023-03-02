@@ -15,8 +15,17 @@ const Login = () => {
   const onChangePassword = (e) => {
     setPassword(e.target.value);
   };
+  const isVaildPassword = () => {
+    const reg = /^[A-Za-z0-9]{6,12}$/;
+    if (!reg.test(password)) {
+      alert('비밀번호 형식을 다시 확인해주세요. 숫자 또는 문자만을 사용해 6~12자리로 입력해주세요.');
+      return false;
+    }
+    return true;
+  };
   const onClickLogin = () => {
-    if (!isSubmit) {
+    const isVaild = isVaildPassword();
+    if (isVaild && !isSubmit) {
       setIsSubmit(true);
       sessionStorage.setItem('username', userName);
       sessionStorage.setItem('password', password);
@@ -31,7 +40,12 @@ const Login = () => {
           <UserName label="유저네임" type="text" onChange={onChangeUserName} />
         </UserNameWrapper>
         <PasswordWrapper>
-          <Password label="비밀번호" type="password" helperText="최소 8 자, 최소 하나의 문자 및 하나의 숫자" onChange={onChangePassword} />
+          <Password
+            label="비밀번호"
+            type="password"
+            helperText="숫자 또는 문자만을 사용해 6~12자리로 입력해주세요."
+            onChange={onChangePassword}
+          />
         </PasswordWrapper>
         <ButtonWrapper>
           <LoginButton variant="contained" onClick={onClickLogin}>
