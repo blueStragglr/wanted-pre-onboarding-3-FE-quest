@@ -4,12 +4,12 @@ import SubmitButton from "../UI/SubmitButton";
 const Login = () => {
 
 	return (
-		<article className="flex flex-col items-center w-full h-full px-5 py-10 login">
+		<article className="absolute flex flex-col items-center w-full h-full px-5 py-10 bg-white login">
 <form className="flex flex-col w-1/2">
         <Input
-          id="email" 
-          label="E-Mail" 
-          type="email" 
+          id="user_name" 
+          label="Name" 
+          type="text" 
         />
         <Input 
           id="password"
