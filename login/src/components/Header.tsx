@@ -17,7 +17,7 @@ const HeaderStyle = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid ${colorType.layoutBorder};
+  border-bottom: 1px solid ${colorType.palette.gray};
 
   p {
     font-size: 1.5rem;

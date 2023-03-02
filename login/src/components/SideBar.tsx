@@ -21,7 +21,7 @@ export default function SideBar(props: SideBarProps): JSX.Element {
         to="/"
         style={({ isActive, isPending }) => {
           return {
-            color: isActive ? colorType.isActive : "inherit",
+            color: isActive ? colorType.event.isActive : "inherit",
           };
         }}
       >
@@ -34,7 +34,7 @@ export default function SideBar(props: SideBarProps): JSX.Element {
             to={`/${page.toLowerCase()}`}
             style={({ isActive, isPending }) => {
               return {
-                color: isActive ? colorType.isActive : "inherit",
+                color: isActive ? colorType.event.isActive : "inherit",
               };
             }}
           >
@@ -52,5 +52,5 @@ const SideBarStyle = styled.nav`
   align-items: center;
   padding: 2rem 0;
   gap: 2rem;
-  border-right: 1px solid ${colorType.layoutBorder};
+  border-right: 1px solid ${colorType.palette.gray};
 `;
