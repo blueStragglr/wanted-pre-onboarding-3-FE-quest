@@ -4,12 +4,7 @@ export const colorType = {
    */
   palette: {
     gray: "#a3a3a3",
-  },
-
-  /**
-   * 특정 이벤트(active, hover 등) 발생 시 적용할 색상표
-   */
-  event: {
-    isActive: "#006db8",
+    blue: "#006db8",
+    hoverBlue: "#4eb8ff",
   },
 };
