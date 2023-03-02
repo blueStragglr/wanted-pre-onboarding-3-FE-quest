@@ -14,10 +14,10 @@ const HeaderContainer = styled.header`
   padding: 20px;
   height: 80px;
   border-bottom: 1px solid lightgray;
+  box-sizing: border-box;
 `;
 
 const HeaderText = styled.h1`
   font-weight: bold;
   font-size: 36px;
-  line-height: 80px;
 `;

@@ -3,12 +3,7 @@ import styled from 'styled-components';
 import Template from '../components/Template';
 
 const PageA = () => {
-  return (
-    <PageContainer>
-      <Template />
-    </PageContainer>
-  );
+  return <Template></Template>;
 };
 
 export default PageA;
-const PageContainer = styled.div``;
