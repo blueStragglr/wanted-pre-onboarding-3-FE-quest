@@ -37,10 +37,6 @@ const router = createBrowserRouter([
 
 export const routesList = [
   {
-    title: 'login',
-    url: '/login',
-  },
-  {
     title: 'Page A',
     url: '/pageA',
   },

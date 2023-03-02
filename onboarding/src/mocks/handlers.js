@@ -10,8 +10,9 @@ export const handlers = [
 
     if (email === testEmail && password === testPassword) {
       return res(ctx.status(200));
+    } else {
+      alert('로그인에 실패하셨습니다');
+      return res(ctx.status(401));
     }
-
-    return res(ctx.status(401));
   }),
 ];

@@ -1,13 +1,21 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { login } from '../apis/login';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   return (
     <div className="content-page">
-      <form className="login-form">
+      <form
+        className="login-form"
+        onSubmit={(e) => {
+          e.preventDefault();
+          login({ email, password }, () => navigate('/'));
+        }}
+      >
         <label>
           <p>이메일</p>
           <input type="email" onChange={(e) => setEmail(e.target.value)} required />
@@ -18,9 +26,7 @@ const LoginPage = () => {
           <input type="password" onChange={(e) => setPassword(e.target.value)} required />
         </label>
 
-        <button type="button" onClick={() => login({ email, password })}>
-          로그인
-        </button>
+        <button>로그인</button>
       </form>
     </div>
   );
