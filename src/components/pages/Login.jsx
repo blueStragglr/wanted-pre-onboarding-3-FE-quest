@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import styled from '@emotion/styled';
 import { useNavigate } from "react-router-dom";
 
@@ -7,8 +7,31 @@ import { useNavigate } from "react-router-dom";
  *
  */
 const Login = () => {
+
+  // const [state, setState] = useState({
+  //   email: '',
+  //   password: '',
+  // })
+  // const [saveInfo, setSaveInfo] = useState([state]);
+  //
+  // const handleChange = useCallback((e)  => {
+  //   setState({
+  //     ...state,
+  //     [e.target.name]: e.target.value
+  //   })
+  // }, [state, setState])
+  //
+  // const handleDoneLogIn = useCallback((e) => {
+  //   e.preventDefault();
+  //   console.log('clicked', state.email, state.password)
+  //   localStorage.setItem(saveInfo.email, saveInfo.password);
+  // }, [])
+
   const navigate = useNavigate();
+
   const [email, setEmail] = useState('');
+  // const [password, setPassword] = useState('');
+  // const [saveInfo, setSaveInfo] = useState([]);
   const [saveEmail, setSaveEmail] = useState([]);
 
   const handleChangeEmail = useCallback((e) => {
@@ -16,15 +39,24 @@ const Login = () => {
   },[setEmail, email]);
   console.log('email:', email);
 
+  // const handleChangePwd = useCallback((e) => {
+  //   setPassword(e.target.value);
+  // },[setPassword]);
+  // console.log('pwd:', password);
+
   const handleDoneLogIn = useCallback((e) => {
     e.preventDefault();
     setSaveEmail([
       ...saveEmail, email
     ]);
-    localStorage.setItem("email", saveEmail[0]);
-    navigate('/');
-    console.log('saveEmail',saveEmail);
-  },[setSaveEmail,saveEmail, email]);
+  },[setSaveEmail, saveEmail, email]);
+
+  useEffect(() => {
+     if(saveEmail.length > 0){
+      localStorage.setItem("email", saveEmail[0]);
+      navigate('/');
+    }
+  },[saveEmail])
 
   return (
     <LoginStyle>
@@ -46,6 +78,8 @@ const Login = () => {
           name={'password'}
           type={'password'}
           placeholder={'password'}
+          // onChange={handleChangePwd}
+          // value={password}
           className={'basic-input'}
         />
         <LoginBtn
@@ -61,6 +95,7 @@ const LoginStyle = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  //max-width: 500px;
   position: absolute;
   top: 50%;
   left: 50%;
