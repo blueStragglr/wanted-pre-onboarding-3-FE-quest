@@ -15,8 +15,8 @@ const Header = () => {
   const handleClickLogOut = useCallback((e) => {
     e.preventDefault();
     navigate('/');
-    console.log('clicekd');
     localStorage.removeItem("email");
+    localStorage.removeItem("password");
     setHaveStorageItem(null);
   },[haveStorageItem]);
 

@@ -7,56 +7,33 @@ import { useNavigate } from "react-router-dom";
  *
  */
 const Login = () => {
-
-  // const [state, setState] = useState({
-  //   email: '',
-  //   password: '',
-  // })
-  // const [saveInfo, setSaveInfo] = useState([state]);
-  //
-  // const handleChange = useCallback((e)  => {
-  //   setState({
-  //     ...state,
-  //     [e.target.name]: e.target.value
-  //   })
-  // }, [state, setState])
-  //
-  // const handleDoneLogIn = useCallback((e) => {
-  //   e.preventDefault();
-  //   console.log('clicked', state.email, state.password)
-  //   localStorage.setItem(saveInfo.email, saveInfo.password);
-  // }, [])
-
   const navigate = useNavigate();
 
-  const [email, setEmail] = useState('');
-  // const [password, setPassword] = useState('');
-  // const [saveInfo, setSaveInfo] = useState([]);
-  const [saveEmail, setSaveEmail] = useState([]);
+  const [state, setState] = useState({
+    email: '',
+    password: '',
+  })
+  const [saveAuth, setSaveAuth] = useState(state);
 
-  const handleChangeEmail = useCallback((e) => {
-    setEmail(e.target.value);
-  },[setEmail, email]);
-  console.log('email:', email);
-
-  // const handleChangePwd = useCallback((e) => {
-  //   setPassword(e.target.value);
-  // },[setPassword]);
-  // console.log('pwd:', password);
+  const handleChangeAuth = useCallback((e)  => {
+    setState({
+      ...state,
+      [e.target.name]: e.target.value,
+    })
+  }, [state, setState])
 
   const handleDoneLogIn = useCallback((e) => {
     e.preventDefault();
-    setSaveEmail([
-      ...saveEmail, email
-    ]);
-  },[setSaveEmail, saveEmail, email]);
+    setSaveAuth(state);
+  }, [state, setSaveAuth, saveAuth])
 
   useEffect(() => {
-     if(saveEmail.length > 0){
-      localStorage.setItem("email", saveEmail[0]);
+    if(saveAuth.email.length > 0){
+      localStorage.setItem("email", saveAuth.email);
+      localStorage.setItem("password", saveAuth.password);
       navigate('/');
     }
-  },[saveEmail])
+  },[saveAuth, state, setSaveAuth])
 
   return (
     <LoginStyle>
@@ -68,8 +45,8 @@ const Login = () => {
           name={'email'}
           type={'email'}
           placeholder={'email'}
-          onChange={handleChangeEmail}
-          value={email}
+          onChange={handleChangeAuth}
+          value={state.email}
           className={'basic-input'}
         />
         <label htmlFor={'password'}>비밀번호</label>
@@ -78,8 +55,8 @@ const Login = () => {
           name={'password'}
           type={'password'}
           placeholder={'password'}
-          // onChange={handleChangePwd}
-          // value={password}
+          onChange={handleChangeAuth}
+          value={state.password}
           className={'basic-input'}
         />
         <LoginBtn
@@ -95,7 +72,6 @@ const LoginStyle = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  //max-width: 500px;
   position: absolute;
   top: 50%;
   left: 50%;
