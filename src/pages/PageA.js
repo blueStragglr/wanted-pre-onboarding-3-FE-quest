@@ -6,7 +6,7 @@ const PageA = () => {
   return (
     <Template>
       <PageContainer>
-        <PageText>집좀가자A</PageText>
+        <Title>This is Page A!</Title>
       </PageContainer>
     </Template>
   );
@@ -22,7 +22,7 @@ const PageContainer = styled.div`
   align-items: center;
 `;
 
-const PageText = styled.div`
+const Title = styled.div`
   font-size: 48px;
   color: royalblue;
 `;
