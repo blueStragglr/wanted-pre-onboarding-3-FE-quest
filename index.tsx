@@ -11,7 +11,7 @@ const useProtectedRouteConditions = () => {
 
 // PageRoutes.tsx
 const PageRoutes = () => {
-  const { isLoggedIn,isAdmin,isBannedUser } = useProtectedRouteConditions();
+  const { isLoggedIn,isAdmin, isBannedUser } = useProtectedRouteConditions();
 
   return (
   <>
@@ -19,7 +19,7 @@ const PageRoutes = () => {
       <AppRoute path="/design" element={DesignPageRouter} protectedBy={isLoggedIn} redirect="/login" />
       <AppRoute path="/setting" element={SettingPage}  protecedBy={isAdmin} redirect="/" />
       <AppRoute path="/pricing" element={PricingPage} public />  
-      <AppRoute path="/login" element={LoginPage} public allowAppLayout={false}/> 
+      <AppRoute path="/login" element={LoginPage} public hasLayout={false}/> 
       <AppRoute path="/pageA" element={PageA} public /> 
       {/* 새로운 주소 확장  */}
       {/* <AppRoute path="/someprivatePage" element={PrivatePage} protectedBy={isBannedUser} />  */}
@@ -43,7 +43,7 @@ interface AppRouteProps {
   redirect?: string;
 }
 
-const AppRoute = ({element, protectedBy:canAccess, hasLayout, redirect, public}:AppRouteProps) => {
+const AppRoute = ({element, protectedBy:canAccess, hasLayout=true, redirect, public}:AppRouteProps) => {
   if(public && canAccess) return withAppLayout(<Route path={path} element={element}/>, hasLayout);
 
   return redirect ? <Redirect path={redirect}/> : null;
