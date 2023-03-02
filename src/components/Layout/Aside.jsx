@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useLocation, useNavigate } from "react-router-dom";
 import { IoMdLogIn, IoMdLogOut } from "react-icons/io";
-import { useRecoilValue, useRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 import { authState } from "@/atoms/authAtom";
 
 const Aside = () => {
@@ -41,7 +41,7 @@ const Aside = () => {
           className={pathname === "/mypage" ? "active" : "basic"}
           onClick={(e) => handleNavigate(e)}
         >
-          MyPage
+          My page
         </li>
       </ul>
       {auth ? (
@@ -85,11 +85,16 @@ const Container = styled.div`
       border-bottom: 1px solid var(--color-primary);
       color: var(--color-point-dark);
       cursor: pointer;
+
       &.active {
         color: var(--color-primary);
       }
       &:hover {
         color: var(--color-primary);
+      }
+      span {
+        font-size: 12px;
+        align-self: flex-end;
       }
     }
   }
