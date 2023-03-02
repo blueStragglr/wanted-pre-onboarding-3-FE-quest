@@ -10,7 +10,7 @@ export default function Layout(): JSX.Element {
         <Header />
       </HeaderStyle>
       <SideBarOutletWrapper>
-        <SideBar />
+        <SideBar pages={["B", "C", "is not exist"]} />
         <OutletWrapper>
           <Outlet />
         </OutletWrapper>
@@ -20,29 +20,29 @@ export default function Layout(): JSX.Element {
 }
 
 const LayoutStyle = styled.div`
+  width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
 `;
 
 const HeaderStyle = styled.div`
-  height: 10vh;
+  height: 10%;
 `;
 
 const SideBarOutletWrapper = styled.div`
-  height: 90vh;
+  height: 90%;
   display: flex;
 
   > nav {
-    width: 20vw;
-    height: 100%;
+    width: 20%;
     @media screen and (max-width: 768px) {
       display: none;
     }
   }
 
   > main {
-    width: 80vw;
-    height: 100%;
+    width: 80%;
   }
 `;
 
