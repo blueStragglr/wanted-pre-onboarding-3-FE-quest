@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import GlobalStyle from "./styles/GlobalStyle";
 import Layout from "./layouts/Layout";
@@ -7,6 +8,10 @@ import C from "./pages/C";
 import Login from "./pages/Login";
 
 function App() {
+  useEffect(() => {
+    localStorage.setItem("isLogin", "false");
+  }, []);
+
   return (
     <BrowserRouter>
       <GlobalStyle />

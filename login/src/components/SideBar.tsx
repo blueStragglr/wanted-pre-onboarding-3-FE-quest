@@ -21,7 +21,7 @@ export default function SideBar(props: SideBarProps): JSX.Element {
         to="/"
         style={({ isActive, isPending }) => {
           return {
-            color: isActive ? colorType.event.isActive : "inherit",
+            color: isActive ? colorType.palette.blue : "inherit",
           };
         }}
       >
@@ -34,7 +34,7 @@ export default function SideBar(props: SideBarProps): JSX.Element {
             to={`/${page.toLowerCase()}`}
             style={({ isActive, isPending }) => {
               return {
-                color: isActive ? colorType.event.isActive : "inherit",
+                color: isActive ? colorType.palette.blue : "inherit",
               };
             }}
           >
