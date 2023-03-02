@@ -5,6 +5,31 @@
 - 이번 프리온보딩 목표: 레이아웃 패턴과 로그인
 - 공부할 것: 리액트 라우터와 레이아웃 구성
 
+### 만들면서 알게 된 것
+* Grid를 쓰니 단순히 배치를 위한 추가적인 `div` 태그를 쓰지 않아도 돼서 좋았다.
+  ```
+  // Grid 사용 전
+  
+  <div className={styles.container}>
+      <Header />
+
+      <div className={styles.mainContainer}>
+        <Sidebar />
+        {children}
+      </div>
+  </div>
+  ```
+  
+  ```
+  // Grid 사용 후
+  
+  <div className={styles.container}>
+      <Header />
+      <Sidebar />
+      {children}
+  </div>
+  ```
+
 ### 요구 사항
 
 - NextJS 등의 SSR 어플리케이션이 아닌, CSR 어플리케이션을 구축한다.
