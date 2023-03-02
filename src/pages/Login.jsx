@@ -1,8 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { useState } from "react";
-import { useRecoilValue, useRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 import { authState } from "@/atoms/authAtom";
 
 const Login = () => {
@@ -90,6 +89,7 @@ const InputWrap = styled.div`
       box-sizing: border-box;
       outline: none;
       border: transparent;
+      background-color: var(--color-white);
     }
   }
 `;
