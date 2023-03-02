@@ -1,5 +1,65 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
 .App {
+  text-align: left;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+.body {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+
+}
+
+.contents {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  padding: 20px;
+  text-align: left;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.4rem;
+  width: 100%;
+  border-bottom: 1px solid #333;
+}
+
+.pageWwrap {
+  padding: 20px;
+  display: table;
+  float: left;
+  height: 100%;
+  width: 80%;
+}
+
+.sideWrap {
+ 
+  padding: 20px;
+  font-size: 1.3rem;
+  border-right: 1px solid #333;
+  height: 100%;
+  float: left;
+  width: 20%;
+}
+
+.pages {
   text-align: center;
+  display: table-cell;
+  font-size: 1.6rem;
+  vertical-align: middle;
+}
+
+.activate {
+  color: #3070cf;
 }
 
 .App-logo {
@@ -32,6 +92,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
