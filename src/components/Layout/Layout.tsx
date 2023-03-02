@@ -11,11 +11,8 @@ export const Layout = ({ children }: LayoutType) => {
   return (
     <div className={styles.container}>
       <Header />
-
-      <div className={styles.mainContainer}>
-        <Sidebar />
-        {children}
-      </div>
+      <Sidebar />
+      {children}
     </div>
   );
 };
