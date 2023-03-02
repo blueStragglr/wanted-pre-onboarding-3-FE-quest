@@ -1,8 +1,7 @@
-import { Page } from "../styles/styles";
+import { Page } from '../styles/styles';
 
 function PageB() {
-    return <Page>PageB</Page>;
-  }
-  
-  export default PageB;
-  
+  return <Page>This is Page B!</Page>;
+}
+
+export default PageB;

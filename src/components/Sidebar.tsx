@@ -1,4 +1,4 @@
-import { Link, useMatch, PathMatch } from 'react-router-dom';
+import { Link, useMatch } from 'react-router-dom';
 import styled from 'styled-components';
 
 const SidebarWrapper = styled.div`
@@ -10,18 +10,18 @@ const SidebarWrapper = styled.div`
   border-right: 3px solid #cecece;
 `;
 
-const Page = styled.div<{isActive: boolean}>`
-    display: flex;
-    align-items: center;
-    padding-bottom: 10px;
-    color: ${props => props.isActive ? props.theme.highlight :props.theme.textColor};
+const Page = styled.div<{ isActive: boolean }>`
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  color: ${(props) => (props.isActive ? props.theme.highlight : props.theme.textColor)};
 `;
 
 function Sidebar() {
-  const pageAMatch = useMatch("/pageA");
-  const pageBMatch = useMatch("/pageB");
-  const pageCMatch = useMatch("/pageC");
-  
+  const pageAMatch = useMatch('/pageA');
+  const pageBMatch = useMatch('/pageB');
+  const pageCMatch = useMatch('/pageC');
+
   return (
     <SidebarWrapper>
       <Page isActive={Boolean(pageAMatch)}>

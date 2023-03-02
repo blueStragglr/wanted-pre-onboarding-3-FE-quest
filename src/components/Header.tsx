@@ -8,7 +8,7 @@ const HeaderWrapper = styled.div`
   align-items: center;
   padding: 20px;
   border-bottom: 3px solid #cecece;
-  font-family: ${props=>props.theme.headerFont};
+  font-family: ${(props) => props.theme.headerFont};
   font-weight: bold;
   font-style: italic;
 `;
