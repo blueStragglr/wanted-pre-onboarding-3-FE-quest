@@ -3,11 +3,12 @@ import Header from './Header';
 import Sidebar from './SideBar';
 import styled from 'styled-components';
 const Template = ({ children }) => {
+  const savedUsername = sessionStorage.getItem('username');
   return (
     <TemplateContainer>
-      <Header />
+      <Header savedUsername={savedUsername} />
       <Content>
-        <Sidebar />
+        <Sidebar savedUsername={savedUsername} />
         <Page>{children}</Page>
       </Content>
     </TemplateContainer>
