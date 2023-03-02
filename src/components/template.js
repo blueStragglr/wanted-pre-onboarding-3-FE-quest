@@ -2,13 +2,13 @@ import React from 'react';
 import Header from './Header';
 import Sidebar from './SideBar';
 import styled from 'styled-components';
-const Template = () => {
+const Template = ({ children }) => {
   return (
     <TemplateContainer>
       <Header />
       <Content>
         <Sidebar />
-        <Page>페이지</Page>
+        <Page>{children}</Page>
       </Content>
     </TemplateContainer>
   );
@@ -26,7 +26,6 @@ const Content = styled.div`
   height: calc(100% - 80px);
 `;
 const Page = styled.div`
-  background-color: blue;
   width: 100%;
   height: 100%;
 `;
