@@ -1,0 +1,21 @@
+#login-page{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  > .wrapper {
+    border:1px solid black;
+    border-radius: .25rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    > form {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+  }
+}
