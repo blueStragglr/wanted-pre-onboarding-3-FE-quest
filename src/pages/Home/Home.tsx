@@ -1,5 +1,6 @@
+import { Layout } from 'components/Layout/Layout';
 import styles from './Home.module.scss';
 
 export const Home = () => {
-  return <div>Home</div>;
+  return <Layout>Home</Layout>;
 };
