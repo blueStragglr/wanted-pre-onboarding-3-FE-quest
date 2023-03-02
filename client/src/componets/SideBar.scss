@@ -1,0 +1,17 @@
+#side-bar{
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 1rem;
+  font-size: 1.5rem;
+  border-right: 1px solid gray;
+  min-width: 10rem;
+  > a {
+    text-decoration: none;
+    color: black;
+    &.focus {
+      color: #0055ff;
+    }
+  }
+}
