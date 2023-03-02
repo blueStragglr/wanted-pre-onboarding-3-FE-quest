@@ -1,0 +1,10 @@
+.layout {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+}
+.headerContainer {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid gainsboro;
+}
