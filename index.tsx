@@ -1,5 +1,5 @@
 // private 페이지가 되는 조건에 대한 정보
-const useProtectedRouteConditions = () => {
+export const useProtectedRouteConditions = () => {
   const {isLoggedIn,isAdmin,isBannedUser} = useCurrentUser(); // 유저 정보 저장 스토어 
  // 조건 더 추가 
   return {
@@ -10,7 +10,7 @@ const useProtectedRouteConditions = () => {
 }
 
 // PageRoutes.tsx
-const PageRoutes = () => {
+export const PageRoutes = () => {
   const { isLoggedIn,isAdmin, isBannedUser } = useProtectedRouteConditions();
 
   return (
@@ -43,24 +43,38 @@ interface AppRouteProps {
   redirect?: string;
 }
 
-const AppRoute = ({element, protectedBy:canAccess, hasLayout=true, redirect, public}:AppRouteProps) => {
+export const AppRoute = ({element, protectedBy:canAccess, hasLayout=true, redirect, public}:AppRouteProps) => {
   if(public && canAccess) return withAppLayout(<Route path={path} element={element}/>, hasLayout);
 
   return redirect ? <Redirect path={redirect}/> : null;
 }
 
-const useAppLayout = ()=>{
+export const useAppLayout = ()=>{
   const value = useContext(AppLayoutContext);
   if(!value) throw new Error();
-  return value.Layout;
+  return value;
 }
 
 // withAppLayout HOC
-const withAppLayout = (component,hasLayout) => {
+export const withAppLayout = (component,hasLayout) => {
 const { Layout } = useAppLayout()
   return hasLayout ? <Layout>{component}</Layout> : <>{component}</>;
 }
 
+
+// AppLayout.tsx
+interface AppLayoutProps {
+  children:ReactNode;
+ }
+ 
+export const AppLayout = ({children}) => {
+  return <>
+    <Header/>
+    <SideBar/>
+      {children}
+     <Footer/>
+   </>
+}
 
 // App.tsx (entry)
 import { AppLayout } from "@component";
