@@ -12,6 +12,13 @@ export const Item = styled.button<{isActive : boolean}>`
     padding: 15px;
     font-weight: bold;
     color: ${({isActive}) => isActive ? 'blue' : 'black'};
+    font-size: 24px;
+    span{
+        cursor: pointer;
+    }
+    span:first-child{
+        margin-right: 10px;
+    }
 `
 
 export const Line = styled.hr`
