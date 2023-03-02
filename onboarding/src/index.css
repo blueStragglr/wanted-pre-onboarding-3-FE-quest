@@ -128,8 +128,11 @@ table {
   border-spacing: 0;
 }
 
-.layout {
-  display: flex;
+header {
+  height: 20px;
+  background-color: black;
+  color: white;
+  padding: 2px;
 }
 
 .content-page {
@@ -160,4 +163,8 @@ table {
   border: 1px solid black;
   padding: 24px;
   border-radius: 8px;
+}
+
+.layout-contents {
+  display: flex;
 }
