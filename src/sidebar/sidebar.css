@@ -1,0 +1,12 @@
+.sidebar{
+    display: flex;
+    border-right: 1px solid #000000;
+    flex-direction: column;
+    padding-left: 3%;
+    width: 8%;
+}
+
+.select-btn{
+    margin: 10%;
+    text-decoration: none;
+}
