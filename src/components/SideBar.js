@@ -24,6 +24,5 @@ export default Sidebar;
 const SidebarContainer = styled.div`
   width: 200px;
   padding: 20px 0px;
-  background-color: red;
   border-right: 1px solid lightgray;
 `;

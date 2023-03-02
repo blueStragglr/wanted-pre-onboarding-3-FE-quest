@@ -5,24 +5,25 @@ import { Link } from 'react-router-dom';
 const SideBarItem = ({ path, text, isActive }) => {
   return (
     <SideBarItemContainer path={path}>
-      <SideBarText isActive={isActive}>{text}</SideBarText>
+      <SideBarText isActive={isActive}>
+        <SideBarItemLink>{text}</SideBarItemLink>
+      </SideBarText>
     </SideBarItemContainer>
   );
 };
 
 export default SideBarItem;
 
-const SideBarItemContainer = styled(Link)`
-  width: 60px;
-  height: 30px;
-  background-color: yellow;
-  margin: auto;
-  justify-content: center;
-  align-items: center;
+const SideBarItemContainer = styled.div`
+  text-align: center;
 `;
 
-const SideBarText = styled.div`
-  font: 24px;
-  text-align: center;
+const SideBarText = styled.span`
+  display: inline-block;
+  padding: 10px 0px;
+  font-size: 24px;
+  font-weight: bold;
   color: ${(props) => (props.isActive ? 'blue' : 'black')};
 `;
+
+const SideBarItemLink = styled(Link)``;
