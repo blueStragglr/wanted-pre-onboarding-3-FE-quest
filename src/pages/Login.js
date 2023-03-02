@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import TextField from '@mui/material/TextField';
@@ -9,6 +9,8 @@ const Login = () => {
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const userNameFocus = useRef(null);
+  const passwordFocus = useRef(null);
   const onChangeUserName = (e) => {
     setUserName(e.target.value);
   };
@@ -32,19 +34,34 @@ const Login = () => {
       navigate('/page/a');
     }
   };
+  const onKeyPressUserName = (e) => {
+    if (e.key === 'Enter') {
+      passwordFocus.current.focus();
+    }
+  };
+  const onKeyPressPassword = (e) => {
+    if (e.key === 'Enter') {
+      onClickLogin();
+    }
+  };
+  useEffect(() => {
+    if (userNameFocus.current) userNameFocus.current.focus();
+  }, []);
   return (
     <LoginContainer>
       <LoginWrapper>
         <Title>로그인 페이지</Title>
         <UserNameWrapper>
-          <UserName label="유저네임" type="text" onChange={onChangeUserName} />
+          <UserName inputRef={userNameFocus} label="유저네임" type="text" onChange={onChangeUserName} onKeyPress={onKeyPressUserName} />
         </UserNameWrapper>
         <PasswordWrapper>
           <Password
+            inputRef={passwordFocus}
             label="비밀번호"
             type="password"
             helperText="숫자 또는 문자만을 사용해 6~12자리로 입력해주세요."
             onChange={onChangePassword}
+            onKeyPress={onKeyPressPassword}
           />
         </PasswordWrapper>
         <ButtonWrapper>
