@@ -4,7 +4,7 @@ import GlobalStyle from './styles/GlobalStyle';
 import PageA from './pages/PageA';
 import PageB from './pages/PageB';
 import PageC from './pages/PageC';
-
+import Login from './pages/Login';
 function App() {
   return (
     <React.Fragment>
@@ -14,6 +14,7 @@ function App() {
         <Route path="/page/a" element={<PageA />}></Route>
         <Route path="/page/b" element={<PageB />}></Route>
         <Route path="/page/c" element={<PageC />}></Route>
+        <Route path="/login" element={<Login />}></Route>
         <Route path="*" element={<Navigate replace to="/page/a" />} />
       </Routes>
     </React.Fragment>

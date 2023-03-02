@@ -8,6 +8,7 @@ const Sidebar = () => {
     { name: 'Page A', path: '/page/a' },
     { name: 'Page B', path: '/page/b' },
     { name: 'Page C', path: '/page/c' },
+    { name: 'Login', path: '/login' },
   ];
 
   return (
