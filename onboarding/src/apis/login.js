@@ -9,7 +9,4 @@ export const login = async (userInfo) => {
     },
     body: JSON.stringify(userInfo),
   });
-
-  if (result.ok && result.status === 200) {
-  }
 };
