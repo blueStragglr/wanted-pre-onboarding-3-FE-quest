@@ -1,0 +1,23 @@
+.aside {
+  position: relative;
+  width: 200px;
+}
+
+.aside ul {
+  width: 200px;
+}
+
+.aside .page {
+  list-style: none;
+  width: 100%;
+  text-align: end;
+  padding: 0.8rem 2rem;
+  margin: 0.8rem;
+  cursor: pointer;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: rgb(80, 89, 91);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  background-color: rgb(149, 237, 230);
+}

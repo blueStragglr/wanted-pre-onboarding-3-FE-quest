@@ -1,0 +1,12 @@
+.article {
+  width: calc(100vw - 200px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.article h1 {
+  text-align: center;
+  font-size: 3rem;
+  letter-spacing: 5px;
+}
