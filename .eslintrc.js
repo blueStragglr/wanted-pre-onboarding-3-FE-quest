@@ -4,7 +4,7 @@ module.export = {
     es6: true,
     node: true,
   },
-  extends: ['airbnb', 'plugin:prettier/recommended'],
+  extends: ['airbnb', 'prettier/react', 'eslint:recommended', 'plugin:prettier/recommended'],
   rules: {
     'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx'] }],
   },
