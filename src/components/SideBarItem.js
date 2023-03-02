@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-const SideBarItem = ({ path, text, isActive }) => {
+const SideBarItem = ({ path, text, isactive }) => {
   return (
     <SideBarItemContainer>
       <SideBarItemWrapper>
-        <SideBarItemText to={path} isActive={isActive}>
+        <SideBarItemText to={path} isactive={isactive}>
           {text}
         </SideBarItemText>
       </SideBarItemWrapper>
@@ -27,5 +27,5 @@ const SideBarItemWrapper = styled.span`
 
 const SideBarItemText = styled(Link)`
   font-size: 24px;
-  color: ${(props) => (props.isActive ? 'royalblue' : 'black')};
+  color: ${(props) => (props.isactive === 'true' ? 'royalblue' : 'black')};
 `;
