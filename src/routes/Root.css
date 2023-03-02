@@ -5,27 +5,28 @@
 
 .root {
   margin: 0 auto;
-  height: 100%;
+  max-height: 100%;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: 60px 1fr;
+  grid-template-columns: 200px auto;
+  grid-template-rows: 60px calc(100vh - 60px);
+  grid-template-areas:
+    "header header"
+    "sidebar content-area";
 }
 
 .header {
-  grid-column: 1/ 7;
-  grid-row: 1;
+  grid-area: header;
   background-color: lightblue;
 }
 
 .sidebar {
-  grid-column: 1;
-  grid-row: 2;
+  grid-area: sidebar;
   background-color: lightcyan;
 }
 
 .content {
-  grid-column: 2 / auto;
-  grid-row: 2;
+  grid-area: content-area;
+  overflow-y: auto;
 }
 
 .nav {
