@@ -1,0 +1,7 @@
+h2 {
+    margin: 0;
+}
+
+.header {
+    border-bottom: var(--border);
+    padding: 1rem;}

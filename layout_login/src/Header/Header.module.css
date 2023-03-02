@@ -1,0 +1,28 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    border-right: var(--border);
+    width: 15%;
+    height: 100vh;
+    font-weight: 500;
+}
+
+.header a {
+    text-decoration: none;
+    color: black;
+    margin: 1rem auto;
+}
+
+button {
+    border: none;
+    outline: none;
+    background: transparent;
+    opacity: .8;
+    cursor: pointer;
+}
+
+.selected {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--clr-accent);
+}
