@@ -1,5 +1,5 @@
-import { Outlet } from 'react-router-dom'
 import SideBar from '../../components/SideBar'
+import Detail from '../Detail'
 import { Wrapper } from './style'
 
 const Home = () => {
@@ -7,7 +7,7 @@ const Home = () => {
     <>
     <Wrapper>
       <SideBar />
-      <Outlet />
+      <Detail />
     </Wrapper>
     </>
   )
