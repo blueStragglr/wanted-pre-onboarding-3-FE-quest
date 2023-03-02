@@ -41,6 +41,7 @@ const GlobalStyle = createGlobalStyle`
     &:active {
       text-decoration: none;
     }
+  }
 `;
 
 export default GlobalStyle;
