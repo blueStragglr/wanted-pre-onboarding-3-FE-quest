@@ -15,9 +15,17 @@
   align-items: $align;
 }
 
-@mixin grid-container($columns: '', $rows: '') {
+@mixin gridbox() {
   display: grid;
+}
+
+@mixin grid-container-columns($columns: '') {
+  @include gridbox;
   grid-template-columns: $columns;
+}
+
+@mixin grid-container-rows($rows: '') {
+  @include gridbox;
   grid-template-rows: $rows;
 }
 
