@@ -1,7 +1,7 @@
 // private 페이지가 되는 조건에 대한 정보
 const useProtectedRouteConditions = () => {
-  const {isLoggedIn,isAdmin,isBannedUser} = useCurrentUser();
-
+  const {isLoggedIn,isAdmin,isBannedUser} = useCurrentUser(); // 유저 정보 저장 스토어 
+ // 조건 더 추가 
   return {
     isLoggedIn,
     isAdmin,
@@ -22,7 +22,7 @@ const PageRoutes = () => {
       <AppRoute path="/login" element={LoginPage} public hasLayout={false}/> 
       <AppRoute path="/pageA" element={PageA} public /> 
       {/* 새로운 주소 확장  */}
-      {/* <AppRoute path="/someprivatePage" element={PrivatePage} protectedBy={isBannedUser} />  */}
+      {/* <AppRoute path="/someprivatePage" element={PrivatePage} protectedBy={isBannedUser} redirect={"/"} />  */}
     </Routes>
   </>)
 }
@@ -68,11 +68,11 @@ import { AppLayout } from "@component";
 function App() {
   return 
   <ThemeProvider>
-    <AuthProvider>
+    <UserProvider>
       <AppLayoutProvider layout={AppLayout}>
         <PageRoutes/>
       </AppLayoutProvider>
-    </AuthProvider>
+    </UserProvider>
   </ThemeProvider>;
 }
 
