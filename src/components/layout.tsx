@@ -1,4 +1,5 @@
 import Divider from '@components/divider'
+import Header from '@components/header'
 import Sidebar from '@components/sidebar'
 import { css } from '@emotion/react'
 import theme from '@styles/theme'
@@ -7,9 +8,7 @@ import { Link, Outlet } from 'react-router-dom'
 export default function Layout() {
     return (
         <>
-            <header css={headerCss}>
-                <h3>Wanted Pre-onboarding course</h3>
-            </header>
+            <Header />
             <Divider size="1px" color={theme.colors.gray} />
             <div css={bodyCss}>
                 <Sidebar />
@@ -21,14 +20,6 @@ export default function Layout() {
         </>
     )
 }
-
-const headerCss = css`
-    padding: 20px 25px;
-
-    h3 {
-        font-weight: bold;
-    }
-`
 
 const bodyCss = css`
     display: flex;
