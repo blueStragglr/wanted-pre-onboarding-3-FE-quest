@@ -1,17 +1,25 @@
 import React from "react";
 import styled from "styled-components";
 import { useLocation, useNavigate } from "react-router-dom";
-import { IoMdLogIn } from "react-icons/io";
+import { IoMdLogIn, IoMdLogOut } from "react-icons/io";
+import { useRecoilValue, useRecoilState } from "recoil";
+import { authState } from "@/atoms/authAtom";
 
 const Aside = () => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
+  const [auth, setAuth] = useRecoilState(authState);
+  console.log(auth);
 
   function handleNavigate(e) {
     const value = e.target.textContent.toLowerCase().replaceAll(" ", "");
     if (value === "main") {
       navigate(`/`);
     } else navigate(`/${value}`);
+  }
+
+  function handleLogout() {
+    setAuth(false);
   }
 
   return (
@@ -36,10 +44,17 @@ const Aside = () => {
           MyPage
         </li>
       </ul>
-      <Auth onClick={(e) => handleNavigate(e)}>
-        <IoMdLogIn className="icon" />
-        <p>Login</p>
-      </Auth>
+      {auth ? (
+        <Auth onClick={handleLogout}>
+          <IoMdLogOut className="icon" />
+          <p>Logout</p>
+        </Auth>
+      ) : (
+        <Auth onClick={(e) => handleNavigate(e)}>
+          <IoMdLogIn className="icon" />
+          <p>Login</p>
+        </Auth>
+      )}
     </Container>
   );
 };
