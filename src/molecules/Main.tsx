@@ -1,13 +1,20 @@
-import { MainText } from "../atoms/MainText";
+import {ReactNode} from 'react';
+import styled from 'styled-components';
 
 export type MainPropsType = {
-    content: string,
+    content: ReactNode,
 }
+
+const StyledMain = styled.main`
+    display:flex;
+    justify-content:center;
+    align-items:center;
+`
 
 export function Main({content}: MainPropsType ) {
     return(
-        <main>
-            <MainText content={content} />
-        </main>
+        <StyledMain>
+            {content}
+        </StyledMain>
     )
 }

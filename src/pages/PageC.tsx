@@ -1,7 +1,8 @@
-import { MainTemplate } from "../templates/MainTemplate"
+import { MainText } from "../atoms/MainText"
+import { PageTemplate } from "../templates/PageTemplate"
 
 export function PageC() {
     return(
-        <MainTemplate content="Page C"/>
+        <PageTemplate pageType="C" content={<MainText content="This is Page C" />}/>
     )
 }
