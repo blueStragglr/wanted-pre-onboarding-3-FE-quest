@@ -1,0 +1,31 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "extends": [],
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": ["react", "react-hooks"],
+    "rules": {
+        "react/react-in-jsx-scope": 0,
+        "react/prefer-stateless-function": 0,
+        "react/jsx-filename-extension": 0,
+        "react/jsx-one-expression-per-line": 0,
+        "react/jsx-curly-brace-presence": ["warn", { "props": "never", "children": "never" }], // JSX 내에서 불필요한 중괄호 제거
+        "no-nested-ternary": 0,
+        "react-hooks/exhaustive-deps": ["warn"]
+    }
+}
