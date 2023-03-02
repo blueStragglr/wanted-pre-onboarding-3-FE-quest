@@ -1,7 +1,7 @@
-import React from 'react'
+import * as S from './styles'
 
 const PageC = () => {
-  return <div>PageC</div>
+  return <S.pageContainer>This is Page C!</S.pageContainer>
 }
 
 export default PageC
