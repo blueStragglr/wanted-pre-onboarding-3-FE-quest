@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { SideLinkText } from "../atoms/SideLinkText";
 import styled from 'styled-components';
 
@@ -20,9 +19,9 @@ const StyledASide = styled.aside`
 export function ASide({pageType}: ASidePropsType) {
     return(
         <StyledASide>
-            <SideLinkText content="Page A" url="/A" color={pageType === "A" ? "blue" : "black"}/>
-            <SideLinkText content="Page B" url="/B" color={pageType === "B" ? "blue" : "black"}/>
-            <SideLinkText content="Page C" url="/C" color={pageType === "C" ? "blue" : "black"}/>
+            <SideLinkText content="Page A" url="/A" color={pageType === "A" ? "skyblue" : "black"}/>
+            <SideLinkText content="Page B" url="/B" color={pageType === "B" ? "skyblue" : "black"}/>
+            <SideLinkText content="Page C" url="/C" color={pageType === "C" ? "skyblue" : "black"}/>
         </StyledASide>
     )
 }

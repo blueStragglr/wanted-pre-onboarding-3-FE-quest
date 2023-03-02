@@ -1,9 +1,30 @@
-export type HeadingTextPropsType = {
-    content : string,
+import styled from 'styled-components';
+
+export interface StyledHeadingMarginPropsType {
+    marginTop?: string,
+    marginLeft?: string,
+    marginBottom?: string,
+    marginRight?: string
 }
 
-export function HeadingText({content}:HeadingTextPropsType) {
+export type HeadingTextPropsType = {
+    content : string,
+    margin : StyledHeadingMarginPropsType,
+}
+
+
+const StyledHeading = styled.span<StyledHeadingMarginPropsType>`
+    font-weight:800;
+    font-size:20px;
+
+    margin-top: ${props => props.marginTop};
+    margin-left: ${props => props.marginLeft};
+    margin-bottom: ${props => props.marginBottom};
+    margin-right: ${props => props.marginRight};
+`;
+
+export function HeadingText({content, margin}:HeadingTextPropsType) {
     return(
-        <h3>{content}</h3>
+        <StyledHeading {...margin}>{content}</StyledHeading>
     )
 }

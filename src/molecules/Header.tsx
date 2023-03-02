@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { HeadingText } from "../atoms/HeadingText";
 
 const StyledHeader = styled.header`
+    width:100vw;
     height:7vh;
-    padding-left:30px;
     
     display:flex;
     flex-direction:row;
@@ -15,7 +15,7 @@ const StyledHeader = styled.header`
 export function Header() {
     return(
         <StyledHeader>
-            <HeadingText content="Wanted Pre-onBoarding course" />
+            <HeadingText content="Wanted Pre-onBoarding course" margin={{marginLeft : '30px'}} />
         </StyledHeader>
     )
 }
