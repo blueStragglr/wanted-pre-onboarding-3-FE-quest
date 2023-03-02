@@ -1,7 +1,8 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import MainLayout, { loaderAuth } from "../components/LayoutMain";
+import LayoutMain, { loaderAuth } from "../components/LayoutMain";
 import { PageA, PageB, PageC, Login } from ".";
 import RootBoundary from "./RootBoundary";
+import LayoutLogin from "../components/LayoutLogin";
 
 export const path = {
   pageA: "page-a",
@@ -13,7 +14,7 @@ export const path = {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout />,
+    element: <LayoutMain />,
     loader: loaderAuth,
     errorElement: <RootBoundary />,
     children: [
@@ -37,7 +38,11 @@ const router = createBrowserRouter([
   },
   {
     path: path.login,
-    element: <Login />,
+    element: (
+      <LayoutLogin>
+        <Login />
+      </LayoutLogin>
+    ),
   },
 ]);
 

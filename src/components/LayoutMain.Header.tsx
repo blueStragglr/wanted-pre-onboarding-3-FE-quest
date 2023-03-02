@@ -5,8 +5,8 @@ import { storage } from "../utils/storage";
 export default function Header() {
   const navigator = useNavigate();
   return (
-    <>
-      <h1>Wanted Pre-onborading course</h1>
+    <div className="fixed bg-white flex p-3 border-b border-black h-14 w-screen">
+      <h1 className="text-2xl mr-4">Wanted Pre-onborading course</h1>
       <button
         type="button"
         onClick={() => {
@@ -16,6 +16,6 @@ export default function Header() {
       >
         logout
       </button>
-    </>
+    </div>
   );
 }

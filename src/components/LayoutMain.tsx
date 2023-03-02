@@ -3,6 +3,7 @@ import TopNavigator from "./LayoutMain.Header";
 import { json, Outlet } from "react-router-dom";
 
 import { storage } from "../utils/storage";
+import Content from "./LayoutMain.Content";
 
 export const loaderAuth = () => {
   const isAuth = storage.get("ACCESS_TOKEN");
@@ -18,9 +19,11 @@ export default function LayoutMain() {
   return (
     <>
       <TopNavigator />
-      <div>
+      <div className="flex">
         <SideNavigator />
-        <Outlet />
+        <Content>
+          <Outlet />
+        </Content>
       </div>
     </>
   );
