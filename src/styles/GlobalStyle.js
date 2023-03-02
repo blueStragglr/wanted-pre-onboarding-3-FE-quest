@@ -10,15 +10,10 @@ export const GlobalStyle = createGlobalStyle/*css*/ `
     --text-xxl: 3.125rem; /* 50px */
 
     /* 색깔 */
-    --color-light-green: #A4C597;
-    --color-normal-green:  #5F9538;
-    --color-deep-green:#2E6316;
+    --color-blue:#3E94CD;
     --color-black:#01192C;
     --color-grey:#CDCDCD;
     --color-white:#ffffff;
-    --color-gold:#D9A059;
-    --color-red:#F13E1F;
-    --color-skyblue:#EAF5F7;
 
     /* 여백 크기 */
     --spacing-xxxs: 0.5rem; /* 8px */
