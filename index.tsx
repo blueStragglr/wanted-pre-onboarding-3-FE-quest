@@ -44,7 +44,7 @@ interface AppRouteProps {
 }
 
 export const AppRoute = ({element, protectedBy:canAccess, hasLayout=true, redirect, public}:AppRouteProps) => {
-  if(public && canAccess) return withAppLayout(<Route path={path} element={element}/>, hasLayout);
+  if(public || canAccess) return withAppLayout(<Route path={path} element={element}/>, hasLayout);
 
   return redirect ? <Redirect path={redirect}/> : null;
 }
@@ -67,7 +67,7 @@ interface AppLayoutProps {
   children:ReactNode;
  }
  
-export const AppLayout = ({children}) => {
+export const AppLayout = ({children}:AppLayoutProps) => {
   return <>
     <Header/>
     <SideBar/>
