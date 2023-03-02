@@ -1,4 +1,4 @@
 export { default as PageA } from './PageA';
 export { default as PageB } from './PageB';
 export { default as PageC } from './PageC';
-export { default as NotFound } from './Notfound';
+export { default as NotFound } from './NotFound';
