@@ -27,7 +27,7 @@ const router = createBrowserRouter([
       {
         path: "/page3",
         element: (
-          <PrivateRoute>
+          <PrivateRoute onlyAuth={true}>
             <Page3 />
           </PrivateRoute>
         ),
@@ -36,7 +36,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/login",
-    element: <Login />,
+    element: (
+      <PrivateRoute onlyAuth={false}>
+        <Login />
+      </PrivateRoute>
+    ),
   },
 ]);
 
