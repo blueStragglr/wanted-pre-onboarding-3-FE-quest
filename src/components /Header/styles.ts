@@ -17,8 +17,4 @@ export const HeaderText = styled.span`
 export const LogoutBtn = styled.button`
   width: 80px;
   height: 100%;
-  background-color: #1d78b6;
-  border: 1px solid #9f9f9f;
-  color: #ffffff;
-  cursor: pointer;
 `;
