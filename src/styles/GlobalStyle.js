@@ -19,6 +19,10 @@ const GlobalStyle = createGlobalStyle`
         outline: none;
         padding-left: 10px;
     }
+    a {
+        text-decoration: none;
+        color: black;
+    }
 `;
 
 export default GlobalStyle;
