@@ -1,4 +1,4 @@
-import { css } from '@emotion/css'
+import { css } from '@emotion/react'
 
 const resetCss = css`
     html,
@@ -124,6 +124,9 @@ const resetCss = css`
     table {
         border-collapse: collapse;
         border-spacing: 0;
+    }
+    a {
+        text-decoration: none;
     }
 `
 
