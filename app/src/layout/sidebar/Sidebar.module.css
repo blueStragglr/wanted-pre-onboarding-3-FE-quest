@@ -1,0 +1,13 @@
+.sidebar {
+  border-right: 1px solid black;
+}
+
+.sidebar nav {
+  margin-top: 12px;
+  padding-left: 24px;
+}
+
+.menuItem {
+  padding: 12px 0;
+  font-weight: 500;
+}
