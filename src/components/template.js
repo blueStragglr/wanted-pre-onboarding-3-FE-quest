@@ -1,11 +1,15 @@
-import Header from './header';
-
+import Header from './Header';
+import styled from 'styled-components';
 const Template = () => {
   return (
-    <div>
+    <TemplateContainer>
       <Header />
-    </div>
+      <Content></Content>
+    </TemplateContainer>
   );
 };
 
 export default Template;
+
+const TemplateContainer = styled.div``;
+const Content = styled.div``;
