@@ -1,9 +1,10 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+
+import style from './SideBar.module.css';
 
 const Side_bar = () => {
     return (
-      <nav>
+      <nav className={style.sidebar}>
         <ul>
           <li><Link to="/page-a">Page A</Link></li>
           <li><Link to="/page-b">Page B</Link></li>

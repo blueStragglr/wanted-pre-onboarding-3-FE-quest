@@ -1,8 +1,8 @@
-import React from 'react';
+import style from './MainPage.module.css';
 
 const PageA = () => {
     return (
-        <div>
+        <div className={style.mainPage}>
             This is Page A
         </div>
     );

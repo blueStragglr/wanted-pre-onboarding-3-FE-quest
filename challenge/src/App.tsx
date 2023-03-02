@@ -13,12 +13,14 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <SideBar/>
-      <Routes>
-        <Route path='/page-a' element={<PageA/>}/>
-        <Route path='/page-b' element={<PageB/>}/>
-        <Route path='/page-c' element={<PageC/>}/>
-      </Routes>
+      <div className='wrap'>
+        <SideBar/>
+        <Routes>
+          <Route path='/page-a' element={<PageA/>}/>
+          <Route path='/page-b' element={<PageB/>}/>
+          <Route path='/page-c' element={<PageC/>}/>
+        </Routes>
+      </div>
     </div>
   );
 }
