@@ -1,0 +1,17 @@
+.navLink {
+  cursor:pointer;
+  font-width: bold;
+  line-height: 31px;
+  color:#12121d;
+  font-size: 18px;
+}
+.navLink+.navLink {
+  margin-left: 10px;
+}
+.navLink:hover,
+.navLink.is_active,
+.sideNav.is_active {
+  text-decoration: underline;
+  color: #4B77EE;
+}
+
