@@ -6,6 +6,7 @@ const globalCss = css`
 
     * {
         box-sizing: border-box;
+        font-size: 16px;
     }
 
     html,
