@@ -15,7 +15,7 @@ function App() {
       <Wrap>
         <Sidebar />
         <Routes>
-          <Route path="/page_a" element={<PageA />} />
+          <Route path="/" element={<PageA />} />
           <Route path="/page_b" element={<PageB />} />
           <Route path="/page_c" element={<PageC />} />
         </Routes>
