@@ -1,0 +1,10 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {
+      haederHeight: "3.5rem",
+    },
+  },
+  plugins: [],
+};
