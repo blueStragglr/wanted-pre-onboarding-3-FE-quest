@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import styled, { css } from "styled-components";
 import { PAGE_LIST } from "../utils/Menu";
 
@@ -9,10 +9,14 @@ const PageLayout = () => {
   );
 
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   const handleLogout = () => {
-    sessionStorage.removeItem("isLogin");
-    setIsLogin("");
+    if (window.confirm("로그아웃 하시겠습니까?")) {
+      sessionStorage.removeItem("isLogin");
+      setIsLogin("");
+      navigate("/");
+    }
   };
 
   return (
@@ -25,7 +29,7 @@ const PageLayout = () => {
           {isLogin ? (
             <User>{isLogin}님, 환영합니다.</User>
           ) : (
-            <LogInOut onClick={() => navigate("/login")}>로그인 하기</LogInOut>
+            <LogIn onClick={() => navigate("/login")}>로그인 하기</LogIn>
           )}
         </LoginWrap>
       </Header>
@@ -35,13 +39,17 @@ const PageLayout = () => {
           <SidebarMenu>
             {PAGE_LIST.map((menu) => {
               return (
-                <Menu key={menu.id} onClick={() => navigate(menu.path)}>
+                <Menu
+                  key={menu.id}
+                  nowPage={menu.path === pathname}
+                  onClick={() => navigate(menu.path)}
+                >
                   {menu.title}
                 </Menu>
               );
             })}
           </SidebarMenu>
-          <LogInOut onClick={handleLogout}>로그아웃</LogInOut>
+          {isLogin && <LogOut onClick={handleLogout}>로그아웃</LogOut>}
         </Sidebar>
         <PageWrap>
           <Outlet />
@@ -56,12 +64,14 @@ const Layout = styled.section``;
 const Header = styled.header`
   width: 100%;
   height: 90px;
-  padding: 30px 60px;
+  padding: 30px 40px;
   ${({ theme }) => theme.mixin.Flex("row", "space-between")};
   border-bottom: 1px solid ${({ theme }) => theme.color.border};
 `;
 
 const Title = styled.h1`
+  font-size: 1.5rem;
+  color: ${({ theme }) => theme.color.point_blue};
   cursor: pointer;
 `;
 
@@ -69,7 +79,7 @@ const LoginWrap = styled.div``;
 
 const User = styled.p``;
 
-const LogInOut = styled.button`
+const LogIn = styled.button`
   font-size: 14px;
   color: ${({ theme }) => theme.color.disabled};
 `;
@@ -83,22 +93,48 @@ const Sidebar = styled.article`
   width: max-content;
   ${({ theme }) =>
     theme.mixin.Flex("column", "space-between", "flex-start", "30px")}
-  padding: 30px 60px;
   min-height: calc(100vh - 90px);
   border-right: 1px solid ${({ theme }) => theme.color.border};
   background-color: #fff;
 `;
 
 const SidebarMenu = styled.ul`
-  margin-top: 30px;
-  ${({ theme }) =>
-    theme.mixin.Flex("column", "flex-start", "flex-start", "8px")};
+  ${({ theme }) => theme.mixin.Flex("column", "flex-start", "flex-start")};
 `;
-const Menu = styled.li`
-  min-width: 100px;
-  padding: 8px 0;
-  background-color: #e9e9e9;
+
+interface MenuStyleProps {
+  nowPage: boolean;
+}
+
+const Menu = styled.li<MenuStyleProps>`
+  min-width: 150px;
+  padding: 12px 40px;
   cursor: pointer;
+  white-space: nowrap;
+
+  ${({ nowPage, theme }) => {
+    if (nowPage) {
+      return css`
+        background-color: ${theme.color.point_blue};
+        color: #fff;
+      `;
+    } else {
+      return css`
+        :hover {
+          background-color: #e9e9e9;
+        }
+      `;
+    }
+  }}
+`;
+
+const LogOut = styled.button`
+  width: 100%;
+  height: 50px;
+  ${({ theme }) => theme.mixin.Flex()}
+  font-size: 14px;
+  color: ${({ theme }) => theme.color.disabled};
+  background-color: ${({ theme }) => theme.color.border};
 `;
 
 const PageWrap = styled.div`
