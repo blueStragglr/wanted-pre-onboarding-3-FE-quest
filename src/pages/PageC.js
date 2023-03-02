@@ -2,17 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 import Template from '../components/Template';
 
-const PageA = () => {
+const PageC = () => {
   return (
     <Template>
       <PageContainer>
-        <PageText>집좀가자A</PageText>
+        <PageText>집좀가자C</PageText>
       </PageContainer>
     </Template>
   );
 };
 
-export default PageA;
+export default PageC;
 
 const PageContainer = styled.div`
   width: 100%;
