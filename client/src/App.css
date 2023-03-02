@@ -1,0 +1,135 @@
+.App {
+  display: flex;
+  height: 100%;
+}
+
+.layout {
+  width: 100%;
+  height: 100%;
+  /* background-color: blue; */
+  display: flex;
+  flex-flow: column;
+}
+
+article h1 {
+  margin-bottom: 1rem;
+}
+
+header {
+  /* background-color: aliceblue; */
+  height: 10%;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  color: #fd5151;
+}
+
+main {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  /* background-color: aqua; */
+}
+
+aside {
+  width: 20%;
+  /* background-color: yellowgreen; */
+  margin: 1rem;
+}
+
+aside li,
+ul {
+  list-style: none;
+}
+
+aside li button {
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-size: 1rem;
+  text-align: start;
+  background: #ff4949;
+  padding: 0.3rem;
+  border-radius: 0.2rem;
+}
+
+a {
+  list-style: none;
+  background: #ff4949;
+  padding: 0.3rem;
+  border-radius: 0.2rem;
+  transition: all 0.2s;
+}
+
+a:hover {
+  background-color: #f43737;
+}
+a + a,
+button {
+  margin-top: 0.8rem;
+}
+
+ul {
+  background: #ff7d7d;
+
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+article {
+  margin: 1rem;
+  flex: 1;
+  margin: 1rem;
+  background: #e9e6e6d1;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.login form {
+  background: #e2e1e1e6;
+  min-width: 15rem;
+  min-height: 12rem;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0px 4px 7px lightgrey;
+}
+
+.login form h1 {
+  margin-bottom: 1rem;
+}
+
+.login form button {
+  margin-top: 2rem;
+  padding: 0.5rem;
+  background: lightcoral;
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: 500;
+}
+
+.login form input {
+  border: none;
+  padding: 0.2rem;
+  border-radius: 0.2rem;
+}
+
+.login form * + * {
+  margin-top: 0.8rem;
+  width: 100%;
+}
