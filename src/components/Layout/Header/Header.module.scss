@@ -1,1 +1,23 @@
 @import 'styles/mixins';
+
+.container {
+  display: grid;
+  grid-template-columns: 2.5rem repeat(12, 1fr) 2.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--color-gray);
+
+  .logoText {
+    grid-column: 2 / span 11;
+    font-weight: var(--font-weight-extrabold);
+    font-style: italic;
+  }
+
+  .loginButton {
+    padding: 0.3rem 0.6rem;
+    font-size: var(--text-size-md);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    border-radius: 0.5rem;
+  }
+}
