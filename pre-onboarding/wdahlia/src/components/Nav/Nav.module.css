@@ -1,12 +1,18 @@
 .nav {
   display: table;
-  height: 50px;
-  border-bottom: 2px solid black;
+  height: 70px;
+  background-color: rgb(179, 228, 227);
 }
 
 .nav .title {
   display: table-cell;
   vertical-align: middle;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
   padding: 0 1.3rem;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
 }

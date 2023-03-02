@@ -7,7 +7,7 @@ export default function Nav() {
   
   return (
     <nav className={styles.nav}>
-      <h1 className={styles.title}><Link to='/'>Wanted Pre-onboarding Course</Link></h1>
+      <h1 className={styles.title}><Link to='/' className={styles.link}>Wanted Pre-onboarding Course</Link></h1>
     </nav>
   );
 }
