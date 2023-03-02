@@ -19,6 +19,11 @@ const GlobalStyles = createGlobalStyle`
       border-radius: 20px;
       position: relative;
     }
+    ::selection {
+      background-color: var(--color-primary);
+      color: var(--color-point);
+    }
+    input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active { transition: background-color 5000s ease-in-out 0s; }
   }
 
   body {
