@@ -1,35 +1,120 @@
-# 3월 원티드 프리온보딩 프론트엔드 과정 사전과제
+#  리액트 라우터와 로그인 페이지 구현
 
-수강생 여러분 안녕하세요! 
+## 🚩 목차
+- 구현 사항
+- 설치 및 세팅
+- 브랜치
+- 개발 사양
+- 기술 스택
+- 폴더 구조
 
-3월 프론트엔드 프리온보딩 과정 진행을 위해, 아래의 내용을 읽고 사전 과제를 수행해 주세요.
+<br/>
 
-사전 과제는 해당 레포지토리를 포크하여 진행해 주시면 됩니다.
+## 🎁 구현 사항
+### 필수 구현사항
+- [x] 최소 3개 이상의 페이지 구현
+- [x] 모든 페이지에 공통으로 반복되는 헤더와 사이드바가 있도록 구성
+### 선택 구현사항
+- [x] 유저네임과 비밀번호를 받아 로그인을 수행할 수 있는 페이지 구현
+- [x] 로그인 페이지는 공통 레이아웃(상단 네비게이션 바 및 사이드바)이 적용되지 않도록 구현
+### 추가 구현사항
+- [x] 로그인한 경우, 네비게이션에서 'Login' 버튼을 숨기고 헤더에서 '로그아웃' 버튼을 보여주도록 구현
+- [x] 로그인한 경우, 헤더 우측에 프로필 기능을 만들어 유저네임을 보여주도록 구현
+- [x] 로그인 정보는 세션 스토리지에 저장하도록 구현
+
+<br/>
+
+## ⚙️ 설치 및 세팅
+### 1. npm 설치
+``` shell
+$ npm install
+```
+
+### 2. Extension 설치
+- ESLint
+- Prettier - Code formatter
+- Style Guide: Airbnb
+
+### 3. Scripts
+| 명령어  | 기능  |
+|---|---|
+| ```$ npm run start``` | 프로젝트 구동 |
+
+### 4. 테스트 계정
+- Email: test1234
+- Password: test1234
+
+<br/>
+
+## 📷 스크린샷
+
+<p align="center">
+  <table>
+    <tr>
+      <th>로그인 페이지</th>
+    </tr>
+    <tr>
+      <th>
+        <img width="600" height="350" alt="login" src="https://user-images.githubusercontent.com/52736242/222516307-e878df73-5804-4813-b488-223eb68281a1.png">
+      </th>
+    </tr>    
+  </table>
+    <table>
+    <tr>
+      <th>로그인 상태의 메인 페이지</th>
+    </tr>
+    <tr>
+      <th>
+        <img width="600" height="350" alt="notice board with login status" src="https://user-images.githubusercontent.com/52736242/222516535-4c7f202d-740b-4b46-9ce0-832776ede1f7.png">
+      </th>
+    </tr>    
+  </table>
+    <table>
+    <tr>
+      <th>로그아웃 상태의 메인 페이지</th>
+    </tr>
+    <tr>
+      <th>
+        <img width="600" height="350" alt="notice board with logout status" src="https://user-images.githubusercontent.com/52736242/222517659-3895aceb-3d4c-40b8-a68d-1dd1882e32fe.png">
+      </th>
+    </tr>    
+  </table>
+</p>
+
+## 🌲 브랜치
+- [master](https://github.com/Homegirl7417/wanted-pre-onboarding-3-FE-quest)
+
+<br/>
+
+## 📚 개발 사양
+- 디자인: PC 최적화
+- 표준 브라우저: Chrome
+- SPA: Client Side Rendering
 
 
+<br/>
 
-### 만들어야 할 것
+## ⚒ 기술 스택
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
+<br/>
+<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAF"/>
+<img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white"/>
+<img src="https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white"/>
 
-이번 프리온보딩에서는 레이아웃 패턴과 로그인에 대해서 다룹니다. 사전 과제에서는 현재 수강생 여러분이 가지고 있는 리액트 라우터 구성 및 레이아웃 구성에 대한 지식을 확인해 보고자 합니다.
+<br/>
+<br/>
 
-사전 과제로써 다음 요구사항을 충족하는 리액트 어플리케이션을 구성합니다.
+## 🗂 폴더 구조
 
-- NextJS 등의 SSR 어플리케이션이 아닌, CSR 어플리케이션을 구축한다.
-- 최소 3개 이상의 페이지를 가지도록 구현한다.
-- 모든 페이지에 공통으로 반복되는 헤더와 사이드바가 있도록 구성한다.
-
-즉, 다음 이미지와 같은 형태로 구현합니다.
-
-![sample-image](./sample.jpg)
-
-이 때, 아래의 내용을 고민하며 과제를 진행해 주시면 더욱 도움이 됩니다.
-
-- 3개의 페이지가 고정되는 앱이 아니라, 여러 개의 페이지가 언제든 추가될 수 있다고 생각하고 프로젝트를 수행해 보세요.
-- 만들어진 페이지별로 로그인 여부를 판단하고자 한다면 어떻게 구조를 확장해야할지 고민해 보세요.
-
-추가로, 여유가 있다면 유저네임과 비밀번호를 받아 로그인을 수행할 수 있는 페이지를 만들어 보세요. 실제 API는 연결하지 않아도 되며, 로그인 페이지는 공통 레이아웃(상단 네비게이션 바 및 사이드바)이 적용되지 않도록 만들어 주세요. 
-
-### 질문하기 & 제출하기
-
-- 과제 관련 질문은 해당 레포지토리에 이슈로 남겨주세요! 확인하는 대로 답변 드리도록 하겠습니다. 
-- 과제를 완료하셨다면 해당 레포지토리에 pull request를 남겨 제출해 주세요. 
+``` shell
+├── README.md
+├── .eslintrc.js
+├── .prettier.js
+├── webpack.config.js
+├── package.json
+├── package-lock.json
+├── public
+└── src
+    ├── components
+    ├── pages
+    ├── styles
