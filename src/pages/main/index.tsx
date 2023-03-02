@@ -19,11 +19,7 @@ function Main(props: PropsType) {
     <div>
       <header className={styles.headerContainer}>
         <Header />
-        <Button
-          className={styles.addButton}
-          onClick={handleLabelListButton}
-          label={ADD_BUTTON_LABEL}
-        />
+        <Button className={'addButton'} onClick={handleLabelListButton} label={ADD_BUTTON_LABEL} />
       </header>
       <article className={styles.layout}>
         <NavBar

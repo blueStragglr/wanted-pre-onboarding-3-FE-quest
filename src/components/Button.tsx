@@ -1,7 +1,8 @@
 import React from 'react';
+import styles from './Button.module.css';
 
 interface ButtonType {
-  onClick: () => void;
+  onClick: (() => void) | undefined;
   className: string | undefined;
   label: string;
 }
@@ -9,9 +10,9 @@ interface ButtonType {
 function Button(props: ButtonType) {
   const { onClick, className, label } = { ...props };
   return (
-    <div className={className} onClick={onClick}>
+    <button className={className && styles[className]} onClick={onClick}>
       {label}
-    </div>
+    </button>
   );
 }
 

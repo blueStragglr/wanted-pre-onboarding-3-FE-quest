@@ -1,0 +1,11 @@
+.layout {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  gap: 8px;
+}
+p {
+  color: #222222;
+  margin: 4px 0;
+}

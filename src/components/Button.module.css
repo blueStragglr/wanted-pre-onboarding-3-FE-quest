@@ -1,0 +1,28 @@
+.medium {
+  width: 80px;
+  margin: auto;
+  background-color: white;
+  border: 0;
+  border-radius: 4px;
+  padding: 12px 16px;
+  color: white;
+  background-color: #6a9fd1;
+}
+.medium:hover {
+  cursor: pointer;
+}
+
+.addButton {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  font-size: small;
+  border: 1px solid gainsboro;
+  border-radius: 12px;
+  margin: 12px;
+  padding: 4px 8px;
+  color: #222222;
+}
+.addButton:hover {
+  cursor: pointer;
+}

@@ -8,3 +8,6 @@ export const MAX_VALUE = 'Z';
 export const ASCII_VALUE = 65;
 export const INIT_ARRAY = ['A', 'B', 'C'];
 export const INIT_SELECTED = 'A';
+export const ID_LABEL = '아이디';
+export const PW_LABEL = '비밀번호';
+export const LOGIN_LABEL = '로그인';
