@@ -1,0 +1,37 @@
+.Header {
+  padding: 0 50px;
+  border: 1px solid #ddd
+}
+
+h1 {
+  line-height: 100px;
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.Aside {
+  height: calc(100vh - 100px);
+  padding: 50px;
+  border-right: 1px solid #ddd;
+}
+
+.GNB {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.GNB li {
+  margin: 0 0 25px 0;
+}
+
+.GNB li a.active {
+  color: #0d6efd;
+}
+
+.inner {
+  display: flex;
+}
+
+.inner article {
+  padding: 50px;
+}
