@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom';
 
 const SideBarItem = ({ path, text, isActive }) => {
   return (
-    <SideBarItemContainer path={path}>
-      <SideBarText isActive={isActive}>
-        <SideBarItemLink>{text}</SideBarItemLink>
-      </SideBarText>
+    <SideBarItemContainer>
+      <SideBarItemWrapper>
+        <SideBarItemText to={path} isActive={isActive}>
+          {text}
+        </SideBarItemText>
+      </SideBarItemWrapper>
     </SideBarItemContainer>
   );
 };
@@ -18,12 +20,12 @@ const SideBarItemContainer = styled.div`
   text-align: center;
 `;
 
-const SideBarText = styled.span`
+const SideBarItemWrapper = styled.span`
   display: inline-block;
   padding: 10px 0px;
-  font-size: 24px;
-  font-weight: bold;
-  color: ${(props) => (props.isActive ? 'blue' : 'black')};
 `;
 
-const SideBarItemLink = styled(Link)``;
+const SideBarItemText = styled(Link)`
+  font-size: 24px;
+  color: ${(props) => (props.isActive ? 'royalblue' : 'black')};
+`;

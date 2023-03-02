@@ -13,7 +13,7 @@ const Sidebar = () => {
   return (
     <SidebarContainer>
       {menus.map((menu, index) => {
-        return <SideBarItem to={menu.path} text={menu.name} isActive={pathName === menu.path ? true : false} key={index} />;
+        return <SideBarItem path={menu.path} text={menu.name} isActive={pathName === menu.path ? true : false} key={index} />;
       })}
     </SidebarContainer>
   );
