@@ -4,7 +4,6 @@ export async function getPages(query) {
 	await fakeNetwork(`getPage:${query}`);
 	let pages = await localforage.getItem("pages");
 	if (!pages) pages = [];
-	console.log(pages);
 	return pages;
 }
 

@@ -10,9 +10,3 @@
 		@apply h-full;
 	}
 }
-
-@layer components {
-	a.active {
-		@apply bg-blue-400;
-	}
-}
