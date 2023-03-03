@@ -1,13 +1,14 @@
 import React from 'react';
-// import BasicRouter from "./Router";
+import { RouterProvider } from 'react-router-dom';
+import router from './routes/Router';
 import GlobalStyles from './GlobalStyles';
 
 function App() {
   return (
-    <div className='App'>
+    <>
       <GlobalStyles />
-      main
-    </div>
+      <RouterProvider router={router} />
+    </>
   );
 }
 
