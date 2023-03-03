@@ -1,6 +1,6 @@
 # 3월 원티드 프리온보딩 프론트엔드 과정 사전과제
 
-[사전과제](http://www.google.co.kr)
+[사전과제](https://flourishing-dragon-846989.netlify.app)
 
 ### 필수 구현
 
