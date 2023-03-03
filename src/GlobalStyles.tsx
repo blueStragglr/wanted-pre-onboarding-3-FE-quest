@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 
-const globalStyles = createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
   ${reset};
   *{
     box-sizing: border-box;
@@ -12,11 +12,10 @@ const globalStyles = createGlobalStyle`
   }
   body {
     font-family: NanumGothic;
-    padding-top: 50px;
   }
   #root {
     overflow: hidden;
   }
 `;
 
-export default globalStyles;
+export default GlobalStyles;
