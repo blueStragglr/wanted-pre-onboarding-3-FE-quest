@@ -5,32 +5,39 @@ import { Link } from 'react-router-dom';
 const Sidebar = () => {
   return (
     <StSidebar>
-      <div><Link to="/pageA">PageA</Link></div>
-      <div><Link to="/pageB">PageB</Link></div>
-      <div><Link to="/pageC">PageC</Link></div>
+      <Link to="/pageA"><button>PageA</button></Link>
+      <Link to="/pageB"><button>PageB</button></Link>
+      <Link to="/pageC"><button>PageC</button></Link>
     </StSidebar>
   )
 }
 
 const StSidebar = styled.div`
-  background: #eee;
+  background: whitesmoke;
   width: 300px;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: top;
   text-align: center;
-  div {
+  /* border-right: 0.8px solid salmon; */
+  
+
+  button {
+    background: #fff;
     margin: 10px;
-    padding: 20px;
+    padding: 18px 100px;
     color: royalblue;
-    font-size: 22px;
-    font-weight: bold;
+    font-size: 18px;
+    /* font-weight: bold; */
     cursor: pointer;
-    border-radius: 8px;
+    border: 0.8px solid white;
+    border-radius: 10px;
+
   }
-  div:hover {
-    background: #ddd;
+  button:hover {
+    background: #fff;
+    border: 0.8px solid salmon;
   }
 `
 
