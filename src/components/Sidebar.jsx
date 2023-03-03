@@ -1,13 +1,9 @@
 import React from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function Sidebar() {
   const navigate = useNavigate();
   const { pathname } = useLocation();
-  console.log('pathname:', pathname);
-  const handleIconClick = (pageName) => {
-    navigate(pageName);
-  };
 
   return (
     <nav className='border-r fixed px-5 py-5 top-16 h-full w-40'>
