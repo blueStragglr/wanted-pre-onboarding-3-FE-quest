@@ -1,5 +1,10 @@
-import { Link, useMatch } from 'react-router-dom';
+import { Link, useMatch, Outlet, useParams } from 'react-router-dom';
 import styled from 'styled-components';
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
 
 const SidebarWrapper = styled.div`
   display: flex;
@@ -18,22 +23,29 @@ const Page = styled.div<{ isActive: boolean }>`
 `;
 
 function Sidebar() {
-  const pageAMatch = useMatch('/pageA');
-  const pageBMatch = useMatch('/pageB');
-  const pageCMatch = useMatch('/pageC');
+  const pageAMatch = useMatch('/pages/a');
+  const pageBMatch = useMatch('/pages/b');
+  const pageCMatch = useMatch('/pages/c');
+
+  const { pageId } = useParams();
 
   return (
-    <SidebarWrapper>
-      <Page isActive={Boolean(pageAMatch)}>
-        <Link to="/pageA">Page A</Link>
-      </Page>
-      <Page isActive={Boolean(pageBMatch)}>
-        <Link to="/pageB">Page B</Link>
-      </Page>
-      <Page isActive={Boolean(pageCMatch)}>
-        <Link to="/pageC">Page C</Link>
-      </Page>
-    </SidebarWrapper>
+    <Wrapper>
+      <SidebarWrapper>
+        <Page isActive={Boolean(pageAMatch)}>
+          <Link to="pages/a">Page A</Link>
+        </Page>
+        <Page isActive={Boolean(pageBMatch)}>
+          <Link to="pages/b">Page B</Link>
+        </Page>
+        <Page isActive={Boolean(pageCMatch)}>
+          <Link to="pages/c">Page C</Link>
+        </Page>
+      </SidebarWrapper>
+      <Outlet context={{
+        pageId: pageId
+      }}/>
+    </Wrapper>
   );
 }
 

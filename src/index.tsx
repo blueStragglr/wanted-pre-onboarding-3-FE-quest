@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
-import App from './App';
+import { RouterProvider } from 'react-router-dom';
 import { lightTheme } from './styles/theme';
+import router from './Router';
 
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Sofia+Sans:ital,wght@0,300;1,200;1,300&display=swap');  
@@ -69,7 +70,7 @@ root.render(
   <React.StrictMode>
     <ThemeProvider theme={lightTheme}>
       <GlobalStyle />
-      <App />
+      <RouterProvider router={router}/>
     </ThemeProvider>
   </React.StrictMode>
 );
