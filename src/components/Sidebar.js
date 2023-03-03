@@ -6,8 +6,8 @@ const Sidebar = () => {
   return (
     <StSidebar>
       <div><Link to="/pageA">PageA</Link></div>
-      <div>Page B</div>
-      <div>Page C</div>
+      <div><Link to="/pageB">PageB</Link></div>
+      <div><Link to="/pageC">PageC</Link></div>
     </StSidebar>
   )
 }
