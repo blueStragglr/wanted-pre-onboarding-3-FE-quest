@@ -1,7 +1,17 @@
-import React from "react";
+import React, { Fragment } from "react";
+import { Outlet } from "react-router-dom";
+import { Header, Sidebar } from "../components";
 
 const Root = () => {
-	return <div>Root</div>;
+	return (
+		<Fragment>
+			<Header />
+			<Sidebar />
+			<div>
+				<Outlet />
+			</div>
+		</Fragment>
+	);
 };
 
 export default Root;
