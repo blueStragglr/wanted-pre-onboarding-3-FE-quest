@@ -1,9 +1,11 @@
 import { createApp, markRaw } from 'vue'
-import { createRouter, createWebHistory } from 'vue-router'
+
+// Pinia
 import { createPinia } from 'pinia'
 
 // Router
 import autoRoutes from 'virtual:generated-pages'
+import { createRouter, createWebHistory } from 'vue-router'
 import type { RouterScrollBehavior } from 'vue-router'
 
 import App from './App.vue'
@@ -37,7 +39,11 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  next()
+  const { isAuthenticated } = storeToRefs(useAuthStore())
+  if (to.meta.requireAuth && !isAuthenticated.value)
+    next({ name: 'Login' })
+  else
+    next()
 })
 
 app.use(router)

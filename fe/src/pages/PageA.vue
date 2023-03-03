@@ -4,7 +4,7 @@
 
 <template>
   <div>
-    Main
+    Page A
   </div>
 </template>
 
@@ -13,8 +13,8 @@
 </style>
 
 <route lang="yaml">
-path: /
-name: Index
+path: /a
+name: PageA
 meta:
   requireAuth: true
 </route>
