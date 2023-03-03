@@ -1,5 +1,5 @@
-import Header from "./Header";
-import Sidebar from "./SideBar";
+//import Header from "./Header";
+//import Sidebar from "./SideBar";
 
 function Frame (){
 
