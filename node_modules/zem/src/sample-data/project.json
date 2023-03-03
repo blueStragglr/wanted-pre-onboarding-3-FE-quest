@@ -1,0 +1,139 @@
+{
+    "name": "Sample extension project",
+    "type": "ios",
+    "density": "1x",
+    "remPreferences": {
+        "rootFontSize": 16,
+        "useForMeasurements": true,
+        "useForFontSizes": true
+    },
+    "colors": [
+        {
+            "r": 255,
+            "g": 0,
+            "b": 0,
+            "a": 1,
+            "name": "red",
+            "sourceId": "655bd9de-1c8d-4ca3-9356-bc244a2b697e"
+        },
+        {
+            "r": 0,
+            "g": 255,
+            "b": 0,
+            "a": 1,
+            "name": "green",
+            "sourceId": "7db136dd-7e06-43b8-8c44-13b1f7425e6c"
+        },
+        {
+            "r": 0,
+            "g": 0,
+            "b": 255,
+            "a": 1,
+            "name": "blue",
+            "sourceId": "cc0496f7-fdab-4996-9ff7-f43cc269c4f6"
+        },
+        {
+            "r": 0,
+            "g": 0,
+            "b": 255,
+            "a": 1,
+            "name": "background color",
+            "sourceId": "e719f81a-9ded-4ff1-84f6-e5d0b8cd950c"
+        },
+        {
+            "r": 255,
+            "g": 255,
+            "b": 0,
+            "a": 1,
+            "name": "yellow",
+            "sourceId": "375584e6-2dff-4cc3-8d07-dc61e3836c6c"
+        },
+        {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 1,
+            "name": "black",
+            "sourceId": "b3be79a3-c886-44de-b3e0-fe5f25684aa8"
+        },
+        {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0.5,
+            "name": "black50",
+            "sourceId": "64243cac-3cb3-4c09-90dd-e8a33ee27303"
+        },
+        {
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 1,
+            "name": "white",
+            "sourceId": "e5a911ed-3626-48ac-8c16-523b0edf0d42"
+        }
+    ],
+    "textStyles": [
+        {
+            "name": "Sample text style",
+            "fontFace": "SFProText-Regular",
+            "fontSize": 20,
+            "fontWeight": 400,
+            "fontStyle": "normal",
+            "fontFamily": "SFProText",
+            "fontStretch": "normal",
+            "textAlign": "left",
+            "weightText": "regular",
+            "color": {
+                "r": 0,
+                "g": 0,
+                "b": 0,
+                "a": 1
+            }
+        },
+        {
+            "name": "Sample text style with color",
+            "fontFace": "SFProText-Regular",
+            "fontSize": 20,
+            "fontWeight": 400,
+            "fontStyle": "normal",
+            "fontFamily": "SFProText",
+            "fontStretch": "normal",
+            "textAlign": "left",
+            "weightText": "regular",
+            "color": {
+                "r": 255,
+                "g": 0,
+                "b": 0,
+                "a": 1
+            }
+        }
+    ],
+    "spacingSections": [
+        {
+            "name": "Simple spacing",
+            "description": "",
+            "baseTokenId": 1,
+            "spacingTokens": [
+                {
+                    "token": "base",
+                    "color": { "r": 127, "b": 127, "g": 127, "a": 1 },
+                    "value": 16,
+                    "_id": 1
+                },
+                {
+                    "token": "double",
+                    "color": { "r": 255, "b": 255, "g": 255, "a": 1 },
+                    "value": 32,
+                    "_id": 2
+                },
+                {
+                    "token": "half",
+                    "color": { "r": 63, "b": 63, "g": 63, "a": 1 },
+                    "value": 8,
+                    "_id": 3
+                }
+            ]
+        }
+    ]
+}
