@@ -1,0 +1,5 @@
+node_modules/*
+reportWebVitals.ts
+setupTests.ts
+config-overrides.js
+vite.config.ts
