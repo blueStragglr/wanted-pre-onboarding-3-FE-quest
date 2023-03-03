@@ -12,17 +12,23 @@ const Navbar = () => {
   };
 
   return (
-    <MenuList>
-      {pages.map((menu) => {
-        return (
-          <Menu key={menu.id} onClick={() => move(menu.path)}>
-            {menu.title}
-          </Menu>
-        );
-      })}
-    </MenuList>
+    <MenuContainer>
+      <MenuList>
+        {pages.map((menu) => {
+          return (
+            <Menu key={menu.id} onClick={() => move(menu.path)}>
+              {menu.title}
+            </Menu>
+          );
+        })}
+      </MenuList>
+    </MenuContainer>
   );
 };
+
+const MenuContainer = styled.section`
+  border-right: 2px solid grey;
+`;
 
 const MenuList = styled.ul`
   list-style: none;

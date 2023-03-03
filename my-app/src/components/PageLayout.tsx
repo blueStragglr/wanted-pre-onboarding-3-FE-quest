@@ -9,17 +9,26 @@ const PageLayout = () => {
       <Header />
       <Container>
         <Navbar />
-        <div>
+        <ContentContainer>
           <Outlet />
-        </div>
+        </ContentContainer>
       </Container>
     </div>
   );
 };
+
 const Container = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
+  height: 100vh;
   margin: 0;
+`;
+
+const ContentContainer = styled.section`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 export default PageLayout;
