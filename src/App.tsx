@@ -1,9 +1,12 @@
-import React from "react";
-import "./App.css";
+import React from 'react';
+// import BasicRouter from "./Router";
+import GlobalStyles from './GlobalStyles';
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
+      <GlobalStyles />
+      main
     </div>
   );
 }
