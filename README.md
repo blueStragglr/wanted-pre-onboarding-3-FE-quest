@@ -41,5 +41,4 @@
 # 진행과정
 
 1. 목업 디자인, router연결, Login 유효성 검사 추가
-<img src="file:///home/es/Pictures/Screenshots/Screenshot%20from%202023-03-04%2023-11-01.png">
  
