@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  @apply flex flex-col items-center;
+  @apply bg-white text-black;
+}
+
+#root {
+  @apply w-full;
+}
