@@ -1,9 +1,9 @@
 import styled from '@emotion/styled'
 
-export default function Page01 (){
+export default function Page03 (){
 
     return(
-        <PageBox>This is page01 </PageBox>
+        <PageBox>This is page03 </PageBox>
     );
 }
 
