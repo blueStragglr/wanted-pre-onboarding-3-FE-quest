@@ -33,3 +33,14 @@
 
 - 과제 관련 질문은 해당 레포지토리에 이슈로 남겨주세요! 확인하는 대로 답변 드리도록 하겠습니다. 
 - 과제를 완료하셨다면 해당 레포지토리에 pull request를 남겨 제출해 주세요. 
+
+
+# skills
+- react, styled component, react-hook-form 
+
+# 진행과정
+
+1. 목업 디자인, router연결, Login 유효성 검사 추가
+<img src="file:///home/es/Downloads/Screencast%20from%202023%EB%85%84%2003%EC%9B%94%2004%EC%9D%BC%2022%EC%8B%9C%2051%EB%B6%84%2013%EC%B4%88.gif">
+ 
+
