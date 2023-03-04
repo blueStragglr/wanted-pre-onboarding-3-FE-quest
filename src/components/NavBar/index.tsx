@@ -1,18 +1,19 @@
 import { NAV_ITEMS } from '@/constants/routes';
 import { NavLink } from 'react-router-dom';
 
-const activeStyle = {
-  textDecoration: 'underline',
+const navStyle = {
+  normal: 'text-base font-semibold leading-6 text-gray-900 px-3',
+  active:
+    'text-base font-semibold leading-6 text-indigo-600 px-3 underline underline-offset-4 decoration-2 decoration-wavy',
 };
 
 const NavItem = ({ navName, path }: { navName: string; path: string }) => {
   return (
     <NavLink
       to={path}
-      style={({ isActive }) => {
-        return isActive ? activeStyle : undefined;
+      className={({ isActive }) => {
+        return isActive ? navStyle.active : navStyle.normal;
       }}
-      className="text-base font-semibold leading-6 text-gray-900 px-3"
     >
       {navName}
     </NavLink>
