@@ -7,7 +7,7 @@ export const Root = () => {
     <div className="isolate">
       <Background />
       <NavBar />
-      <div className="relative px-6 lg:px-8">
+      <div className="relative px-10 pt-5 lg:px-10">
         <Outlet />
       </div>
     </div>
