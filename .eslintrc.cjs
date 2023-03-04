@@ -83,6 +83,12 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'arrow-body-style': ['error', 'always'],
     'import/extensions': ['error', 'never'],
+    'jsx-a11y/label-has-associated-control': [
+      'off',
+      {
+        labelAttributes: ['htmlFor'],
+      },
+    ],
   },
   settings: {
     'import/resolver': {
