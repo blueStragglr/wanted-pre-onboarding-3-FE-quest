@@ -41,5 +41,6 @@
 # 진행과정
 
 1. 목업 디자인, router연결, Login 유효성 검사 추가
+<p align="center">
 ![ezgif com-video-to-gif (1)](https://user-images.githubusercontent.com/97860973/222907556-96168543-2446-4bc5-affd-2abfb2705081.gif)
-
+</p>
