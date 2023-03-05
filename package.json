@@ -39,5 +39,11 @@
 		"husky": "^8.0.0",
 		"typescript": "*",
 		"vite": "^4.1.0"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "yarn run pretty",
+      "yarn run lint"
+    ]
 	}
 }
