@@ -4,14 +4,13 @@ import { loginValidate, LoginValidateProps } from '@/service/auth.service'
 const Login = () => {
   const submitCallback = async ({ email, password }: LoginValidateProps) => {
     await new Promise(res => setTimeout(res, 1000))
-    console.log(email, password)
+    alert(email)
   }
   const { inputValues, validateError, onChangeHandler, submitHandler, satisfyAllValidates } = useForm({
     initialValues: { email: '', password: '' },
     submitCallback,
     validate: loginValidate,
   })
-  console.log('satisfyAllValidates', satisfyAllValidates)
   return (
     <div className="w-50 mx-auto my-auto">
       <form onSubmit={submitHandler} className="flex flex-col items-center justify-center gap-4">
@@ -32,7 +31,7 @@ const Login = () => {
           <label htmlFor="email">Password</label>
           <input
             id="password"
-            type="text"
+            type="password"
             name="password"
             value={inputValues.password}
             placeholder="password"
