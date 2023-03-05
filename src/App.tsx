@@ -4,6 +4,7 @@ import LayoutContainer from "./components/Layout/LayoutContainer";
 import APage from "./pages/APage";
 import BPage from "./pages/BPage";
 import CPage from "./pages/CPage";
+import LoginPage from "./pages/LoginPage";
 import { PATH_NAME } from "./constants/path";
 import "./App.css";
 
@@ -11,6 +12,9 @@ function App() {
   return (
     <BrowserRouter>
       <LayoutContainer>
+        <Routes>
+          <Route path={PATH_NAME.LOGIN} element={<LoginPage />} />
+        </Routes>
         <Routes>
           <Route path={PATH_NAME.PAGE_A} element={<APage />} />
           <Route path={PATH_NAME.PAGE_B} element={<BPage />} />
