@@ -1,7 +1,5 @@
-import React from "react";
-
 function pageCContainer() {
-  return <div>PageC Container</div>;
+  return <h1>PageC Container</h1>;
 }
 
 export default pageCContainer;

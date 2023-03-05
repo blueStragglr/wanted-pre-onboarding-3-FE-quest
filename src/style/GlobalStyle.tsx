@@ -79,6 +79,14 @@ export const GlobalStyle = createGlobalStyle`
     a {
       text-decoration: none;
     }
+    
+    input[type="text"], input[type="password"] {
+      border-width: initial;
+      box-shadow: none;
+      outline: 0;
+      border-radius: 0;
+      border:0;
+    }
     /* .hidden-mobile {
         display: block;
         transition: 1s 0.4s;

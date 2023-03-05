@@ -1,14 +1,19 @@
-import React from "react";
 import styled from "styled-components";
 import { GlobalStyle } from "../src/style/GlobalStyle";
+import Layout from "./components/common/Layout";
+import Router from "./routers/Router";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
+    <BrowserRouter>
       <Container>
         <GlobalStyle />
+        <Layout>
+          <Router />
+        </Layout>
       </Container>
-    </div>
+    </BrowserRouter>
   );
 }
 

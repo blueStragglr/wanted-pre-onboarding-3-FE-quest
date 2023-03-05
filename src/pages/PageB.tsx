@@ -1,7 +1,12 @@
-import React from "react";
+import PageBContainer from "../views/pageB/container/PageBContainer";
+import { InnerWrap } from "./PageA";
 
 function PageB() {
-  return <div>PageB</div>;
+  return (
+    <InnerWrap>
+      <PageBContainer />
+    </InnerWrap>
+  );
 }
 
 export default PageB;
