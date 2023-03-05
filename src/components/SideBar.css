@@ -1,0 +1,8 @@
+.side-bar {
+  position: fixed;
+  width: 20%;
+  height: 100%;
+  background-color: aquamarine;
+  top: var(--header-height);
+  left: 0;
+}
