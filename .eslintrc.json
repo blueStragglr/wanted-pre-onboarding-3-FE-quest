@@ -1,0 +1,55 @@
+{
+	"env": {
+		"browser": true,
+		"es2021": true
+	},
+	"extends": ["prettier", "plugin:import/typescript"],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": "latest",
+		"sourceType": "module"
+	},
+	"overrides": [
+		{
+			"files": ["*.ts", "*.tsx"]
+		}
+	],
+
+	"plugins": ["react", "import"],
+	"rules": {
+		"@typescript-eslint/explicit-function-return-type": "off",
+		"@typescript-eslint/triple-slash-reference": "off",
+		"react/react-in-jsx-scope": "off",
+		"no-var": "error",
+		"no-unused-vars": ["error", { "args": "none" }],
+		"eqeqeq": "off",
+		"no-console": "off",
+		"import/order": [
+			"error",
+			{
+				"groups": ["builtin", "external", "internal", ["sibling", "parent", "index"], "type", "unknown"],
+				"pathGroups": [
+					{
+						"pattern": "{react,react-router**,react-dom/**}",
+						"group": "builtin",
+						"position": "after"
+					},
+					{
+						"pattern": "@src/**",
+						"group": "external",
+						"position": "after"
+					}
+				],
+				"pathGroupsExcludedImportTypes": ["react"],
+				"newlines-between": "always",
+				"alphabetize": {
+					"order": "asc",
+					"caseInsensitive": true
+				}
+			}
+		]
+	}
+}
