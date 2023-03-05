@@ -4,7 +4,7 @@ import HistoryBackButton from '@/components/HistoryBackButton'
 
 const LayoutFullPage = () => {
   return (
-    <main>
+    <main className="h-screen p-10">
       <HistoryBackButton />
       <Outlet />
     </main>
