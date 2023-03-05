@@ -1,10 +1,13 @@
 import { Outlet } from 'react-router-dom'
 
+import HistoryBackButton from '@/components/HistoryBackButton'
+
 const LayoutFullPage = () => {
   return (
-    <div>
+    <main>
+      <HistoryBackButton />
       <Outlet />
-    </div>
+    </main>
   )
 }
 
