@@ -1,11 +1,11 @@
-import Header from './components/Header';
+import Header from './components/layouts/Header';
 import Sidebar from './components/Sidebar';
 
 function App() {
   return (
     <>
       <Header />
-      <Sidebar/>
+      <Sidebar />
     </>
   );
 }

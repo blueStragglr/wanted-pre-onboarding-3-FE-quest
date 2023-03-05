@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { RouterProvider } from 'react-router-dom';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { lightTheme } from './styles/theme';
 import router from './Router';
 
@@ -57,7 +57,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Roboto', sans-serif;
     background-color: ${(props) => props.theme.bgColor};
-    color: black;
+    color: ${(props) => props.theme.textColor};;
   }
   a {
     text-decoration: none;
@@ -70,7 +70,7 @@ root.render(
   <React.StrictMode>
     <ThemeProvider theme={lightTheme}>
       <GlobalStyle />
-      <RouterProvider router={router}/>
+      <RouterProvider router={router} />
     </ThemeProvider>
   </React.StrictMode>
 );

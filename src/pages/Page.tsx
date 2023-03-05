@@ -1,5 +1,5 @@
-import { useOutletContext } from "react-router-dom";
-import styled from "styled-components";
+import { useOutletContext } from 'react-router-dom';
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   display: flex;
@@ -9,11 +9,11 @@ const Wrapper = styled.div`
 `;
 
 interface IPageContext {
-    pageId: string;
+  pageId: string;
 }
 
 function Page() {
-    const { pageId } = useOutletContext<IPageContext>();
+  const { pageId } = useOutletContext<IPageContext>();
   return <Wrapper>This is Page {pageId}!</Wrapper>;
 }
 

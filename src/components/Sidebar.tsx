@@ -42,9 +42,11 @@ function Sidebar() {
           <Link to="pages/c">Page C</Link>
         </Page>
       </SidebarWrapper>
-      <Outlet context={{
-        pageId: pageId
-      }}/>
+      <Outlet
+        context={{
+          pageId: pageId,
+        }}
+      />
     </Wrapper>
   );
 }
