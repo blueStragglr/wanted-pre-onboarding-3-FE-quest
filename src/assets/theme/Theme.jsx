@@ -5,6 +5,8 @@ const colors = {
   white: "#ffffff",
   red: "#e36675",
   blue: "#4a90e2",
+  purple: "#8574eb",
+  lightPurple: "#C0B7F8",
 };
 
 const font = {
@@ -12,6 +14,23 @@ const font = {
       font-family: 'pretendard-bold';
       font-size: 32px;
     `,
+
+  headerButton: `
+    font-family: 'pretendard-semibold';
+    font-size: 20px;
+  `,
+
+  mainTitle: `
+    font-family: 'pretendard-bold';
+    font-size: 70px;
+    line-height: 70px;
+  `,
+
+  context: `
+    font-family: 'pretendard-semibold';
+    font-size: 20px;
+    line-height: 30px;
+  `,
 };
 
 const flex = {
