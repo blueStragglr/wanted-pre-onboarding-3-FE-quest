@@ -9,6 +9,15 @@
   font-family: 'Roman', sans-serif;
 }
 
+.ir {
+  overflow: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  text-indent: -9999px;
+}
+
 /* Header */
 header {
   grid-area: header;
@@ -46,6 +55,42 @@ a {
 }
 a:focus {
   color: #0974bb;
+}
+
+/* login */
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginTitle {
+  margin-bottom: 80px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+fieldset {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+
+label {
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+input {
+  font-size: 16px;
+  padding: 10px;
 }
 
 /* page */
