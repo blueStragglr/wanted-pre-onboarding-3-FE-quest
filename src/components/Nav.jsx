@@ -6,7 +6,7 @@ const Nav = ({ pages }) => {
     <aside>
       <nav>
         <ul>
-          {pages.map((page, idx) => (
+          {pages.map((page) => (
             <li key={uuidv4()} id={uuidv4()}>
               <Link
                 to={`/${page.path}`}
