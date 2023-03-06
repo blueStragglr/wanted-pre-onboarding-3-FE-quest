@@ -11,25 +11,30 @@ const LoginForm = () => {
   } = useLoginForm();
 
   return (
-    <form onSubmit={handleSubmitForm}>
-      <InputWithLabel
-        text="유저 네임"
-        id="username"
-        type="text"
-        value={userName}
-        onChange={handleChangeUserName}
-      />
-      <InputWithLabel
-        text="비밀번호"
-        id="password"
-        type="password"
-        value={password}
-        onChange={handleChangePassword}
-      />
+    <S.Form onSubmit={handleSubmitForm}>
+      <S.InputContainer>
+        <InputWithLabel
+          text="username"
+          id="username"
+          type="text"
+          value={userName}
+          onChange={handleChangeUserName}
+        />
+      </S.InputContainer>
+      <S.InputContainer>
+        <InputWithLabel
+          text="password"
+          id="password"
+          type="password"
+          value={password}
+          onChange={handleChangePassword}
+        />
+      </S.InputContainer>
+
       <button type="submit" disabled={!userName || !password}>
         로그인
       </button>
-    </form>
+    </S.Form>
   );
 };
 
