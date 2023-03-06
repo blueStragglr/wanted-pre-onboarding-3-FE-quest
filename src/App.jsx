@@ -5,11 +5,13 @@ import A from './pages/A';
 import B from './pages/B';
 import C from './pages/C';
 import D from './pages/D';
+import { useState } from 'react';
 import { Routes, Route, Outlet } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import StyleApp from './App.module.css';
 
 function App() {
+  const [isLogin, setIsLogin] = useState(false);
   const pages = [
     {
       path: 'a',
@@ -29,12 +31,19 @@ function App() {
     },
   ];
 
+  const handleLogin = () => {
+    setIsLogin((prev) => !prev);
+  };
+
   return (
     <div className={StyleApp.App}>
-      <Header />
+      <Header isLogin={isLogin} />
       <Nav pages={pages} />
       <Routes>
-        <Route path='/login' element={<Login />} />
+        <Route
+          path='/login'
+          element={<Login isLogin={isLogin} onLogin={handleLogin} />}
+        />
         <Route element={<Outlet />}>
           {pages.map((page) => (
             <Route

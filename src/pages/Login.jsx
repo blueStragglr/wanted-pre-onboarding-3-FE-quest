@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import StyleApp from '../App.module.css';
 
-const Login = () => {
+const Login = ({ onLogin }) => {
   const inputRef = useRef(null);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -13,7 +13,9 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(username, password);
+    if (username && password) {
+      onLogin();
+    }
   };
 
   const handleChange = (e) => {
