@@ -1,0 +1,12 @@
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.mainContent {
+  font-size: 55px;
+  font-weight: bolder;
+  color: lightskyblue;
+}
