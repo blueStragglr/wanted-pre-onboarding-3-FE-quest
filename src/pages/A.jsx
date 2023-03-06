@@ -1,9 +1,6 @@
-import React from 'react';
-import StyleApp from '../App.module.css';
-
 const A = () => {
   return (
-    <main className={StyleApp}>
+    <main>
       <h2>This is Page A!</h2>
     </main>
   );
