@@ -1,10 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import StyleApp from '../App.module.css';
 
 const Login = ({ onLogin }) => {
   const inputRef = useRef(null);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     inputRef.current.focus();
@@ -15,6 +18,7 @@ const Login = ({ onLogin }) => {
 
     if (username && password) {
       onLogin();
+      navigate('/a');
     }
   };
 
