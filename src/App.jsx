@@ -1,16 +1,24 @@
 import Header from './components/Header';
 import Nav from './components/Nav';
-import Login from './pages/Login';
+import Login from './pages/Login/Login';
+import LandingPage from './pages/LandingPage';
 import A from './pages/A';
 import B from './pages/B';
 import C from './pages/C';
 import D from './pages/D';
-import { LoginProvider } from './context/LoginContext';
-import { Routes, Route, Outlet } from 'react-router-dom';
+import { LoginContext } from './context/LoginContext';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Outlet,
+} from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import StyleApp from './App.module.css';
+import { useContext } from 'react';
 
 function App() {
+  const { isLogin } = useContext(LoginContext);
   const pages = [
     {
       path: 'a',
@@ -32,22 +40,30 @@ function App() {
 
   return (
     <div className={StyleApp.App}>
-      <Header />
-      <LoginProvider>
-        <Nav pages={pages} />
-        <Routes>
-          <Route path='/login' element={<Login />} />
-          <Route element={<Outlet />}>
-            {pages.map((page) => (
-              <Route
-                key={uuidv4()}
-                path={`/${page.path}`}
-                element={page.component}
-              />
-            ))}
-          </Route>
-        </Routes>
-      </LoginProvider>
+      <Router>
+        <Header />
+        {isLogin ? (
+          <div className={StyleApp.container}>
+            <Nav pages={pages} />
+            <Routes>
+              <Route element={<Outlet />}>
+                {pages.map((page) => (
+                  <Route
+                    key={uuidv4()}
+                    path={`/${page.path}`}
+                    element={page.component}
+                  />
+                ))}
+              </Route>
+            </Routes>
+          </div>
+        ) : (
+          <Routes>
+            <Route path='/' element={<LandingPage />} />
+            <Route path='/login' element={<Login />} />
+          </Routes>
+        )}
+      </Router>
     </div>
   );
 }
