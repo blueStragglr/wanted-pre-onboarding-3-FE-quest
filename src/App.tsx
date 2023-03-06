@@ -5,6 +5,8 @@ function App() {
     alert('Hello World!');
   }
 
+  const test = '';
+
   return (
     <div className="flex h-screen w-screen justify-center items-center">
       <button
