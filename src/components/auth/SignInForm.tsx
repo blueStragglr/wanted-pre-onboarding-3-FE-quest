@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { SignInRequestProps } from '../../apis/auth/auth.types';
-import { Wrapper, Box, Input, WarnText, Button } from './styles';
+import { Wrapper, Box, Input, WarnText, Button, SignLink } from './styles';
 
 function SignInForm({ submitCallback }: { submitCallback: (props: SignInRequestProps) => void }) {
   const {
@@ -28,8 +28,8 @@ function SignInForm({ submitCallback }: { submitCallback: (props: SignInRequestP
           {...register('password', { required: true, minLength: 8 })}
           placeholder="Password"
           type="password"
+          autoComplete="off"
         />
-
         {errors.password && errors.password.type === 'required' ? (
           <WarnText>Enter your password!</WarnText>
         ) : errors.password && errors.password.type === 'minLength' ? (
@@ -38,6 +38,7 @@ function SignInForm({ submitCallback }: { submitCallback: (props: SignInRequestP
           ''
         )}
         <Button>Sign In</Button>
+        <SignLink to="/signup"> Dont have a account? Sign up.</SignLink>
       </Box>
     </Wrapper>
   );

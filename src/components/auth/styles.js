@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { ToastContainer } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -14,7 +15,7 @@ export const Box = styled.form`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 200px;
+  width: 230px;
 `;
 
 export const Input = styled.input`
@@ -34,6 +35,7 @@ export const Button = styled.button`
   background-color: #2c3e50;
   color: white;
   border-radius: 5px;
+  margin-bottom: 10px;
   :hover {
     background-color: #34495e;
   }
@@ -44,6 +46,13 @@ export const WarnText = styled.div`
   margin-bottom: 10px;
   font-size: 12px;
   word-break: break-all;
+`;
+
+export const SignLink = styled(Link)`
+  color: gray;
+  :hover {
+    color: black;
+  }
 `;
 
 export function Toast() {

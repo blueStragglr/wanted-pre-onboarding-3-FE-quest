@@ -1,8 +1,11 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
 import App from './App';
 import Main from './pages/Main';
 import Page from './pages/Page';
-import Sign from './pages/Sign';
+import SignUp from './pages/SignUp';
+import SignIn from './pages/SignIn';
+
+const accessToken = localStorage.getItem('access_token');
 
 const router = createBrowserRouter([
   {
@@ -20,8 +23,12 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: 'sign',
-    element: <Sign />,
+    path: 'signup',
+    element: accessToken ? <Navigate replace to={'/'} /> : <SignUp />,
+  },
+  {
+    path: 'signin',
+    element: accessToken ? <Navigate replace to={'/'} /> : <SignIn />,
   },
 ]);
 

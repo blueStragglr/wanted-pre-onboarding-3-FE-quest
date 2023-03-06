@@ -15,7 +15,8 @@ export async function signUp(data: SignUpRequestProps) {
 
 export async function signIn(data: SignInRequestProps) {
   try {
-    await apiClient.post('/auth/signin', data);
+    let response = await apiClient.post('/auth/signin', data);
+    localStorage.setItem('access_token', response.data.access_token);
     toast.success('로그인 성공');
   } catch (e: unknown) {
     let message = handleError(e);
