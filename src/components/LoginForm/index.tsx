@@ -1,13 +1,13 @@
 import React from "react";
 import InputWithLabel from "../InputWithLabel";
-import useForm from "../../hooks/useForm";
+import useLoginForm from "./hooks/useLoginForm";
 
 const LoginForm = () => {
   const {
     state: { userName, password },
     onChange: { handleChangeUserName, handleChangePassword },
     onSubmit: { handleSubmitForm },
-  } = useForm();
+  } = useLoginForm();
 
   return (
     <form onSubmit={handleSubmitForm}>

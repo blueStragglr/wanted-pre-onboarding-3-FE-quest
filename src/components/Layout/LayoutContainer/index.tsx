@@ -1,15 +1,16 @@
 import React from "react";
 import Header from "../Header";
 import Sidebar from "../Sidebar";
+import { Outlet } from "react-router-dom";
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
+const LayoutContainer = () => {
   return (
     <>
       <Header />
       <Sidebar />
-      {children}
+      <Outlet />
     </>
   );
 };
 
-export default Layout;
+export default LayoutContainer;

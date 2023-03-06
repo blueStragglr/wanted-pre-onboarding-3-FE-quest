@@ -6,22 +6,23 @@ import BPage from "./pages/BPage";
 import CPage from "./pages/CPage";
 import LoginPage from "./pages/LoginPage";
 import { PATH_NAME } from "./constants/path";
+import { AuthContextProvider } from "./contexts/AuthContext";
 import "./App.css";
 
 function App() {
   return (
-    <BrowserRouter>
-      <LayoutContainer>
+    <AuthContextProvider>
+      <BrowserRouter>
         <Routes>
           <Route path={PATH_NAME.LOGIN} element={<LoginPage />} />
+          <Route element={<LayoutContainer />}>
+            <Route path={PATH_NAME.PAGE_A} element={<APage />} />
+            <Route path={PATH_NAME.PAGE_B} element={<BPage />} />
+            <Route path={PATH_NAME.PAGE_C} element={<CPage />} />
+          </Route>
         </Routes>
-        <Routes>
-          <Route path={PATH_NAME.PAGE_A} element={<APage />} />
-          <Route path={PATH_NAME.PAGE_B} element={<BPage />} />
-          <Route path={PATH_NAME.PAGE_C} element={<CPage />} />
-        </Routes>
-      </LayoutContainer>
-    </BrowserRouter>
+      </BrowserRouter>
+    </AuthContextProvider>
   );
 }
 
