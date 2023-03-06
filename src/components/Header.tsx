@@ -36,8 +36,8 @@ function Header() {
     <HeaderWrapper>
       <Title to="/">Wanted Pre-onboarding course</Title>
       <SignWrapper>
-        <SignIn to="/sign">Sign In</SignIn>
-        <SignUp to="/sign">Sign Up</SignUp>
+        <SignIn to="/signin">Sign In</SignIn>
+        <SignUp to="/signup">Sign Up</SignUp>
       </SignWrapper>
     </HeaderWrapper>
   );
