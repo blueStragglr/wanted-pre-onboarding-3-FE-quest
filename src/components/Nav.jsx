@@ -1,19 +1,18 @@
 import { Link } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 
-const Nav = () => {
+const Nav = ({ pages }) => {
   return (
     <aside>
       <nav>
         <ul>
-          <li>
-            <Link to='/a'>Page A</Link>
-          </li>
-          <li>
-            <Link to='/b'>Page B</Link>
-          </li>
-          <li>
-            <Link to='/c'>Page C</Link>
-          </li>
+          {pages.map((page, idx) => (
+            <li key={uuidv4()} id={uuidv4()}>
+              <Link
+                to={`/${page.path}`}
+              >{`Page ${page.path.toUpperCase()}`}</Link>
+            </li>
+          ))}
         </ul>
       </nav>
     </aside>
