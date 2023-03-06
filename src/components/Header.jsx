@@ -1,5 +1,3 @@
-import StyleApp from '../App.module.css';
-
 const Header = () => {
   return (
     <header>
