@@ -23,9 +23,9 @@ function App() {
         {
           errorElement: <NoMatch />,
           children: [
-            { index: true, element: <NoMatch /> },
+            { index: true, element: <Main /> },
             {
-              path: ":pageId",
+              path: "/:pageId",
               element: <CommonPage />,
               loader: pageLoader,
               // action: pageAction,
