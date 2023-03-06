@@ -4,7 +4,6 @@ import Utils from '../common/libs/Utils';
 
 const PageA = () => {
     const location = useLocation().search;
-    // console.log('location',location);
     const needPermit = Utils.checkAuth(location);
 
     return (

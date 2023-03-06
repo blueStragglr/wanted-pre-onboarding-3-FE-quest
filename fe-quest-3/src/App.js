@@ -1,56 +1,46 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import React from 'react';
+import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 import './App.css';
-import { categories } from './common/Category';
-import Header from './common/Header';
-import Nav from './common/Nav';
-import Contents from './common/Contents';
-import styled from "styled-components";
 
-  const Wrapper = styled.div`
-    display: flex;
-    height: 100%;
-    align-items: stretch;
-    box-sizing: border-box;
 
-    @media screen and (max-width: 500px) {
-      flex-direction: column;
-    }
-  `;
+import Container, { loader as rootLoader }from './components/Container';
+import Main from './components/Main';
+import CommonPage, { loader as pageLoader } from './components/CommonPage';
+import NoMatch from './components/NoMatch';
+
+  
 
 function App() {
-  const [activeLink, setActiveLink] = useState(null);
-  const { pathname } = useLocation();
-  const goNav = useNavigate();
 
-  useEffect(()=>{
-    const current = categories.find(cate => cate.path === pathname);
-    setActiveLink(`${current?current.pageName : null}`);    
-  },[pathname]);
-
-  const selectMenu = ({pageName,path,permission}) => {
-    if(!pageName) {
-      goNav('/');
-      setActiveLink(null);
-      return;
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Container />,      
+      loader: rootLoader,
+      errorElement: <NoMatch />,
+      // action: rootAction,
+      children: [
+        {
+          errorElement: <NoMatch />,
+          children: [
+            { index: true, element: <NoMatch /> },
+            {
+              path: ":pageId",
+              element: <CommonPage />,
+              loader: pageLoader,
+              // action: pageAction,
+            },
+          ],
+        },
+      ],
     }
-      setActiveLink(pageName);
-      // eslint-disable-next-line react-hooks/rules-of-hooks
-      goNav(`${path}?permission=${permission}`,{state:{message:'this is state'}});
-  }
+  ]);
 
   return (
-    <div className="app_container">
-      <Header selectMenu={selectMenu} />
-      <Wrapper>
-        <Nav 
-        categories={categories}
-        activeLink={activeLink}
-        selectMenu={selectMenu}
-        />
-        <Contents categories={categories} />
-      </Wrapper>
-    </div>
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>
+    
   );
 }
 
