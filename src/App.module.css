@@ -1,21 +1,5 @@
 .App {
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 180px 10fr;
-  grid-template-rows: 80px auto;
-  grid-template-areas:
-    'header header'
-    'aside  main  ';
   font-family: 'Roman', sans-serif;
-}
-
-.ir {
-  overflow: hidden;
-  position: absolute;
-  width: 0;
-  height: 0;
-  line-height: 0;
-  text-indent: -9999px;
 }
 
 /* Header */
@@ -28,6 +12,17 @@ h1 {
   padding: 6px 30px;
   font-size: 26px;
   font-weight: 600;
+}
+
+/* container */
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 180px 10fr;
+  grid-template-rows: 80px auto;
+  grid-template-areas:
+    'aside  main'
+    'aside  main';
 }
 
 /* Nav */
@@ -55,62 +50,6 @@ a {
 }
 a:focus {
   color: #4aa4e0;
-}
-
-/* login */
-.login {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.loginTitle {
-  margin-top: 0;
-  margin-bottom: 80px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-fieldset {
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  border: none;
-}
-
-label {
-  margin-bottom: 8px;
-  font-size: 18px;
-  font-weight: 500;
-}
-
-input {
-  font-size: 16px;
-  padding: 10px;
-}
-
-button {
-  margin-top: 20px;
-  width: 200px;
-  padding: 6px;
-  font-size: 18px;
-  font-weight: 600;
-  background-color: transparent;
-  border-radius: 5px;
-  border-color: #0974bb;
-  border-style: solid;
-  cursor: pointer;
-  color: #0974bb;
-}
-
-button:hover {
-  color: #4aa4e0;
-  border-color: #4aa4e0;
 }
 
 /* page */
