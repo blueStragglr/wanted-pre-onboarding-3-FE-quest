@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "postinstall": "husky install",
+    "lint": "eslint --cache .",
+    "format": "prettier --cache --write ."
   },
   "dependencies": {
     "react": "^18.2.0",

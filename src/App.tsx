@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 function App() {
   function onClick() {
-    alert("Hello World!");
+    alert('Hello World!');
   }
 
   return (
