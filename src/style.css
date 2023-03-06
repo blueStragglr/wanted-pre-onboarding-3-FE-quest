@@ -1,0 +1,90 @@
+/* reset css */
+
+body {
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* common css */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* css */
+
+.main-layout {
+  min-height: 100vh;
+}
+
+.main-layout__header {
+  background: pink;
+  height: 100px;
+  font-size: 40px;
+}
+
+.login-btn {
+  position: absolute;
+  right: 50px;
+  font-size: 30px;
+}
+
+.main-layout__content {
+  display: flex;
+}
+
+.main-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: lightskyblue;
+  width: 200px;
+  height: 100%;
+  min-height: calc(100vh - 120px);
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+.menu {
+  display: block;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.main-layout__main {
+  width: 100%;
+  background: lightgreen;
+  font-size: 40px;
+}
+
+/* Login */
+
+.login {
+  flex-direction: column;
+  padding: 30px;
+  gap: 20px;
+  font-size: 40px;
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login__form__label {
+  font-size: 20px;
+}
+
+.login__submit-btn {
+  margin-top: 20px;
+}

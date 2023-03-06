@@ -1,13 +1,10 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 
-export function Layout() {
+export function Root() {
   return (
     <div>
-      <nav>Nav</nav>
-      <main>
-        <Outlet />
-      </main>
+      <Outlet />
     </div>
   );
 }
