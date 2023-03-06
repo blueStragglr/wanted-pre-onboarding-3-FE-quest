@@ -1,0 +1,67 @@
+.App {
+  font-family: 'Roman', sans-serif;
+}
+
+/* Header */
+header {
+  grid-area: header;
+  border-bottom: 1px solid #c4c4c4;
+}
+
+h1 {
+  padding: 6px 30px;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+/* container */
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 180px 10fr;
+  grid-template-rows: 80px auto;
+  grid-template-areas:
+    'aside  main'
+    'aside  main';
+}
+
+/* Nav */
+aside {
+  grid-area: aside;
+  border-right: 1px solid #c4c4c4;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0 30px;
+  list-style: none;
+}
+
+li {
+  font-size: 20px;
+  line-height: 28px;
+  margin-bottom: 6px;
+}
+
+a {
+  color: #0974bb;
+  text-decoration: none;
+}
+a:focus {
+  color: #4aa4e0;
+}
+
+/* page */
+main {
+  grid-area: main;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  color: #0974bb;
+  font-size: 36px;
+  font-weight: 400;
+}
