@@ -54,7 +54,7 @@ a {
   text-decoration: none;
 }
 a:focus {
-  color: #0974bb;
+  color: #4aa4e0;
 }
 
 /* login */
@@ -66,6 +66,7 @@ a:focus {
 }
 
 .loginTitle {
+  margin-top: 0;
   margin-bottom: 80px;
 }
 
@@ -91,6 +92,25 @@ label {
 input {
   font-size: 16px;
   padding: 10px;
+}
+
+button {
+  margin-top: 20px;
+  width: 200px;
+  padding: 6px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: transparent;
+  border-radius: 5px;
+  border-color: #0974bb;
+  border-style: solid;
+  cursor: pointer;
+  color: #0974bb;
+}
+
+button:hover {
+  color: #4aa4e0;
+  border-color: #4aa4e0;
 }
 
 /* page */
