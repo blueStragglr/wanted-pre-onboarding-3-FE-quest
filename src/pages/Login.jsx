@@ -1,11 +1,13 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useContext } from 'react';
+import { LoginContext } from '../context/LoginContext';
 import { useNavigate } from 'react-router-dom';
 import StyleApp from '../App.module.css';
 
-const Login = ({ onLogin }) => {
+const Login = () => {
   const inputRef = useRef(null);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const { handleLogin } = useContext(LoginContext);
 
   const navigate = useNavigate();
 
@@ -17,7 +19,7 @@ const Login = ({ onLogin }) => {
     e.preventDefault();
 
     if (username && password) {
-      onLogin();
+      handleLogin();
       navigate('/a');
     }
   };
