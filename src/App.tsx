@@ -8,24 +8,28 @@ import CPage from "./pages/CPage";
 import LoginPage from "./pages/LoginPage";
 import { PATH_NAME } from "./constants/path";
 import { AuthContextProvider } from "./contexts/AuthContext";
-import "./App.css";
+import "./components/styles/GlobalStyle.ts";
+import GlobalStyle from "./components/styles/GlobalStyle";
 
 function App() {
   return (
-    <AuthContextProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path={PATH_NAME.LOGIN} element={<LoginPage />} />
-          <Route element={<ProtectedRoute />}>
-            <Route element={<LayoutContainer />}>
-              <Route path={PATH_NAME.PAGE_A} element={<APage />} />
-              <Route path={PATH_NAME.PAGE_B} element={<BPage />} />
-              <Route path={PATH_NAME.PAGE_C} element={<CPage />} />
+    <>
+      <GlobalStyle />
+      <AuthContextProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path={PATH_NAME.LOGIN} element={<LoginPage />} />
+            <Route element={<ProtectedRoute />}>
+              <Route element={<LayoutContainer />}>
+                <Route path={PATH_NAME.PAGE_A} element={<APage />} />
+                <Route path={PATH_NAME.PAGE_B} element={<BPage />} />
+                <Route path={PATH_NAME.PAGE_C} element={<CPage />} />
+              </Route>
             </Route>
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </AuthContextProvider>
+          </Routes>
+        </BrowserRouter>
+      </AuthContextProvider>
+    </>
   );
 }
 
