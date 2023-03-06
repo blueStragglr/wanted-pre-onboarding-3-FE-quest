@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 export default function Page02 (){
 
     return(
-        <PageBox>This is page02 </PageBox>
+        <PageBox>This is page B! </PageBox>
     );
 }
 

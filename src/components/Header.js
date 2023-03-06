@@ -16,7 +16,7 @@ function Header(){
 
     return(
         <HeaderBox>
-            원티드 프리온보딩 3월 사전과제
+            Wanted Pre-onboarding course
         </HeaderBox>
     );
 

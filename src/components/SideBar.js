@@ -11,17 +11,17 @@ export default function Sidebar (){
             <ul className='flex flex-col items-center'>
                 <li className={liCss}>
                     <NavLink to='/page01' className={path === '/page01' || path === '/' ? activeCss : normalCss}>
-                        페이지01
+                        페이지 A
                     </NavLink>
                 </li>
                 <li className={liCss}>
                     <NavLink to='/page02' className={path === '/page02' ? activeCss : normalCss}>
-                        페이지02
+                        페이지 B
                     </NavLink>
                 </li>
                 <li className={liCss}>
                     <NavLink to='/page03' className={path === '/page03' ? activeCss : normalCss}>
-                        페이지03
+                        페이지 C
                     </NavLink>
                 </li>
             </ul>
