@@ -1,19 +1,18 @@
+import { Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import PageA from './pages/PageA';
+import PageB from './pages/PageB';
+import PageC from './pages/PageC';
+
 function App() {
-  function onClick() {
-    alert('Hello World!');
-  }
-
-  const test = '';
-
   return (
-    <div className="flex h-screen w-screen justify-center items-center">
-      <button
-        className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4"
-        onClick={onClick}
-      >
-        Click!
-      </button>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />}>
+        <Route path="/a-page" element={<PageA />} />
+        <Route path="/b-page" element={<PageB />} />
+        <Route path="/c-page" element={<PageC />} />
+      </Route>
+    </Routes>
   );
 }
 
