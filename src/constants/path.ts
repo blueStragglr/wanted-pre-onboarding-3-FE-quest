@@ -1,6 +1,6 @@
 export const ROUTERPATH = {
-  PAGEA: 'pages/a',
-  PAGEB: 'pages/b',
-  PAGEC: 'pages/c',
+  PAGEA: '/',
+  PAGEB: '/b',
+  PAGEC: '/c',
   LOGIN: '/login',
 }
