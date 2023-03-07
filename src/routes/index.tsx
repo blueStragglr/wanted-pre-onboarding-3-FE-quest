@@ -1,26 +1,35 @@
 import { lazy } from 'react'
-import { Navigate, useRoutes } from 'react-router-dom'
+import { useRoutes } from 'react-router-dom'
+import LoginPage from 'src/pages/LoginPage'
 
 const PageA = lazy(() => import('../pages/PageA'))
 const PageB = lazy(() => import('../pages/PageB'))
 const PageC = lazy(() => import('../pages/PageC'))
 
-const pageARoute = [
+const pageRoute = [
   {
-    path: 'pages/PageA',
-    element: <></>,
+    path: 'pages',
+    element: (
+      <>
+        <PageA />
+      </>
+    ),
   },
-]
-const pageBRoute = [
   {
-    path: 'pages/PageB',
-    element: <></>,
+    path: 'pages/b',
+    element: (
+      <>
+        <PageB />
+      </>
+    ),
   },
-]
-const pageCRoute = [
   {
-    path: 'pages/PageC',
-    element: <></>,
+    path: 'pages/c',
+    element: (
+      <>
+        <PageC />
+      </>
+    ),
   },
 ]
 
@@ -28,7 +37,11 @@ const RenderRouter = () =>
   useRoutes([
     {
       path: '/',
-      children: [...pageARoute],
+      element: <LoginPage />,
+    },
+    {
+      path: '/',
+      children: [...pageRoute],
     },
   ])
 

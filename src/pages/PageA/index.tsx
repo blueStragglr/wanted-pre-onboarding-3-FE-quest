@@ -1,7 +1,7 @@
 import React from 'react'
 
 const PageA = () => {
-  return <div>index</div>
+  return <div>PageA</div>
 }
 
 export default PageA
