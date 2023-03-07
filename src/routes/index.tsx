@@ -1,5 +1,6 @@
 import { lazy } from 'react'
-import { useRoutes } from 'react-router-dom'
+import { Navigate, useRoutes } from 'react-router-dom'
+import Layout from 'src/components/common/Layout'
 import LoginPage from 'src/pages/LoginPage'
 
 const PageA = lazy(() => import('../pages/PageA'))
@@ -9,38 +10,31 @@ const PageC = lazy(() => import('../pages/PageC'))
 const pageRoute = [
   {
     path: 'pages',
-    element: (
-      <>
-        <PageA />
-      </>
-    ),
+    element: <Navigate to="pages" />,
+  },
+  {
+    path: 'pages/a',
+    element: <PageA />,
   },
   {
     path: 'pages/b',
-    element: (
-      <>
-        <PageB />
-      </>
-    ),
+    element: <PageB />,
   },
   {
     path: 'pages/c',
-    element: (
-      <>
-        <PageC />
-      </>
-    ),
+    element: <PageC />,
   },
 ]
 
 const RenderRouter = () =>
   useRoutes([
+    // {
+    //   path: 'login',
+    //   element: <LoginPage />,
+    // },
     {
       path: '/',
-      element: <LoginPage />,
-    },
-    {
-      path: '/',
+      element: <Layout />,
       children: [...pageRoute],
     },
   ])

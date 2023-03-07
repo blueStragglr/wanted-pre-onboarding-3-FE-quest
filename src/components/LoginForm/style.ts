@@ -17,12 +17,4 @@ export const InputForm = styled('form')`
 
 export const InputBox = styled('div')`
   margin: 10px 0;
-  input {
-    width: 80%;
-    border: 1px solid #e5e9f5;
-    background-color: #f6f7fa;
-    padding: 20px;
-    margin: 10px 0;
-    border-radius: 10px;
-  }
 `

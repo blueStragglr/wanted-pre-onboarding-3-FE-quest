@@ -1,4 +1,5 @@
 import React from 'react'
+import Input from '../common/Input'
 import useLoiginForm from './hooks/useLoiginForm'
 import * as S from './style'
 const LoginForm = () => {
@@ -11,17 +12,19 @@ const LoginForm = () => {
     <>
       <S.InputForm onSubmit={Submit}>
         <S.InputBox>
-          <input
-            type="text"
+          <Input
+            text="username"
             id="username"
+            type="text"
             value={username}
             onChange={onUserName}
           />
         </S.InputBox>
         <S.InputBox>
-          <input
+          <Input
             type="text"
             id="passwrd"
+            text="password"
             value={passwrd}
             onChange={onPasswrd}
           />
