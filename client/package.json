@@ -22,7 +22,7 @@
     "build": "craco build",
     "test": "craco test",
     "eject": "craco eject",
-    "prepare": "husky install"
+    "prepare": "cd ../ && husky install ./client/.husky"
   },
   "eslintConfig": {
     "extends": [
