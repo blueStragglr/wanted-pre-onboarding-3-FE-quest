@@ -1,10 +1,18 @@
+import { useNavigate } from 'react-router-dom'
+
 import useForm from '@/hooks/useForm'
-import { loginValidate, LoginValidateProps } from '@/service/auth.service'
+import { ROUTE } from '@/router/routerInfo'
+import authService from '@/service/auth.service'
+import { loginValidate, LoginValidateProps } from '@/service/auth.validation'
 
 const Login = () => {
+  const navigate = useNavigate()
   const submitCallback = async ({ email, password }: LoginValidateProps) => {
     await new Promise(res => setTimeout(res, 1000))
-    alert(email)
+    alert('로그인 성공~')
+    // TODO: 상태관리 및 로그인 서비스 함수로 리팩토링
+    authService.saveToken(email)
+    navigate(ROUTE.HOME)
   }
   const { inputValues, validateError, onChangeHandler, submitHandler, satisfyAllValidates } = useForm({
     initialValues: { email: '', password: '' },
