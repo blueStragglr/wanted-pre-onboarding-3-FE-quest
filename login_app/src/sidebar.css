@@ -1,0 +1,8 @@
+.sidebar__wrap {
+    height: calc(100vh - 60px);
+    padding: 10px;
+    box-sizing: border-box;
+    width: 250px;
+    display: flex;
+    border-right: 1px solid #ddd;
+}

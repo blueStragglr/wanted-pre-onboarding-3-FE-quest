@@ -1,0 +1,5 @@
+.content__wrap {
+    width: calc(100% - 250px);
+    padding: 10px;
+    box-sizing: border-box;
+}
