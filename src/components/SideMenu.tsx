@@ -6,7 +6,7 @@ const SideMenu = () => {
       <NavLink
         className="mt-5"
         style={({ isActive }) =>
-          isActive ? { color: 'red' } : { color: 'blue' }
+          isActive ? { color: 'blue' } : { color: 'black' }
         }
         to={'/a-page'}
       >
@@ -15,7 +15,7 @@ const SideMenu = () => {
       <NavLink
         className="mt-5"
         style={({ isActive }) =>
-          isActive ? { color: 'red' } : { color: 'blue' }
+          isActive ? { color: 'blue' } : { color: 'black' }
         }
         to={'/b-page'}
       >
@@ -24,7 +24,7 @@ const SideMenu = () => {
       <NavLink
         className="mt-5"
         style={({ isActive }) =>
-          isActive ? { color: 'red' } : { color: 'blue' }
+          isActive ? { color: 'blue' } : { color: 'black' }
         }
         to={'/c-page'}
       >
