@@ -3,3 +3,24 @@
     box-sizing: border-box;
     padding: 10px;
 }
+
+input {
+    border: 1px solid #bbb;
+    height: 30px;
+    width: 240px;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+button {
+    margin-top: 30px;
+    height: 30px;
+    width: 80px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ccc;
+}

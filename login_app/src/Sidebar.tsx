@@ -1,7 +1,9 @@
 import "./sidebar.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function Sidebar() {
+  const location = useLocation()
+
   const menu: { name: string; path: string }[] = [
     {
       name: "menu A",
@@ -16,6 +18,8 @@ function Sidebar() {
       path: "/c",
     },
   ];
+
+  if(location.pathname === '/login') return null
 
   return (
     <div className="sidebar__wrap">
