@@ -2,3 +2,8 @@
   width: 100%;
   display: flex;
 }
+
+a {
+  text-decoration: none;
+  color: #333;
+}

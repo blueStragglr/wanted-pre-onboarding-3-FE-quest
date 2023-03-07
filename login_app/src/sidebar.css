@@ -1,8 +1,15 @@
 .sidebar__wrap {
     height: calc(100vh - 60px);
-    padding: 10px;
     box-sizing: border-box;
     width: 250px;
     display: flex;
+    flex-direction: column;
     border-right: 1px solid #ddd;
+}
+
+.menu-item {
+    box-sizing: border-box;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
 }
