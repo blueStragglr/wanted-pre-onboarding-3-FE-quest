@@ -1,9 +1,10 @@
-import { css } from "@emotion/react";
+import { css } from '@emotion/react';
 
 const reset = css`
   * {
     box-sizing: border-box;
     margin: 0;
+    font-family: sans-serif;
   }
 
   a {
@@ -162,7 +163,7 @@ const reset = css`
   blockquote:after,
   q:before,
   q:after {
-    content: "";
+    content: '';
     content: none;
   }
 
