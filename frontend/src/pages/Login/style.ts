@@ -17,6 +17,15 @@ export const LoginBox = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    button{
+        background-color: transparent;
+        padding: 10px;
+        border-radius: 5px;
+        font-weight: bold;
+        text-decoration: underline;
+        cursor: pointer;
+    }
 `
 
 export const Title = styled.span`
