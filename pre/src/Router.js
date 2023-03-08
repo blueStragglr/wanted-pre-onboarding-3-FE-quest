@@ -5,13 +5,14 @@ import Layout from './components/Layout';
 
 const Router = createBrowserRouter(
   mocks.map((a) => {
-    console.log(a.element, a.path);
-    return a.withAuth
-      ? {
-          path: a.path,
-          element: <Layout path={a.path.replace(/\/\*$/g, '')}>{a.element}</Layout>,
-        }
-      : { path: a.path, element: a.element };
+    return {
+      path: a.path,
+      element: (
+        <Layout path={a.path.replace(/\/\*$/g, '')} withAuth={a.withAuth}>
+          {a.element}
+        </Layout>
+      ),
+    };
   })
 );
 
