@@ -1,7 +1,5 @@
 import { atom } from "recoil";
 
-const pageDefault = ['a', 'b', 'c']
-
 const localStorageEffect = (key : string) => 
     ({setSelf, onSet} : any) => {
         const savedPages = localStorage.getItem(key);
@@ -14,10 +12,16 @@ const localStorageEffect = (key : string) =>
             : localStorage.setItem(key, JSON.stringify(newValue))
         });
     };
+export interface ILoggedIn{
+    isLoggedIn : boolean;
+    username : string;
+}
 
-
-export const pageState = atom({
-    key : 'pages',
-    default : pageDefault,
-    effects : [localStorageEffect('pages')]
+export const loginState = atom<ILoggedIn>({
+    key : 'login',
+    default : {
+        isLoggedIn : false,
+        username : ''
+    },
+    effects : [localStorageEffect('login')]
 })
