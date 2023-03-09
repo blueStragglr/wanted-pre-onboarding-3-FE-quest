@@ -4,7 +4,7 @@ import className from 'classnames';
 import styles from './Sidebar.module.scss';
 
 export const Sidebar = () => {
-  const [clickedTabId, setClickedTabId] = useState('0');
+  const [clickedTabId, setClickedTabId] = useState('');
 
   const handleActiveTab = (e: React.MouseEvent<HTMLLIElement>) => {
     setClickedTabId(e.currentTarget.id);
