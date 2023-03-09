@@ -1,8 +1,8 @@
 {
   "name": "client",
-  "homepage": "https://github.com/kimyouknow/wanted-pre-onboarding-3-FE-quest",
+  "homepage": "https://kimyouknow.github.io/wanted-pre-onboarding-3-FE-quest/",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
