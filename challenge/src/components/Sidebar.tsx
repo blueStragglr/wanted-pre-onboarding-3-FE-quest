@@ -1,8 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Sidebar() {
+  const navigate = useNavigate();
   const isLogin = window.localStorage.getItem("login")?.split(",");
-  console.log(isLogin?.[0]);
+  const handleLogout = () => {
+    window.localStorage.removeItem("login");
+    navigate("/");
+  };
   return (
     <nav className="w-1/5 h-screen border-r-indigo-500 border-solid border-2">
       <ul>
@@ -11,11 +15,17 @@ export default function Sidebar() {
             <Link to="/login">Login</Link>
           </li>
         ) : (
-          <li>
-            <p>
-              Welcome! <strong>{isLogin[1]}</strong>
-            </p>
-          </li>
+          <>
+            {" "}
+            <li>
+              <p>
+                Welcome! <strong>{isLogin[1]}</strong>
+              </p>
+            </li>
+            <li>
+              <button onClick={handleLogout}>LogOut</button>
+            </li>
+          </>
         )}
         <li>
           <Link to="/pagea">PageA</Link>
