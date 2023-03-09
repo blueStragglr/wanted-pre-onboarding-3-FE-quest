@@ -1,9 +1,12 @@
+export type LoginSuccessMessage = 'SUCCESS';
+export type LoginFailMessage = 'FAIL';
+
 export interface LoginResponse {
-  message: string;
+  message: LoginSuccessMessage | LoginFailMessage;
   token: string;
 }
 
 export interface Token {
-  user: string;
   secret: string;
+  user: string;
 }
