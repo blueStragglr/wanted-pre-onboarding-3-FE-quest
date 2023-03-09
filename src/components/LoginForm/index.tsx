@@ -1,13 +1,13 @@
-import React from 'react'
-import Input from '../common/Input'
-import useLoiginForm from './hooks/useLoiginForm'
-import * as S from './style'
+import React from "react";
+import Input from "../common/Input";
+import useLoiginForm from "./hooks/useLoiginForm";
+import * as S from "./style";
 const LoginForm = () => {
   const {
     state: { passwrd, username },
     onSubmit: { Submit },
     onEvent: { onUserName, onPasswrd },
-  } = useLoiginForm()
+  } = useLoiginForm();
   return (
     <>
       <S.InputForm onSubmit={Submit}>
@@ -22,7 +22,7 @@ const LoginForm = () => {
         </S.InputBox>
         <S.InputBox>
           <Input
-            type="text"
+            type="password"
             id="passwrd"
             text="password"
             value={passwrd}
@@ -34,7 +34,7 @@ const LoginForm = () => {
         </button>
       </S.InputForm>
     </>
-  )
-}
+  );
+};
 
-export default LoginForm
+export default LoginForm;
