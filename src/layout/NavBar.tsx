@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { RouterInfo } from '../Router';
 
 const NavBar = () => {
   const location = useLocation();
@@ -7,24 +8,20 @@ const NavBar = () => {
   return (
     <nav className="fixed top-14 left-0 h-screen w-56 border border-r-gray-400 px-4 py-7">
       <ul className="flex flex-col gap-5">
-        <Link
-          to="/"
-          className={location.pathname === '/' ? 'text-blue-400' : ''}
-        >
-          Page A
-        </Link>
-        <Link
-          to="/pageb"
-          className={location.pathname === '/pageb' ? 'text-blue-400' : ''}
-        >
-          Page B
-        </Link>
-        <Link
-          to="/pagec"
-          className={location.pathname === '/pagec' ? 'text-blue-400' : ''}
-        >
-          Page C
-        </Link>
+        {RouterInfo.map((router) => {
+          if (router.withAuthorization) {
+            return (
+              <Link
+                to={router.path}
+                className={
+                  location.pathname === `${router.path}` ? 'text-blue-400' : ''
+                }
+              >
+                {router.label}
+              </Link>
+            );
+          }
+        })}
       </ul>
     </nav>
   );
