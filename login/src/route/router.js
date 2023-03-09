@@ -3,6 +3,7 @@ import { PageA } from "../pages/PageA";
 import { PageB } from "../pages/PageB";
 import { PageC } from "../pages/PageC";
 import { createBrowserRouter } from "react-router-dom";
+import { Authorization } from "../components/\bAuthorization";
 
 export const RouteInfo = [
   {
@@ -33,9 +34,14 @@ export const RouteInfo = [
 
 export const router = createBrowserRouter(
   RouteInfo.map((info) => {
-    return {
-      path: info.path,
-      element: info.element,
-    };
+    return info.withAuthorization
+      ? {
+          path: info.path,
+          element: <Authorization currentPath={info.path.replace(/\/\*$>/g, "")}>{info.element}</Authorization>,
+        }
+      : {
+          path: info.path,
+          element: info.element,
+        };
   }),
 );
