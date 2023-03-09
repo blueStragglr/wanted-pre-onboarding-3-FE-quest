@@ -1,17 +1,15 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { PageA, PageB, PageC, NotFound } from '@pages';
 import Layout from '@components/Layout';
+import RouterInfo from 'constants/routerInfo';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
-    children: [
-      { index: true, element: <PageA /> },
-      { path: '*', element: <NotFound /> },
-      { path: '/pageb', element: <PageB /> },
-      { path: '/pagec', element: <PageC /> },
-    ],
+    children: RouterInfo.map((routerInfo) => ({
+      path: routerInfo.path,
+      element: routerInfo.element,
+    })),
   },
 ]);
 

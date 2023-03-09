@@ -7,7 +7,7 @@ export default function Sidebar() {
       {navLink.map((nav) => (
         <NavLink
           key={nav.title}
-          to={nav.link}
+          to={nav.path}
           className={({ isActive }) =>
             isActive ? 'text-sky-700 font-extrabold' : ''
           }
