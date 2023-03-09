@@ -1,4 +1,4 @@
-import navLink from 'constants/navLinkt';
+import navLink from 'constants/navLink';
 import { NavLink } from 'react-router-dom';
 
 export default function Sidebar() {
