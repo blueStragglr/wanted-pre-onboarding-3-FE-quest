@@ -1,13 +1,13 @@
 import styled from "styled-components";
+import { RouteInfo } from "../route/router";
 
 export const Nav = () => {
-  const pages = ["page-a", "page-b", "page-c"];
   return (
     <Wrapper>
-      {pages.map((page, idx) => {
+      {RouteInfo.map((info) => {
         return (
-          <li key={idx}>
-            <a href={`/${page}`}>{page}</a>
+          <li key={info.label}>
+            <a href={`${info.path}`}>{info.label}</a>
           </li>
         );
       })}
