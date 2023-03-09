@@ -4,7 +4,7 @@ import Sidebar from "../components/Sidebar";
 
 export default function Home() {
   return (
-    <div>
+    <div className="flex pt-20">
       <Header />
       <Sidebar />
       <Outlet />

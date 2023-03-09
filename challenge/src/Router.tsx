@@ -8,24 +8,26 @@ import PageC from "./routes/PageC";
 
 const router = createBrowserRouter([
   {
-    path: "",
-    element: <App />,
-  },
-  {
     path: "/",
-    element: <Home />,
+    element: <App />,
     children: [
       {
-        path: "/pagea",
-        element: <PageA />,
-      },
-      {
-        path: "/pageb",
-        element: <PageB />,
-      },
-      {
-        path: "/pagec",
-        element: <PageC />,
+        path: "",
+        element: <Home />,
+        children: [
+          {
+            path: "/pagea",
+            element: <PageA />,
+          },
+          {
+            path: "/pageb",
+            element: <PageB />,
+          },
+          {
+            path: "/pagec",
+            element: <PageC />,
+          },
+        ],
       },
     ],
   },
