@@ -1,15 +1,13 @@
-import { Outlet } from 'react-router-dom';
-
-import { Header } from '@/pages/Root/Header';
-import { NavList } from '@/pages/Root/NavList';
+import { Header } from '@/components/Header';
+import { Sidebar } from '@/components/Sidebar';
 
 export const Root = () => {
   return (
     <div>
       <Header />
       <main className="flex flex-row space-x-2 > *">
-        <NavList />
-        <Outlet />
+        <Sidebar />
+        <div />
       </main>
     </div>
   );
