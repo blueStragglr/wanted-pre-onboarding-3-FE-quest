@@ -2,46 +2,47 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSetRecoilState } from 'recoil';
 import { loginState } from '../../util/state/atom';
-import { IUser, users } from '../../util/users/users';
+import { ILoginPayload, TLoginResult } from '../../util/types/login';
+import { TgetUser } from '../../util/types/user';
+import { IUserInfo } from '../../util/users/users';
 import { Form, LoginBox, SubTitle, Title, Wrapper } from './style'
 
-const Login = () => {
+interface ILoginComponent{
+    label:string;
+    loginFn : (args:ILoginPayload) => Promise<TLoginResult>  
+    getUserFn : (access_token ?: string)  => Promise<IUserInfo | null>
+}
+
+const Login : React.FC<ILoginComponent> = ({label, loginFn, getUserFn}) => {
     const setLoggedIn = useSetRecoilState(loginState);
-    const navigate = useNavigate();
-
-    const checkValidUser = async (username:string, password:string) : Promise<string> => {
-        const user : IUser | undefined = users.find((user) => user.username === username && user.password === password)
-
-        return user 
-        ? user.userInfo.username
-        : ''
-    }
-
-    const handleSubmit = (e:React.FormEvent<HTMLFormElement>) : void => {
-        e.preventDefault();
-        const formData = new FormData(e.currentTarget);
-        const loginResult = checkValidUser(formData.get('username') as string, formData.get('password') as string);
-
-        if (!loginResult) {
-            alert('로그인 정보가 일치하지 않습니다');
-            return 
-        }else{
-            loginResult
-            .then((username) => setLoggedIn({isLoggedIn : true, username}));
-            navigate('/');
-            // ! promise 객체에 담긴 string 과 일반 string 타입은 다르다.
-            // setLoggedIn({isLoggedIn : true, username : loginResult.}) 
-            // navigate('/')
-        }
-    }
-
+    
+    const navigate = useNavigate(); 
     const handleGoHome = () => navigate('/')
     
+    const handleSubmit = async (e:React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+
+        const formData = new FormData(e.currentTarget)
+        const loginPayload : ILoginPayload = {
+            username : formData.get('username') as string,
+            password : formData.get('password') as string
+        }
+
+        const loginResult: TLoginResult = await loginFn(loginPayload)
+        if(loginResult.result === 'fail') return
+        const name: TgetUser = await getUserFn(loginResult.access_token)
+        if(!name) return
+
+        setLoggedIn({isLoggedIn:true, name})
+        alert('로그인 성공!')
+        handleGoHome()
+    }  
+
   return (
     <Wrapper>
         <LoginBox>
             <Title>Wanted Pre-onboaring course</Title>
-            <SubTitle>Login</SubTitle>
+            <SubTitle>Login {`${label}`}</SubTitle>
             <Form onSubmit={handleSubmit}>
                 <input type="text" placeholder='username' name='username' />
                 <input type="password" placeholder='password' name='password'/>
