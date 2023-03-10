@@ -1,8 +1,10 @@
 import { createBrowserRouter } from 'react-router-dom'
 import Home from './pages/Home'
 import Detail from './pages/Detail'
-import Login from './pages/Login'
 import AuthLogin from './components/AuthLogin'
+import Login from './pages/Login'
+import { getUserWithLocal, getUserWithToken, loginWithLocal, loginWithToken } from './util/api/login'
+
 
 interface IRouterItem{
     path:string;
@@ -36,10 +38,22 @@ export const allRouterInApp:IRouterItem[] = [
         label : '홈페이지'
     },
     {
-        path : '/auth/login',
-        element : <Login />,
+        path : '/auth/login/jwt',
+        element : <Login 
+        label = 'jwt'
+        loginFn={loginWithToken}
+        getUserFn={getUserWithToken}/>,
         loginRequired : false,
-        label : '로그인 페이지'
+        label : '토큰 로그인'
+    },
+    {
+        path : '/auth/login/local',
+        element : <Login 
+        label = 'local'
+        loginFn={loginWithLocal}
+        getUserFn={getUserWithLocal}/>,
+        loginRequired : false,
+        label : '로컬스토리지 로그인'
     },
     ...deatailPageRouter,
 ] 
