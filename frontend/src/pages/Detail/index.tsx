@@ -5,13 +5,13 @@ const Detail = () => {
   
   return (
     <>
-    <Wrapper>
-      {
-        pageId 
-        ? <Title>{`This is Page ${pageId?.toUpperCase()}`} !</Title>
-        : <Title>This is Detail Page</Title>
-      }
-    </Wrapper>
+    {
+      pageId 
+      ? <Wrapper>
+          <Title>{`This is Page ${pageId?.toUpperCase()}`} !</Title>
+        </Wrapper>
+      : null
+    }
     </>
   )
 }
