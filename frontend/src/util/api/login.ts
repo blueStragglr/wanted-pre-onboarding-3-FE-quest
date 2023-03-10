@@ -1,6 +1,6 @@
 import axios from "axios";
 import { IGetUser, ILoginPayload, IToken, TLoginResult } from "../types/login";
-import { IUserInfo } from "../users/users";
+import { IUserInfo, TgetUser } from "../types/user";
 import { ACCESS_TOKEN_KEY, BASE_URL } from "./const";
 import { getSavedAccessToken } from "./local";
 
@@ -79,7 +79,7 @@ export const loginWithLocal = async(args:ILoginPayload) : Promise<TLoginResult> 
 // 로컬 스토리지에 있는 token을 getAccessTokenFromLocalStorage로 가져와서 Authorization header에 Bearer token으로 넣어주세요.
 // API Spec은 강의 자료를 참고하세요.
 // 유저 정보 조회에 성공한 경우에는 UserInfo 타입의 값을 반환하세요.
-export const getUserWithLocal = async () : Promise<IUserInfo | null>  => {
+export const getUserWithLocal = async () : Promise<TgetUser>  => {
     const savedToken = getSavedAccessToken()
     if(!savedToken) return null
 
