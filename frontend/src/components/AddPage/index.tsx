@@ -1,10 +1,7 @@
 import { useState } from 'react';
-import { useRecoilState } from 'recoil'
-import { pageState } from '../../util/state/atom'
 import { Button, ErrMsg, Form, Input } from './style';
 
 const AddPage = () => {
-  const [pages, setPages] = useRecoilState(pageState)
   const [value, setValue] = useState<string>('');
   const [error, setError] = useState<string>('');
 
@@ -12,17 +9,8 @@ const AddPage = () => {
     const {currentTarget : {value}} = e
     setValue(value)
   }
-
   const handlePages = (e: React.FormEvent) => {
     e.preventDefault()
-    if(value === ''){
-      setError('빈 페이지는 추가할 수 없습니다.')
-      return
-    }else if(pages.indexOf(value) !==-1){
-      setError('중복된 페이지는 추가할 수 없습니다.')
-      return
-    }
-    setPages((prev) => [...prev, value])
   }
 
   return (
