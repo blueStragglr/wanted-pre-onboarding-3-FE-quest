@@ -2,7 +2,7 @@ import { Cookies } from 'react-cookie';
 
 const cookies = new Cookies();
 
-export const setCookie = (name, value) => {
+export const setCookie = (name:string, value:string) => {
   const halfHour = new Date(Number(new Date()) + 60 * 30 * 1000);
   return cookies.set(name, value, {
     expires: halfHour,
@@ -10,10 +10,10 @@ export const setCookie = (name, value) => {
   });
 };
 
-export const getCookie = (name) => {
+export const getCookie = (name:string) => {
   return cookies.get(name);
 };
 
-export const removeCookie = (name) => {
+export const removeCookie = (name:string) => {
   return cookies.remove(name);
 };
