@@ -12,16 +12,18 @@ const localStorageEffect = (key : string) =>
             : localStorage.setItem(key, JSON.stringify(newValue))
         });
     };
+    
 export interface ILoggedIn{
     isLoggedIn : boolean;
-    username : string;
+    name : string;
 }
 
 export const loginState = atom<ILoggedIn>({
     key : 'login',
     default : {
         isLoggedIn : false,
-        username : ''
+        name : ''
     },
+    // TODO : access_token 을 통해서 사용자 정보를 가져올 수 있는데 로컬에 사용자 정보를 저장 해야 하는 이유?
     effects : [localStorageEffect('login')]
 })
