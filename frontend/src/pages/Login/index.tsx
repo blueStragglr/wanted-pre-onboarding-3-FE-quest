@@ -4,13 +4,12 @@ import { useSetRecoilState } from 'recoil';
 import { loginState } from '../../util/state/atom';
 import { ILoginPayload, TLoginResult } from '../../util/types/login';
 import { TgetUser } from '../../util/types/user';
-import { IUserInfo } from '../../util/users/users';
 import { Form, LoginBox, SubTitle, Title, Wrapper } from './style'
 
 interface ILoginComponent{
     label:string;
     loginFn : (args:ILoginPayload) => Promise<TLoginResult>  
-    getUserFn : (access_token ?: string)  => Promise<IUserInfo | null>
+    getUserFn : (access_token ?: string)  => Promise<TgetUser>
 }
 
 const Login : React.FC<ILoginComponent> = ({label, loginFn, getUserFn}) => {
