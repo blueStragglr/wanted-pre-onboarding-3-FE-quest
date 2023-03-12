@@ -54,7 +54,8 @@ table {
 }
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  background-color: 'smokewhite';
+  background-color: ${({theme}) => theme.backgroundColor};
+  color: ${({theme}) => theme.textColor};
   margin: 0;
   padding: 0;
   overflow-x: hidden;
