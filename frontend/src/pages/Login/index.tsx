@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useSetRecoilState } from 'recoil';
-import { loginState } from '../../util/state/atom';
+import { ILoginState, setUserToLocal } from '../../context/LoginContext';
+import { useLoginContext } from '../../hooks/useLoginContext';
 import { ILoginPayload, TLoginResult } from '../../util/types/login';
 import { TgetUser } from '../../util/types/user';
 import { Form, LoginBox, SubTitle, Title, Wrapper } from './style'
@@ -13,7 +13,7 @@ interface ILoginComponent{
 }
 
 const Login : React.FC<ILoginComponent> = ({label, loginFn, getUserFn}) => {
-    const setLoggedIn = useSetRecoilState(loginState);
+    const {dispatch} : ILoginState = useLoginContext()
     
     const navigate = useNavigate(); 
     const handleGoHome = () => navigate('/')
@@ -32,7 +32,8 @@ const Login : React.FC<ILoginComponent> = ({label, loginFn, getUserFn}) => {
         const name: TgetUser = await getUserFn(loginResult.access_token)
         if(!name) return
 
-        setLoggedIn({isLoggedIn:true, name})
+        dispatch({type:'LOGIN', name})
+        setUserToLocal({isLoggedIn:true, name})
         alert('로그인 성공!')
         handleGoHome()
     }  
