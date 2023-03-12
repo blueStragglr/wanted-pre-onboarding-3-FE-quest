@@ -1,8 +1,8 @@
 import ReactDOM from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
+import ContextProvider from './context/ContextProvider';
 import { router } from './Router';
-import { GlobalStyle } from './util/style/globalStyle';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -10,9 +10,10 @@ const root = ReactDOM.createRoot(
 
 root.render(
   // <React.StrictMode>
-  <RecoilRoot>
-    <GlobalStyle />
-    <RouterProvider router={router}/>
-  </RecoilRoot>
+  <ContextProvider>
+    <RecoilRoot>
+      <RouterProvider router={router}/>
+    </RecoilRoot>
+  </ContextProvider>
   // </React.StrictMode>
 );
