@@ -1,21 +1,27 @@
 import { useNavigate } from "react-router-dom"
-import { useRecoilState, useSetRecoilState } from "recoil";
-import { ACCESS_TOKEN_KEY } from "../../util/api/const";
-import { loginState } from "../../util/state/atom";
+import { ILoginState, userKey } from "../../context/LoginContext";
+import { ThemeState } from "../../context/ThemeContext";
+import { useLoginContext } from "../../hooks/useLoginContext";
+import { useThemeContext } from "../../hooks/useThemeContext";
 import { Line, Title, Wrapper } from "./style"
 
 const Header = () => {
+  const {isDark, setIsDark} : ThemeState = useThemeContext()
+  const toggleTheme = () => setIsDark((prev) => !prev)
+
   const navigate = useNavigate();
-  const [{isLoggedIn ,name}, setLoggedIn] = useRecoilState(loginState)
+
+  const {state : {isLoggedIn, name}, dispatch} : ILoginState = useLoginContext()
 
   const handleLogin = (type:string) => navigate(`/auth/login/${type}`)
   const handleLogout = () => {
     if(!window.confirm('로그아웃 하시겠습니까?')){
       return
     }
-    setLoggedIn({isLoggedIn : false, name:''});
-    if(localStorage.getItem(ACCESS_TOKEN_KEY) !== undefined) {
-      localStorage.removeItem(ACCESS_TOKEN_KEY)
+    dispatch({type:"LOGOUT", name:''});
+
+    if(localStorage.getItem(userKey)) {
+      localStorage.removeItem(userKey)
     }
     navigate('/')
   }
@@ -37,6 +43,9 @@ const Header = () => {
               </>
             
             }
+            <button onClick={toggleTheme}>
+              {isDark ? 'light' : 'dark'}
+            </button> 
         </Wrapper>
         <Line/>
     </>
