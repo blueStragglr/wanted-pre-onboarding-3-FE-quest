@@ -7,6 +7,8 @@ import { useEffect } from "react";
 import { useCallback } from "react";
 import { useRef } from "react";
 import { DeleteAccessTokenFormLocalStorage } from "../utils/accessTokenHandler";
+import { useSetRecoilState } from "recoil";
+import { isLogined } from "../Recoil/atoms";
 
 const TopNavigationBar = styled.h1`
   font-size: 20px;
@@ -41,6 +43,11 @@ font-size:13px;
 function Header() {
   const [user, setUserInfo] = useState<UserInfo | null>(null)
   const isDataFetched = useRef(false)
+  const setisLogin = useSetRecoilState(isLogined);
+  const toggleDarkAtom = () => setisLogin((prev) => {
+    if(prev === true) return false
+    return false
+  });
 
   const getUserInfo = useCallback (async () => {
 
@@ -58,6 +65,7 @@ function Header() {
   const removeToken =() =>{
     DeleteAccessTokenFormLocalStorage()
     setUserInfo(null)
+    toggleDarkAtom()
   }
   return (
     <>

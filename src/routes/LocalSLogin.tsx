@@ -4,6 +4,9 @@ import { UserInfo } from "../types/user";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import LoginOptions from "../Component/LoginOptions";
+import { useSetRecoilState } from "recoil";
+import { isLogined } from "../Recoil/atoms";
+
 
 const LogContainer = styled.div`
   width: 100%;
@@ -49,6 +52,14 @@ const User = styled.div`
 
 const LocalLogin = () => {
   const [userInfo, setUserInfo] = useState<UserInfo | null>(null);
+  const setisLogin = useSetRecoilState(isLogined);
+  const toggleDarkAtom = () => setisLogin((prev) => {
+    if(prev === false) {
+      console.log(prev)  
+      return true
+    }
+    return false
+  });
 
   const loginSubmitHandler = async (
     event: React.FormEvent<HTMLFormElement>
@@ -66,6 +77,8 @@ const LocalLogin = () => {
     if (result === "fail") return alert("로그인 실패하셨습니다");
     const userInfo = await getCurrentUserInfo();
     setUserInfo(userInfo);
+
+    toggleDarkAtom()
 
   };
 

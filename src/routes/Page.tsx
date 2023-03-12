@@ -4,6 +4,9 @@ import { useLocation } from "react-router-dom";
 import { useState , useRef, useCallback , useEffect} from "react";
 import { UserInfo } from "../types/user";
 import { getCurrentUserInfo } from "../Api/login";
+import { isLogined } from "../Recoil/atoms";
+import { useRecoilValue } from "recoil";
+
 
 const MainContainer = styled.div`
   height: 100vh;
@@ -23,6 +26,7 @@ interface ILocation {
 function Page() {
   const { PageId } = useParams();
   const { state } = useLocation() as ILocation;
+  const islogin = useRecoilValue(isLogined);
 
   const [user, setUserInfo] = useState<UserInfo | null>(null)
   const isDataFetched = useRef(false)
@@ -34,6 +38,7 @@ function Page() {
 
     isDataFetched.current = true
   }, [])
+
   useEffect(() => {
     if (isDataFetched.current) return
     getUserInfo()
@@ -41,9 +46,9 @@ function Page() {
 
   return (
     <>
-      {!state.Auth ? (
+      {!state.Auth  ? (
         <MainContainer>I'm {PageId}</MainContainer>
-      ) : user?.name ? "로그인이 되어있군요!": (
+      ) : user?.name && islogin ? "로그인이 되어있군요!": (
         <MainContainer>로그인이 필요합니다. <br />
         Login - localstorage login 으로 이동해서 로그인을 해주세요. 
         </MainContainer>
