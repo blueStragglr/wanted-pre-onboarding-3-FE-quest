@@ -4,7 +4,7 @@ import Detail from './pages/Detail'
 import AuthLogin from './components/AuthLogin'
 import Login from './pages/Login'
 import { getUserWithLocal, getUserWithToken, loginWithLocal, loginWithToken } from './util/api/login'
-
+import App from './App'
 
 interface IRouterItem{
     path:string;
@@ -73,16 +73,23 @@ export const getSidebarItem : ISidebarItem[] = (() =>
         return prev
 }, [] as ISidebarItem[]))();  
 
-export const router = createBrowserRouter(
-    allRouterInApp.map((routerItem:IRouterItem) => {
-        return routerItem.loginRequired
-        ?{
-            path : routerItem.path,
-            element: <AuthLogin element ={routerItem.element}/>,
-         }
-        :{
-            path : routerItem.path,
-            element : routerItem.element
-         }
-    })
+export const router = createBrowserRouter([
+    {
+        path : '/',
+        element : <App />,
+        children : allRouterInApp.map((routerItem:IRouterItem) => {
+            return routerItem.loginRequired
+            ?{
+                path : routerItem.path,
+                element: <AuthLogin element ={routerItem.element}/>,
+             }
+            :{
+                path : routerItem.path,
+                element : routerItem.element
+             }
+        })
+    }
+]
+    
+
 )
