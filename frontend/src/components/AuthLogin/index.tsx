@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useRecoilValue } from 'recoil'
-import { loginState } from '../../util/state/atom'
-import Header from '../Header'
+import { ILoginState } from '../../context/LoginContext'
+import { useLoginContext } from '../../hooks/useLoginContext'
 import SideBar from '../SideBar'
 import { Container, Wrapper } from './style'
 
@@ -12,7 +11,7 @@ interface IAuthLogin{
 
 const AuthLogin:React.FC<IAuthLogin> = ({element}) => {
     const navigate = useNavigate();
-    const {isLoggedIn} = useRecoilValue(loginState)
+    const {state : {isLoggedIn}} : ILoginState = useLoginContext()
 
     useEffect(() => {
         if(!isLoggedIn){
@@ -23,7 +22,6 @@ const AuthLogin:React.FC<IAuthLogin> = ({element}) => {
     
   return (
     <Container>
-        <Header />
         <Wrapper>
             <SideBar />
             {element}
