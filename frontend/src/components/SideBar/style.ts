@@ -11,7 +11,7 @@ export const Item = styled.button<{isActive : boolean}>`
     background-color: inherit;
     padding: 15px;
     font-weight: bold;
-    color: ${({isActive}) => isActive ? 'blue' : 'black'};
+    color: ${({isActive, theme}) => isActive ? 'blue' : theme.textColor};
     font-size: 24px;
     span{
         cursor: pointer;
