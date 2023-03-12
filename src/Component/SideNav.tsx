@@ -23,15 +23,19 @@ const NavPart = [
   {
     part: "PageA",
     pathname: `/PageA`,
+    Auth: false,
   },
   {
     part: "PageB",
     pathname: `/PageB`,
+    Auth: false,
   },
   {
     part: "PageC",
     pathname: `/PageC`,
+    Auth: false,
   },
+  { part: "NeedLogin", pathname: `/needLogin`, Auth: true },
 ];
 
 function SideNav() {
@@ -45,7 +49,7 @@ function SideNav() {
                 to={{
                   pathname: item.pathname,
                 }}
-                state={{}}
+                state={{ Auth: item.Auth }}
               >
                 {item.part}
               </Link>

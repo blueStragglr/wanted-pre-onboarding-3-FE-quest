@@ -1,3 +1,8 @@
+* {
+    box-sizing: border-box;
+  }
+  
+
 body {
     margin: 0;
     width: 100%;
@@ -10,3 +15,35 @@ body {
     height: 100vh;
     overflow: hidden;
 }
+
+
+  input {
+    font-size: 1.5em;
+    padding: 0.25em;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 100%;
+    margin-bottom: 24px;
+  }
+  
+  button {
+    font-size: 1.5em;
+    padding: 0.5em;
+    background-color: #ccc;
+    color: #ffffff;
+    border-radius: 3px;
+    width: 100%;
+  }
+  
+  .content {
+    margin: 0 auto;
+    max-width: 640px;
+    padding: 80px 20px;
+  }
+  
+  .label {
+    font-size: 1.5em;
+    padding: 0.5em;
+    width: 100%;
+  }
+  
