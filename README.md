@@ -30,3 +30,16 @@
 ### 로그인 페이지
 
 https://user-images.githubusercontent.com/71386219/222968810-d229301e-56af-47b9-97e1-da4e8e69aaea.mov
+
+## 서버 실행 방법
+
+```shell
+  # 처음 한 번만 실행. 서버/클라이언트 의존성 설치가 동시에 이루어집니다.
+  $ npm install
+
+  # 서버 실행
+  $ npm run server
+
+  # 클라이언트 실행
+  $ npm run client
+```

@@ -1,0 +1,21 @@
+{
+  "name": "wanted-pre-onboarding-3-fe-quest",
+  "version": "1.0.0",
+  "description": "로그인 연습 레포지토리",
+  "main": "index.js",
+  "scripts": {
+    "init": "cd client && npm && cd ../server && npm",
+    "client": "cd client && npm start",
+    "server": "cd server && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kimyouknow/wanted-pre-onboarding-3-FE-quest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kimyouknow/wanted-pre-onboarding-3-FE-quest/issues"
+  },
+  "homepage": "https://github.com/kimyouknow/wanted-pre-onboarding-3-FE-quest#readme"
+}
