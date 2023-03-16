@@ -25,6 +25,6 @@ it('GET /api/user', async () => {
   expect(Array.isArray(response.body)).toBeTruthy()
   // test실행할 때마다 mock mongo를 초기화해서 빈 배열이 와서 아래 코드를 주석처리함
   // const body = response.body as IUser[]
-  // expect(body[0].id).toBeDefined()
+  // expect(body[0].email).toBeDefined()
   // expect(body[0].nickname).toBeDefined()
 })

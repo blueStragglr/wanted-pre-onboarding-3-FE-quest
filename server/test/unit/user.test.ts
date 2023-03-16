@@ -1,7 +1,8 @@
 import { userController } from '@src/api/controllers'
-import UserModel from '@src/model/User'
+import userService from '@src/services/user.service'
 import { createRandomUserList } from '@test/mocks/user.mock'
 import { NextFunction } from 'express'
+import { StatusCodes } from 'http-status-codes'
 import httpMock from 'node-mocks-http'
 
 jest.mock('@src/model/User')
@@ -15,30 +16,18 @@ beforeEach(() => {
   res = httpMock.createResponse()
 })
 
-describe('Product Controller Get', () => {
+describe('User Controller getUsers', () => {
   const allUsers = createRandomUserList(10)
-  it('should have a getUsers function', () => {
-    expect(typeof userController.getUsers).toBe('function')
-  })
-  it('should call UserModel.find()', async () => {
+  it('should return StatusCodes.OK return all Users', async () => {
+    jest.spyOn(userService, 'findAllUser').mockResolvedValueOnce(allUsers as any[])
     await userController.getUsers(req, res, next)
-    expect(UserModel.find as jest.Mock).toHaveBeenCalled()
-  })
-  it('should return 200 response', async () => {
-    await userController.getUsers(req, res, next)
-    expect(res.statusCode).toBe(200)
+    expect(res.statusCode).toBe(StatusCodes.OK)
     expect(res._isEndCalled()).toBeTruthy()
-  })
-  it('should return json body in response', async () => {
-    ;(UserModel.find as jest.Mock).mockReturnValue(allUsers)
-    await userController.getUsers(req, res, next)
     expect(res._getJSONData()).toStrictEqual(allUsers)
   })
-  it('should handle errors', async () => {
-    const errorMessage = { message: 'Error finding product data' }
-    const rejectedPromise = Promise.reject(errorMessage)
-    ;(UserModel.find as jest.Mock).mockReturnValue(rejectedPromise)
+  it('should call the next function with an error if an error occurs during all user find', async () => {
+    jest.spyOn(userService, 'findAllUser').mockRejectedValueOnce(new Error('Database error'))
     await userController.getUsers(req, res, next)
-    expect(next).toBeCalledWith(errorMessage)
+    expect(next).toBeCalledWith(new Error('Database error'))
   })
 })

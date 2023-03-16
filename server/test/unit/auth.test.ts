@@ -1,10 +1,16 @@
 import { authController } from '@src/api/controllers'
-import UserModel, { IUser } from '@src/model/User'
-import { createRandomUserInfo } from '@test/mocks/user.mock'
+import authService, { USER_SUCCESS, USER_VALIDATION_ERRORS } from '@src/services/auth.service'
+import userService from '@src/services/user.service'
+import { createToken } from '@src/utils/authorizeUtils'
+import { createError } from '@src/utils/responseUtils'
 import { NextFunction } from 'express'
+import { StatusCodes } from 'http-status-codes'
 import httpMock from 'node-mocks-http'
 
-jest.mock('@src/model/User')
+const testBody = {
+  email: 'test@example.com',
+  password: 'testPassword',
+}
 
 let req = httpMock.createRequest()
 let res = httpMock.createResponse()
@@ -15,34 +21,65 @@ beforeEach(() => {
   res = httpMock.createResponse()
 })
 
-describe('Product Controller Create', () => {
-  let newUser: IUser
+describe('Auth Controller signup', () => {
+  it('should return a EMPTY_FORM BAD_REQUEST response if one of felid is empty', async () => {
+    const errorReturn = {
+      isValid: false,
+      message: USER_VALIDATION_ERRORS.EMPTY_FORM,
+    }
+    jest.spyOn(authService, 'loginValidator').mockReturnValue(errorReturn)
+    await authController.signUp(req, res, next)
+    expect(res.statusCode).toBe(StatusCodes.BAD_REQUEST)
+    expect(res._getData()).toStrictEqual(createError(errorReturn.message))
+  })
+  it('should return a INVALID_EMAIL response If the email validate condition is not met', async () => {
+    const errorReturn = {
+      isValid: false,
+      message: USER_VALIDATION_ERRORS.INVALID_EMAIL,
+    }
+    req.body = { ...testBody, email: 'asdf' }
+    jest.spyOn(authService, 'loginValidator').mockReturnValue(errorReturn)
+    await authController.signUp(req, res, next)
+    expect(res.statusCode).toBe(StatusCodes.BAD_REQUEST)
+    expect(res._getData()).toStrictEqual(createError(errorReturn.message))
+  })
+  it('should return a INVALID_EMAIL response If the password validate condition is not met', async () => {
+    const errorReturn = {
+      isValid: false,
+      message: USER_VALIDATION_ERRORS.INVALID_PASSWORD,
+    }
+    req.body = { ...testBody, password: 'asdf' }
+    jest.spyOn(authService, 'loginValidator').mockReturnValue(errorReturn)
+    await authController.signUp(req, res, next)
+    expect(res.statusCode).toBe(StatusCodes.BAD_REQUEST)
+    expect(res._getData()).toStrictEqual(createError(errorReturn.message))
+  })
+
   beforeEach(() => {
-    newUser = createRandomUserInfo()
-    req.body = newUser
+    jest.clearAllMocks()
+    req.body = testBody
+    jest.spyOn(authService, 'loginValidator').mockReturnValue({ isValid: true })
   })
-  it('should have a createProduct function', () => {
-    expect(typeof authController.signUp).toBe('function')
-  })
-  it('should call UserModel.create', async () => {
+
+  it('should check if the user already exists', async () => {
+    const mockFindUser = jest.spyOn(userService, 'findUser').mockResolvedValueOnce(true)
     await authController.signUp(req, res, next)
-    expect(UserModel.create).toBeCalledWith(req.body)
+    expect(mockFindUser).toHaveBeenCalled()
+    expect(res.statusCode).toBe(StatusCodes.CONFLICT)
+    expect(res._getData()).toStrictEqual(createError(USER_VALIDATION_ERRORS.EXIST_USER))
   })
-  it('should return 201 response code', async () => {
+  it('should StatusCodes.OK create a new user and return a token', async () => {
+    jest.spyOn(userService, 'findUser').mockResolvedValueOnce(false)
+    const mockCreateUser = jest.spyOn(userService, 'createUser').mockResolvedValueOnce({ email: testBody.email })
     await authController.signUp(req, res, next)
-    expect(res.statusCode).toBe(201)
-    expect(res._isEndCalled()).toBeTruthy()
+    expect(mockCreateUser).toBeCalledWith({ email: testBody.email, password: testBody.password })
+    expect(res.statusCode).toBe(StatusCodes.OK)
+    expect(res._getJSONData()).toStrictEqual({ message: USER_SUCCESS.SIGN_UP, token: createToken(testBody.email) })
   })
-  it('should return json body in response', async () => {
-    ;(UserModel.create as jest.Mock).mockReturnValue(req.body)
+  it('should call the next function with an error if an error occurs during user creation', async () => {
+    jest.spyOn(userService, 'findUser').mockResolvedValueOnce(false)
+    jest.spyOn(userService, 'createUser').mockRejectedValueOnce(new Error('Database error'))
     await authController.signUp(req, res, next)
-    expect(res._getJSONData()).toStrictEqual(newUser)
-  })
-  it('should handle errors', async () => {
-    const errorMessage = { message: 'description property missing' }
-    const rejectedPromise = Promise.reject(errorMessage)
-    ;(UserModel.create as jest.Mock).mockReturnValue(rejectedPromise)
-    await authController.signUp(req, res, next)
-    expect(next).toBeCalledWith(errorMessage)
+    expect(next).toBeCalledWith(new Error('Database error'))
   })
 })

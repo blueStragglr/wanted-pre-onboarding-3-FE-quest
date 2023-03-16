@@ -1,16 +1,16 @@
+import { User } from '@src/types/users.type'
 import mongoose, { Schema } from 'mongoose'
 
-export interface IUser {
-  id: string
-  nickname: string
-}
-
-const userSchema = new Schema<IUser>({
-  id: {
+const userSchema = new Schema<User>({
+  email: {
     type: String,
     required: true,
   },
-  nickname: {
+  password: {
+    type: String,
+    required: true,
+  },
+  createdAt: {
     type: String,
     required: true,
   },

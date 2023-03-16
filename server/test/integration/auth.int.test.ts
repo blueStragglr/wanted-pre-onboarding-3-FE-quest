@@ -1,7 +1,9 @@
 import app from '@src/app'
 import config from '@src/config'
-import { IUser } from '@src/model/User'
-import { createRandomUserInfo } from '@test/mocks/user.mock'
+import { USER_SUCCESS, USER_VALIDATION_ERRORS } from '@src/services/auth.service'
+import { createToken } from '@src/utils/authorizeUtils'
+import { createRandomUserInput } from '@test/mocks/user.mock'
+import { StatusCodes } from 'http-status-codes'
 import mongoose, { ConnectOptions } from 'mongoose'
 import request from 'supertest'
 
@@ -21,20 +23,20 @@ afterEach(done => {
   })
 })
 
-const newUser = createRandomUserInfo()
+const newUserInput = createRandomUserInput()
 
 it('POST /api/auth/signup', async () => {
-  const response = await request(app).post('/api/auth/signup').send(newUser)
+  const response = await request(app).post('/api/auth/signup').send(newUserInput)
   const { statusCode } = response
-  const { id, nickname } = response.body as IUser
-  expect(statusCode).toBe(201)
-  expect(id).toBe(newUser.id)
-  expect(nickname).toBe(newUser.nickname)
+  const { message, token } = response.body as { message: string; token: string }
+  expect(statusCode).toBe(StatusCodes.OK)
+  expect(message).toBe(USER_SUCCESS.SIGN_UP)
+  expect(token).toBe(createToken(newUserInput.email))
 })
 
 it('should return 500 on POST /api/auth/signup', async () => {
-  const response = await request(app).post('/api/auth/signup').send({ id: 'no nickname' })
+  const response = await request(app).post('/api/auth/signup').send({ email: 'Fake Nickname' })
   expect(response.body).toStrictEqual({
-    message: 'User validation failed: nickname: Path `nickname` is required.',
+    details: USER_VALIDATION_ERRORS.EMPTY_FORM,
   })
 })
