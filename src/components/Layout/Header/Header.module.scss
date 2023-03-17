@@ -1,0 +1,36 @@
+@import 'src/styles/mixins';
+
+.container {
+  @include grid-item-column(1 / span 14);
+  @include flexbox-row(space-between, center);
+  padding: 1rem 2.5rem;
+  border-bottom: 2px solid var(--color-gray);
+
+  .logoText {
+    @include flexbox-row;
+
+    span {
+      font-size: var(--text-size-md);
+      font-weight: var(--font-weight-extrabold);
+      font-style: italic;
+      cursor: pointer;
+    }
+  }
+
+  .loginButton {
+    width: 5rem;
+    margin-left: auto;
+    padding: 0.4rem 0.7rem;
+    font-size: var(--text-size-base);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    border-radius: 0.5rem;
+    transition: background-color 0.4s ease-in-out;
+
+    &:hover {
+      color: var(--color-white);
+      background-color: var(--color-primary);
+    }
+  }
+}

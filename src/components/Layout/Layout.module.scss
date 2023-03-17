@@ -1,0 +1,7 @@
+@import 'src/styles/mixins';
+
+.container {
+  @include grid-container-columns(2.5rem repeat(12, 1fr) 2.5rem);
+  @include grid-container-rows(repeat(12, 1fr));
+  height: 100vh;
+}

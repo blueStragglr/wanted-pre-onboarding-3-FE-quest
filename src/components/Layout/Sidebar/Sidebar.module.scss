@@ -1,0 +1,22 @@
+@import 'src/styles/mixins';
+
+.container {
+  @include grid-item-column(2 / span 2);
+  @include grid-item-row(2 / span 12);
+  border-right: 2px solid var(--color-gray);
+
+  .menuList {
+    height: 100%;
+    padding-top: 1rem;
+
+    .menuListItem {
+      padding: 1rem 0;
+      font-size: var(--text-size-md);
+      font-weight: var(--font-weight-semibold);
+
+      &.clicked {
+        color: var(--color-primary);
+      }
+    }
+  }
+}
