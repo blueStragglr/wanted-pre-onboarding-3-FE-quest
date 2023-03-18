@@ -20,7 +20,9 @@ describe('User Controller getUsers', () => {
   const allUsers = createRandomUserList(10)
   it('should return StatusCodes.OK return all Users', async () => {
     jest.spyOn(userService, 'findAllUser').mockResolvedValueOnce(allUsers as any[])
+
     await userController.getUsers(req, res, next)
+
     expect(res.statusCode).toBe(StatusCodes.OK)
     expect(res._isEndCalled()).toBeTruthy()
     expect(res._getJSONData()).toStrictEqual(allUsers)

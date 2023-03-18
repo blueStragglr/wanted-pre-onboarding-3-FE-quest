@@ -4,7 +4,7 @@ import errorhandler from '@src/api/middleware/errorhandler'
 import config from '@src/config'
 import express from 'express'
 
-const createServer = () => {
+export const createServer = () => {
   const app: express.Application = express()
   app.use(express.urlencoded({ extended: false }))
   app.use(express.json())

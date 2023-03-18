@@ -1,6 +1,6 @@
 import validator from 'validator'
 
-const loginValidator = (loginForm: { email: string; password: string }) => {
+const authValidator = (loginForm: { email: string; password: string }) => {
   if (Object.values(loginForm).some(v => !v)) {
     return {
       isValid: false,
@@ -26,7 +26,7 @@ const loginValidator = (loginForm: { email: string; password: string }) => {
 }
 
 const authService = {
-  loginValidator,
+  authValidator,
 }
 
 export default authService
@@ -41,4 +41,5 @@ export const USER_VALIDATION_ERRORS = {
 
 export const USER_SUCCESS = {
   SIGN_UP: '계정이 성공적으로 생성되었습니다.',
+  LOGIN: '성공적으로 로그인 했습니다.',
 }

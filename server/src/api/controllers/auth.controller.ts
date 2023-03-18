@@ -6,28 +6,52 @@ import { createError } from '@src/utils/responseUtils'
 import { NextFunction, Request, Response } from 'express'
 import { StatusCodes } from 'http-status-codes'
 
-export const login = () => {
-  console.log('login')
+export const login = async (req: Request, res: Response, next: NextFunction) => {
+  const { email, password } = req.body as UserInput
+  const { isValid, message } = authService.authValidator({ email, password })
+
+  if (!isValid) {
+    return res.status(StatusCodes.BAD_REQUEST).json(createError(message))
+  }
+
+  try {
+    const targetUser = await userService.findUser({ email, password })
+
+    if (targetUser) {
+      const { email, _id } = targetUser
+      return res.status(StatusCodes.OK).json({
+        message: USER_SUCCESS.LOGIN,
+        token: createToken({ email, _id }),
+      })
+    }
+
+    return res.status(StatusCodes.BAD_REQUEST).json(createError(USER_VALIDATION_ERRORS.USER_NOT_FOUND))
+  } catch (error) {
+    next(error)
+  }
 }
 
 export const signUp = async (req: Request, res: Response, next: NextFunction) => {
   const { email, password } = req.body as UserInput
-  const { isValid, message } = authService.loginValidator({ email, password })
+  const { isValid, message } = authService.authValidator({ email, password })
   if (!isValid) {
-    return res.status(StatusCodes.BAD_REQUEST).send(createError(message))
-  }
-
-  const existUser = await userService.findUser({ email: email })
-
-  if (existUser) {
-    return res.status(StatusCodes.CONFLICT).send(createError(USER_VALIDATION_ERRORS.EXIST_USER))
+    return res.status(StatusCodes.BAD_REQUEST).json(createError(message))
   }
 
   try {
-    const { email: createdEmail } = await userService.createUser({ email, password })
+    const existUser = await userService.findUser({ email: email })
+
+    if (existUser) {
+      return res.status(StatusCodes.CONFLICT).json(createError(USER_VALIDATION_ERRORS.EXIST_USER))
+    }
+  } catch (error) {
+    next(error)
+  }
+
+  try {
+    await userService.createUser({ email, password })
     return res.status(StatusCodes.OK).json({
       message: USER_SUCCESS.SIGN_UP,
-      token: createToken(createdEmail),
     })
   } catch (error) {
     next(error)

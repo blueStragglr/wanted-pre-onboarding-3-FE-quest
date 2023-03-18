@@ -6,6 +6,6 @@ const route = Router()
 export default (app: Router) => {
   app.use('/auth', route)
 
-  route.get('/login', authController.login)
+  route.post('/login', authController.login)
   route.post('/signup', authController.signUp)
 }
