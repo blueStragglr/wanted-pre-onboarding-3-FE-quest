@@ -15,17 +15,23 @@ export const login = async (req: Request, res: Response, next: NextFunction) => 
   }
 
   try {
-    const targetUser = await userService.findUser({ email, password })
+    const targetUser = await userService.findUser({ email })
 
-    if (targetUser) {
-      const { email, _id } = targetUser
-      return res.status(StatusCodes.OK).json({
-        message: USER_SUCCESS.LOGIN,
-        token: createToken({ email, _id }),
-      })
+    if (!targetUser) {
+      return res.status(StatusCodes.BAD_REQUEST).json(createError(USER_VALIDATION_ERRORS.USER_NOT_FOUND))
     }
 
-    return res.status(StatusCodes.BAD_REQUEST).json(createError(USER_VALIDATION_ERRORS.USER_NOT_FOUND))
+    const { email: _email, _id, password: _password } = targetUser
+    const isPasswordMatched = await authService.comparePassword(password, _password)
+
+    if (!isPasswordMatched) {
+      return res.status(StatusCodes.BAD_REQUEST).json(createError(USER_VALIDATION_ERRORS.PASSWORD_NOT_MATCH))
+    }
+
+    return res.status(StatusCodes.OK).json({
+      message: USER_SUCCESS.LOGIN,
+      token: createToken({ email: _email, _id }),
+    })
   } catch (error) {
     next(error)
   }

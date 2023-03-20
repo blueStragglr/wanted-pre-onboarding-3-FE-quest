@@ -42,7 +42,7 @@ export interface UseFormReturns<T> {
   inputValues: T
   validateError: Record<keyof T, string>
   onChangeHandler: (event: React.ChangeEvent<HTMLInputElement>) => void
-  onChangeHandlerWithSelect: ({ name, value }: { name: string; value: string }) => void
+  onChangeHandlerWithSelect: ({ id, value }: { id: string; value: string }) => void
   submitHandler: (event: React.FormEvent<HTMLFormElement>) => Promise<void>
   isTargetSatisfyValidate: (target: keyof T) => boolean
   satisfyAllValidates: boolean
@@ -85,15 +85,15 @@ const useForm = <T extends Record<string, string>>({
 
   /**
    * 에러를 표시할 방법에 따라 에러객체를 반환하는 함수
-   * @param {string} name input태그의 key값
+   * @param {string} id input태그의 key값
    * @param {string} value  input태그의 값
    */
-  const onChangeError = (name: string, value: string) => {
+  const onChangeError = (id: string, value: string) => {
     if (mode === FORM_MODE.onChange) {
-      const res = validate({ ...inputValues, [name]: value })
-      setValidateError({ ...validateError, [name]: res[name] })
+      const res = validate({ ...inputValues, [id]: value })
+      setValidateError({ ...validateError, [id]: res[id] })
     } else {
-      setValidateError(validate({ ...inputValues, [name]: value }))
+      setValidateError(validate({ ...inputValues, [id]: value }))
     }
   }
 
@@ -103,9 +103,9 @@ const useForm = <T extends Record<string, string>>({
    * @return {void}
    */
   const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    const { name, value } = event.target
-    setInputValues({ ...inputValues, [name]: value })
-    onChangeError(name, value)
+    const { id, value } = event.target
+    setInputValues({ ...inputValues, [id]: value })
+    onChangeError(id, value)
   }
 
   /**
@@ -113,9 +113,9 @@ const useForm = <T extends Record<string, string>>({
    * @param {Object}
    * @return {void}
    */
-  const onChangeHandlerWithSelect = ({ name, value }: { name: string; value: string }): void => {
-    setInputValues({ ...inputValues, [name]: value })
-    onChangeError(name, value)
+  const onChangeHandlerWithSelect = ({ id, value }: { id: string; value: string }): void => {
+    setInputValues({ ...inputValues, [id]: value })
+    onChangeError(id, value)
   }
 
   const showEntireError = () => {

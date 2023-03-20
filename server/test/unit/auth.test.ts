@@ -161,7 +161,7 @@ describe('Auth controller: login', () => {
     expect(res._getJSONData()).toStrictEqual(createError(errorReturn.message))
     expect(next).not.toHaveBeenCalled()
   })
-  it('should return a INVALID_EMAIL response If the password validate condition is not met', async () => {
+  it('should return a INVALID_PASSWORD response If the password validate condition is not met', async () => {
     const errorReturn = {
       isValid: false,
       message: USER_VALIDATION_ERRORS.INVALID_PASSWORD,
@@ -177,20 +177,41 @@ describe('Auth controller: login', () => {
     expect(res._getJSONData()).toStrictEqual(createError(errorReturn.message))
     expect(next).not.toHaveBeenCalled()
   })
+  it('should return a PASSWORD_NOT_MATCH response If the input password and comparison do not match ', async () => {
+    const errorReturn = {
+      isValid: false,
+      message: USER_VALIDATION_ERRORS.PASSWORD_NOT_MATCH,
+    }
+    const expectedUser = createRandomUser()
+    const mockAuthValidator = jest.spyOn(authService, 'authValidator').mockReturnValue({ isValid: true })
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+    const mockFindUser = jest.spyOn(userService, 'findUser').mockResolvedValueOnce(expectedUser as any)
+    const mockComparePassword = jest.spyOn(authService, 'comparePassword').mockResolvedValueOnce(false)
 
+    await authController.login(req, res, next)
+
+    expect(mockAuthValidator).toHaveBeenCalledWith(testBody)
+    expect(mockFindUser).toHaveBeenCalledWith({ email: testBody.email })
+    expect(mockComparePassword).toHaveBeenCalled()
+    expect(res.statusCode).toBe(StatusCodes.BAD_REQUEST)
+    expect(res._getJSONData()).toStrictEqual(createError(errorReturn.message))
+    expect(next).not.toHaveBeenCalled()
+  })
   it('should StatusCodes.OK and return a token if the user is found ', async () => {
     const expectedUser = createRandomUser()
     const expectedToken = createToken({ email: expectedUser.email, _id: expectedUser._id })
     const mockAuthValidator = jest.spyOn(authService, 'authValidator').mockReturnValue({ isValid: true })
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     const mockFindUser = jest.spyOn(userService, 'findUser').mockResolvedValueOnce(expectedUser as any)
+    const mockComparePassword = jest.spyOn(authService, 'comparePassword').mockResolvedValueOnce(true)
 
     await authController.login(req, res, next)
 
     expect(next).not.toHaveBeenCalled()
 
     expect(mockAuthValidator).toHaveBeenCalledWith(testBody)
-    expect(mockFindUser).toHaveBeenCalledWith({ email: testBody.email, password: testBody.password })
+    expect(mockFindUser).toHaveBeenCalledWith({ email: testBody.email })
+    expect(mockComparePassword).toHaveBeenCalled()
     expect(res.statusCode).toBe(StatusCodes.OK)
     expect(res._getJSONData()).toStrictEqual({ message: USER_SUCCESS.LOGIN, token: expectedToken })
   })

@@ -66,7 +66,7 @@ export const routerInfoList: RouterInfo[] = [
   },
 
   {
-    label: 'SIGN_UP',
+    label: 'SIGN UP',
     path: ROUTE.SIGN_UP,
     element: SignUp,
     withAuthorization: false,
