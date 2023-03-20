@@ -53,6 +53,7 @@ const Login = () => {
         <TextInput
           label="Password"
           id="password"
+          type="password"
           placeholder="Password *"
           value={inputValues.password}
           onChange={onChangeHandler}
