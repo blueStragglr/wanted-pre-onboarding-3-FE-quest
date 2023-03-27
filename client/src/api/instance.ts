@@ -1,23 +1,27 @@
-import axios, { AxiosError, AxiosResponse } from 'axios'
+import axios, { AxiosInstance, AxiosInterceptorManager, AxiosResponse, InternalAxiosRequestConfig } from 'axios'
 
+import { onResponse, onResponseError } from '@/api/responseHandler'
 import { ROOT_API_URL } from '@/constants/api.constant'
+type CustomResponseFormat<T = any> = T
 
-const publicApi = axios.create({
+interface CustomInstance extends AxiosInstance {
+  interceptors: {
+    request: AxiosInterceptorManager<InternalAxiosRequestConfig>
+    response: AxiosInterceptorManager<AxiosResponse<CustomResponseFormat>>
+  }
+  get<T>(...params: Parameters<AxiosInstance['get']>): Promise<T>
+  delete<T>(...params: Parameters<AxiosInstance['delete']>): Promise<T>
+  post<T>(...params: Parameters<AxiosInstance['post']>): Promise<T>
+  put<T>(...params: Parameters<AxiosInstance['put']>): Promise<T>
+  patch<T>(...params: Parameters<AxiosInstance['patch']>): Promise<T>
+}
+
+const publicApi: CustomInstance = axios.create({
   baseURL: ROOT_API_URL,
 })
 
 publicApi.defaults.timeout = 2500
 
-publicApi.interceptors.response.use(
-  (response: AxiosResponse) => {
-    // FIXME: response.data 타입에러
-    return response
-  },
-  (error: AxiosError | Error) => {
-    // 요청 에러가 발생했을 때 수행할 로직
-    console.error(error) // 디버깅
-    return error
-  },
-)
+publicApi.interceptors.response.use(onResponse, onResponseError)
 
 export default publicApi

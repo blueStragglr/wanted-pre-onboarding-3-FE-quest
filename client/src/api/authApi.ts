@@ -3,23 +3,15 @@ import { API } from '@/constants/api.constant'
 
 const authApi = {
   signUp(email: string, password: string) {
-    return publicApi({
-      url: API.AUTH.SIGNUP,
-      method: 'POST',
-      data: {
-        email,
-        password,
-      },
+    return publicApi.post<{ message: string }>(API.AUTH.SIGNUP, {
+      email,
+      password,
     })
   },
   login(email: string, password: string) {
-    return publicApi({
-      url: API.AUTH.LOGIN,
-      method: 'POST',
-      data: {
-        email,
-        password,
-      },
+    return publicApi.post<{ message: string; token: string }>(API.AUTH.LOGIN, {
+      email,
+      password,
     })
   },
 }

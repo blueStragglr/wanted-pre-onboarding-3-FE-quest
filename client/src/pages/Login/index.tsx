@@ -18,8 +18,7 @@ const Login = () => {
   const submitCallback = async ({ email, password }: LoginValidateProps) => {
     try {
       const response = await authApi.login(email, password)
-      // FIXME: axios response typing
-      const { message, token } = response.data as { message: string; token: string }
+      const { message, token } = response
       alert(message)
       // TODO: 상태관리 및 로그인 서비스 함수로 리팩토링
       authService.saveToken(token)

@@ -48,12 +48,12 @@ export default authService
 const saltRounds = 10
 
 export const USER_VALIDATION_ERRORS = {
-  EMPTY_FORM: '이메일 / 패스워드 값이 비어있습니다',
-  INVALID_EMAIL: '이메일 형식에 맞게 입력해주세요',
-  INVALID_PASSWORD: '패스워드 길이는 8 이상이어야 합니다',
+  EMPTY_FORM: '이메일 / 패스워드 값이 비어있습니다.',
+  INVALID_EMAIL: '이메일 형식에 맞게 입력해주세요.',
+  INVALID_PASSWORD: '패스워드 길이는 8 이상이어야 합니다.',
   PASSWORD_NOT_MATCH: '패스워드가 일치하지 않습니다.',
-  USER_NOT_FOUND: '로그인에 실패했습니다',
-  EXIST_USER: '이미 존재하는 유저입니다',
+  USER_NOT_FOUND: '이메일과 패스워드를 확인해주세요.',
+  EXIST_USER: '이미 존재하는 유저입니다.',
 }
 
 export const USER_SUCCESS = {

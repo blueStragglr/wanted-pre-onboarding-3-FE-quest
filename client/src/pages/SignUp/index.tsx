@@ -17,8 +17,7 @@ const SignUp = () => {
   const submitCallback = async ({ email, password }: LoginValidateProps) => {
     try {
       const response = await authApi.signUp(email, password)
-      // FIXME: axios response typing
-      const { message } = response.data as { message: string }
+      const { message } = response
       alert(message)
       // TODO: 상태관리 및 로그인 서비스 함수로 리팩토링
       navigate(ROUTE.LOGIN)
