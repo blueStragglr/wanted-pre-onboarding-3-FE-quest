@@ -1,6 +1,5 @@
-import { useNavigate } from 'react-router-dom'
-
 import Button from '@/components/Button'
+import { useRouter } from '@/hooks/useRouter'
 
 interface NotAllowProps {
   warnMessage: string
@@ -8,9 +7,9 @@ interface NotAllowProps {
   fallbackMessage: string
 }
 const NotAllow = ({ warnMessage, fallBackUrl, fallbackMessage }: NotAllowProps) => {
-  const navigate = useNavigate()
+  const { routeTo } = useRouter()
   const handleClickFallbackButton = () => {
-    navigate(fallBackUrl)
+    routeTo(fallBackUrl)
   }
 
   return (

@@ -1,11 +1,10 @@
-import { useNavigate } from 'react-router-dom'
-
+import { useRouter } from '@/hooks/useRouter'
 import { ROUTE } from '@/router/routerInfo'
 
 const BackToMainButton = () => {
-  const navigate = useNavigate()
+  const { routeTo } = useRouter()
   const handleClickBackToMainButton = () => {
-    navigate(ROUTE.HOME)
+    routeTo(ROUTE.HOME)
   }
   return (
     <button onClick={handleClickBackToMainButton}>

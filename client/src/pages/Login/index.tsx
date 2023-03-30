@@ -1,18 +1,17 @@
-import { useNavigate } from 'react-router-dom'
-
 import authApi from '@/api/authApi'
 import Button from '@/components/Button'
 import TextInput from '@/components/TextInput'
 import useForm from '@/hooks/useForm'
+import { useRouter } from '@/hooks/useRouter'
 import { ROUTE } from '@/router/routerInfo'
 import authService from '@/service/auth.service'
 import { loginValidate, LoginValidateProps } from '@/service/auth.validation'
 
 const Login = () => {
-  const navigate = useNavigate()
+  const { routeTo } = useRouter()
 
   const handleClickGoToSignUp = () => {
-    navigate(ROUTE.SIGN_UP)
+    routeTo(ROUTE.SIGN_UP)
   }
 
   const submitCallback = async ({ email, password }: LoginValidateProps) => {
@@ -22,7 +21,7 @@ const Login = () => {
       alert(message)
       // TODO: 상태관리 및 로그인 서비스 함수로 리팩토링
       authService.saveToken(token)
-      navigate(ROUTE.HOME)
+      routeTo(ROUTE.HOME)
     } catch (error) {
       alert(error)
     }
