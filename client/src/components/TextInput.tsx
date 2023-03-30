@@ -13,6 +13,7 @@ const TextInput = ({
   placeholder,
   value,
   onChange,
+  onBlur,
   isError,
   errorMessage,
   type = 'text',
@@ -30,6 +31,7 @@ const TextInput = ({
           placeholder={placeholder}
           value={value}
           onChange={onChange}
+          onBlur={onBlur}
           autoComplete="off"
         />
       </div>

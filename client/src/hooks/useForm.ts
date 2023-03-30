@@ -4,12 +4,15 @@ type ValidateChecker<T> = (inputsObj: T) => Record<keyof T, string>
 
 /**
  * input 태그의 에러 체크를 언제할지 정하는 mode (onChange, onSubmit)
+ * @typedef {Object} FormMode
  * @property {"onChange"} onChange 각각의 input 태그 에서 onchange이벤트가 발생할 때 onchange가 발생한 태그만 validation체크
  * @property {"onSubmit"} onSubmit 제출할 때 모든 input태그의 validation 체크
+ * @property {"onBlur"} onBlur input태그가 focus를 잃었을 때 validation 체크
  */
 const FORM_MODE = {
   onChange: 'onChange',
   onSubmit: 'onSubmit',
+  onBlur: 'onBlur',
 } as const
 
 /**
@@ -33,6 +36,7 @@ interface UseFormOptions<T> {
  * @property {Object} inputValues  form에서 사용하는 input들의 객체
  * @property {Object} validateError   form에서 사용하는 input에 해당하는 에러 객체
  * @property {(Event) => void} onChangeHandler  inputValues 중 모든 text Input OnChange를 위한 함수
+ * @property {(Event) => void} onBlurHandler  inputValues 중 모든 text Input에서 focus가 벗어나면 발생하는 함수
  * @property {(Event) => void} onChangeHandlerWithSelect  inputValues 중 모든 select 태그 OnChange를 위한 함수
  * @property {(Event) => Promise<void>} submitHandler  모든 validate 조건을 만족하면 submitCallback 실행
  * @property {(target: string) => boolean} isTargetSatisfyValidate  validation을 체크하고 싶은 input의 키 값을 넣으면 boolean을 반환
@@ -42,7 +46,8 @@ export interface UseFormReturns<T> {
   inputValues: T
   validateError: Record<keyof T, string>
   onChangeHandler: (event: React.ChangeEvent<HTMLInputElement>) => void
-  onChangeHandlerWithSelect: ({ id, value }: { id: string; value: string }) => void
+  onBlurHandler: (event: React.FocusEvent<HTMLInputElement>) => void
+  onChangeHandlerWithSelect: ({ id, value }: { id: keyof T; value: string }) => void
   submitHandler: (event: React.FormEvent<HTMLFormElement>) => Promise<void>
   isTargetSatisfyValidate: (target: keyof T) => boolean
   satisfyAllValidates: boolean
@@ -88,8 +93,10 @@ const useForm = <T extends Record<string, string>>({
    * @param {string} id input태그의 key값
    * @param {string} value  input태그의 값
    */
-  const onChangeError = (id: string, value: string) => {
-    if (mode === FORM_MODE.onChange) {
+  const onChangeError = (id: keyof T, value: string) => {
+    console.log('a')
+
+    if (mode === FORM_MODE.onChange || mode === FORM_MODE.onBlur) {
       const res = validate({ ...inputValues, [id]: value })
       setValidateError({ ...validateError, [id]: res[id] })
     } else {
@@ -105,6 +112,17 @@ const useForm = <T extends Record<string, string>>({
   const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>): void => {
     const { id, value } = event.target
     setInputValues({ ...inputValues, [id]: value })
+    if (mode === FORM_MODE.onBlur) return
+    onChangeError(id, value)
+  }
+
+  /**
+   * inputValues 중 모든 text Input에서 focus가 벗어나면 발생하는 함수
+   * @param event React Change Event
+   */
+  const onBlurHandler = (event: React.FocusEvent<HTMLInputElement>): void => {
+    console.log(event)
+    const { id, value } = event.target
     onChangeError(id, value)
   }
 
@@ -113,7 +131,7 @@ const useForm = <T extends Record<string, string>>({
    * @param {Object}
    * @return {void}
    */
-  const onChangeHandlerWithSelect = ({ id, value }: { id: string; value: string }): void => {
+  const onChangeHandlerWithSelect = ({ id, value }: { id: keyof T; value: string }): void => {
     setInputValues({ ...inputValues, [id]: value })
     onChangeError(id, value)
   }
@@ -148,6 +166,7 @@ const useForm = <T extends Record<string, string>>({
     inputValues,
     validateError,
     onChangeHandler,
+    onBlurHandler,
     onChangeHandlerWithSelect,
     submitHandler,
     satisfyAllValidates,

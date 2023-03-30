@@ -27,7 +27,8 @@ const Login = () => {
       alert(error)
     }
   }
-  const { inputValues, validateError, onChangeHandler, submitHandler, satisfyAllValidates } = useForm({
+  const { inputValues, validateError, onChangeHandler, onBlurHandler, submitHandler, satisfyAllValidates } = useForm({
+    mode: 'onBlur',
     initialValues: { email: '', password: '' },
     submitCallback,
     validate: loginValidate,
@@ -46,6 +47,7 @@ const Login = () => {
           placeholder="Email address *"
           value={inputValues.email}
           onChange={onChangeHandler}
+          onBlur={onBlurHandler}
           isError={!!validateError.email}
           errorMessage={validateError.email}
         />
@@ -56,6 +58,7 @@ const Login = () => {
           placeholder="Password *"
           value={inputValues.password}
           onChange={onChangeHandler}
+          onBlur={onBlurHandler}
           isError={!!validateError.password}
           errorMessage={validateError.password}
         />
