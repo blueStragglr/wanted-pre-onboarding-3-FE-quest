@@ -1,0 +1,32 @@
+#layout{
+    width: 100vw;
+    height : 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: cetner;
+}
+
+#header{
+    position: relative;
+    z-index: 9999;
+    height: 60px;
+    width : 100vw;
+    padding: 20px;
+    border-bottom: 1px solid black;
+}
+
+#bottomSide{
+    display: flex;
+    height : calc( 100vh - 60px);
+}
+
+#main{
+    overflow: auto;
+    flex-grow: 1;
+    background: pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
