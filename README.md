@@ -1,35 +1,70 @@
 # 3월 원티드 프리온보딩 프론트엔드 과정 사전과제
 
-수강생 여러분 안녕하세요! 
+로그인 기능 학습 및 구현
 
-3월 프론트엔드 프리온보딩 과정 진행을 위해, 아래의 내용을 읽고 사전 과제를 수행해 주세요.
+**공통**
 
-사전 과제는 해당 레포지토리를 포크하여 진행해 주시면 됩니다.
+- [x] : 토큰 기반 로그인
+- [ ] : Access Token 및 Refresh Token 적용 (배포 이후 자동로그인 구현하면서 수정할 예정)
 
+**Client**
 
+```md
+Typescript, React, Tailwindcss, Axios, Gh-pages
+```
 
-### 만들어야 할 것
+- [x] : 인증/인가에 따라 라우팅 접근
+- [x] : 라우팅 관리 로직 한 곳으로 모으기
+- [x] : form 컨트롤 custom hooks
+- [x] : 배포
 
-이번 프리온보딩에서는 레이아웃 패턴과 로그인에 대해서 다룹니다. 사전 과제에서는 현재 수강생 여러분이 가지고 있는 리액트 라우터 구성 및 레이아웃 구성에 대한 지식을 확인해 보고자 합니다.
+**Server**
 
-사전 과제로써 다음 요구사항을 충족하는 리액트 어플리케이션을 구성합니다.
+```md
+Typescript, Express, Jest, Supertest, Mongoose
+```
 
-- NextJS 등의 SSR 어플리케이션이 아닌, CSR 어플리케이션을 구축한다.
-- 최소 3개 이상의 페이지를 가지도록 구현한다.
-- 모든 페이지에 공통으로 반복되는 헤더와 사이드바가 있도록 구성한다.
+- [x] : jest를 활용한 유닛테스트
+- [ ] : 배포
 
-즉, 다음 이미지와 같은 형태로 구현합니다.
+## Document
 
-![sample-image](./sample.jpg)
+**공통**
 
-이 때, 아래의 내용을 고민하며 과제를 진행해 주시면 더욱 도움이 됩니다.
+- [세션 기반 인증과 토큰 기반 인증](./docs/%EC%84%B8%EC%85%98%20%EA%B8%B0%EB%B0%98%20%EC%9D%B8%EC%A6%9D%EA%B3%BC%20%ED%86%A0%ED%81%B0%20%EA%B8%B0%EB%B0%98%20%EC%9D%B8%EC%A6%9D.md)
 
-- 3개의 페이지가 고정되는 앱이 아니라, 여러 개의 페이지가 언제든 추가될 수 있다고 생각하고 프로젝트를 수행해 보세요.
-- 만들어진 페이지별로 로그인 여부를 판단하고자 한다면 어떻게 구조를 확장해야할지 고민해 보세요.
+**Client**
 
-추가로, 여유가 있다면 유저네임과 비밀번호를 받아 로그인을 수행할 수 있는 페이지를 만들어 보세요. 실제 API는 연결하지 않아도 되며, 로그인 페이지는 공통 레이아웃(상단 네비게이션 바 및 사이드바)이 적용되지 않도록 만들어 주세요. 
+- [Routing 관리](./client/docs/router.md)
+- [Client - Trouble Shooting](./client/docs/trouble-shooting.md)
 
-### 질문하기 & 제출하기
+**Server**
 
-- 과제 관련 질문은 해당 레포지토리에 이슈로 남겨주세요! 확인하는 대로 답변 드리도록 하겠습니다. 
-- 과제를 완료하셨다면 해당 레포지토리에 pull request를 남겨 제출해 주세요. 
+- [Server - Trouble Shooting](./server/docs/trouble-shooting.md)
+
+## 실행 방법
+
+```shell
+  # 처음 한 번만 실행. 서버/클라이언트 의존성 설치가 동시에 이루어집니다.
+  $ npm install
+
+  # 서버 실행
+  $ npm run server
+
+  # 클라이언트 실행
+  $ npm run client
+```
+
+## 결과
+
+### 로그인/회원가입
+
+https://user-images.githubusercontent.com/71386219/228737390-11bc0629-e2ca-4ed9-8165-6d41fbd5e8da.mov
+
+### 모든 페이지에 공통으로 반복되는 헤더와 사이드바 (로그인 여부에 따라 변경)
+
+https://user-images.githubusercontent.com/71386219/228737399-2aef6732-2f17-48da-b5d9-473e85b2810c.mov
+
+### 로그인 여부에 따른 페이지 접근
+
+https://user-images.githubusercontent.com/71386219/228737354-3089a45f-9bff-42dd-8c72-af5fbd8208c2.mov
